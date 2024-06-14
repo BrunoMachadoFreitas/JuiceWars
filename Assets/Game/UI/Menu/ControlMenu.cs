@@ -16,6 +16,9 @@ public class ControlMenu : MonoBehaviour
     [SerializeField] public GameObject MenuSettings;
     public GameObject MenuSettingsX;
 
+    [SerializeField] public GameObject MenuAchievements;
+    public GameObject MenuAchievementsX;
+
     public GameObject BackgroundTab1;
     public GameObject BackgroundTab2;
     public GameObject BackgroundTab3;
@@ -48,7 +51,9 @@ public class ControlMenu : MonoBehaviour
     {
         MainMenuX = Instantiate(MainMenu);
         MenuSettingsX = Instantiate(MenuSettings);
+        MenuAchievementsX = Instantiate(MenuAchievements);
         MenuSettingsX.SetActive(false);
+        MenuAchievementsX.SetActive(false);
 
 
 
@@ -58,6 +63,7 @@ public class ControlMenu : MonoBehaviour
 
         MainMenuX.transform.GetChild(7).GetComponent<Button>().onClick.AddListener(delegate () { startGame(); });
         MainMenuX.transform.GetChild(8).GetComponent<Button>().onClick.AddListener(delegate () { HideMainMenuShowSettings(); });
+        MainMenuX.transform.GetChild(9).GetComponent<Button>().onClick.AddListener(delegate () { HideMainMenuShowAchievements(); });
 
 
         MenuSettingsX.transform.GetChild(1).GetChild(1).GetComponent<Button>().onClick.AddListener(delegate () { HideSettingsMenuShowMainMenu(); });
@@ -103,7 +109,11 @@ public class ControlMenu : MonoBehaviour
         MenuSettingsX.SetActive(true);
         MainMenuX.SetActive(false);
     }
-
+    public void HideMainMenuShowAchievements()
+    {
+        MenuAchievementsX.SetActive(true);
+        MainMenuX.SetActive(false);
+    }
     public void HideSettingsMenuShowMainMenu()
     {
         if (GameStateController.instance) { 

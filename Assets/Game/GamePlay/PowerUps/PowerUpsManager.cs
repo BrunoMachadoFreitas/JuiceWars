@@ -129,7 +129,10 @@ public class PowerUpsManager : MonoBehaviour
     }
     public void RandomizePowerUpsForButtons(int i)
     {
+        try
+        {
 
+        
             int randomPowerUp = UnityEngine.Random.Range(0, powerUps.Count);
             PowerUpObject[i].GetComponentInChildren<Button>().image.sprite = ImagesForButtons[randomPowerUp];
             PowerUpObject[i].GetComponentInChildren<Button>().gameObject.GetComponentInChildren<TextMeshProUGUI>().text = Descriptions[randomPowerUp];
@@ -141,8 +144,13 @@ public class PowerUpsManager : MonoBehaviour
                     PowerUpObject[i].transform.GetChild(2).gameObject.SetActive(true);
             }
             CanVerify = true;
+        }
+        catch(Exception ex)
+        {
+            UnityEngine.Debug.Log(ex.Message);
+        }
 
-        
+
     }
 
 
@@ -278,7 +286,7 @@ public class PowerUpsManager : MonoBehaviour
                     {
                     }
                     DataManagment.instance.objectData.FoundPistol = true;
-                    DataManagment.instance.objectData.imagePistol = ImagesForButtons[1];
+                    DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[1]);
                     DataManagment.instance.SaveData();
                     powerUps["Pistol"] = DataManagment.instance.objectData.FoundPistol;
                 }
@@ -341,7 +349,7 @@ public class PowerUpsManager : MonoBehaviour
                     }
 
                     DataManagment.instance.objectData.FoundMinigun = true;
-                    DataManagment.instance.objectData.imagePistol = ImagesForButtons[2];
+                    DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[2]);
                     DataManagment.instance.SaveData();
                     powerUps["MiniGun"] = DataManagment.instance.objectData.FoundMinigun;
                     // Se houver pelo menos dois spots com MiniGun_Main
@@ -379,13 +387,13 @@ public class PowerUpsManager : MonoBehaviour
                 }
                 break;
             case "JuiceLife": IncreaseLife(); DataManagment.instance.objectData.FoundJuiceLife = true;
-                DataManagment.instance.objectData.imagePistol = ImagesForButtons[0];
+                DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[0]);
                 DataManagment.instance.SaveData();
                 powerUps["JuiceLife"] = DataManagment.instance.objectData.FoundJuiceLife;
 
                 break;
             case "JuiceReg": RegLife(); DataManagment.instance.objectData.FoundReg = true;
-                DataManagment.instance.objectData.imagePistol = ImagesForButtons[3];
+                DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[3]);
                 DataManagment.instance.SaveData();
                 powerUps["JuiceReg"] = DataManagment.instance.objectData.FoundReg;
                 break;
@@ -421,7 +429,7 @@ public class PowerUpsManager : MonoBehaviour
                     }
 
                     DataManagment.instance.objectData.FoundJuiceClub = true;
-                    DataManagment.instance.objectData.imagePistol = ImagesForButtons[4];
+                    DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[4]);
                     DataManagment.instance.SaveData();
                     powerUps["JuiceClub"] = DataManagment.instance.objectData.FoundJuiceClub;
                 }
@@ -481,7 +489,7 @@ public class PowerUpsManager : MonoBehaviour
                     {
                     }
                     DataManagment.instance.objectData.FoundBoomerang = true;
-                    DataManagment.instance.objectData.imagePistol = ImagesForButtons[5];
+                    DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[5]);
                     DataManagment.instance.SaveData();
                     powerUps["Boomerang"] = DataManagment.instance.objectData.FoundBoomerang;
 
@@ -525,7 +533,7 @@ public class PowerUpsManager : MonoBehaviour
              
                 ManageCardEffects("RedWineCard");
                 DataManagment.instance.objectData.FoundCardWine = true;
-                DataManagment.instance.objectData.imagePistol = ImagesForButtons[6];
+                DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[6]);
                 DataManagment.instance.SaveData();
 
                 powerUps["RedWineCard"] = DataManagment.instance.objectData.FoundCardWine;
@@ -534,7 +542,7 @@ public class PowerUpsManager : MonoBehaviour
 
                 ManageCardEffects("TequillaCard");
                 DataManagment.instance.objectData.FoundCardWine = true;
-                DataManagment.instance.objectData.imagePistol = ImagesForButtons[7];
+                DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[7]);
                 DataManagment.instance.SaveData();
                 powerUps["TequillaCard"] = DataManagment.instance.objectData.FoundTequillaCard;
                 break;

@@ -47,6 +47,33 @@ public class DataManagment : MonoBehaviour
             return new DataInfo();
         }
     }
+    public string SpriteToBase64(Sprite sprite)
+    {
+        if (sprite == null)
+        {
+            return null;
+        }
+
+        Texture2D texture = sprite.texture;
+        byte[] imageData = texture.EncodeToPNG(); // ou EncodeToJPG();
+        return System.Convert.ToBase64String(imageData);
+    }
+
+
+    public Sprite Base64ToSprite(string base64)
+    {
+        if (string.IsNullOrEmpty(base64))
+        {
+            return null;
+        }
+
+        byte[] imageData = System.Convert.FromBase64String(base64);
+        Texture2D texture = new Texture2D(2, 2);
+        texture.LoadImage(imageData);
+        Rect rect = new Rect(0, 0, texture.width, texture.height);
+        return Sprite.Create(texture, rect, new Vector2(0.5f, 0.5f));
+    }
+
 }
 [System.Serializable]
 public class DataInfo
@@ -60,28 +87,28 @@ public class DataInfo
 
     //Items
     public bool FoundMinigun;
-    public Sprite imageMinigun;
+    public string imageMinigun;
 
     public bool FoundPistol;
-    public Sprite imagePistol;
+    public string imagePistol;
 
     public bool FoundReg;
-    public Sprite imageReg;
+    public string imageReg;
 
     public bool FoundJuiceLife;
-    public Sprite imageJuiceLife;
+    public string imageJuiceLife;
 
     public bool FoundJuiceClub;
-    public Sprite imageJuiceClub;
+    public string imageJuiceClub;
 
     public bool FoundBoomerang;
-    public Sprite imageBoomerang;
+    public string imageBoomerang;
 
     public bool FoundCardWine;
-    public Sprite imageCardWine;
+    public string imageCardWine;
 
     public bool FoundTequillaCard;
-    public Sprite imageTequillaCard;
+    public string imageTequillaCard;
 
     
 }

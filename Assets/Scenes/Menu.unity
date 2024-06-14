@@ -431,6 +431,10 @@ PrefabInstance:
     - target: {fileID: 5723376816494221634, guid: 3f4aab392136fbc4cbb2d3b0818bcd9e, type: 3}
       propertyPath: MenuSettings
       value: 
+      objectReference: {fileID: 2689176473421199874, guid: 72b663ef33963a44bb8a4d9f1fc92d5c, type: 3}
+    - target: {fileID: 5723376816494221634, guid: 3f4aab392136fbc4cbb2d3b0818bcd9e, type: 3}
+      propertyPath: MenuAchievements
+      value: 
       objectReference: {fileID: 2689176473421199874, guid: 898d60fcd5d79f9479176b6bf17743cf, type: 3}
     - target: {fileID: 5723376816494221635, guid: 3f4aab392136fbc4cbb2d3b0818bcd9e, type: 3}
       propertyPath: m_Name
