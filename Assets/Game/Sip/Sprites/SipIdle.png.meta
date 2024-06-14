@@ -1,0 +1,1014 @@
+fileFormatVersion: 2
+guid: a4c364849a35f694aa2a24cb2d7c1d69
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SipIdle_0
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 2028
+        width: 239
+        height: 348
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1.5185494, y: -171.84529}
+        - {x: 4.1826224, y: -166.14621}
+        - {x: 6.083013, y: -154.74805}
+        - {x: 4.1826224, y: -149.04897}
+        - {x: -3.4189398, y: -143.34988}
+        - {x: -3.4189398, y: -128.15234}
+        - {x: -1.5185494, y: -126.25265}
+        - {x: -1.5185494, y: -120.553566}
+        - {x: 2.2822318, y: -114.854485}
+        - {x: 2.2822318, y: -111.0551}
+        - {x: 6.083013, y: -105.35602}
+        - {x: 7.983403, y: -105.35602}
+        - {x: 9.883794, y: -107.25571}
+        - {x: 32.68848, y: -107.25571}
+        - {x: 34.58887, y: -114.854485}
+        - {x: 36.48926, y: -116.75418}
+        - {x: 36.48926, y: -120.553566}
+        - {x: 38.389652, y: -122.45326}
+        - {x: 38.389652, y: -126.25265}
+        - {x: 40.290043, y: -128.15234}
+        - {x: 40.290043, y: -139.5505}
+        - {x: 38.389652, y: -141.4502}
+        - {x: 38.389652, y: -145.24959}
+        - {x: 32.68848, y: -149.04897}
+        - {x: 30.78809, y: -154.74805}
+        - {x: 30.78809, y: -160.44713}
+        - {x: 32.68848, y: -162.34683}
+        - {x: 32.68848, y: -166.14621}
+        - {x: 38.389652, y: -171.84529}
+        - {x: 45.991215, y: -173.745}
+        - {x: 76.39746, y: -173.745}
+        - {x: 85.899414, y: -166.14621}
+        - {x: 87.799805, y: -158.54744}
+        - {x: 85.899414, y: -152.84836}
+        - {x: 78.29785, y: -145.24959}
+        - {x: 68.7959, y: -141.4502}
+        - {x: 64.99512, y: -141.4502}
+        - {x: 63.09473, y: -139.5505}
+        - {x: 57.39356, y: -139.5505}
+        - {x: 57.39356, y: -135.75111}
+        - {x: 59.29395, y: -133.85143}
+        - {x: 59.29395, y: -124.35295}
+        - {x: 57.39356, y: -122.45326}
+        - {x: 57.39356, y: -116.75418}
+        - {x: 49.791996, y: -103.45632}
+        - {x: 59.29395, y: -101.556625}
+        - {x: 64.99512, y: -97.75724}
+        - {x: 66.89551, y: -99.65694}
+        - {x: 72.59668, y: -99.65694}
+        - {x: 82.09863, y: -93.957855}
+        - {x: 82.09863, y: -90.15846}
+        - {x: 83.99902, y: -92.05816}
+        - {x: 97.30176, y: -92.05816}
+        - {x: 103.00293, y: -86.35908}
+        - {x: 103.00293, y: -82.55969}
+        - {x: 93.50098, y: -73.06122}
+        - {x: 97.30176, y: -71.16153}
+        - {x: 103.00293, y: -69.26183}
+        - {x: 119.5, y: -52.16459}
+        - {x: 119.5, y: -46.465508}
+        - {x: 119.5, y: -10.371326}
+        - {x: 118.206055, y: -4.672245}
+        - {x: 116.305664, y: 2.9265301}
+        - {x: 112.50488, y: 8.625611}
+        - {x: 108.7041, y: 18.12408}
+        - {x: 101.10254, y: 23.823162}
+        - {x: 101.10254, y: 40.920406}
+        - {x: 106.80371, y: 46.619488}
+        - {x: 110.60449, y: 56.117958}
+        - {x: 110.60449, y: 59.917343}
+        - {x: 104.90332, y: 67.51612}
+        - {x: 104.90332, y: 84.613365}
+        - {x: 106.80371, y: 86.513054}
+        - {x: 106.80371, y: 92.212135}
+        - {x: 116.305664, y: 109.30938}
+        - {x: 116.305664, y: 120.70754}
+        - {x: 110.60449, y: 134.0054}
+        - {x: 91.600586, y: 151.10265}
+        - {x: 80.19824, y: 153.00233}
+        - {x: 78.29785, y: 154.90204}
+        - {x: 72.59668, y: 154.90204}
+        - {x: 66.89551, y: 158.70142}
+        - {x: 55.493168, y: 160.60112}
+        - {x: 53.592777, y: 162.50081}
+        - {x: 47.891605, y: 162.50081}
+        - {x: 45.991215, y: 164.4005}
+        - {x: 17.485355, y: 164.4005}
+        - {x: 15.584966, y: 162.50081}
+        - {x: 0.38184118, y: 162.50081}
+        - {x: -1.5185494, y: 160.60112}
+        - {x: -9.120111, y: 160.60112}
+        - {x: -11.020502, y: 158.70142}
+        - {x: -18.622065, y: 158.70142}
+        - {x: -20.522455, y: 156.80173}
+        - {x: -28.124018, y: 156.80173}
+        - {x: -31.924799, y: 154.90204}
+        - {x: -33.825188, y: 158.70142}
+        - {x: -35.72558, y: 164.4005}
+        - {x: -47.127922, y: 174}
+        - {x: -66.13183, y: 174}
+        - {x: -77.53417, y: 170.09958}
+        - {x: -81.33495, y: 170.09958}
+        - {x: -90.83691, y: 164.4005}
+        - {x: -94.63769, y: 164.4005}
+        - {x: -107.94042, y: 156.80173}
+        - {x: -111.7412, y: 156.80173}
+        - {x: -119.342766, y: 151.10265}
+        - {x: -119.342766, y: 139.70448}
+        - {x: -109.84081, y: 126.406624}
+        - {x: -106.04003, y: 126.406624}
+        - {x: -100.33886, y: 132.10571}
+        - {x: -98.43847, y: 132.10571}
+        - {x: -87.036125, y: 139.70448}
+        - {x: -77.53417, y: 145.40356}
+        - {x: -62.331047, y: 145.40356}
+        - {x: -64.23144, y: 145.40356}
+        - {x: -75.63378, y: 139.70448}
+        - {x: -75.63378, y: 135.90509}
+        - {x: -83.235344, y: 128.30632}
+        - {x: -83.235344, y: 113.10877}
+        - {x: -75.63378, y: 101.71061}
+        - {x: -75.63378, y: 84.613365}
+        - {x: -73.73339, y: 82.71367}
+        - {x: -73.73339, y: 61.81704}
+        - {x: -77.53417, y: 56.117958}
+        - {x: -77.53417, y: 48.51918}
+        - {x: -69.93261, y: 37.121017}
+        - {x: -69.93261, y: 27.62255}
+        - {x: -68.03222, y: 23.823162}
+        - {x: -75.63378, y: 18.12408}
+        - {x: -77.53417, y: 12.424999}
+        - {x: -77.53417, y: 6.725918}
+        - {x: -79.43456, y: 4.826224}
+        - {x: -79.43456, y: -23.669184}
+        - {x: -77.53417, y: -25.568876}
+        - {x: -77.53417, y: -29.368265}
+        - {x: -73.73339, y: -35.067345}
+        - {x: -68.03222, y: -46.465508}
+        - {x: -50.928703, y: -63.56275}
+        - {x: -50.928703, y: -67.36214}
+        - {x: -47.127922, y: -74.960915}
+        - {x: -47.127922, y: -80.659996}
+        - {x: -37.62597, y: -93.957855}
+        - {x: -24.323236, y: -99.65694}
+        - {x: -14.821283, y: -101.556625}
+        - {x: -14.821283, y: -107.25571}
+        - {x: -22.422846, y: -122.45326}
+        - {x: -22.422846, y: -139.5505}
+        - {x: -28.124018, y: -139.5505}
+        - {x: -41.42675, y: -145.24959}
+        - {x: -49.028313, y: -152.84836}
+        - {x: -50.928703, y: -160.44713}
+        - {x: -49.028313, y: -162.34683}
+        - {x: -50.928703, y: -169.9456}
+        - {x: -47.127922, y: -173.745}
+        - {x: -9.120111, y: -173.745}
+      - - {x: 86.5, y: -31}
+        - {x: 99.5, y: -46}
+        - {x: 85.5, y: -57}
+        - {x: 98.5, y: -54}
+        - {x: 109.5, y: -43}
+        - {x: 106.5, y: -22}
+        - {x: 91.5, y: 4}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: c552badc0c1ad0c49a15b179292d00df
+      internalID: 1003123907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_1
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 2028
+        width: 240
+        height: 344
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54bc1a5fb8460d14592b619bf992d1b6
+      internalID: 1804167604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_2
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 2028
+        width: 240
+        height: 342
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fbd8eedb31636549bd74048c5f1b0e6
+      internalID: 1833724137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_3
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 2028
+        width: 239
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c466a1393b9d8724aa582172b3b0cc81
+      internalID: -745211826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_4
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 2028
+        width: 239
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a8437d9c999ab54ea34304cb7a152bb
+      internalID: -1839222801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_5
+      rect:
+        serializedVersion: 2
+        x: 1721
+        y: 2026
+        width: 239
+        height: 344
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec87151ce39fd2c48828fbf604112b66
+      internalID: -163127840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_6
+      rect:
+        serializedVersion: 2
+        x: 1994
+        y: 2028
+        width: 240
+        height: 344
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a27268e574cb17d45a71885d5c18629c
+      internalID: -150727439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_7
+      rect:
+        serializedVersion: 2
+        x: 2275
+        y: 2028
+        width: 238
+        height: 348
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e41e4b2f033e1a041a082d22c2ffaa4a
+      internalID: -684006577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_8
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 1568
+        width: 239
+        height: 336
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7149739727f6e7d42a0549cb22df60f2
+      internalID: 2082847065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_9
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 1571
+        width: 240
+        height: 333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 213a567c88142a640a51745131e6d97a
+      internalID: -1612532607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_10
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 1571
+        width: 239
+        height: 332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 986dbf08e921f1e42afbd449f2386bda
+      internalID: 829872070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_11
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 1571
+        width: 239
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdda820fe3f8e4e42bdc05be2347ee3a
+      internalID: -486519478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_12
+      rect:
+        serializedVersion: 2
+        x: 1597
+        y: 1571
+        width: 240
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1474cbecb5662b43a2041b739149e61
+      internalID: 2973267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_13
+      rect:
+        serializedVersion: 2
+        x: 1852
+        y: 1571
+        width: 239
+        height: 332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1615118889e09eb40a58221af4ce4cee
+      internalID: -1865566510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_14
+      rect:
+        serializedVersion: 2
+        x: 2105
+        y: 1570
+        width: 239
+        height: 334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a314154425f3107468ee01feb09f9519
+      internalID: 2073968997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_15
+      rect:
+        serializedVersion: 2
+        x: 2416
+        y: 1571
+        width: 240
+        height: 337
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec04e1c505f96a448bc0fe89d359477e
+      internalID: -1751796125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_16
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 964
+        width: 196
+        height: 367
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a86580c5b2f7cb246bf1d088ebd8cf51
+      internalID: -601579783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_17
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 960
+        width: 194
+        height: 369
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1be7625bfe4f48747a88af15d011919e
+      internalID: -1160238364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_18
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 964
+        width: 195
+        height: 363
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1eda6566b7323046b14da1bf54f3c2d
+      internalID: 142848110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_19
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 964
+        width: 196
+        height: 361
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd159076eec02db46af4505f427654e9
+      internalID: -1586717080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_20
+      rect:
+        serializedVersion: 2
+        x: 1396
+        y: 962
+        width: 196
+        height: 361
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dae3e4f3aa945e14cae08883f3a88625
+      internalID: -1793201136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_21
+      rect:
+        serializedVersion: 2
+        x: 1651
+        y: 962
+        width: 195
+        height: 363
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f826304ab743b5458966c725b9bebf6
+      internalID: -325271548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_22
+      rect:
+        serializedVersion: 2
+        x: 1879
+        y: 964
+        width: 195
+        height: 365
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90ca95efbe3d39c49baeccaf2bb09fb1
+      internalID: -1754937343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_23
+      rect:
+        serializedVersion: 2
+        x: 2101
+        y: 962
+        width: 196
+        height: 369
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a3f38951632ef847a31e23fa094c0e2
+      internalID: -506808129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_24
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 425
+        width: 196
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b28ff06e4e3e098478f6d2f3a06acc99
+      internalID: -2078682590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_25
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 425
+        width: 196
+        height: 364
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e7497a84cd54354b9376828bbc2d2b0
+      internalID: -1043109986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_26
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 425
+        width: 196
+        height: 362
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 948e6d1819711434e8855766444b0b67
+      internalID: -1245619626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_27
+      rect:
+        serializedVersion: 2
+        x: 1242
+        y: 425
+        width: 196
+        height: 361
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0301d2a235c6df84baf0786217615905
+      internalID: -128910707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_28
+      rect:
+        serializedVersion: 2
+        x: 1538
+        y: 425
+        width: 196
+        height: 361
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00adddc579eb8ba47b8938a0addff784
+      internalID: -906892746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_29
+      rect:
+        serializedVersion: 2
+        x: 1799
+        y: 426
+        width: 195
+        height: 363
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fdef3c0976a91744b7ee628134ffb57
+      internalID: -565216522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_30
+      rect:
+        serializedVersion: 2
+        x: 2051
+        y: 417
+        width: 196
+        height: 367
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 879b736937b91c948a945d1a7f81a428
+      internalID: 24487660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SipIdle_31
+      rect:
+        serializedVersion: 2
+        x: 2321
+        y: 417
+        width: 196
+        height: 365
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cfd15c4769f3aa499b027ebab320de1
+      internalID: -1320673941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SipIdle_0: 1003123907
+      SipIdle_1: 1804167604
+      SipIdle_10: 829872070
+      SipIdle_11: -486519478
+      SipIdle_12: 2973267
+      SipIdle_13: -1865566510
+      SipIdle_14: 2073968997
+      SipIdle_15: -1751796125
+      SipIdle_16: -601579783
+      SipIdle_17: -1160238364
+      SipIdle_18: 142848110
+      SipIdle_19: -1586717080
+      SipIdle_2: 1833724137
+      SipIdle_20: -1793201136
+      SipIdle_21: -325271548
+      SipIdle_22: -1754937343
+      SipIdle_23: -506808129
+      SipIdle_24: -2078682590
+      SipIdle_25: -1043109986
+      SipIdle_26: -1245619626
+      SipIdle_27: -128910707
+      SipIdle_28: -906892746
+      SipIdle_29: -565216522
+      SipIdle_3: -745211826
+      SipIdle_30: 24487660
+      SipIdle_31: -1320673941
+      SipIdle_4: -1839222801
+      SipIdle_5: -163127840
+      SipIdle_6: -150727439
+      SipIdle_7: -684006577
+      SipIdle_8: 2082847065
+      SipIdle_9: -1612532607
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

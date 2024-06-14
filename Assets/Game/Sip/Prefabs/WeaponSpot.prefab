@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1310779407571404685
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2915282164682409334}
+  - component: {fileID: 2925676638783729497}
+  m_Layer: 0
+  m_Name: WeaponSpot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2915282164682409334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310779407571404685}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2925676638783729497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310779407571404685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e100d38844af94189d3b703f71e49c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WpType: 0
+  PistolPrefab: {fileID: 1525032310100622408, guid: 43695334f0b53934d9667d78613d4c62, type: 3}
+  DaggerPrefab: {fileID: 7631230785307397830, guid: 47fa927c0bf81fa48848fb3f66530712, type: 3}
+  MiniGunPrefab: {fileID: 1307365537002540378, guid: ecacc2832e015b44fa36e562c75a5284, type: 3}
+  ShotgunPrefab: {fileID: 446249612330831050, guid: 9682c5545740e06419d96f3caa7a2d89, type: 3}
+  RocketPrefab: {fileID: 0}
+  BoomerangPrefab: {fileID: 0}
+  SwordPrefab: {fileID: 0}
+  ClubPrefab: {fileID: 0}

@@ -1,0 +1,1717 @@
+fileFormatVersion: 2
+guid: 956b3a1a51a8fd641bc47ec32b5ca0ca
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: borders_Camada 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6110
+        width: 234
+        height: 3520
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3e775784b45115468c0bd0e0620efc8
+      internalID: -1095520356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_1
+      rect:
+        serializedVersion: 2
+        x: 2774
+        y: 9532
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94a67b839c5d4cb48a6950e0ad02c1e8
+      internalID: 1768871374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_2
+      rect:
+        serializedVersion: 2
+        x: 3442
+        y: 9542
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d31356fd7a5b5224e80087f673aa39c9
+      internalID: 473344191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_4
+      rect:
+        serializedVersion: 2
+        x: 5384
+        y: 8362
+        width: 5025
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 516a7bb890ffca549973c976e57edfea
+      internalID: -1070489229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_8
+      rect:
+        serializedVersion: 2
+        x: 10778
+        y: 1711
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee27d392887886e4c8cbda64ce2f4a9b
+      internalID: 1875484142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_9
+      rect:
+        serializedVersion: 2
+        x: 10005
+        y: 1597
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a02b7e8e3fbc4f46ae44c6cda18e33d
+      internalID: -1810119848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_10
+      rect:
+        serializedVersion: 2
+        x: 10045
+        y: 1558
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19f8539f581bd884ea1450a6b4d7af3a
+      internalID: 1864179605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_16
+      rect:
+        serializedVersion: 2
+        x: 10634
+        y: 1079
+        width: 72
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5995c4ebffee60f4cb41d211862b8fb4
+      internalID: -2125190966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_17
+      rect:
+        serializedVersion: 2
+        x: 10712
+        y: 1049
+        width: 85
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07290b5949a58a74cbff6c1862211cf4
+      internalID: 771941998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_18
+      rect:
+        serializedVersion: 2
+        x: 10129
+        y: 1049
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74077940c9d14aa42a9b93f9736dd5ad
+      internalID: -482731758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_19
+      rect:
+        serializedVersion: 2
+        x: 10220
+        y: 1049
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 215a867e473223747930021569f5ec8b
+      internalID: 1248129099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_20
+      rect:
+        serializedVersion: 2
+        x: 10312
+        y: 1049
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fa4c4c803409ad409deb2502448ae64
+      internalID: 1979214817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_21
+      rect:
+        serializedVersion: 2
+        x: 10396
+        y: 1049
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adc659a12dcf2bb4292ccf9a92c03efa
+      internalID: 1807724547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_22
+      rect:
+        serializedVersion: 2
+        x: 10481
+        y: 1017
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5db4b981ecae4f142b54131b43585dec
+      internalID: 416488985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_23
+      rect:
+        serializedVersion: 2
+        x: 10572
+        y: 1049
+        width: 20
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9f5fad3db1b70b41a8e0808c43040d1
+      internalID: 18965642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_24
+      rect:
+        serializedVersion: 2
+        x: 10651
+        y: 1049
+        width: 19
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbcd4dd2591c9be499944d5d08106f65
+      internalID: -283463743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_25
+      rect:
+        serializedVersion: 2
+        x: 10846
+        y: 587
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c56db5264a7c31c4a85cc7490bffb506
+      internalID: 1889516490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_28
+      rect:
+        serializedVersion: 2
+        x: 12736
+        y: 547
+        width: 20
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58acfe3936f382140a5bd7c3512f42fe
+      internalID: -181235641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_29
+      rect:
+        serializedVersion: 2
+        x: 10318
+        y: 535
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 693d7170e20fce543bb6407f5e902194
+      internalID: 1207653890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_34
+      rect:
+        serializedVersion: 2
+        x: 13261
+        y: 518
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99dc23e8108694c4b96a0f3290ab354e
+      internalID: 1051213226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_35
+      rect:
+        serializedVersion: 2
+        x: 12078
+        y: 509
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3df0414c30e83104788e0783ad9f0c58
+      internalID: 1389120413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_36
+      rect:
+        serializedVersion: 2
+        x: 12789
+        y: 508
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05fff2038afe45e4cb3d86a0c577aeec
+      internalID: 1920311496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_37
+      rect:
+        serializedVersion: 2
+        x: 12841
+        y: 509
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 817087e397edd33449dc8ed5d6d34f56
+      internalID: -425035672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_38
+      rect:
+        serializedVersion: 2
+        x: 12854
+        y: 509
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19ed591870ec4dd4eb6467a42ff9cdbf
+      internalID: 99101006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_39
+      rect:
+        serializedVersion: 2
+        x: 12899
+        y: 508
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95648a0530f078e4cb2a1404210a6cfe
+      internalID: -887540392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_40
+      rect:
+        serializedVersion: 2
+        x: 13049
+        y: 508
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da45acb36d6fd284997c16fe760797e8
+      internalID: 458401509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_41
+      rect:
+        serializedVersion: 2
+        x: 13095
+        y: 508
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd661193e7412984e8f5902a7cd040fc
+      internalID: 979234140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_42
+      rect:
+        serializedVersion: 2
+        x: 13114
+        y: 508
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a3f6b868852a8b49af6e35b99c61b96
+      internalID: -1685603831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_44
+      rect:
+        serializedVersion: 2
+        x: 13336
+        y: 509
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 051b492113c13904aaf836848194d97a
+      internalID: 1811036483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_48
+      rect:
+        serializedVersion: 2
+        x: 10403
+        y: 443
+        width: 39
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 393fbf35532fe8044a67844a69d9a974
+      internalID: 1404264688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_50
+      rect:
+        serializedVersion: 2
+        x: 10739
+        y: 453
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b40cec15f8e136b4aad203a48ecf1d63
+      internalID: -1926091126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_51
+      rect:
+        serializedVersion: 2
+        x: 12202
+        y: 463
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecf855b5d28cc8a4aaf91030e37064be
+      internalID: -1296617585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_52
+      rect:
+        serializedVersion: 2
+        x: 12437
+        y: 456
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3b59e8552191fc4d891133aa9256f4d
+      internalID: -1432118291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_53
+      rect:
+        serializedVersion: 2
+        x: 12945
+        y: 450
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84bc7a8a53b91224598438e62a73dba1
+      internalID: -1203343778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_55
+      rect:
+        serializedVersion: 2
+        x: 13336
+        y: 463
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5758cb909c47906408353f65dc45a131
+      internalID: 1597421109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_57
+      rect:
+        serializedVersion: 2
+        x: 11557
+        y: 424
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8976d348322b9d84a99fbdc8440291c1
+      internalID: 1617984197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_58
+      rect:
+        serializedVersion: 2
+        x: 12117
+        y: 417
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f2f1feb0342ae9419db5c0d096f881d
+      internalID: 804110524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_59
+      rect:
+        serializedVersion: 2
+        x: 12293
+        y: 404
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e09c367f99787494b8f3ea5fb33a79cd
+      internalID: 32601203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_60
+      rect:
+        serializedVersion: 2
+        x: 10755
+        y: 385
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6e03eb250856e74a95af1d3f74d1482
+      internalID: 1904816844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_61
+      rect:
+        serializedVersion: 2
+        x: 13238
+        y: 385
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8956b52d8dba4534ca23b92729356d1d
+      internalID: -894214834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_62
+      rect:
+        serializedVersion: 2
+        x: 13264
+        y: 385
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34c6a0ff4c9ec8e4fad5b83dd6522859
+      internalID: -1432244827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_63
+      rect:
+        serializedVersion: 2
+        x: 12078
+        y: 352
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 314ba498b17be774da9f424902e0f686
+      internalID: 14712381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_68
+      rect:
+        serializedVersion: 2
+        x: 13062
+        y: 352
+        width: 39
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83204d45bfea3a340aff0786f4a19aea
+      internalID: -1718511756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_69
+      rect:
+        serializedVersion: 2
+        x: 13261
+        y: 336
+        width: 26
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 363d5ccb2750e6045bffe7907d7f0639
+      internalID: -1299548253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_71
+      rect:
+        serializedVersion: 2
+        x: 12397
+        y: 339
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b1dbfdd9d6b7734a9750495ecbd2867
+      internalID: 823793251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_74
+      rect:
+        serializedVersion: 2
+        x: 12375
+        y: 316
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1c1100d05b5e914f93897938a04069c
+      internalID: -1337041404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_76
+      rect:
+        serializedVersion: 2
+        x: 12749
+        y: 267
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92aa3eb377015014189987db17fab131
+      internalID: -1213550514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_77
+      rect:
+        serializedVersion: 2
+        x: 13140
+        y: 267
+        width: 20
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b53099576d323a54886deb3812ae8f55
+      internalID: 1444210872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_78
+      rect:
+        serializedVersion: 2
+        x: 11869
+        y: 222
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e68abc3eef71a7d49a8c070ccc76e892
+      internalID: 1519712545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_79
+      rect:
+        serializedVersion: 2
+        x: 12710
+        y: 189
+        width: 26
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20bc1358c4bf2074f88c3b8e5fb035fa
+      internalID: 2121524712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_80
+      rect:
+        serializedVersion: 2
+        x: 12808
+        y: 215
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 488c34ae8af68d14aa2c77920bc794c7
+      internalID: -17324098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_81
+      rect:
+        serializedVersion: 2
+        x: 13258
+        y: 196
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a97a6b2f31791548bbf9e7043c4466e
+      internalID: 572929635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_82
+      rect:
+        serializedVersion: 2
+        x: 12515
+        y: 189
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2924327a0312ead4fb8bce87be838688
+      internalID: 1203923234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_83
+      rect:
+        serializedVersion: 2
+        x: 12658
+        y: 183
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16f3fd1fbd1de214ba9bc1d0e1e3e90b
+      internalID: 1066395663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_84
+      rect:
+        serializedVersion: 2
+        x: 12860
+        y: 189
+        width: 33
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0c92c70f38c5ed44b50eb4f2c32ecff
+      internalID: 1407370901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_85
+      rect:
+        serializedVersion: 2
+        x: 13062
+        y: 189
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19058ae85ab204a43b9d4e21922b21a4
+      internalID: -1139721466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_86
+      rect:
+        serializedVersion: 2
+        x: 11416
+        y: 160
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd136f4a502f3bd4ab1f6b420d4ed94f
+      internalID: -686374248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_87
+      rect:
+        serializedVersion: 2
+        x: 12665
+        y: 170
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29dc48e45a707a240bc3b2c552b7bd22
+      internalID: -1837057614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_89
+      rect:
+        serializedVersion: 2
+        x: 10787
+        y: 157
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64aec090fedd16e4c869115f5ee2c6b3
+      internalID: -1128393464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_90
+      rect:
+        serializedVersion: 2
+        x: 10833
+        y: 156
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84b50302e878cc940ab02797699d4b74
+      internalID: 1516868960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_91
+      rect:
+        serializedVersion: 2
+        x: 11426
+        y: 150
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f69a30afc66aef40aa38c405372f31d
+      internalID: -47626024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_92
+      rect:
+        serializedVersion: 2
+        x: 10778
+        y: 62
+        width: 97
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f69d66b2efd7974b93c6fe33cf3b30f
+      internalID: 1209885108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_93
+      rect:
+        serializedVersion: 2
+        x: 11667
+        y: 117
+        width: 26
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dd4ca8071aa0ce46a1dede6fd6fbbb3
+      internalID: 1950846750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_94
+      rect:
+        serializedVersion: 2
+        x: 11811
+        y: 117
+        width: 45
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95f9431788cae7a47b2107d8e89f71e1
+      internalID: -1530341880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_95
+      rect:
+        serializedVersion: 2
+        x: 10318
+        y: 85
+        width: 7
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19dd30d7200147c48a478aaa3e4e08fd
+      internalID: 2006242396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_97
+      rect:
+        serializedVersion: 2
+        x: 11609
+        y: 72
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da612e913af784a4b83976b95cfd9e3c
+      internalID: 74183952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_98
+      rect:
+        serializedVersion: 2
+        x: 11850
+        y: 72
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d158a33ec7bc8740bd14eede46de6f9
+      internalID: -1046854482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_3
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 6098
+        width: 4297
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20ba2176a1c296c4988b902a1f1092ce
+      internalID: 1529476599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_5
+      rect:
+        serializedVersion: 2
+        x: 4551
+        y: 6098
+        width: 243
+        height: 3542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cc3514618c4a0947a0b95ec29e946d8
+      internalID: -1002652231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borders_Camada 1_6
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 9316
+        width: 4309
+        height: 321
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87d52dc78fe8ea4458eafb65162314fa
+      internalID: 337004797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      borders_Camada 1_0: -1095520356
+      borders_Camada 1_1: 1768871374
+      borders_Camada 1_10: 1864179605
+      borders_Camada 1_11: 1823167267
+      borders_Camada 1_12: -2141764020
+      borders_Camada 1_13: -336040335
+      borders_Camada 1_14: 1112807828
+      borders_Camada 1_15: 1767213307
+      borders_Camada 1_16: -2125190966
+      borders_Camada 1_17: 771941998
+      borders_Camada 1_18: -482731758
+      borders_Camada 1_19: 1248129099
+      borders_Camada 1_2: 473344191
+      borders_Camada 1_20: 1979214817
+      borders_Camada 1_21: 1807724547
+      borders_Camada 1_22: 416488985
+      borders_Camada 1_23: 18965642
+      borders_Camada 1_24: -283463743
+      borders_Camada 1_25: 1889516490
+      borders_Camada 1_26: -261491699
+      borders_Camada 1_27: -820861612
+      borders_Camada 1_28: -181235641
+      borders_Camada 1_29: 1207653890
+      borders_Camada 1_3: 1529476599
+      borders_Camada 1_30: -329666967
+      borders_Camada 1_31: -1742620391
+      borders_Camada 1_32: -1223982635
+      borders_Camada 1_33: -1900160924
+      borders_Camada 1_34: 1051213226
+      borders_Camada 1_35: 1389120413
+      borders_Camada 1_36: 1920311496
+      borders_Camada 1_37: -425035672
+      borders_Camada 1_38: 99101006
+      borders_Camada 1_39: -887540392
+      borders_Camada 1_4: -1070489229
+      borders_Camada 1_40: 458401509
+      borders_Camada 1_41: 979234140
+      borders_Camada 1_42: -1685603831
+      borders_Camada 1_43: -122179253
+      borders_Camada 1_44: 1811036483
+      borders_Camada 1_45: 1452516212
+      borders_Camada 1_46: 593818311
+      borders_Camada 1_47: -13565735
+      borders_Camada 1_48: 1404264688
+      borders_Camada 1_49: 1803715855
+      borders_Camada 1_5: -1002652231
+      borders_Camada 1_50: -1926091126
+      borders_Camada 1_51: -1296617585
+      borders_Camada 1_52: -1432118291
+      borders_Camada 1_53: -1203343778
+      borders_Camada 1_54: -1759331728
+      borders_Camada 1_55: 1597421109
+      borders_Camada 1_56: -1883222442
+      borders_Camada 1_57: 1617984197
+      borders_Camada 1_58: 804110524
+      borders_Camada 1_59: 32601203
+      borders_Camada 1_6: 337004797
+      borders_Camada 1_60: 1904816844
+      borders_Camada 1_61: -894214834
+      borders_Camada 1_62: -1432244827
+      borders_Camada 1_63: 14712381
+      borders_Camada 1_64: -1922226315
+      borders_Camada 1_65: 1544860952
+      borders_Camada 1_66: -1346650585
+      borders_Camada 1_67: 628364701
+      borders_Camada 1_68: -1718511756
+      borders_Camada 1_69: -1299548253
+      borders_Camada 1_7: -32317337
+      borders_Camada 1_70: -1778811747
+      borders_Camada 1_71: 823793251
+      borders_Camada 1_72: 1915012028
+      borders_Camada 1_73: 1232273705
+      borders_Camada 1_74: -1337041404
+      borders_Camada 1_75: 1388894769
+      borders_Camada 1_76: -1213550514
+      borders_Camada 1_77: 1444210872
+      borders_Camada 1_78: 1519712545
+      borders_Camada 1_79: 2121524712
+      borders_Camada 1_8: 1875484142
+      borders_Camada 1_80: -17324098
+      borders_Camada 1_81: 572929635
+      borders_Camada 1_82: 1203923234
+      borders_Camada 1_83: 1066395663
+      borders_Camada 1_84: 1407370901
+      borders_Camada 1_85: -1139721466
+      borders_Camada 1_86: -686374248
+      borders_Camada 1_87: -1837057614
+      borders_Camada 1_88: 157235352
+      borders_Camada 1_89: -1128393464
+      borders_Camada 1_9: -1810119848
+      borders_Camada 1_90: 1516868960
+      borders_Camada 1_91: -47626024
+      borders_Camada 1_92: 1209885108
+      borders_Camada 1_93: 1950846750
+      borders_Camada 1_94: -1530341880
+      borders_Camada 1_95: 2006242396
+      borders_Camada 1_96: -1150143339
+      borders_Camada 1_97: 74183952
+      borders_Camada 1_98: -1046854482
+      borders_Camada 1_99: -51926383
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

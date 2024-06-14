@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5260209740749482451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5260209740749482448}
+  - component: {fileID: 5260209740749482449}
+  m_Layer: 0
+  m_Name: PowerUpManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &5260209740749482448
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5260209740749482451}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 684.16705, y: 290.708, z: 11.414198}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5260209740749482449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5260209740749482451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8debf466f272db142970cba0402e7d0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valueRerool: 3
+  PowerUpObject:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  ImagesForButtons:
+  - {fileID: 21300000, guid: ab0b102854090974a93c245336e87ff1, type: 3}
+  - {fileID: 1043723682, guid: 82b9b0dae5f975e4a8eb0b6aca0492f7, type: 3}
+  - {fileID: 1422822719, guid: 02ea3c4bcdb89cb4cb89ebd357e02b68, type: 3}
+  - {fileID: 21300000, guid: 663c7327067dbb4419661fd25869ccc1, type: 3}
+  - {fileID: 21300000, guid: 69d337a6f50910543af61f353a9cf3f7, type: 3}
+  - {fileID: 21300000, guid: df0f9f0c66494264b9dde2595dc88f34, type: 3}
+  Prices:
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  Descriptions:
+  - Max life increased by 10
+  - A great pistol
+  - A mini fast gun
+  - Juice your guts (Reg. UP 10 HP)
+  - A Good straw to beat them up
+  - A good circle friend
+  WhatToBuy: []
+  ListToSave: []
+  txtRerool: {fileID: 0}

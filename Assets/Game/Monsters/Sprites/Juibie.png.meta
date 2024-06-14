@@ -1,0 +1,2121 @@
+fileFormatVersion: 2
+guid: 2311f46fb3952994a8afcce83ddfa197
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Juibie_0
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 1930
+        width: 316
+        height: 409
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 64.762215, y: -177.51622}
+        - {x: 62.85694, y: -171.79962}
+        - {x: 55.235847, y: -166.08304}
+        - {x: 53.330574, y: -166.08304}
+        - {x: 49.520027, y: -160.36644}
+        - {x: 38.088387, y: -154.64986}
+        - {x: 38.088387, y: -152.74432}
+        - {x: 39.99366, y: -150.83879}
+        - {x: 39.99366, y: -135.59456}
+        - {x: 41.898933, y: -135.59456}
+        - {x: 47.614754, y: -131.7835}
+        - {x: 51.4253, y: -131.7835}
+        - {x: 59.046394, y: -126.0669}
+        - {x: 62.85694, y: -124.16138}
+        - {x: 62.85694, y: -114.63373}
+        - {x: 68.57276, y: -103.20055}
+        - {x: 68.57276, y: -99.38949}
+        - {x: 70.478035, y: -97.483955}
+        - {x: 70.478035, y: -89.86184}
+        - {x: 72.38331, y: -87.95631}
+        - {x: 74.28858, y: -63.184418}
+        - {x: 76.193855, y: -61.278885}
+        - {x: 76.193855, y: -57.467827}
+        - {x: 78.09913, y: -55.562298}
+        - {x: 93.34132, y: -55.562298}
+        - {x: 95.24659, y: -53.656765}
+        - {x: 99.05714, y: -53.656765}
+        - {x: 102.86768, y: -49.845707}
+        - {x: 104.77296, y: -49.845707}
+        - {x: 114.299324, y: -42.223587}
+        - {x: 127.63624, y: -13.640636}
+        - {x: 129.5415, y: -2.207456}
+        - {x: 131.44678, y: -0.30192602}
+        - {x: 131.44678, y: 5.414664}
+        - {x: 133.35205, y: 7.320194}
+        - {x: 135.25732, y: 16.847843}
+        - {x: 139.06787, y: 20.658903}
+        - {x: 148.59424, y: 24.469963}
+        - {x: 158, y: 35.903145}
+        - {x: 158, y: 37.808674}
+        - {x: 158, y: 39.714203}
+        - {x: 158, y: 49.241856}
+        - {x: 158, y: 51.147385}
+        - {x: 152.40479, y: 51.147385}
+        - {x: 150.49951, y: 49.241856}
+        - {x: 150.49951, y: 56.863976}
+        - {x: 146.68896, y: 60.675034}
+        - {x: 142.87842, y: 60.675034}
+        - {x: 137.1626, y: 54.958443}
+        - {x: 135.25732, y: 56.863976}
+        - {x: 135.25732, y: 60.675034}
+        - {x: 131.44678, y: 64.48609}
+        - {x: 127.63624, y: 64.48609}
+        - {x: 121.92042, y: 58.769505}
+        - {x: 120.015144, y: 51.147385}
+        - {x: 118.10987, y: 49.241856}
+        - {x: 110.48878, y: 58.769505}
+        - {x: 106.67823, y: 58.769505}
+        - {x: 102.86768, y: 54.958443}
+        - {x: 102.86768, y: 47.336323}
+        - {x: 108.5835, y: 37.808674}
+        - {x: 110.48878, y: 26.375494}
+        - {x: 112.39405, y: 24.469963}
+        - {x: 112.39405, y: 13.036784}
+        - {x: 110.48878, y: 11.131254}
+        - {x: 110.48878, y: 5.414664}
+        - {x: 108.5835, y: 3.509134}
+        - {x: 108.5835, y: -2.207456}
+        - {x: 106.67823, y: -4.112986}
+        - {x: 104.77296, y: -17.451696}
+        - {x: 102.86768, y: -19.357225}
+        - {x: 100.96241, y: -28.884876}
+        - {x: 97.15186, y: -32.695934}
+        - {x: 91.43604, y: -34.601467}
+        - {x: 89.53077, y: -36.506996}
+        - {x: 81.909676, y: -36.506996}
+        - {x: 81.909676, y: -30.790405}
+        - {x: 83.81495, y: -28.884876}
+        - {x: 83.81495, y: -13.640636}
+        - {x: 85.72022, y: -9.829576}
+        - {x: 83.81495, y: -7.924046}
+        - {x: 85.72022, y: -6.018516}
+        - {x: 85.72022, y: 9.225724}
+        - {x: 87.625496, y: 11.131254}
+        - {x: 87.625496, y: 24.469963}
+        - {x: 89.53077, y: 26.375494}
+        - {x: 89.53077, y: 51.147385}
+        - {x: 91.43604, y: 51.147385}
+        - {x: 97.15186, y: 53.052914}
+        - {x: 100.96241, y: 56.863976}
+        - {x: 104.77296, y: 66.391624}
+        - {x: 104.77296, y: 83.5414}
+        - {x: 99.05714, y: 96.880104}
+        - {x: 81.909676, y: 112.124344}
+        - {x: 74.28858, y: 114.02988}
+        - {x: 72.38331, y: 115.9354}
+        - {x: 66.66749, y: 115.9354}
+        - {x: 74.28858, y: 117.840935}
+        - {x: 78.09913, y: 114.02988}
+        - {x: 85.72022, y: 114.02988}
+        - {x: 89.53077, y: 115.9354}
+        - {x: 93.34132, y: 112.124344}
+        - {x: 102.86768, y: 112.124344}
+        - {x: 108.5835, y: 117.840935}
+        - {x: 108.5835, y: 129.27411}
+        - {x: 110.48878, y: 131.17964}
+        - {x: 110.48878, y: 138.80176}
+        - {x: 102.86768, y: 146.42389}
+        - {x: 97.15186, y: 146.42389}
+        - {x: 97.15186, y: 154.046}
+        - {x: 91.43604, y: 159.76259}
+        - {x: 81.909676, y: 159.76259}
+        - {x: 76.193855, y: 154.046}
+        - {x: 76.193855, y: 150.23494}
+        - {x: 72.38331, y: 154.046}
+        - {x: 64.762215, y: 154.046}
+        - {x: 57.14112, y: 146.42389}
+        - {x: 57.14112, y: 154.046}
+        - {x: 51.4253, y: 159.76259}
+        - {x: 39.99366, y: 159.76259}
+        - {x: 39.99366, y: 163.57365}
+        - {x: 43.804207, y: 159.76259}
+        - {x: 49.520027, y: 159.76259}
+        - {x: 57.14112, y: 165.47919}
+        - {x: 57.14112, y: 176.91237}
+        - {x: 53.330574, y: 180.72342}
+        - {x: 45.70948, y: 182.62895}
+        - {x: 38.088387, y: 176.91237}
+        - {x: 36.183113, y: 176.91237}
+        - {x: 34.27784, y: 178.81789}
+        - {x: 26.656748, y: 178.81789}
+        - {x: 20.940928, y: 173.1013}
+        - {x: 15.225107, y: 178.81789}
+        - {x: 3.7934668, y: 178.81789}
+        - {x: -3.8276267, y: 171.19577}
+        - {x: -5.7329, y: 171.19577}
+        - {x: -5.7329, y: 178.81789}
+        - {x: -11.44872, y: 184.53448}
+        - {x: -11.44872, y: 197.8732}
+        - {x: -20.975086, y: 204.5}
+        - {x: -34.312, y: 204.5}
+        - {x: -41.933094, y: 201.68425}
+        - {x: -43.838367, y: 195.96767}
+        - {x: -43.838367, y: 190.25107}
+        - {x: -40.02782, y: 180.72342}
+        - {x: -36.217274, y: 178.81789}
+        - {x: -38.122547, y: 175.00684}
+        - {x: -40.02782, y: 176.91237}
+        - {x: -45.74364, y: 176.91237}
+        - {x: -53.364735, y: 169.29024}
+        - {x: -53.364735, y: 161.66812}
+        - {x: -59.080555, y: 161.66812}
+        - {x: -68.60692, y: 155.95154}
+        - {x: -70.51219, y: 150.23494}
+        - {x: -70.51219, y: 144.51836}
+        - {x: -72.417465, y: 146.42389}
+        - {x: -81.94383, y: 146.42389}
+        - {x: -87.65965, y: 140.70729}
+        - {x: -87.65965, y: 131.17964}
+        - {x: -81.94383, y: 125.46305}
+        - {x: -72.417465, y: 125.46305}
+        - {x: -70.51219, y: 127.36858}
+        - {x: -70.51219, y: 123.557526}
+        - {x: -78.133286, y: 123.557526}
+        - {x: -85.75438, y: 117.840935}
+        - {x: -87.65965, y: 112.124344}
+        - {x: -87.65965, y: 106.40775}
+        - {x: -95.28075, y: 106.40775}
+        - {x: -102.90184, y: 102.596695}
+        - {x: -104.80711, y: 96.880104}
+        - {x: -104.80711, y: 89.25798}
+        - {x: -106.71239, y: 87.352455}
+        - {x: -106.71239, y: 75.91927}
+        - {x: -100.99657, y: 62.580563}
+        - {x: -97.18602, y: 60.675034}
+        - {x: -91.4702, y: 54.958443}
+        - {x: -91.4702, y: 51.147385}
+        - {x: -89.564926, y: 49.241856}
+        - {x: -89.564926, y: 16.847843}
+        - {x: -87.65965, y: 14.942314}
+        - {x: -87.65965, y: 5.414664}
+        - {x: -85.75438, y: 3.509134}
+        - {x: -85.75438, y: -6.018516}
+        - {x: -83.849106, y: -7.924046}
+        - {x: -83.849106, y: -28.884876}
+        - {x: -81.94383, y: -30.790405}
+        - {x: -81.94383, y: -36.506996}
+        - {x: -87.65965, y: -36.506996}
+        - {x: -89.564926, y: -34.601467}
+        - {x: -93.37547, y: -34.601467}
+        - {x: -100.99657, y: -23.168285}
+        - {x: -102.90184, y: -11.735106}
+        - {x: -104.80711, y: -9.829576}
+        - {x: -106.71239, y: 5.414664}
+        - {x: -108.61766, y: 7.320194}
+        - {x: -108.61766, y: 16.847843}
+        - {x: -110.522934, y: 20.658903}
+        - {x: -108.61766, y: 22.564434}
+        - {x: -108.61766, y: 30.186554}
+        - {x: -106.71239, y: 32.092083}
+        - {x: -104.80711, y: 41.619736}
+        - {x: -99.09129, y: 51.147385}
+        - {x: -99.09129, y: 54.958443}
+        - {x: -102.90184, y: 58.769505}
+        - {x: -108.61766, y: 58.769505}
+        - {x: -114.33348, y: 53.052914}
+        - {x: -114.33348, y: 51.147385}
+        - {x: -116.238754, y: 49.241856}
+        - {x: -120.0493, y: 60.675034}
+        - {x: -125.76512, y: 64.48609}
+        - {x: -129.57567, y: 64.48609}
+        - {x: -133.38622, y: 60.675034}
+        - {x: -133.38622, y: 56.863976}
+        - {x: -135.29149, y: 54.958443}
+        - {x: -139.10204, y: 60.675034}
+        - {x: -144.81786, y: 60.675034}
+        - {x: -148.6284, y: 56.863976}
+        - {x: -148.6284, y: 49.241856}
+        - {x: -150.53368, y: 51.147385}
+        - {x: -156.2495, y: 51.147385}
+        - {x: -158, y: 49.241856}
+        - {x: -158, y: 39.714203}
+        - {x: -146.72313, y: 26.375494}
+        - {x: -144.81786, y: 26.375494}
+        - {x: -142.91258, y: 22.564434}
+        - {x: -135.29149, y: 18.753374}
+        - {x: -131.48094, y: 13.036784}
+        - {x: -131.48094, y: 9.225724}
+        - {x: -129.57567, y: 7.320194}
+        - {x: -127.670395, y: -6.018516}
+        - {x: -125.76512, y: -7.924046}
+        - {x: -123.85985, y: -17.451696}
+        - {x: -120.0493, y: -23.168285}
+        - {x: -120.0493, y: -26.979345}
+        - {x: -116.238754, y: -36.506996}
+        - {x: -104.80711, y: -49.845707}
+        - {x: -95.28075, y: -53.656765}
+        - {x: -91.4702, y: -53.656765}
+        - {x: -89.564926, y: -55.562298}
+        - {x: -78.133286, y: -55.562298}
+        - {x: -76.22801, y: -66.995476}
+        - {x: -74.32274, y: -68.90101}
+        - {x: -74.32274, y: -74.6176}
+        - {x: -72.417465, y: -76.523125}
+        - {x: -72.417465, y: -82.239716}
+        - {x: -70.51219, y: -84.14525}
+        - {x: -68.60692, y: -95.57842}
+        - {x: -66.701645, y: -97.483955}
+        - {x: -66.701645, y: -101.29501}
+        - {x: -62.8911, y: -108.91714}
+        - {x: -62.8911, y: -114.63373}
+        - {x: -60.98583, y: -120.35032}
+        - {x: -53.364735, y: -127.972435}
+        - {x: -40.02782, y: -133.68903}
+        - {x: -36.217274, y: -133.68903}
+        - {x: -34.312, y: -135.59456}
+        - {x: -38.122547, y: -139.40561}
+        - {x: -40.02782, y: -150.83879}
+        - {x: -38.122547, y: -152.74432}
+        - {x: -38.122547, y: -160.36644}
+        - {x: -49.554188, y: -160.36644}
+        - {x: -51.45946, y: -162.27197}
+        - {x: -62.8911, y: -164.1775}
+        - {x: -72.417465, y: -173.70515}
+        - {x: -72.417465, y: -183.2328}
+        - {x: -68.60692, y: -188.9494}
+        - {x: -59.080555, y: -192.76045}
+        - {x: -53.364735, y: -192.76045}
+        - {x: -51.45946, y: -194.66599}
+        - {x: -32.406727, y: -196.57152}
+        - {x: -30.501453, y: -194.66599}
+        - {x: -22.88036, y: -194.66599}
+        - {x: -17.16454, y: -192.76045}
+        - {x: -11.44872, y: -185.13834}
+        - {x: -11.44872, y: -173.70515}
+        - {x: -19.069813, y: -166.08304}
+        - {x: -19.069813, y: -154.64986}
+        - {x: -20.975086, y: -152.74432}
+        - {x: -19.069813, y: -150.83879}
+        - {x: -19.069813, y: -145.12221}
+        - {x: -15.259267, y: -139.40561}
+        - {x: -5.7329, y: -139.40561}
+        - {x: -3.8276267, y: -141.31114}
+        - {x: 17.13038, y: -141.31114}
+        - {x: 19.035654, y: -139.40561}
+        - {x: 20.940928, y: -141.31114}
+        - {x: 20.940928, y: -145.12221}
+        - {x: 19.035654, y: -147.02774}
+        - {x: 19.035654, y: -156.55539}
+        - {x: 17.13038, y: -158.46092}
+        - {x: 15.225107, y: -158.46092}
+        - {x: 9.509287, y: -164.1775}
+        - {x: 9.509287, y: -175.61069}
+        - {x: 11.41456, y: -181.32727}
+        - {x: 19.035654, y: -188.9494}
+        - {x: 28.562021, y: -192.76045}
+        - {x: 32.372566, y: -192.76045}
+        - {x: 38.088387, y: -196.57152}
+        - {x: 49.520027, y: -198.47705}
+        - {x: 51.4253, y: -202.2881}
+        - {x: 53.330574, y: -204.19363}
+        - {x: 59.046394, y: -204.19363}
+        - {x: 62.85694, y: -200.38257}
+        - {x: 60.951668, y: -196.57152}
+        - {x: 64.762215, y: -192.76045}
+      - - {x: -32.406727, y: 133.08517}
+        - {x: -30.501453, y: 136.89624}
+        - {x: -30.501453, y: 142.61282}
+        - {x: -36.217274, y: 150.23494}
+        - {x: -38.122547, y: 154.046}
+        - {x: -30.501453, y: 159.76259}
+        - {x: -32.406727, y: 159.76259}
+        - {x: -26.690907, y: 155.95154}
+        - {x: -19.069813, y: 157.85707}
+        - {x: -26.690907, y: 157.85707}
+        - {x: -34.312, y: 150.23494}
+        - {x: -34.312, y: 140.70729}
+        - {x: -26.690907, y: 133.08517}
+        - {x: -24.785633, y: 133.08517}
+        - {x: -28.59618, y: 129.27411}
+        - {x: -28.59618, y: 131.17964}
+      - - {x: 91.43604, y: 163.57365}
+        - {x: 99.05714, y: 171.19577}
+        - {x: 99.05714, y: 176.91237}
+        - {x: 95.24659, y: 184.53448}
+        - {x: 85.72022, y: 186.44002}
+        - {x: 78.09913, y: 182.62895}
+        - {x: 76.193855, y: 175.00684}
+        - {x: 74.28858, y: 176.91237}
+        - {x: 64.762215, y: 176.91237}
+        - {x: 59.046394, y: 173.1013}
+        - {x: 57.14112, y: 165.47919}
+        - {x: 64.762215, y: 155.95154}
+        - {x: 74.28858, y: 155.95154}
+        - {x: 80.0044, y: 161.66812}
+        - {x: 80.0044, y: 167.38472}
+        - {x: 83.81495, y: 163.57365}
+      - - {x: 45.70948, y: 204.5}
+        - {x: 17.13038, y: 204.5}
+        - {x: 15.225107, y: 204.5}
+        - {x: 15.225107, y: 195.96767}
+        - {x: 20.940928, y: 186.44002}
+        - {x: 26.656748, y: 184.53448}
+        - {x: 38.088387, y: 184.53448}
+        - {x: 47.614754, y: 195.96767}
+        - {x: 47.614754, y: 203.58978}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: bf3810496cc11ea4fa374443165fad54
+      internalID: 2021824099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_1
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 2320
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4df3c0631254ef241b5503782ac1147e
+      internalID: -964257806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_2
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 1924
+        width: 316
+        height: 409
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8bb443e08fcbce49b39f536d7c90554
+      internalID: -450061617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_3
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 2316
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17e99d483d562cd4e9c3fd5e20f71f12
+      internalID: -1900604182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_4
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 1927
+        width: 315
+        height: 408
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c36ee0d5c9e33549951f1131ae1f495
+      internalID: -1933805582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_5
+      rect:
+        serializedVersion: 2
+        x: 1319
+        y: 2316
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6abe57e821e94c46a138841399082ae
+      internalID: 944160390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_6
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 1916
+        width: 315
+        height: 410
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e59c756ff0a92f49adcba39099ce72a
+      internalID: 1479593758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_7
+      rect:
+        serializedVersion: 2
+        x: 1771
+        y: 2307
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eeca48d5d9f71e48813eebd00eeb274
+      internalID: -2132143610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_8
+      rect:
+        serializedVersion: 2
+        x: 2223
+        y: 2297
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4ddbaafca0945b448d35d230806d30f
+      internalID: -965114978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_9
+      rect:
+        serializedVersion: 2
+        x: 3124
+        y: 2301
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83b41a54f5f7a394f8f1c24d1ac24e0b
+      internalID: -1419429787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_10
+      rect:
+        serializedVersion: 2
+        x: 3402
+        y: 1920
+        width: 314
+        height: 408
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d70c061dfa04684081ead10e5b05507
+      internalID: 771657259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_11
+      rect:
+        serializedVersion: 2
+        x: 3575
+        y: 2310
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba33bcb019a523f478cb0f1b14a60774
+      internalID: -1331909268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_12
+      rect:
+        serializedVersion: 2
+        x: 2047
+        y: 1906
+        width: 315
+        height: 408
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e62d4fc1081edcf4ba9481cb5ad3314b
+      internalID: 195942164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_13
+      rect:
+        serializedVersion: 2
+        x: 2499
+        y: 1912
+        width: 314
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9f0f2eb837bcc34ca9b19a6b94a7f5e
+      internalID: 1579621110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_14
+      rect:
+        serializedVersion: 2
+        x: 2673
+        y: 2295
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6d40314659928e4baadff72c01e0634
+      internalID: -1620837996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_15
+      rect:
+        serializedVersion: 2
+        x: 2950
+        y: 1910
+        width: 315
+        height: 408
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 847488e444db1cb4da78858d5507f506
+      internalID: -1665646392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_16
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 1663
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8096f0082c2afd140b971a50dd517e64
+      internalID: 1506693943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_17
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 1663
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02360d1acc116da4c9d6e6a0950c6e8f
+      internalID: 1880537145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_18
+      rect:
+        serializedVersion: 2
+        x: 3276
+        y: 1299
+        width: 301
+        height: 405
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cccf903b9ffc2214abb5bfe3b74cf7e4
+      internalID: 1056775780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_19
+      rect:
+        serializedVersion: 2
+        x: 3446
+        y: 1686
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d94ca7593c58834aaaa9d2342c25784
+      internalID: 1988470771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_20
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 1634
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20223f348e6676149b53f740d4042d24
+      internalID: 1776287642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_21
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 1638
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f57c74be1b37d594b97b7a769d436f7a
+      internalID: 48089140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_22
+      rect:
+        serializedVersion: 2
+        x: 1171
+        y: 1285
+        width: 301
+        height: 395
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab63e905223b3d74fa766e118d6eed70
+      internalID: -1607908117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_23
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 1281
+        width: 301
+        height: 387
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f23b8ac3685e0a545b29b04c0a954fc8
+      internalID: 574083748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_24
+      rect:
+        serializedVersion: 2
+        x: 1748
+        y: 1651
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fe7d02f67c5ba447bc28591fa67dc30
+      internalID: 1958543562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_25
+      rect:
+        serializedVersion: 2
+        x: 2013
+        y: 1271
+        width: 301
+        height: 393
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81db0e626e3594348aa325520e982eca
+      internalID: -2127554058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_26
+      rect:
+        serializedVersion: 2
+        x: 2177
+        y: 1647
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eb7aa7073a65ae418e6f927682a1f63
+      internalID: -560546076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_27
+      rect:
+        serializedVersion: 2
+        x: 2434
+        y: 1289
+        width: 301
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9cf74ee933a50246a8c4effe5affbe8
+      internalID: 572738901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_28
+      rect:
+        serializedVersion: 2
+        x: 2855
+        y: 1295
+        width: 301
+        height: 379
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ce45633ba7ea394da03f31173720d6a
+      internalID: 725941748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_29
+      rect:
+        serializedVersion: 2
+        x: 3015
+        y: 1657
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b488db6e8dea9684fb4d1b27f35797d8
+      internalID: 884814011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_30
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 1276
+        width: 198
+        height: 377
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33c6226b1c231d54a8b4dc1e618e4a92
+      internalID: 229042514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_31
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1266
+        width: 301
+        height: 391
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bab22bbced69ad14db5057f175164889
+      internalID: 285808471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_32
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 797
+        width: 246
+        height: 402
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a206fbff4abb0734da06b2fd40951370
+      internalID: 1519828867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_33
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1181
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6754f8a2b720078478955274ce07e176
+      internalID: 1005605346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_34
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 1163
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40b1993b24dc9b9439ee0e1d2c705889
+      internalID: 875871947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_35
+      rect:
+        serializedVersion: 2
+        x: 2545
+        y: 1158
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a2b8cacdffb8a14597a8191e0576c9b
+      internalID: 1530005402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_36
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 775
+        width: 244
+        height: 405
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b4febcdf7e548b4e96ab5ef34e7513b
+      internalID: -163910790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_37
+      rect:
+        serializedVersion: 2
+        x: 1605
+        y: 1148
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67a54b7039c6e3f4e9bc97ed0cd43cac
+      internalID: 419784171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_38
+      rect:
+        serializedVersion: 2
+        x: 1986
+        y: 1171
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f557bd5a5f342394a9a8c73781342d98
+      internalID: -1868932228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_39
+      rect:
+        serializedVersion: 2
+        x: 1997
+        y: 1169
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e1bc9ae5ce8a394292b1c708e17a1de
+      internalID: 1266138027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_40
+      rect:
+        serializedVersion: 2
+        x: 2455
+        y: 769
+        width: 255
+        height: 406
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e682d1b3bca88c04eb43151c33ae7b3e
+      internalID: -1655072920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_41
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 1121
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be7f7f2e7eafb1d4999feec1875ac92b
+      internalID: 1339550789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_42
+      rect:
+        serializedVersion: 2
+        x: 1502
+        y: 765
+        width: 261
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d6898f0a2ccfcd46b94f6a74a0ea1ee
+      internalID: -881327334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_43
+      rect:
+        serializedVersion: 2
+        x: 1975
+        y: 761
+        width: 257
+        height: 395
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb12aec779f5ee84590c2370a2b8136d
+      internalID: -2063081369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_44
+      rect:
+        serializedVersion: 2
+        x: 2064
+        y: 1137
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d2022ed88a46c746a6239e4d4971182
+      internalID: 412081500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_45
+      rect:
+        serializedVersion: 2
+        x: 2931
+        y: 761
+        width: 248
+        height: 410
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43d10be003d1d2c46ad9cc6c4a362480
+      internalID: 2106080030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_46
+      rect:
+        serializedVersion: 2
+        x: 3350
+        y: 734
+        width: 246
+        height: 417
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28509eeeccabbd44ead9b887dd82c22e
+      internalID: -843737875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_47
+      rect:
+        serializedVersion: 2
+        x: 3448
+        y: 1133
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f1560ae05fa22342999e5919719e11a
+      internalID: -1046485325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_48
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 1102
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a60cd9d429ed684e96cde9c3645adea
+      internalID: -1551997991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_49
+      rect:
+        serializedVersion: 2
+        x: 2440
+        y: 1099
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b16d284ebb7d7a41afc78b8320a3d85
+      internalID: 1488505870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_50
+      rect:
+        serializedVersion: 2
+        x: 2929
+        y: 1093
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 236ab1259c395ff43898c747a98cba2d
+      internalID: 2002223502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_51
+      rect:
+        serializedVersion: 2
+        x: 1961
+        y: 1076
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c735dd3b728d26448989de8b90b6454b
+      internalID: 550855554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_52
+      rect:
+        serializedVersion: 2
+        x: 3345
+        y: 1074
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c490c0449c54004c87526b484607a08
+      internalID: -1841331916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_53
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 182
+        width: 265
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11eb36d2203139d499260c858f67dfda
+      internalID: 498317242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_54
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 564
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a07c813ef1f3fb749a02f129bc6c3248
+      internalID: 1545261147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_55
+      rect:
+        serializedVersion: 2
+        x: 2184
+        y: 557
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2618f1230d07ac14cac31d7ec3b24c66
+      internalID: -1222612470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_56
+      rect:
+        serializedVersion: 2
+        x: 2242
+        y: 565
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4cbeadeb0615e0409409891109d8aa6
+      internalID: -751440716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_57
+      rect:
+        serializedVersion: 2
+        x: 2777
+        y: 559
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc35aa766307738429dd682203f29c9a
+      internalID: 852302071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_58
+      rect:
+        serializedVersion: 2
+        x: 3065
+        y: 165
+        width: 243
+        height: 430
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6d33c2dcd048d343a86a94e8efd5110
+      internalID: 5883087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_59
+      rect:
+        serializedVersion: 2
+        x: 3206
+        y: 577
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d2083d49d9a69849a52a258fe92149a
+      internalID: -96892202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_60
+      rect:
+        serializedVersion: 2
+        x: 3718
+        y: 554
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eea7a8fc22f2c8648a375559b00a6a8b
+      internalID: -13204073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_61
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 174
+        width: 250
+        height: 379
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9223e2a1e12c50741850521e21d2e8de
+      internalID: 394015140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_62
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 535
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a8a2ad162576414c806a1b6abb6280c
+      internalID: -863481641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_63
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 173
+        width: 267
+        height: 379
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b091e4cd9327fb47be9c8fe64d9494e
+      internalID: -1111909101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_64
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 533
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7453f3ba8a2052439ce7b6e2f314e28
+      internalID: 1359579980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_65
+      rect:
+        serializedVersion: 2
+        x: 1582
+        y: 152
+        width: 269
+        height: 403
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38fdc2b8d44b7a94db0ac400d4fb7056
+      internalID: 1466841246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_66
+      rect:
+        serializedVersion: 2
+        x: 1739
+        y: 535
+        width: 36
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a28605b8c02c2e747a3a5004b931fb05
+      internalID: 269923622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_67
+      rect:
+        serializedVersion: 2
+        x: 2102
+        y: 155
+        width: 242
+        height: 399
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55834dca62d61b245afdee6a1a55d585
+      internalID: -2072391049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_68
+      rect:
+        serializedVersion: 2
+        x: 2263
+        y: 540
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0baf6c7bfeb02994bacfea624561a992
+      internalID: -1678314484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_69
+      rect:
+        serializedVersion: 2
+        x: 2303
+        y: 544
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1e0edca5b1f7804f96684a3274ad76b
+      internalID: 1801392672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_70
+      rect:
+        serializedVersion: 2
+        x: 2636
+        y: 155
+        width: 240
+        height: 421
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fcdd06e8b2a7bd4485b911a1e32f032
+      internalID: 76326426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_71
+      rect:
+        serializedVersion: 2
+        x: 3660
+        y: 546
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2317419358172a49bf33761327e9578
+      internalID: -826952110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_72
+      rect:
+        serializedVersion: 2
+        x: 3779
+        y: 533
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 908751e1af6e50843bdf2f9488d59ace
+      internalID: 2080622264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juibie_73
+      rect:
+        serializedVersion: 2
+        x: 3571
+        y: 146
+        width: 240
+        height: 399
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d40787e12f0813458f513eb71ad1eb2
+      internalID: 506448789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Juibie_0: 2021824099
+      Juibie_1: -964257806
+      Juibie_10: 771657259
+      Juibie_11: -1331909268
+      Juibie_12: 195942164
+      Juibie_13: 1579621110
+      Juibie_14: -1620837996
+      Juibie_15: -1665646392
+      Juibie_16: 1506693943
+      Juibie_17: 1880537145
+      Juibie_18: 1056775780
+      Juibie_19: 1988470771
+      Juibie_2: -450061617
+      Juibie_20: 1776287642
+      Juibie_21: 48089140
+      Juibie_22: -1607908117
+      Juibie_23: 574083748
+      Juibie_24: 1958543562
+      Juibie_25: -2127554058
+      Juibie_26: -560546076
+      Juibie_27: 572738901
+      Juibie_28: 725941748
+      Juibie_29: 884814011
+      Juibie_3: -1900604182
+      Juibie_30: 229042514
+      Juibie_31: 285808471
+      Juibie_32: 1519828867
+      Juibie_33: 1005605346
+      Juibie_34: 875871947
+      Juibie_35: 1530005402
+      Juibie_36: -163910790
+      Juibie_37: 419784171
+      Juibie_38: -1868932228
+      Juibie_39: 1266138027
+      Juibie_4: -1933805582
+      Juibie_40: -1655072920
+      Juibie_41: 1339550789
+      Juibie_42: -881327334
+      Juibie_43: -2063081369
+      Juibie_44: 412081500
+      Juibie_45: 2106080030
+      Juibie_46: -843737875
+      Juibie_47: -1046485325
+      Juibie_48: -1551997991
+      Juibie_49: 1488505870
+      Juibie_5: 944160390
+      Juibie_50: 2002223502
+      Juibie_51: 550855554
+      Juibie_52: -1841331916
+      Juibie_53: 498317242
+      Juibie_54: 1545261147
+      Juibie_55: -1222612470
+      Juibie_56: -751440716
+      Juibie_57: 852302071
+      Juibie_58: 5883087
+      Juibie_59: -96892202
+      Juibie_6: 1479593758
+      Juibie_60: -13204073
+      Juibie_61: 394015140
+      Juibie_62: -863481641
+      Juibie_63: -1111909101
+      Juibie_64: 1359579980
+      Juibie_65: 1466841246
+      Juibie_66: 269923622
+      Juibie_67: -2072391049
+      Juibie_68: -1678314484
+      Juibie_69: 1801392672
+      Juibie_7: -2132143610
+      Juibie_70: 76326426
+      Juibie_71: -826952110
+      Juibie_72: 2080622264
+      Juibie_73: 506448789
+      Juibie_8: -965114978
+      Juibie_9: -1419429787
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &838894925535131730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 838894925535131728}
+  - component: {fileID: 838894925535131731}
+  m_Layer: 0
+  m_Name: WaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &838894925535131728
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838894925535131730}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.710541, y: 262.5635, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &838894925535131731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838894925535131730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa0dc8dab5be8949b8aa5f9e1b092ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isWaveStopped: 0
+  waveDuration: 10
+  EnemyPrefab: {fileID: 6501984974712581605, guid: a20ac17a57a03754b868e6808dfc4ddf, type: 3}
+  playingArea: {fileID: 0}
+  imagetoSpawn: {fileID: 1681536077123951227, guid: 58ce5dc11c1487047a81b416c79b59d2, type: 3}
+  Timerobj: {fileID: 3362373252777830010, guid: a721d6b25120a9c4f876a1deccfbee48, type: 3}
+  waveTimerText: {fileID: 1109333029044709404, guid: f8389901cf7bc5d44bdd94537f5904f6, type: 3}
+  JuiceShieldPrefab: {fileID: 321087646669498264, guid: a850f00359fdb8243b8cdf153edcaa45, type: 3}
+  Monsters: []
+  MoneyCollect: []
+  Images: []
+  ImagesWaiter: []
+  canvasTransform: {fileID: 0}
+  moveDuration: 1
+  isSpawning: 0
+  currentRound: 1
+  monsterToSpawn:
+  - {fileID: 6501984974712581605, guid: a20ac17a57a03754b868e6808dfc4ddf, type: 3}
+  - {fileID: 8381856441583292580, guid: 8c3c623db71830b488ff716c5fefd85c, type: 3}
+  - {fileID: 8381856441583292580, guid: d9c89f18b84ed5e4da789187d8a11ee6, type: 3}
+  given: 0
+  MoneyCollectedd: {fileID: 7832086705229126384, guid: 8bb7cf930d9fb574aaa3b36e0a25a3e7, type: 3}
+  MoneyCollecteddAux: {fileID: 0}
+  targetSprite: {fileID: 0}
+  Camera: {fileID: 0}
+  FadeObjectX: {fileID: 2466211326037500192, guid: bed3fa942e669134fa99684138d12766, type: 3}
+  FadeObjectY: {fileID: 0}
+  MoobMultiplier: 1
+  alreadyExists: 0
+  spawnArea: {x: 75, y: 75}

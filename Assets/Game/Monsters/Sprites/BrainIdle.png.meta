@@ -1,0 +1,1203 @@
+fileFormatVersion: 2
+guid: 6adde2c0d17bd89409a0e970acdc929f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BrainIdle_0
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 5494
+        width: 724
+        height: 1032
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e4f479cb96b51542894fa486ee89b15
+      internalID: -1121887119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_1
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 6192
+        width: 108
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff8af1ef518d90b4a926c5a6cc1776a1
+      internalID: 1499737064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_2
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 5572
+        width: 728
+        height: 1032
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7fc3540bccd80c418f57bb5d4c0d628
+      internalID: -935272376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_3
+      rect:
+        serializedVersion: 2
+        x: 1938
+        y: 5607
+        width: 731
+        height: 1032
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdae81c5fa3322b49b0924454ff14b8e
+      internalID: -810909631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_4
+      rect:
+        serializedVersion: 2
+        x: 3005
+        y: 6227
+        width: 108
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 701d4a1dc0f619a499cc364d8fd8cefe
+      internalID: -1907666510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_5
+      rect:
+        serializedVersion: 2
+        x: 3032
+        y: 5611
+        width: 727
+        height: 1032
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78e37bd497673ff489764cc71c2513e8
+      internalID: 22966395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_6
+      rect:
+        serializedVersion: 2
+        x: 4157
+        y: 6195
+        width: 108
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24a22c50b93ef14469b362a97da54818
+      internalID: -1828070840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_7
+      rect:
+        serializedVersion: 2
+        x: 4180
+        y: 5562
+        width: 724
+        height: 1032
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 107412895c1460b42bf0102d6a2b9f58
+      internalID: -1634561548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_8
+      rect:
+        serializedVersion: 2
+        x: 5022
+        y: 6145
+        width: 108
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 338346df599e91443bdd0a38132049e5
+      internalID: 1754577828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_9
+      rect:
+        serializedVersion: 2
+        x: 5025
+        y: 5529
+        width: 725
+        height: 1032
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 280bafd02169da24b88055ea064b88ea
+      internalID: 1890518759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_10
+      rect:
+        serializedVersion: 2
+        x: 6167
+        y: 6152
+        width: 108
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96d6ceb77a79a7041bcf3a726e39ecbf
+      internalID: -1550553767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_11
+      rect:
+        serializedVersion: 2
+        x: 6182
+        y: 5514
+        width: 724
+        height: 1031
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0adebf7943ca364d9c108b756800f0e
+      internalID: 871358140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_12
+      rect:
+        serializedVersion: 2
+        x: 6976
+        y: 5432
+        width: 724
+        height: 1032
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19e4dc4610d51404bbcdad820a93040a
+      internalID: -2036794485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_13
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 6107
+        width: 109
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6890d73880426624da71c57fe56435ca
+      internalID: -1834092903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_14
+      rect:
+        serializedVersion: 2
+        x: 6970
+        y: 6055
+        width: 110
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 726bd3e38a06dcd4a86635f29af8c1e6
+      internalID: 614733744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_15
+      rect:
+        serializedVersion: 2
+        x: 4986
+        y: 6016
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a6cf9944562f104584f978de3ed78fa
+      internalID: 1712134032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_16
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 3548
+        width: 568
+        height: 1019
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 292e468aa1b3d4e488e4312158b1acdd
+      internalID: 122052445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_17
+      rect:
+        serializedVersion: 2
+        x: 1326
+        y: 3601
+        width: 557
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d52635169fbc6845b4683c8fbe0101b
+      internalID: 38268032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_18
+      rect:
+        serializedVersion: 2
+        x: 2356
+        y: 3636
+        width: 570
+        height: 1028
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b8b3ac98fb99004e96075372c79e66a
+      internalID: -456848964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_19
+      rect:
+        serializedVersion: 2
+        x: 3180
+        y: 3676
+        width: 568
+        height: 1047
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4166be6937e2b3e4e98a92ce4aecf86a
+      internalID: 866682165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_20
+      rect:
+        serializedVersion: 2
+        x: 4087
+        y: 3676
+        width: 568
+        height: 1047
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c604d7daa8d077043bae8a2f50bb1055
+      internalID: -1986963988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_21
+      rect:
+        serializedVersion: 2
+        x: 5006
+        y: 3636
+        width: 568
+        height: 1028
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ee70e23ba6d1484e902b36d70fd9ff7
+      internalID: -1401580204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_22
+      rect:
+        serializedVersion: 2
+        x: 5940
+        y: 3601
+        width: 569
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea61c42eac891b74cb1f22b041472c0c
+      internalID: -198759036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_23
+      rect:
+        serializedVersion: 2
+        x: 6946
+        y: 3549
+        width: 570
+        height: 1018
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0afc47541a587184894d0dff992183cd
+      internalID: 431131528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_24
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 2203
+        width: 556
+        height: 1020
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba72d76647734034e90a485355fca23a
+      internalID: 2041295704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_25
+      rect:
+        serializedVersion: 2
+        x: 1241
+        y: 2249
+        width: 556
+        height: 1025
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50724c7ea3d5a9d44bc228307ecb938c
+      internalID: 2124285800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_26
+      rect:
+        serializedVersion: 2
+        x: 2179
+        y: 2285
+        width: 557
+        height: 1031
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dec81fe461bd33f43ba0843e01a75f66
+      internalID: 1034074032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_27
+      rect:
+        serializedVersion: 2
+        x: 3102
+        y: 2332
+        width: 556
+        height: 1047
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bccb208824e90045b517d868ca44d3e
+      internalID: -1471142718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_28
+      rect:
+        serializedVersion: 2
+        x: 4009
+        y: 2332
+        width: 557
+        height: 1047
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b39bd522a6d11494eb4a7480b29effe3
+      internalID: 1821198536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_29
+      rect:
+        serializedVersion: 2
+        x: 4831
+        y: 2285
+        width: 556
+        height: 1031
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de8e2980df1abea4a82f9fa865400f73
+      internalID: -635079232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_30
+      rect:
+        serializedVersion: 2
+        x: 5870
+        y: 2249
+        width: 557
+        height: 1025
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 469a4ab999e0290418f9c8795183ddf6
+      internalID: 1061841181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_31
+      rect:
+        serializedVersion: 2
+        x: 6910
+        y: 2203
+        width: 556
+        height: 1020
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2c0597a433276a4798108eb9d937625
+      internalID: 1332580117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_32
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 707
+        width: 730
+        height: 993
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22e3a5a6fb839444eb94a5511e76531a
+      internalID: 1500252946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_33
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 711
+        width: 728
+        height: 1012
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d1be6721e9508343ba64b6229a8b097
+      internalID: -1277107604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_34
+      rect:
+        serializedVersion: 2
+        x: 1898
+        y: 1342
+        width: 109
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac23c73a0ddb45048bf246b5d5cb37ce
+      internalID: -32195337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_35
+      rect:
+        serializedVersion: 2
+        x: 2241
+        y: 719
+        width: 732
+        height: 1032
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 066651cca2b636f47896d1ceac511e93
+      internalID: -1077757621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_36
+      rect:
+        serializedVersion: 2
+        x: 2884
+        y: 1381
+        width: 108
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a11df3ab6eb00844fb7274abe5cea847
+      internalID: -1994981887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_37
+      rect:
+        serializedVersion: 2
+        x: 3172
+        y: 750
+        width: 735
+        height: 1032
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46c1cfc5c33d79f48a5d73efc40fddf8
+      internalID: 699437932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_38
+      rect:
+        serializedVersion: 2
+        x: 3811
+        y: 1418
+        width: 108
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6151ba7925d5e045a10e0bedd09aa56
+      internalID: -1065189722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_39
+      rect:
+        serializedVersion: 2
+        x: 4040
+        y: 762
+        width: 728
+        height: 1008
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfbb278b39cdf4d44abc8ebca870ae16
+      internalID: -154509902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_40
+      rect:
+        serializedVersion: 2
+        x: 4675
+        y: 1390
+        width: 109
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f40a508fb73dd14f89e40ca7e87d084
+      internalID: 1696449083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_41
+      rect:
+        serializedVersion: 2
+        x: 4897
+        y: 719
+        width: 732
+        height: 1032
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acdadae4c6e78804583134efccf9f6f4
+      internalID: -849815301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_42
+      rect:
+        serializedVersion: 2
+        x: 5539
+        y: 1381
+        width: 108
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef5763d8495cd0548a46ad9947bcca27
+      internalID: -1922516594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_43
+      rect:
+        serializedVersion: 2
+        x: 5890
+        y: 712
+        width: 728
+        height: 1011
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f3eba2dd3fb11e47993bd94692bfd60
+      internalID: -159017667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_44
+      rect:
+        serializedVersion: 2
+        x: 6525
+        y: 1342
+        width: 108
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27249b976fc2bad42a6610e65aab5b16
+      internalID: 140799091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_45
+      rect:
+        serializedVersion: 2
+        x: 6962
+        y: 707
+        width: 731
+        height: 993
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e90562279713e364ebefedd4c43f1a90
+      internalID: 2081744421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_46
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 1299
+        width: 109
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f67c5f2f4a310a44ba28cbaab6677f6
+      internalID: 982987108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrainIdle_47
+      rect:
+        serializedVersion: 2
+        x: 7599
+        y: 1299
+        width: 109
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16f04fbfde686c343a1b3454a47aadb1
+      internalID: -943711987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      BrainIdle_0: -1121887119
+      BrainIdle_1: 1499737064
+      BrainIdle_10: -1550553767
+      BrainIdle_11: 871358140
+      BrainIdle_12: -2036794485
+      BrainIdle_13: -1834092903
+      BrainIdle_14: 614733744
+      BrainIdle_15: 1712134032
+      BrainIdle_16: 122052445
+      BrainIdle_17: 38268032
+      BrainIdle_18: -456848964
+      BrainIdle_19: 866682165
+      BrainIdle_2: -935272376
+      BrainIdle_20: -1986963988
+      BrainIdle_21: -1401580204
+      BrainIdle_22: -198759036
+      BrainIdle_23: 431131528
+      BrainIdle_24: 2041295704
+      BrainIdle_25: 2124285800
+      BrainIdle_26: 1034074032
+      BrainIdle_27: -1471142718
+      BrainIdle_28: 1821198536
+      BrainIdle_29: -635079232
+      BrainIdle_3: -810909631
+      BrainIdle_30: 1061841181
+      BrainIdle_31: 1332580117
+      BrainIdle_32: 1500252946
+      BrainIdle_33: -1277107604
+      BrainIdle_34: -32195337
+      BrainIdle_35: -1077757621
+      BrainIdle_36: -1994981887
+      BrainIdle_37: 699437932
+      BrainIdle_38: -1065189722
+      BrainIdle_39: -154509902
+      BrainIdle_4: -1907666510
+      BrainIdle_40: 1696449083
+      BrainIdle_41: -849815301
+      BrainIdle_42: -1922516594
+      BrainIdle_43: -159017667
+      BrainIdle_44: 140799091
+      BrainIdle_45: 2081744421
+      BrainIdle_46: 982987108
+      BrainIdle_47: -943711987
+      BrainIdle_5: 22966395
+      BrainIdle_6: -1828070840
+      BrainIdle_7: -1634561548
+      BrainIdle_8: 1754577828
+      BrainIdle_9: 1890518759
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
