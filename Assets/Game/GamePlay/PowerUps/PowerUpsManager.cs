@@ -13,7 +13,7 @@ public class PowerUpsManager : MonoBehaviour
 {
 
     public static PowerUpsManager instance;
-    public Dictionary<string, string> powerUps = new Dictionary<string, string>();
+    public Dictionary<string, bool> powerUps = new Dictionary<string, bool>();
 
     public int valueRerool = 3;
 
@@ -46,15 +46,15 @@ public class PowerUpsManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        powerUps.Add("JuiceLife", "10");
+        powerUps.Add("JuiceLife", DataManagment.instance.objectData.FoundJuiceLife);
 
-        powerUps.Add("Pistol", "10");
-        powerUps.Add("MiniGun", "10");
-        powerUps.Add("JuiceReg", "10");
-        powerUps.Add("JuiceClub", "10");
-        powerUps.Add("Boomerang", "10");
-        powerUps.Add("CardWine", "10");
-        powerUps.Add("TequillaCard", "10");
+        powerUps.Add("Pistol", DataManagment.instance.objectData.FoundPistol);
+        powerUps.Add("MiniGun", DataManagment.instance.objectData.FoundMinigun);
+        powerUps.Add("JuiceReg", DataManagment.instance.objectData.FoundReg);
+        powerUps.Add("JuiceClub", DataManagment.instance.objectData.FoundJuiceClub);
+        powerUps.Add("Boomerang", DataManagment.instance.objectData.FoundBoomerang);
+        powerUps.Add("CardWine", DataManagment.instance.objectData.FoundCardWine);
+        powerUps.Add("TequillaCard", DataManagment.instance.objectData.FoundTequillaCard);
     }
     void Start()
     {
@@ -136,12 +136,9 @@ public class PowerUpsManager : MonoBehaviour
             PowerUpObject[i].GetComponentInChildren<Image>().transform.GetChild(1).gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "0";
        
             WhatToBuy.Add(powerUps.ElementAt(randomPowerUp).Key);
-            if (powerUps.ElementAt(randomPowerUp).Key == "Pistol")
+            if (powerUps.ElementAt(randomPowerUp).Value == false)
             {
-                if(DataManagment.instance.objectData.FoundPistol == false)
-                {
                     PowerUpObject[i].transform.GetChild(2).gameObject.SetActive(true);
-                }
             }
             CanVerify = true;
 
@@ -191,7 +188,7 @@ public class PowerUpsManager : MonoBehaviour
     public void BuyBtn1()
     {
         switchPowerups(0);
-
+        PowerUpObject[0].transform.GetChild(2).gameObject.SetActive(false);
         SoundManager.instance.GameSounds[3].Play();
         ResumeGame();
        
@@ -203,6 +200,7 @@ public class PowerUpsManager : MonoBehaviour
     {
         switchPowerups(1);
         SoundManager.instance.GameSounds[3].Play();
+        PowerUpObject[1].transform.GetChild(2).gameObject.SetActive(false);
         ResumeGame();
     }
 
@@ -210,6 +208,7 @@ public class PowerUpsManager : MonoBehaviour
     {
         switchPowerups(2);
         SoundManager.instance.GameSounds[3].Play();
+        PowerUpObject[2].transform.GetChild(2).gameObject.SetActive(false);
         ResumeGame();
     }
 
@@ -217,6 +216,7 @@ public class PowerUpsManager : MonoBehaviour
     {
         switchPowerups(3);
         SoundManager.instance.GameSounds[3].Play();
+        PowerUpObject[3].transform.GetChild(2).gameObject.SetActive(false);
         ResumeGame();
     }
 
@@ -278,9 +278,9 @@ public class PowerUpsManager : MonoBehaviour
                     {
                     }
                     DataManagment.instance.objectData.FoundPistol = true;
-                    DataManagment.instance.objectData.imagePistol.sprite = ImagesForButtons[1];
+                    DataManagment.instance.objectData.imagePistol = ImagesForButtons[1];
                     DataManagment.instance.SaveData();
-
+                    powerUps["Pistol"] = DataManagment.instance.objectData.FoundPistol;
                 }
                 break;
 
@@ -333,12 +333,17 @@ public class PowerUpsManager : MonoBehaviour
 
                         weaponSpotAux.GetComponent<WeaponControll>().WpType = WeaponType.MiniGun;
                         //weaponSpotAux.GetComponent<WeaponControll>().SetWeapon();
+
+                        
                     }
                     else
                     {
                     }
 
-
+                    DataManagment.instance.objectData.FoundMinigun = true;
+                    DataManagment.instance.objectData.imagePistol = ImagesForButtons[2];
+                    DataManagment.instance.SaveData();
+                    powerUps["MiniGun"] = DataManagment.instance.objectData.FoundMinigun;
                     // Se houver pelo menos dois spots com MiniGun_Main
                     //if (miniGunCount >= 1)
                     //{
@@ -364,17 +369,26 @@ public class PowerUpsManager : MonoBehaviour
                     //}
                     //else
                     //{
-                        
-                        
+
+
                     //}
 
 
-                   
+
 
                 }
                 break;
-            case "JuiceLife": IncreaseLife(); break;
-            case "JuiceReg": RegLife(); break;
+            case "JuiceLife": IncreaseLife(); DataManagment.instance.objectData.FoundJuiceLife = true;
+                DataManagment.instance.objectData.imagePistol = ImagesForButtons[0];
+                DataManagment.instance.SaveData();
+                powerUps["JuiceLife"] = DataManagment.instance.objectData.FoundJuiceLife;
+
+                break;
+            case "JuiceReg": RegLife(); DataManagment.instance.objectData.FoundReg = true;
+                DataManagment.instance.objectData.imagePistol = ImagesForButtons[3];
+                DataManagment.instance.SaveData();
+                powerUps["JuiceReg"] = DataManagment.instance.objectData.FoundReg;
+                break;
             case "JuiceClub": 
                 if (Player_Main.instance.Money >= 0)
                 {
@@ -400,13 +414,16 @@ public class PowerUpsManager : MonoBehaviour
                         weaponSpotAux.GetComponent<WeaponControll>().WpType = WeaponType.Club;
                         //weaponSpotAux.GetComponent<WeaponControll>().SetWeapon();
 
-
+                       
                     }
                     else
                     {
                     }
 
-
+                    DataManagment.instance.objectData.FoundJuiceClub = true;
+                    DataManagment.instance.objectData.imagePistol = ImagesForButtons[4];
+                    DataManagment.instance.SaveData();
+                    powerUps["JuiceClub"] = DataManagment.instance.objectData.FoundJuiceClub;
                 }
                 break;
 
@@ -457,11 +474,16 @@ public class PowerUpsManager : MonoBehaviour
                         weaponSpotAux.SetActive(true);
 
                         weaponSpotAux.GetComponent<WeaponControll>().WpType = WeaponType.Boomerang;
+
+                        
                     }
                     else
                     {
                     }
-
+                    DataManagment.instance.objectData.FoundBoomerang = true;
+                    DataManagment.instance.objectData.imagePistol = ImagesForButtons[5];
+                    DataManagment.instance.SaveData();
+                    powerUps["Boomerang"] = DataManagment.instance.objectData.FoundBoomerang;
 
 
                     //// Se houver pelo menos dois spots com MiniGun_Main
@@ -489,8 +511,8 @@ public class PowerUpsManager : MonoBehaviour
                     //}
                     //else
                     //{
-                        
-                       
+
+
                     //}
 
 
@@ -502,10 +524,19 @@ public class PowerUpsManager : MonoBehaviour
             case "CardWine":
              
                 ManageCardEffects("RedWineCard");
+                DataManagment.instance.objectData.FoundCardWine = true;
+                DataManagment.instance.objectData.imagePistol = ImagesForButtons[6];
+                DataManagment.instance.SaveData();
+
+                powerUps["RedWineCard"] = DataManagment.instance.objectData.FoundCardWine;
                 break;
             case "TequillaCard":
 
                 ManageCardEffects("TequillaCard");
+                DataManagment.instance.objectData.FoundCardWine = true;
+                DataManagment.instance.objectData.imagePistol = ImagesForButtons[7];
+                DataManagment.instance.SaveData();
+                powerUps["TequillaCard"] = DataManagment.instance.objectData.FoundTequillaCard;
                 break;
         }
         PlayerItemOnUiManager.instance.ManageItemsOfPLayer();

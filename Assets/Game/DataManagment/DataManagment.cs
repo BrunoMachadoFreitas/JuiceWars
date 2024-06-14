@@ -60,10 +60,28 @@ public class DataInfo
 
     //Items
     public bool FoundMinigun;
-    public UnityEngine.UI.Image imageMinigun;
+    public Sprite imageMinigun;
 
     public bool FoundPistol;
-    public UnityEngine.UI.Image imagePistol;
+    public Sprite imagePistol;
 
+    public bool FoundReg;
+    public Sprite imageReg;
 
+    public bool FoundJuiceLife;
+    public Sprite imageJuiceLife;
+
+    public bool FoundJuiceClub;
+    public Sprite imageJuiceClub;
+
+    public bool FoundBoomerang;
+    public Sprite imageBoomerang;
+
+    public bool FoundCardWine;
+    public Sprite imageCardWine;
+
+    public bool FoundTequillaCard;
+    public Sprite imageTequillaCard;
+
+    
 }

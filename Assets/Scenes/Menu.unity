@@ -493,5 +493,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SaveManagment
       objectReference: {fileID: 0}
+    - target: {fileID: 6582199489774532530, guid: 0a99d2512aa5d3349ad641249f3d6ad2, type: 3}
+      propertyPath: objectData.imagePistol
+      value: 
+      objectReference: {fileID: 21300000, guid: 02a93a09bf646c9429194f9f3fb54740, type: 3}
+    - target: {fileID: 6582199489774532530, guid: 0a99d2512aa5d3349ad641249f3d6ad2, type: 3}
+      propertyPath: objectData.imageMinigun
+      value: 
+      objectReference: {fileID: 21300000, guid: 02a93a09bf646c9429194f9f3fb54740, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a99d2512aa5d3349ad641249f3d6ad2, type: 3}
