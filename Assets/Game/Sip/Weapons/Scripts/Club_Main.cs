@@ -206,6 +206,7 @@ public class Club_Main : MonoBehaviour
         {
             float distanceCovered = (Time.time - startTime) * moveSpeed;
             float fractionOfJourney = distanceCovered / journeyLength;
+            if(aimTransform)
             transform.position = Vector2.Lerp(initialPosition, aimTransform.position, fractionOfJourney);
             if (closestMonster)
                 closestMonster.GetComponent<Monster>().isBeingAttacked = false;

@@ -13,7 +13,7 @@ public class Boomerang_Main : MonoBehaviour
 
     float ReloadTime = 2f;
     bool reloading = false;
-    float moveSpeed = 12f;
+    float moveSpeed = 6f;
 
     private CircleCollider2D circleCollider;
     GameObject closestMonster;
@@ -34,18 +34,14 @@ public class Boomerang_Main : MonoBehaviour
         {
             aimTransform = transform.parent;
         }
-        else
-        {
-        }
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Monster"))
         {
-
             Player_Stats.instance.ApplyDamage(other);
         }
-
     }
 
     // Update is called once per frame
@@ -56,7 +52,7 @@ public class Boomerang_Main : MonoBehaviour
         // Variável para armazenar a distância para o monstro mais próximo
         float closestDistance = playerRadius;
         ReloadTime = Player_Stats.instance.RealoadTime;
-        if(Player_Main.instance != null)
+        if (Player_Main.instance != null)
         {
             if (WaveManager.instance)
             {
@@ -80,24 +76,17 @@ public class Boomerang_Main : MonoBehaviour
                     }
                     if (closestMonster)
                     {
-                    
-                            MoveToEnemyAndDamage(closestMonster);
-                    
+                        MoveToEnemyAndDamage(closestMonster);
                     }
-
                 }
-
             }
-
         }
 
-        if(GameStateController.instance.currentGameState == GameState.Paused)
+        if (GameStateController.instance.currentGameState == GameState.Paused)
         {
             transform.SetParent(aimTransform);
         }
     }
-
-
 
     void MoveToEnemyAndDamage(GameObject monster)
     {
@@ -110,12 +99,9 @@ public class Boomerang_Main : MonoBehaviour
 
     private IEnumerator MoveAndReturn(Vector2 initialPos, Vector2 targetPos)
     {
-        // Armazena a posição atual do parent
-        Vector2 parentPosition = transform.parent.position;
-
         float journeyLength = Vector2.Distance(initialPos, targetPos);
         float startTime = Time.time;
-        
+
         // Move a adaga para a posição do monstro
         while (Time.time - startTime < 1f)
         {
@@ -124,33 +110,37 @@ public class Boomerang_Main : MonoBehaviour
             float distanceCovered = (Time.time - startTime) * moveSpeed;
             float fractionOfJourney = distanceCovered / journeyLength;
             rb.simulated = true;
-            if(aimTransform)
-            transform.position = Vector2.Lerp(aimTransform.transform.position, targetPos, fractionOfJourney);
+            if (aimTransform)
+                transform.position = Vector2.Lerp(aimTransform.transform.position, targetPos, fractionOfJourney);
             this.transform.parent = null;
             circleCollider.enabled = true;
             this.gameObject.transform.Rotate(0f, 0f, 4f);
             this.gameObject.transform.Translate(0f, 2f, 0f);
-           
+
             yield return null;
         }
 
-
-        // Retorna a adaga para a posição inicial do player
+        // Retorna a adaga para a posição inicial do player de forma suave
         startTime = Time.time;
-        //Vector2 initialPosition = transform.position; // Salva a posição inicial da adaga
+        journeyLength = Vector2.Distance(transform.position, aimTransform.position);
+
         while (Time.time - startTime < 1f)
         {
-            trailObject.GetComponent<TrailRenderer>().emitting = false;
             float distanceCovered = (Time.time - startTime) * moveSpeed;
             float fractionOfJourney = distanceCovered / journeyLength;
-            if (aimTransform)
-                transform.position = Vector2.Lerp(this.transform.position, aimTransform.position, fractionOfJourney); // Interpola gradualmente para a posição inicial
-            rb.simulated = false;
-            this.transform.parent = aimTransform;
-            yield return new WaitForSeconds(Player_Stats.instance.VelocityBoomerang);
+            transform.position = Vector2.Lerp(transform.position, aimTransform.position, 10f);
+            //this.gameObject.transform.Rotate(0f, 0f, 4f);
+            yield return null;
         }
+
+        // Certifica-se de que o boomerang esteja exatamente na posição do aimTransform no final
+        transform.position = aimTransform.position;
+        rb.simulated = false;
+        this.transform.parent = aimTransform;
+        trailObject.GetComponent<TrailRenderer>().emitting = false;
+
+        yield return new WaitForSeconds(Player_Stats.instance.VelocityBoomerang);
 
         reloading = false; // Define reloading como false após retornar à posição inicial
     }
-
 }

@@ -22,7 +22,7 @@ public class Leveling : MonoBehaviour
     [SerializeField] private UnityEngine.UI.Image ExpBar;
     [SerializeField] private TextMeshProUGUI TextExp;
     [SerializeField] private TextMeshProUGUI TextLvl;
-    [SerializeField] private float NextLvlMultiplier = 2.5f;
+    [SerializeField] private float NextLvlMultiplier = 1.5f;
 
     [SerializeField] private GameObject CanvasPowerUps;
 
@@ -83,7 +83,7 @@ public class Leveling : MonoBehaviour
         RoundsManager.instance.LevelingChoose();
         SoundManager.instance.PlaySound(2);
 
-        Player_Stats.instance.IncreaseStatsByLevel();
+        //Player_Stats.instance.IncreaseStatsByLevel();
         AudiosInScene.Add(sound);
         GameStateController.instance.currentGameState = GameState.Paused;
         Player_Main.instance.CanvasExp.gameObject.SetActive(false);

@@ -10,9 +10,11 @@ public class Acievements_Manager : MonoBehaviour
     public GameObject itemPrefab; // Prefab genérico para os itens
     public Transform parentTransform; // Parent para os itens instanciados
     public int itemsPerRow = 3; // Quantidade de itens por linha
-    public float itemSpacing = 1.0f; // Espaçamento entre itens
+    public float itemSpacing = 100.0f; // Espaçamento entre itens
     public Vector2 startOffset = new Vector2(0, 0); // Deslocamento inicial para a primeira posição
     DataInfo objectData = new DataInfo();
+
+    public List<Sprite> spritesItemsSaved = new List<Sprite>();
     void Start()
     {
         objectData = DataManagment.instance.LoadData();
@@ -25,42 +27,42 @@ public class Acievements_Manager : MonoBehaviour
 
         if (objectData.FoundMinigun)
         {
-            foundItems.Add(DataManagment.instance.Base64ToSprite(objectData.imageMinigun));
+            foundItems.Add(spritesItemsSaved[2]);
         }
 
         if (objectData.FoundPistol)
         {
-            foundItems.Add(DataManagment.instance.Base64ToSprite(objectData.imagePistol));
+            foundItems.Add(spritesItemsSaved[1]);
         }
 
         if (objectData.FoundReg)
         {
-            foundItems.Add(DataManagment.instance.Base64ToSprite(objectData.imageReg));
+            foundItems.Add(spritesItemsSaved[3]);
         }
 
         if (objectData.FoundJuiceLife)
         {
-            foundItems.Add(DataManagment.instance.Base64ToSprite(objectData.imageJuiceLife));
+            foundItems.Add(spritesItemsSaved[0]);
         }
 
         if (objectData.FoundJuiceClub)
         {
-            foundItems.Add(DataManagment.instance.Base64ToSprite(objectData.imageJuiceClub));
+            foundItems.Add(spritesItemsSaved[4]);
         }
 
         if (objectData.FoundBoomerang)
         {
-            foundItems.Add(DataManagment.instance.Base64ToSprite(objectData.imageBoomerang));
+            foundItems.Add(spritesItemsSaved[5]);
         }
 
         if (objectData.FoundCardWine)
         {
-            foundItems.Add(DataManagment.instance.Base64ToSprite(objectData.imageCardWine));
+            foundItems.Add(spritesItemsSaved[6]);
         }
 
         if (objectData.FoundTequillaCard)
         {
-            foundItems.Add(DataManagment.instance.Base64ToSprite(objectData.imageTequillaCard));
+            foundItems.Add(spritesItemsSaved[7]);
         }
 
         for (int i = 0; i < foundItems.Count; i++)

@@ -187,6 +187,7 @@ public class Player_Main : MonoBehaviour
             localScale.x = -0.9916076f; // Vira para a esquerda
             localScale.y = 1.23547f;
         }
+        VectorCurrentPlatform = movement;
         transform.GetChild(2).GetComponent<SpriteRenderer>().transform.localScale = localScale;
     }
 
@@ -215,8 +216,11 @@ public class Player_Main : MonoBehaviour
             localScale.x = 0.9916076f;
             localScale.y = 1.23547f;
         }
+        VectorCurrentPlatform = myInput;
         transform.GetChild(2).GetComponent<SpriteRenderer>().transform.localScale = localScale;
     }
+
+    Vector2 VectorCurrentPlatform = Vector2.zero;
     void FixedUpdate()
     {
 
@@ -228,15 +232,15 @@ public class Player_Main : MonoBehaviour
                 MovePlayerKeyboard();
 
 
-            if (TargetPlatform == TargetPlatform.Android)
-            {
-                rb.MovePosition(rb.position + myInput * Player_Stats.instance.CurrentSpeed * Time.fixedDeltaTime);
-            }
-            else
-            {
+            //if (TargetPlatform == TargetPlatform.Android)
+            //{
+                rb.MovePosition(rb.position + VectorCurrentPlatform * Player_Stats.instance.CurrentSpeed * Time.fixedDeltaTime);
+            //}
+            //else
+            //{
 
-                rb.MovePosition(rb.position + movement * Player_Stats.instance.CurrentSpeed * Time.fixedDeltaTime);
-            }
+            //    rb.MovePosition(rb.position + movement * Player_Stats.instance.CurrentSpeed * Time.fixedDeltaTime);
+            //}
         }
         else
         {

@@ -49,6 +49,15 @@ MonoBehaviour:
   itemsPerRow: 3
   itemSpacing: 1
   startOffset: {x: 0, y: 0}
+  spritesItemsSaved:
+  - {fileID: 21300000, guid: ab0b102854090974a93c245336e87ff1, type: 3}
+  - {fileID: 21300000, guid: ea3b3190a00bda54d946e46dc19b237b, type: 3}
+  - {fileID: 21300000, guid: 60c32267453e7154d999d3306b6a1ef1, type: 3}
+  - {fileID: 21300000, guid: 663c7327067dbb4419661fd25869ccc1, type: 3}
+  - {fileID: 21300000, guid: 69d337a6f50910543af61f353a9cf3f7, type: 3}
+  - {fileID: 21300000, guid: df0f9f0c66494264b9dde2595dc88f34, type: 3}
+  - {fileID: 21300000, guid: 38bc5130ce3b2404088c61eea4a568d1, type: 3}
+  - {fileID: 21300000, guid: d1dc5ee595d490143ac5a27f4328a222, type: 3}
 --- !u!1 &2689176472628706006
 GameObject:
   m_ObjectHideFlags: 0

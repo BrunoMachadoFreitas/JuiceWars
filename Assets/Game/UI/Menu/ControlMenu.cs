@@ -25,6 +25,7 @@ public class ControlMenu : MonoBehaviour
 
 
     [SerializeField] private GameObject GameSound;
+    [SerializeField] private GameObject GameSoundX;
     
 
     //SOUND
@@ -50,6 +51,7 @@ public class ControlMenu : MonoBehaviour
     void Start()
     {
         MainMenuX = Instantiate(MainMenu);
+        //GameSoundX = Instantiate(GameSound);
         MenuSettingsX = Instantiate(MenuSettings);
         MenuAchievementsX = Instantiate(MenuAchievements);
         MenuSettingsX.SetActive(false);
@@ -138,7 +140,7 @@ public class ControlMenu : MonoBehaviour
     public void startGame()
     {
         // Registra o callback para quando a cena for carregada
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        //SceneManager.sceneLoaded += OnSceneLoaded;
 
         // Carrega a cena pelo índice (ou pelo nome)
         SceneManager.LoadScene(1, LoadSceneMode.Single);

@@ -423,7 +423,7 @@ PrefabInstance:
     - target: {fileID: 5723376816494221634, guid: 3f4aab392136fbc4cbb2d3b0818bcd9e, type: 3}
       propertyPath: GameSound
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1364253605846157598, guid: 5d8fbb24743b3a14bb42df7330a0b5ff, type: 3}
     - target: {fileID: 5723376816494221634, guid: 3f4aab392136fbc4cbb2d3b0818bcd9e, type: 3}
       propertyPath: canvasMenu
       value: 
