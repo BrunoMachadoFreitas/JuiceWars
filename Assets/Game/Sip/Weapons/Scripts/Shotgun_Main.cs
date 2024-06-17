@@ -10,14 +10,11 @@ public class Shotgun_Main : MonoBehaviour
     private Animator anim;
     [SerializeField] public Animator animParent;
 
-    float fireRate = 0.1f; // Taxa de disparo (tempo entre os disparos)
     float nextFireTime = 0f; // Tempo até o próximo disparo
     bool reloading = false;
     int bulletCount = 0;
-    int maxBulletCount = 3;
-    int shotsPerBurst = 3; // Número de balas por rajada
-    //float timeBetweenShots = 2f; // Intervalo de tempo entre as balas na rajada
-    float reloadTime = 1.5f;
+    int maxBulletCount = 3; // Limite de balas por rajada
+    float reloadTime = 5f; // Tempo de recarga fixo de 5 segundos
     float lvlUpgrade = 0f;
 
     public GameObject muzzle;
@@ -35,24 +32,12 @@ public class Shotgun_Main : MonoBehaviour
         {
             aimTransform = transform.parent;
         }
-        else
-        {
-        }
     }
 
     void Update()
     {
-        // Escala o tempo de recarga usando uma função exponencial
-        if(Player_Stats.instance.RealoadTime >= 1)
-        {
-            reloadTime = Player_Stats.instance.RealoadTime - lvlUpgrade;
-        }
-        else
-        {
-            reloadTime = Player_Stats.instance.RealoadTime * 1  - lvlUpgrade - .5f;
-        }
-       
-
+        // Ajustar tempo de recarga
+        reloadTime = Player_Stats.instance.RealoadTime * 1 - lvlUpgrade;
 
         float closestDistance = Player_Stats.instance.Range;
         if (WaveManager.instance)
@@ -74,6 +59,13 @@ public class Shotgun_Main : MonoBehaviour
 
                 if (closestMonster)
                 {
+                    if (closestMonster.GetComponent<Monster>().isBeingAttacked)
+                    {
+                        // Se o monstro mais próximo está sendo atacado, encontrar o próximo mais próximo
+                        closestMonster = GetNextClosestMonster(closestMonster);
+                    }
+
+
                     Vector2 direction = (closestMonster.transform.position - transform.position).normalized;
 
                     float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -91,29 +83,62 @@ public class Shotgun_Main : MonoBehaviour
                         localScale.x = 1f;
                     }
                     aimTransform.localScale = localScale;
+
                     if (closestMonster != null && Time.time >= nextFireTime && !reloading)
                     {
-                        anim.SetTrigger("Shoot");
-                        StartCoroutine(ShootBurst(direction)); // Dispara uma rajada
+                        
+                        Shoot(closestMonster.transform);
                     }
-
                 }
             }
         }
     }
+    GameObject GetNextClosestMonster(GameObject currentMonster)
+    {
+        float closestDistance = Player_Stats.instance.Range;
+        GameObject nextClosestMonster = null;
 
-    private IEnumerator ShootBurst(Vector2 direction)
+        foreach (var monster in WaveManager.instance.Monsters)
+        {
+            if (monster != null && monster != currentMonster)
+            {
+                float distanceToMonster = Vector2.Distance(Player_Main.instance.transform.position, monster.transform.position);
+                if (distanceToMonster < closestDistance && !monster.GetComponent<Monster>().isBeingAttacked)
+                {
+                    nextClosestMonster = monster;
+                    closestDistance = distanceToMonster;
+                }
+            }
+        }
+
+        return nextClosestMonster;
+    }
+    private void Shoot(Transform MonsterPos)
     {
 
-        if(bulletCount < shotsPerBurst)
+        
+
+        StartCoroutine(WaitSound(MonsterPos));
+        
+        
+        reloading = true;
+        StartCoroutine(ShootWait());
+    }
+    private IEnumerator WaitSound(Transform MonsterPos)
+    {
+        SoundManager.instance.PlaySound(9);
+        yield return new WaitForSeconds(1f); // Aguarda 2 segundos
+        anim.SetTrigger("Shoot");
+        if (MonsterPos)
         {
 
+            Vector2 direction = (MonsterPos.transform.position - transform.position).normalized;
             foreach (var spawnPoint in bulletSpawnPoints)
             {
 
                 // Instancia a bala na posição do spawnPoint
                 Bullet_Shotgun instanceBullet = Instantiate(Bullet, spawnPoint.position, Quaternion.identity);
-           
+
                 // Define a direção da bala
                 if (instanceBullet != null)
                 {
@@ -122,37 +147,28 @@ public class Shotgun_Main : MonoBehaviour
                 }
             }
         }
-        
-        StartCoroutine(ReloadIfNeeded()); // Inicia a rotina de recarga se necessário
-
-        yield return new WaitForSeconds(reloadTime); // Aguarda o intervalo entre as balas na rajada
-
-        nextFireTime = Time.time + fireRate; // Atualiza o tempo do próximo disparo
-    }
-
-    private IEnumerator ReloadIfNeeded()
-    {
-        if (bulletCount >= maxBulletCount)
+        else
         {
-            // Inicia a recarga se a contagem de balas atingiu o máximo
-            yield return StartCoroutine(Reload());
-            
+            SoundManager.instance.GameSoundsInGame[9].Stop();
+            yield return null;
         }
+        yield return new WaitForSeconds(1f);
     }
 
-    private IEnumerator Reload()
+    private IEnumerator ShootWait()
     {
-        anim.ResetTrigger("Shoot");
-        reloading = true;
-        yield return new WaitForSeconds(Player_Stats.instance.VelocityShootGun);
-        bulletCount = 0;
-        reloading = false;
-    }
 
+        //muzzle.SetActive(false);
+
+        yield return new WaitForSeconds(Player_Stats.instance.VelocityShootGun); // Aguarda 2 segundos
+
+        reloading = false;
+
+
+    }
     void OnDestroy()
     {
-
+       
     }
 
-   
 }

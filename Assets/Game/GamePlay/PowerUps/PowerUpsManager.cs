@@ -55,6 +55,7 @@ public class PowerUpsManager : MonoBehaviour
         powerUps.Add("Boomerang", DataManagment.instance.objectData.FoundBoomerang);
         powerUps.Add("CardWine", DataManagment.instance.objectData.FoundCardWine);
         powerUps.Add("TequillaCard", DataManagment.instance.objectData.FoundTequillaCard);
+        powerUps.Add("JuiceHole", DataManagment.instance.objectData.FoundJuiceHoleCard);
     }
     void Start()
     {
@@ -546,6 +547,15 @@ public class PowerUpsManager : MonoBehaviour
                 DataManagment.instance.SaveData();
                 powerUps["TequillaCard"] = DataManagment.instance.objectData.FoundTequillaCard;
                 break;
+
+            case "JuiceHole":
+
+                ManageCardEffects("JuiceHole");
+                DataManagment.instance.objectData.FoundJuiceHoleCard = true;
+                //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[7]);
+                DataManagment.instance.SaveData();
+                powerUps["JuiceHole"] = DataManagment.instance.objectData.FoundJuiceHoleCard;
+                break;
         }
         PlayerItemOnUiManager.instance.ManageItemsOfPLayer();
 
@@ -562,6 +572,11 @@ public class PowerUpsManager : MonoBehaviour
             {
                 AtributteCardPowerImagesAndStats(7);
             }
+
+        if (CardPower == "JuiceHole")
+        {
+            AtributteCardPowerImagesAndStats(8);
+        }
     }
 
 
@@ -580,6 +595,12 @@ public class PowerUpsManager : MonoBehaviour
                 else if (IndexCardForImageOnListImages == 7 && !Player_Stats.instance.CardsActive.Contains(CardType.Tequilla))
                 {
                     o.GetComponent<CardSpot>().CardType = CardType.Tequilla;
+                    o.InstantiateCard();
+                }
+
+                else if (IndexCardForImageOnListImages == 8 && !Player_Stats.instance.CardsActive.Contains(CardType.JuiceHole))
+                {
+                    o.GetComponent<CardSpot>().CardType = CardType.JuiceHole;
                     o.InstantiateCard();
                 }
                 break; // Para a iteração assim que encontrar um CardSpot sem card e atribuir o tipo de card.

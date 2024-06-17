@@ -16,8 +16,8 @@ public class Move_Monster : MonoBehaviour
     public GameObject player;
     
     private Rigidbody2D rb;
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private float CurrentMoveSpeed;
+    public float moveSpeed;
+    public float CurrentMoveSpeed;
     [SerializeField] private MonsterType currentMonsterType;
     private float randomMoveInterval = 5f; // Intervalo de tempo para mudança de direção aleatória
     private float nextRandomMoveTime = 0f;

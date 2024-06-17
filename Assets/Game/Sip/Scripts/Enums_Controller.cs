@@ -26,6 +26,13 @@ public enum TargetPlatform
     PS4 = 4,
     XBX = 5,
 }
+
+public enum CardType
+{
+    RedWine = 0,
+    Tequilla = 1,
+    JuiceHole = 2,
+}
 public class Enums_Controller : MonoBehaviour
 {
    

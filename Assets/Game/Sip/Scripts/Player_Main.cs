@@ -87,6 +87,10 @@ public class Player_Main : MonoBehaviour
 
     [SerializeField] private RectTransform dashButtonRect; 
     public RectTransform movementButtonRect;
+
+
+    public GameObject juiceHolePrefab; // Referência ao prefab do JuiceHole
+    private GameObject currentJuiceHole;
     private void Awake()
     {
         if (instance == null)
@@ -119,7 +123,7 @@ public class Player_Main : MonoBehaviour
         
         //Instantiate(Whip, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
     }
-
+   
 
     void Update()
     {
@@ -498,5 +502,46 @@ public class Player_Main : MonoBehaviour
         Camera.main.gameObject.transform.localPosition = originalPosition; // Retorna a câmera à sua posição original
     }
 
+    public bool CanJuiceHole = false;
 
+    public void StartJuiceHoleCoroutine()
+    {
+        StartCoroutine(JuiceHoleCoroutine());
+    }
+    public IEnumerator JuiceHoleCoroutine()
+    {
+        float minDistance = 3.0f; // Distância mínima do player
+        float maxDistance = 10.0f; // Distância máxima do player
+
+        while (CanJuiceHole)
+        {
+            if (currentJuiceHole == null)
+            {
+                Vector3 playerPosition = Player_Main.instance.transform.position;
+
+                // Gera uma posição aleatória dentro do raio especificado
+                Vector3 randomPosition = GetRandomPositionAround(playerPosition, minDistance, maxDistance);
+
+                currentJuiceHole = Instantiate(juiceHolePrefab, randomPosition, Quaternion.identity);
+            }
+            yield return new WaitForSeconds(5f);
+        }
+    }
+
+    private Vector2 GetRandomPositionAround(Vector3 center, float minRadius, float maxRadius)
+    {
+        // Gera um ângulo aleatório
+        float angle = UnityEngine.Random.Range(0f, 2f * Mathf.PI);
+
+        // Gera uma distância aleatória dentro do intervalo especificado
+        float distance = UnityEngine.Random.Range(minRadius, maxRadius);
+
+        // Calcula a posição x e z com base no ângulo e na distância
+        float x = center.x + distance * Mathf.Cos(angle);
+
+        // Mantém a mesma posição y
+        float y = center.y;
+
+        return new Vector2(x, y);
+    }
 }

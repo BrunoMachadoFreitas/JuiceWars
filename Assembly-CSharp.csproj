@@ -114,6 +114,7 @@
     <Compile Include="Assets\Game\Sounds\SoundScripts\DestroyGameSound.cs" />
     <Compile Include="Assets\Game\Monsters\Scripts\DamagePopUp.cs" />
     <Compile Include="Assets\Game\Sounds\SoundScripts\SoundManagerSaveValuesFromSettings.cs" />
+    <Compile Include="Assets\Game\Sip\Weapons\Scripts\JuiceHole_Main.cs" />
     <Compile Include="Assets\Game\Sip\Weapons\Scripts\Boomerang_Main.cs" />
     <Compile Include="Assets\Scenes\ScenesScripts\ManageScenes.cs" />
     <Compile Include="Assets\Game\Sip\Weapons\Scripts\Bullet_Rocket.cs" />

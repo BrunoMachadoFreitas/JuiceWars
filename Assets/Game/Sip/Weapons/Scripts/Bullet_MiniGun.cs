@@ -18,10 +18,16 @@ public class Bullet_MiniGun : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        
+
         // Calcula o vetor de direção do jogador para o inimigo
+        //if (Monster) { 
         direction = Monster.transform.position - transform.position;
         direction.Normalize();
+        //}
+        //else
+        //{
+        //    direction = new Vector3(this.transform.position.x, this.transform.position.y) - transform.position;
+        //}
     }
 
     // Update is called once per frame

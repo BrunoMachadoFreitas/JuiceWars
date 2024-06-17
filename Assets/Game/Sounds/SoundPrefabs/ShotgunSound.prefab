@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 682839573353633929}
   - component: {fileID: -4611590743572742245}
   m_Layer: 0
-  m_Name: MiniGunShoot
+  m_Name: ShotgunSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,7 +43,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 71eb38c61d18fe5468479cec6b965f08, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 07e2a7daa236c394592a8bdf18c281f4, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

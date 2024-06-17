@@ -6,7 +6,7 @@ public class Player_Stats : MonoBehaviour
 {
     public static Player_Stats instance;
 
-    public float Power = 6f;
+    public float Power = 1f;
     public float LifeSteal = 0;
     public float PercentStealLife = 90;
     public float Life = 0f; // Vida total do personagem

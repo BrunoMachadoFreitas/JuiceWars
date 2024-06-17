@@ -3384,7 +3384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d573b702e96b758469e0b8d60ac9055b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Power: 6
+  Power: 1
   LifeSteal: 0
   PercentStealLife: 90
   Life: 0
@@ -3479,6 +3479,8 @@ MonoBehaviour:
   ImageDash: {fileID: 5862495077502751464}
   dashButtonRect: {fileID: 1591785382355744035}
   movementButtonRect: {fileID: 0}
+  juiceHolePrefab: {fileID: 9068122985544794492, guid: 1197b1eafc2a1eb419825bf446fecd49, type: 3}
+  CanJuiceHole: 0
 --- !u!1 &6314707925590063487
 GameObject:
   m_ObjectHideFlags: 0
@@ -5629,7 +5631,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2925676638783729497, guid: c41661fa975ca2348ba32c378f817e14, type: 3}
       propertyPath: WpType
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2925676638783729497, guid: c41661fa975ca2348ba32c378f817e14, type: 3}
       propertyPath: m_Enabled
@@ -6713,7 +6715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2925676638783729497, guid: c41661fa975ca2348ba32c378f817e14, type: 3}
       propertyPath: WpType
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2925676638783729497, guid: c41661fa975ca2348ba32c378f817e14, type: 3}
       propertyPath: m_Enabled

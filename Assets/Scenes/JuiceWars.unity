@@ -3929,7 +3929,7 @@ PrefabInstance:
       objectReference: {fileID: 1438724375}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: Prices.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: Prices.Array.data[6]
@@ -3940,8 +3940,12 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
+      propertyPath: Prices.Array.data[8]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: Descriptions.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: Descriptions.Array.data[6]
@@ -3952,8 +3956,12 @@ PrefabInstance:
       value: Gain  10% speed boost!
       objectReference: {fileID: 0}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
+      propertyPath: Descriptions.Array.data[8]
+      value: Create black holes
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: ImagesForButtons.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: PowerUpObject.Array.data[0]
@@ -3979,6 +3987,10 @@ PrefabInstance:
       propertyPath: ImagesForButtons.Array.data[7]
       value: 
       objectReference: {fileID: 21300000, guid: d1dc5ee595d490143ac5a27f4328a222, type: 3}
+    - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
+      propertyPath: ImagesForButtons.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: 51cd9602a84e6e04882acdb9f1f376e9, type: 3}
     - target: {fileID: 5260209740749482451, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: m_Name
       value: PowerUpManager

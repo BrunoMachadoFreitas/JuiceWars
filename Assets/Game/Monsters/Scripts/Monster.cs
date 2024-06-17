@@ -149,7 +149,7 @@ public class Monster : MonoBehaviour
 
     [SerializeField] GameObject Exp;
      GameObject ExpObj;
-    private void TakeDamageMonster(float damage)
+    public void TakeDamageMonster(float damage)
     {
         life -= damage;
         isDamaged = true;
@@ -187,9 +187,45 @@ public class Monster : MonoBehaviour
 
     }
 
+    public void TakeDamageMonsterBlackHole(float damage)
+    {
+        life -= damage;
+        isDamaged = true;
 
-   
+        if (AnimFlash != null)
+            AnimFlash.SetTrigger("hit");
+
+        Instantiate(floatingTextPrefab, PopUpTransform.position, Quaternion.identity);
+
+      
 
 
-    
+        floatingTextPrefab.GetComponentInChildren<TextMeshProUGUI>().text = Mathf.FloorToInt(damage).ToString();
+
+
+        if (life <= 0)
+        {
+
+            Player_Stats.instance.DropMoneyCalculator(this.transform);
+            //Player_Stats.instance.ExpGiveCalculator();
+            ExpObj = Instantiate(Exp, this.transform.position, Quaternion.identity);
+            particle.Play();
+
+            WaveManager.instance.Monsters.Remove(this.gameObject);
+            StartCoroutine(WaitDeath());
+            Player_Main.instance.EnemysKilled++;
+            Destroy(this.gameObject);
+        }
+        else
+        {
+
+            isDamaged = false;
+        }
+
+
+    }
+
+
+
+
 }

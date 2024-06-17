@@ -60,6 +60,7 @@ MonoBehaviour:
   textDesc: {fileID: 3561532906289757371}
   canvas: {fileID: 0}
   BackGround: {fileID: 0}
+  juiceHolePrefab: {fileID: 9068122985544794492, guid: 1197b1eafc2a1eb419825bf446fecd49, type: 3}
 --- !u!222 &3307678099029008060
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -8,12 +8,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
-public enum CardType
-{
 
-    RedWine = 0,
-    Tequilla = 1,
-}
 public class CardSpot : MonoBehaviour
 {
     [SerializeField] public CardType CardType;
@@ -95,6 +90,16 @@ public class CardSpot : MonoBehaviour
                 CardX = Instantiate(Card, this.transform.position, Quaternion.identity);
                 CardX.transform.SetParent(this.transform);
                 CardX.transform.GetChild(1).GetComponent<Image>().sprite = PowerUpsManager.instance.ImagesForButtons[7];
+                CardX.AssociatedCardSpot = this;
+                HasCard = true;
+                CardX.InitializePowerUp(CardType);
+                textDescCard = CardX.textDesc;
+                break;
+            case CardType.JuiceHole:
+                CardX = Instantiate(Card, this.transform.position, Quaternion.identity);
+                CardX.gameObject.SetActive(true);
+                CardX.transform.SetParent(this.transform);
+                CardX.transform.GetChild(1).GetComponent<Image>().sprite = PowerUpsManager.instance.ImagesForButtons[8];
                 CardX.AssociatedCardSpot = this;
                 HasCard = true;
                 CardX.InitializePowerUp(CardType);

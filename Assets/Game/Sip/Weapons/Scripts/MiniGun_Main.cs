@@ -10,11 +10,13 @@ public class MiniGun_Main : MonoBehaviour
     private Animator anim;
 
     float fireRate = 0.1f; // Taxa de disparo (tempo entre os disparos)
-    float nextFireTime = 1.5f; // Tempo até o próximo disparo
+    float nextFireTime = 0f; // Tempo até o próximo disparo
     bool reloading = false;
     bool isShooting = false;
     int bulletCount = 0;
-    float reloadTime = 5f;
+    int maxBullets = 50; // Número máximo de balas
+    int bulletBag = 1; // Número de balas por rajada
+    float reloadTime = 5f; // Tempo de recarga
     public float lvlUpgrade = 0f;
     public GameObject muzzle;
     public Bullet_MiniGun Bullet;
@@ -55,7 +57,7 @@ public class MiniGun_Main : MonoBehaviour
                         closestMonster = GetNextClosestMonster(closestMonster);
                     }
 
-                    if (closestMonster != null && !closestMonster.GetComponent<Monster>().isBeingAttacked)
+                    if (closestMonster != null && !closestMonster.GetComponent<Monster>().isBeingAttacked && Time.time > nextFireTime)
                     {
                         Vector2 direction = (closestMonster.transform.position - this.transform.position).normalized;
                         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -74,14 +76,9 @@ public class MiniGun_Main : MonoBehaviour
                         }
                         aimTransform.localScale = localScale;
 
-                        FireBullet(closestMonster);
-
-                        bulletCount++;
-                        StartCoroutine(WaitForNextShot());
-                        if (closestMonster == null)
+                        if (!isShooting)
                         {
-                            muzzle.SetActive(false);
-                            StartCoroutine(Reload());
+                            StartCoroutine(FireBulletsCoroutine(closestMonster));
                         }
                     }
                 }
@@ -131,28 +128,47 @@ public class MiniGun_Main : MonoBehaviour
         return nextClosestMonster;
     }
 
-    void FireBullet(GameObject Monster)
+    IEnumerator FireBulletsCoroutine(GameObject monster)
     {
-        if (!isShooting)
+        isShooting = true;
+        for (int i = 0; i < bulletBag; i++)
         {
-            isShooting = true;
-            muzzle.SetActive(true);
-            Bullet_MiniGun BulletNew = Instantiate(Bullet, new Vector3(muzzle.transform.position.x, muzzle.transform.position.y, 0f), Quaternion.identity);
-            if (BulletNew != null)
+            if (bulletCount >= maxBullets)
             {
-                BulletNew.Monster = Monster;
-                BulletNew.damageLvlWeapon = (Player_Stats.instance.Power + lvlUpgrade) / 2;
+                break;
             }
 
-            Monster.GetComponent<Monster>().isBeingAttacked = true;
-            anim.SetTrigger("Shoot");
+            FireBullet(monster);
 
-            SoundManager.instance.PlaySound(4);
-
-
-            StartCoroutine(ResetIsBeingAttacked(Monster));
-            Invoke("ResetShootingFlag", Player_Stats.instance.VelocityMiniGun);
+            bulletCount++;
+            yield return new WaitForSeconds(fireRate);
         }
+
+        isShooting = false;
+
+        if (bulletCount >= maxBullets)
+        {
+            StartCoroutine(Reload());
+        }
+    }
+
+    void FireBullet(GameObject Monster)
+    {
+        muzzle.SetActive(true);
+        Bullet_MiniGun BulletNew = Instantiate(Bullet, new Vector3(muzzle.transform.position.x, muzzle.transform.position.y, 0f), Quaternion.identity);
+        if (BulletNew != null)
+        {
+            BulletNew.Monster = Monster;
+            BulletNew.damageLvlWeapon = (Player_Stats.instance.Power + lvlUpgrade) / 2;
+        }
+
+        Monster.GetComponent<Monster>().isBeingAttacked = true;
+        anim.SetTrigger("Shoot");
+
+        //SoundManager.instance.PlaySound(4);
+
+        StartCoroutine(ResetIsBeingAttacked(Monster));
+        Invoke("ResetShootingFlag", Player_Stats.instance.VelocityMiniGun);
     }
 
     IEnumerator ResetIsBeingAttacked(GameObject monster)
@@ -167,18 +183,29 @@ public class MiniGun_Main : MonoBehaviour
         isShooting = false;
     }
 
-    IEnumerator WaitForNextShot()
-    {
-        yield return new WaitForSeconds(Player_Stats.instance.RealoadTime);
-
-        nextFireTime = Time.time + fireRate;
-    }
-
     private IEnumerator Reload()
     {
         reloading = true;
+        anim.SetTrigger("Reload"); // Opcional: adiciona animação de recarga
+        StartCoroutine(RechargeCoroutine());
         yield return new WaitForSeconds(reloadTime);
         bulletCount = 0;
         reloading = false;
+    }
+    [SerializeField] private UnityEngine.UI.Image ImageMinigunWaiter;
+    private IEnumerator RechargeCoroutine()
+    {
+        float rechargeTime = reloadTime;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < rechargeTime)
+        {
+            elapsedTime += Time.deltaTime;
+            ImageMinigunWaiter.fillAmount = Mathf.Clamp01(elapsedTime / rechargeTime);
+            yield return null;
+        }
+
+        // Ao final do timer, garantir que o fillAmount esteja em 1
+        ImageMinigunWaiter.fillAmount = 1f;
     }
 }

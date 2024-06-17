@@ -37,6 +37,8 @@ public class Bullet_Rocket : MonoBehaviour
             DangerZone1.GetComponent<CircleCollider2D>().isTrigger = true;
             Destroy(this.gameObject);
 
+           
+
         }
     }
 }

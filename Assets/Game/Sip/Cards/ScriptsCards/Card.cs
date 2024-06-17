@@ -30,6 +30,10 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     private float clickTime = 0f;
     private Coroutine hideTextCoroutine;
 
+
+
+    
+
     void Start()
     {
         canvas = transform.parent.parent.GetComponent<Canvas>();
@@ -65,6 +69,19 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 Player_Stats.instance.CardsActive.Add(thisCardType);
                 textDesc.text = "More Velocity";
                 break;
+
+            case CardType.JuiceHole:
+                thisCardType = CardType.JuiceHole;
+                Player_Stats.instance.CardsActive.Add(thisCardType);
+                Player_Main.instance.CanJuiceHole = true;
+                textDesc.text = "Spawns a mini black hole at a time";
+               Player_Main.instance.StartJuiceHoleCoroutine();
+                //if (juiceHoleCoroutine != null)
+                //{
+                //    StopCoroutine(juiceHoleCoroutine);
+                //}
+                //StartCoroutine(JuiceHoleCoroutine());
+                break;
         }
     }
 
@@ -90,9 +107,18 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 thisCardType = CardType.Tequilla;
                 textDesc.text = "More Velocity";
                 break;
+
+            case CardType.JuiceHole:
+                thisCardType = CardType.JuiceHole;
+                Player_Stats.instance.CardsActive.Add(thisCardType);
+                textDesc.text = "Spawns a mini black hole at a time";
+
+                Player_Main.instance.StartJuiceHoleCoroutine();
+
+                break;
         }
     }
-
+   
     public void OnBeginDrag(PointerEventData eventData)
     {
         isDragging = true;
