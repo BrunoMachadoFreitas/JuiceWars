@@ -91,6 +91,10 @@ public class Player_Main : MonoBehaviour
 
     public GameObject juiceHolePrefab; // Referência ao prefab do JuiceHole
     private GameObject currentJuiceHole;
+
+    public GameObject WhipPrefab; // Referência ao prefab do JuiceHole
+    private GameObject currentWhip;
+
     private void Awake()
     {
         if (instance == null)
@@ -120,7 +124,14 @@ public class Player_Main : MonoBehaviour
         Player_Stats.instance.CurrentLife = Player_Stats.instance.Life;
         Player_Stats.instance.PlayerDodge = 0f;
         Player_Stats.instance.CurrentSpeed = Player_Stats.instance.moveSpeed;
-        
+
+        if (Player_Stats.instance.HasWhip)
+        {
+            currentWhip = Instantiate(WhipPrefab, this.transform.position, Quaternion.identity);
+            currentWhip.transform.position = new Vector3(0, 0);
+            currentWhip.transform.SetParent(this.transform, false);
+        }
+
         //Instantiate(Whip, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
     }
    

@@ -111,7 +111,21 @@ public class Monster : MonoBehaviour
         {
             TakeDamageMonster(Player_Stats.instance.Power);
         }
-       
+
+        else if (other.CompareTag("Whip"))
+        {
+            // Calcula a direção de empurrão
+            Vector2 pushDirection = (transform.position - other.transform.position).normalized;
+
+            // Empurra o monstro para trás
+            Rigidbody2D monsterRigidbody = GetComponent<Rigidbody2D>();
+            if (monsterRigidbody != null)
+            {
+                float pushForce = 5f; // Força do empurrão
+                monsterRigidbody.AddForce(pushDirection * pushForce, ForceMode2D.Impulse);
+            }
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D other)

@@ -65,7 +65,7 @@ public class ButtonUiClick : MonoBehaviour
         Speed = 7f;
         ReloadTime = 2f;
         Range = 8f;
-        Power = 5f;
+        Power = 1f;
         LifeSteal = 3;
         LifeSteal = PercentStealLife;
 
@@ -83,7 +83,7 @@ public class ButtonUiClick : MonoBehaviour
         Speed = 3f;
         ReloadTime = 1f;
         Range = 4f;
-        Power = 3f;
+        Power = 1f;
         LifeSteal = 0;
         LifeSteal = PercentStealLife;
 

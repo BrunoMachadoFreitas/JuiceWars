@@ -40,7 +40,7 @@ public class SoundManager : MonoBehaviour
         }
         if (ControlMenu.instance)
         {
-            ChangeVolume(ControlMenu.instance.AudioVolumeSoundsGeneral);
+            ChangeVolume(DataManagment.instance.objectData.SoundValue);
         }
         else
         {

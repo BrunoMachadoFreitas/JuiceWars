@@ -46,8 +46,9 @@ public class PowerUpsManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        powerUps.Add("JuiceLife", DataManagment.instance.objectData.FoundJuiceLife);
 
+
+        powerUps.Add("JuiceLife", DataManagment.instance.objectData.FoundJuiceLife);
         powerUps.Add("Pistol", DataManagment.instance.objectData.FoundPistol);
         powerUps.Add("MiniGun", DataManagment.instance.objectData.FoundMinigun);
         powerUps.Add("JuiceReg", DataManagment.instance.objectData.FoundReg);
@@ -56,10 +57,11 @@ public class PowerUpsManager : MonoBehaviour
         powerUps.Add("CardWine", DataManagment.instance.objectData.FoundCardWine);
         powerUps.Add("TequillaCard", DataManagment.instance.objectData.FoundTequillaCard);
         powerUps.Add("JuiceHole", DataManagment.instance.objectData.FoundJuiceHoleCard);
+        powerUps.Add("BreakCardSpot", DataManagment.instance.objectData.FoundBreakCardSpot);
     }
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -68,11 +70,9 @@ public class PowerUpsManager : MonoBehaviour
         txtRerool.text = valueRerool.ToString();
         if (CanVerify)
         {
-
-        
-            for(int i = 0; i < PowerUpObject.Count; i++)
+            for (int i = 0; i < PowerUpObject.Count; i++)
             {
-                if (Player_Main.instance.Money <  0 /*Convert.ToInt32(powerUps.ElementAt(i).Value*/)
+                if (Player_Main.instance.Money < 0 /*Convert.ToInt32(powerUps.ElementAt(i).Value*/)
                 {
                     PowerUpObject[i].GetComponentInChildren<Image>().transform.GetChild(1).gameObject.GetComponentInChildren<TextMeshProUGUI>().color = Color.red;
                     PowerUpObject[i].GetComponentInChildren<Button>().interactable = false;
@@ -117,13 +117,11 @@ public class PowerUpsManager : MonoBehaviour
         if (Player_Main.instance.Money >= 0)
         {
             CanVerify = false;
-        
-            for (int i = 0; i < PowerUpObject.Count ; i++)
+
+            for (int i = 0; i < PowerUpObject.Count; i++)
             {
                 RandomizePowerUpsForButtons(i);
             }
-
-         
             //Player_Main.instance.Money -= valueRerool;
             valueRerool += 3;
         }
@@ -133,51 +131,47 @@ public class PowerUpsManager : MonoBehaviour
     {
         try
         {
-
-        
             int randomPowerUp = UnityEngine.Random.Range(0, powerUps.Count);
             PowerUpObject[i].GetComponentInChildren<Button>().image.sprite = ImagesForButtons[randomPowerUp];
             PowerUpObject[i].GetComponentInChildren<Button>().gameObject.GetComponentInChildren<TextMeshProUGUI>().text = Descriptions[randomPowerUp];
             PowerUpObject[i].GetComponentInChildren<Image>().transform.GetChild(1).gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "0";
-       
+
             WhatToBuy.Add(powerUps.ElementAt(randomPowerUp).Key);
             if (powerUps.ElementAt(randomPowerUp).Value == false)
             {
-                    PowerUpObject[i].transform.GetChild(2).gameObject.SetActive(true);
+                PowerUpObject[i].transform.GetChild(2).gameObject.SetActive(true);
             }
             CanVerify = true;
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             UnityEngine.Debug.Log(ex.Message);
         }
-
-
     }
 
 
     public void resetEveryThing()
     {
-
         WhatToBuy.Clear();
-        for(int i = 0; i < PowerUpObject.Count; i++)
+        for (int i = 0; i < PowerUpObject.Count; i++)
         {
             PowerUpObject[i].GetComponentInChildren<Button>().image.sprite = null;
             PowerUpObject[i].GetComponentInChildren<Button>().gameObject.GetComponentInChildren<TextMeshProUGUI>().text = null;
             PowerUpObject[i].GetComponentInChildren<Image>().transform.GetChild(1).gameObject.GetComponentInChildren<TextMeshProUGUI>().text = null;
-
         }
     }
-    private void IncreaseLife(){
+    private void IncreaseLife()
+    {
 
-        if(Player_Main.instance.Money >= 0) {
+        if (Player_Main.instance.Money >= 0)
+        {
 
 
             Player_Stats.instance.Life += 10;
             //Player_Main.instance.Money -= 10;
-            
+
         }
-        
+
     }
     private void RegLife()
     {
@@ -185,15 +179,15 @@ public class PowerUpsManager : MonoBehaviour
         if (Player_Main.instance.Money >= 0)
         {
 
-            if(Player_Stats.instance.CurrentLife <= Player_Stats.instance.Life)
-            Player_Stats.instance.CurrentLife += 10;
+            if (Player_Stats.instance.CurrentLife <= Player_Stats.instance.Life)
+                Player_Stats.instance.CurrentLife += 10;
             //Player_Main.instance.Money -= 10;
 
         }
 
     }
 
-   
+
 
     public void BuyBtn1()
     {
@@ -201,11 +195,11 @@ public class PowerUpsManager : MonoBehaviour
         PowerUpObject[0].transform.GetChild(2).gameObject.SetActive(false);
         SoundManager.instance.GameSounds[3].Play();
         ResumeGame();
-       
+
     }
 
 
-   
+
     public void BuyBtn2()
     {
         switchPowerups(1);
@@ -244,13 +238,13 @@ public class PowerUpsManager : MonoBehaviour
         PowerUpsManager.instance.resetEveryThing();
         GameStateController.instance.currentGameState = GameState.Playing;
 
-        if(Player_Main.instance.TargetPlatform == TargetPlatform.Android || Player_Main.instance.TargetPlatform == TargetPlatform.IOS)
-        RoundsManager.instance.CanvasMobile.gameObject.SetActive(true);
-      
+        if (Player_Main.instance.TargetPlatform == TargetPlatform.Android || Player_Main.instance.TargetPlatform == TargetPlatform.IOS)
+            RoundsManager.instance.CanvasMobile.gameObject.SetActive(true);
+
         Player_Main.instance.CanvasExp.gameObject.SetActive(true);
 
-        
-       
+
+
     }
     private void switchPowerups(int elementAt)
     {
@@ -288,8 +282,9 @@ public class PowerUpsManager : MonoBehaviour
                     {
                     }
                     DataManagment.instance.objectData.FoundPistol = true;
-                    DataManagment.instance.SaveData();
+                    
                     powerUps["Pistol"] = DataManagment.instance.objectData.FoundPistol;
+                    DataManagment.instance.SaveData();
                 }
                 break;
 
@@ -343,7 +338,7 @@ public class PowerUpsManager : MonoBehaviour
                         weaponSpotAux.GetComponent<WeaponControll>().WpType = WeaponType.MiniGun;
                         //weaponSpotAux.GetComponent<WeaponControll>().SetWeapon();
 
-                        
+
                     }
                     else
                     {
@@ -351,8 +346,9 @@ public class PowerUpsManager : MonoBehaviour
 
                     DataManagment.instance.objectData.FoundMinigun = true;
                     //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[2]);
-                    DataManagment.instance.SaveData();
+                    
                     powerUps["MiniGun"] = DataManagment.instance.objectData.FoundMinigun;
+                    DataManagment.instance.SaveData();
                     // Se houver pelo menos dois spots com MiniGun_Main
                     //if (miniGunCount >= 1)
                     //{
@@ -387,18 +383,21 @@ public class PowerUpsManager : MonoBehaviour
 
                 }
                 break;
-            case "JuiceLife": IncreaseLife(); DataManagment.instance.objectData.FoundJuiceLife = true;
+            case "JuiceLife":
+                IncreaseLife(); DataManagment.instance.objectData.FoundJuiceLife = true;
                 //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[0]);
-                DataManagment.instance.SaveData();
+                
                 powerUps["JuiceLife"] = DataManagment.instance.objectData.FoundJuiceLife;
-
-                break;
-            case "JuiceReg": RegLife(); DataManagment.instance.objectData.FoundReg = true;
-                //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[3]);
                 DataManagment.instance.SaveData();
-                powerUps["JuiceReg"] = DataManagment.instance.objectData.FoundReg;
                 break;
-            case "JuiceClub": 
+            case "JuiceReg":
+                RegLife(); DataManagment.instance.objectData.FoundReg = true;
+                //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[3]);
+                
+                powerUps["JuiceReg"] = DataManagment.instance.objectData.FoundReg;
+                DataManagment.instance.SaveData();
+                break;
+            case "JuiceClub":
                 if (Player_Main.instance.Money >= 0)
                 {
 
@@ -423,7 +422,7 @@ public class PowerUpsManager : MonoBehaviour
                         weaponSpotAux.GetComponent<WeaponControll>().WpType = WeaponType.Club;
                         //weaponSpotAux.GetComponent<WeaponControll>().SetWeapon();
 
-                       
+
                     }
                     else
                     {
@@ -431,12 +430,13 @@ public class PowerUpsManager : MonoBehaviour
 
                     DataManagment.instance.objectData.FoundJuiceClub = true;
                     //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[4]);
-                    DataManagment.instance.SaveData();
+                    
                     powerUps["JuiceClub"] = DataManagment.instance.objectData.FoundJuiceClub;
+                    DataManagment.instance.SaveData();
                 }
                 break;
 
-               
+
             case "Boomerang":
                 int BoomerangCount = 0;
                 Boomerang_Main firstBoomerang = null;
@@ -484,16 +484,16 @@ public class PowerUpsManager : MonoBehaviour
 
                         weaponSpotAux.GetComponent<WeaponControll>().WpType = WeaponType.Boomerang;
 
-                        
+
                     }
                     else
                     {
                     }
                     DataManagment.instance.objectData.FoundBoomerang = true;
                     //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[5]);
-                    DataManagment.instance.SaveData();
+                    
                     powerUps["Boomerang"] = DataManagment.instance.objectData.FoundBoomerang;
-
+                    DataManagment.instance.SaveData();
 
                     //// Se houver pelo menos dois spots com MiniGun_Main
                     //if (BoomerangCount >= 1)
@@ -531,21 +531,23 @@ public class PowerUpsManager : MonoBehaviour
                 break;
 
             case "CardWine":
-             
+
                 ManageCardEffects("RedWineCard");
                 DataManagment.instance.objectData.FoundCardWine = true;
                 //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[6]);
-                DataManagment.instance.SaveData();
+                
 
                 powerUps["RedWineCard"] = DataManagment.instance.objectData.FoundCardWine;
+                DataManagment.instance.SaveData();
                 break;
             case "TequillaCard":
 
                 ManageCardEffects("TequillaCard");
                 DataManagment.instance.objectData.FoundCardWine = true;
                 //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[7]);
-                DataManagment.instance.SaveData();
+               
                 powerUps["TequillaCard"] = DataManagment.instance.objectData.FoundTequillaCard;
+                DataManagment.instance.SaveData();
                 break;
 
             case "JuiceHole":
@@ -553,9 +555,26 @@ public class PowerUpsManager : MonoBehaviour
                 ManageCardEffects("JuiceHole");
                 DataManagment.instance.objectData.FoundJuiceHoleCard = true;
                 //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[7]);
-                DataManagment.instance.SaveData();
+                
                 powerUps["JuiceHole"] = DataManagment.instance.objectData.FoundJuiceHoleCard;
+                DataManagment.instance.SaveData();
                 break;
+            case "BreakCardSpot":
+                int countCardSpotsStucked = 0;
+                List<CardSpot> cardSpotList = new List<CardSpot>();
+                for (int i = 0; i < CardSpotsManager.instance.cardSpots.Count; i++)
+                {
+                    if (CardSpotsManager.instance.cardSpots[i].IsCardSpotStucked)
+                    {
+                        cardSpotList.Add(CardSpotsManager.instance.cardSpots[i]);
+                    }
+                }
+
+                int randomCardSpotIndex = UnityEngine.Random.Range(0, cardSpotList.Count);
+                cardSpotList[randomCardSpotIndex].IsCardSpotStucked = false;
+                cardSpotList[randomCardSpotIndex].ImageCardSpotStucked.SetActive(false);
+                break;
+
         }
         PlayerItemOnUiManager.instance.ManageItemsOfPLayer();
 
@@ -564,14 +583,14 @@ public class PowerUpsManager : MonoBehaviour
 
     private void ManageCardEffects(string CardPower)
     {
-            if (CardPower == "RedWineCard" )
-            {
-                AtributteCardPowerImagesAndStats(6);
-            }
-            if (CardPower == "TequillaCard")
-            {
-                AtributteCardPowerImagesAndStats(7);
-            }
+        if (CardPower == "RedWineCard")
+        {
+            AtributteCardPowerImagesAndStats(6);
+        }
+        if (CardPower == "TequillaCard")
+        {
+            AtributteCardPowerImagesAndStats(7);
+        }
 
         if (CardPower == "JuiceHole")
         {
@@ -609,7 +628,7 @@ public class PowerUpsManager : MonoBehaviour
         }
     }
 
-   
+
 
     List<string> ListCards = new List<string>();
 }

@@ -109,6 +109,7 @@ public class DataInfo
 
     public bool FoundTequillaCard;
     public bool FoundJuiceHoleCard;
+    public bool FoundBreakCardSpot;
     public string imageTequillaCard;
 
     

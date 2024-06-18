@@ -123,6 +123,7 @@
     <Compile Include="Assets\Game\UI\Menu\ControlMenu.cs" />
     <Compile Include="Assets\Game\Sip\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Game\Sip\Scripts\DashPlayer.cs" />
+    <Compile Include="Assets\Game\Sip\Weapons\Scripts\Whip_Weapon.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

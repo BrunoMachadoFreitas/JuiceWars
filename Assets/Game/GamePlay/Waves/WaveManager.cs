@@ -135,11 +135,13 @@ public class WaveManager : MonoBehaviour
     // Método para spawnar o JuiceShield
     private void SpawnJuiceShield()
     {
+        if(Player_Main.instance != null) { 
         Vector3 position = GenerateRandomPosition();
         position += Player_Main.instance.transform.position;
 
         GameObject newJuiceShield = Instantiate(JuiceShieldPrefab);
         newJuiceShield.transform.position = position;
+        }
     }
 
     // Corrotina que spawna o JuiceShield a cada 5 segundos

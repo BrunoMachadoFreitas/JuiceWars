@@ -28,7 +28,7 @@ public class CardSpot : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textDescCard;
 
     public bool IsCardSpotStucked;
-    [SerializeField] private GameObject ImageCardSpotStucked;
+    public GameObject ImageCardSpotStucked;
 
 
     public float cardPowerModifier;

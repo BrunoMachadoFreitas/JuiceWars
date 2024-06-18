@@ -35,6 +35,8 @@ public class ControlMenu : MonoBehaviour
     [SerializeField] private Slider valueSlider;
 
     [SerializeField] private TextMeshProUGUI SoundValueOnUISettings;
+
+    public DataInfo objectData = new DataInfo();
     private void Awake()
     {
         if (instance == null)
@@ -50,6 +52,7 @@ public class ControlMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        objectData = DataManagment.instance.LoadData();
         MainMenuX = Instantiate(MainMenu);
         //GameSoundX = Instantiate(GameSound);
         MenuSettingsX = Instantiate(MenuSettings);

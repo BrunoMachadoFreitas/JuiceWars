@@ -15,6 +15,8 @@ public class Whip_Main : MonoBehaviour
 
     void Start()
     {
+        WhipPosRight = Player_Main.instance.gameObject.transform.GetChild(13);
+        WhipPosLeft = Player_Main.instance.gameObject.transform.GetChild(14);
         lineRenderer = GetComponent<LineRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
 
@@ -67,18 +69,20 @@ public class Whip_Main : MonoBehaviour
             // Atualiza o BoxCollider2D
             float currentLength = Vector3.Distance(whipStartPos, currentPosition);
             boxCollider.size = new Vector2(currentLength, 0.1f);
-            boxCollider.offset = whipStartPos + (currentPosition - whipStartPos) / 2 - (Vector3)boxCollider.transform.position;
+            //boxCollider.offset = whipStartPos + (currentPosition - whipStartPos)  - (Vector3)boxCollider.transform.position;
+            boxCollider.offset = whipStartPos;
 
             elapsedTime += Time.deltaTime;
+            
             yield return null;
         }
-
+        SoundManager.instance.PlaySound(10);
         lineRenderer.SetPosition(0, whipStartPos);
         lineRenderer.SetPosition(1, whipEndPos);
 
         // Ajuste final do BoxCollider2D
-        boxCollider.size = new Vector2(whipLength + 9f, 0.1f);
-        boxCollider.offset = whipStartPos + (whipEndPos - whipStartPos) - (Vector3)boxCollider.transform.position;
+        boxCollider.size = new Vector2(whipLength, 0.1f);
+        boxCollider.offset = whipStartPos;
     }
 
     IEnumerator RetractWhip()
@@ -102,8 +106,8 @@ public class Whip_Main : MonoBehaviour
 
             // Atualiza o BoxCollider2D
             float currentLength = Vector3.Distance(whipStartPos, currentPosition);
-            boxCollider.size = new Vector2(currentLength + 9f, 0.1f);
-            boxCollider.offset = whipStartPos + (currentPosition - whipStartPos)  - (Vector3)boxCollider.transform.position;
+            boxCollider.size = new Vector2(currentLength, 0.1f);
+            //boxCollider.offset = whipStartPos + (currentPosition - whipStartPos) - (Vector3)boxCollider.transform.position;
 
             elapsedTime += Time.deltaTime;
             yield return null;
@@ -113,23 +117,26 @@ public class Whip_Main : MonoBehaviour
         lineRenderer.SetPosition(1, whipStartPos);
 
         // Ajuste final do BoxCollider2D
-        boxCollider.size = new Vector2(0f, 0.1f); // Colapsado
+        boxCollider.size = new Vector2(0f, 0f); // Colapsado
         boxCollider.offset = Vector2.zero;
+
     }
 
     void Update()
     {
         // Atualiza a posição inicial e final do chicote
-        whipStartPos = Player_Main.instance.movement.x >= 0 ? WhipPosRight.position : WhipPosLeft.position;
-        whipEndPos = whipStartPos + (Player_Main.instance.movement.x >= 0 ? Vector3.right : Vector3.left) * whipLength;
+        if (Player_Main.instance) { 
+            whipStartPos = Player_Main.instance.movement.x >= 0 ? WhipPosRight.position : WhipPosLeft.position;
+            whipEndPos = whipStartPos + (Player_Main.instance.movement.x >= 0 ? Vector3.right : Vector3.left) * whipLength;
+        
+            // Calcula o vetor de direção do jogador para o inimigo
+            Vector2 direction = whipStartPos - transform.position;
+            direction.Normalize();
+            // Move o inimigo na direção do jogador com a velocidade especificada
+            this.gameObject.GetComponent<Rigidbody2D>().MovePosition(this.gameObject.GetComponent<Rigidbody2D>().position + direction * 5f * Time.fixedDeltaTime);
 
-        // Calcula o vetor de direção do jogador para o inimigo
-        Vector2 direction = Player_Main.instance.transform.position - transform.position;
-        direction.Normalize();
-        // Move o inimigo na direção do jogador com a velocidade especificada
-        this.gameObject.GetComponent<Rigidbody2D>().MovePosition(this.gameObject.GetComponent<Rigidbody2D>().position + direction * 5f * Time.fixedDeltaTime);
-
-        this.transform.position = Player_Main.instance.movement.x >= 0 ? WhipPosRight.position : WhipPosLeft.position;
+            this.transform.position = Player_Main.instance.movement.x >= 0 ? WhipPosRight.position : WhipPosLeft.position;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -137,6 +144,7 @@ public class Whip_Main : MonoBehaviour
         if (other.CompareTag("Monster"))
         {
             Player_Stats.instance.ApplyDamage(other);
+
         }
     }
 

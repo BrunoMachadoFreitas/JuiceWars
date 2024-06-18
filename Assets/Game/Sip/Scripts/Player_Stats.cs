@@ -32,6 +32,8 @@ public class Player_Stats : MonoBehaviour
     public float DashRechargeTime;
     public bool InDash = false;
 
+    public bool HasWhip = false;
+
     // Sound
     public float GeneralVolume = 0.5f;
 
@@ -91,7 +93,20 @@ public class Player_Stats : MonoBehaviour
             
         }
      }
+    public void ApplyDamageFromWhip(Collider2D ToSend)
+    {
+        ToSend.SendMessage("TakeDamageMonster", 6f);
+        // Verifica se o dinheiro deve ser spawnado
+        float randomValueLifeSteal = Random.Range(0f, 100f);
+        if (randomValueLifeSteal < PercentStealLife)
+        {
+            if (CurrentLife < Life)
+            {
+                CurrentLife += Power;
+            }
 
+        }
+    }
     public void DropMoneyCalculator(Transform MonsterTransformToDrop)
     {
         // Verifica se o dinheiro deve ser spawnado
