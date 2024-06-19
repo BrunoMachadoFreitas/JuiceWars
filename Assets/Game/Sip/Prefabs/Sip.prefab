@@ -3154,6 +3154,7 @@ GameObject:
   - component: {fileID: 409347504552099296}
   - component: {fileID: 5812400756159558993}
   - component: {fileID: 6060381099345378762}
+  - component: {fileID: 7480496681699159835}
   m_Layer: 0
   m_Name: Sip
   m_TagString: Player
@@ -3444,7 +3445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetPlatform: 0
   textMoney: {fileID: 1397378071226664658}
-  shakeIntensity: 0.2
+  shakeIntensity: 0.5
   shakeDuration: 0.1
   AnimPlayer: {fileID: 0}
   myInput: {x: 0, y: 0}
@@ -3482,8 +3483,21 @@ MonoBehaviour:
   dashButtonRect: {fileID: 1591785382355744035}
   movementButtonRect: {fileID: 0}
   juiceHolePrefab: {fileID: 9068122985544794492, guid: 1197b1eafc2a1eb419825bf446fecd49, type: 3}
+  currentJuiceHole: {fileID: 0}
   WhipPrefab: {fileID: 7850184147566366089, guid: 738186a1339680e49aa9d3932f2bbe1f, type: 3}
   CanJuiceHole: 0
+--- !u!114 &7480496681699159835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6060381099345378359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 024d4f9c02e81c74e8c9c8b055d722e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6314707925590063487
 GameObject:
   m_ObjectHideFlags: 0
@@ -4653,7 +4667,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1938015621918443017, guid: d7e23439f3971b34482b4d2b783cddbb, type: 3}
       propertyPath: IsCardSpotStucked
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1938015621918443017, guid: d7e23439f3971b34482b4d2b783cddbb, type: 3}
       propertyPath: ImageCardSpotStucked
@@ -5910,7 +5924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1938015621918443017, guid: d7e23439f3971b34482b4d2b783cddbb, type: 3}
       propertyPath: IsCardSpotStucked
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1938015621918443017, guid: d7e23439f3971b34482b4d2b783cddbb, type: 3}
       propertyPath: ImageCardSpotStucked
@@ -6099,7 +6113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1938015621918443017, guid: d7e23439f3971b34482b4d2b783cddbb, type: 3}
       propertyPath: IsCardSpotStucked
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1938015621918443017, guid: d7e23439f3971b34482b4d2b783cddbb, type: 3}
       propertyPath: ImageCardSpotStucked
@@ -7026,7 +7040,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1938015621918443017, guid: d7e23439f3971b34482b4d2b783cddbb, type: 3}
       propertyPath: IsCardSpotStucked
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1938015621918443017, guid: d7e23439f3971b34482b4d2b783cddbb, type: 3}
       propertyPath: ImageCardSpotStucked
@@ -7332,7 +7346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1938015621918443017, guid: d7e23439f3971b34482b4d2b783cddbb, type: 3}
       propertyPath: IsCardSpotStucked
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1938015621918443017, guid: d7e23439f3971b34482b4d2b783cddbb, type: 3}
       propertyPath: ImageCardSpotStucked

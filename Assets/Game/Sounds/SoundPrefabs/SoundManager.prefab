@@ -56,6 +56,7 @@ MonoBehaviour:
   - {fileID: 7618348512895437635, guid: 60f4968edad72ad42b795fb4e5c6b50a, type: 3}
   - {fileID: 682839573353633929, guid: 51b1351f3e645a440862343138bb54bf, type: 3}
   - {fileID: -3901202434128467894, guid: 1862ae49196f1d74f8180b4525367c62, type: 3}
+  - {fileID: -3901202434128467894, guid: 9abe97fc571d90d499d444d72e7fa02b, type: 3}
   GameSoundsInGame: []
   Volume1: 0
   Volume2: 0

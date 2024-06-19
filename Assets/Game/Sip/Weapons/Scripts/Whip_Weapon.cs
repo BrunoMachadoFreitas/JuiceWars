@@ -87,11 +87,11 @@ public class Whip_Weapon : MonoBehaviour
             transform.position = Player_Main.instance.transform.position;
 
             // Verificar a direção do movimento do jogador
-            if (Player_Main.instance.movement.x > 0)
+            if (Player_Main.instance.movement.x > 0 || Player_Main.instance.myInput.x > 0)
             {
                 stretchingRight = true;
             }
-            else if (Player_Main.instance.movement.x < 0)
+            else if (Player_Main.instance.movement.x < 0 || Player_Main.instance.myInput.x < 0)
             {
                 stretchingRight = false;
             }

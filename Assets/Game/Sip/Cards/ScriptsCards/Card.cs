@@ -75,7 +75,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 Player_Stats.instance.CardsActive.Add(thisCardType);
                 Player_Main.instance.CanJuiceHole = true;
                 textDesc.text = "Spawns a mini black hole at a time";
-               Player_Main.instance.StartJuiceHoleCoroutine();
+                PlayerCardsManager.instance.StartJuiceHoleCoroutine();
                 //if (juiceHoleCoroutine != null)
                 //{
                 //    StopCoroutine(juiceHoleCoroutine);
@@ -113,7 +113,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 Player_Stats.instance.CardsActive.Add(thisCardType);
                 textDesc.text = "Spawns a mini black hole at a time";
 
-                Player_Main.instance.StartJuiceHoleCoroutine();
+                PlayerCardsManager.instance.StartJuiceHoleCoroutine();
 
                 break;
         }

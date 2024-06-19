@@ -90,7 +90,7 @@ public class Player_Main : MonoBehaviour
 
 
     public GameObject juiceHolePrefab; // Referência ao prefab do JuiceHole
-    private GameObject currentJuiceHole;
+    public GameObject currentJuiceHole;
 
     public GameObject WhipPrefab; // Referência ao prefab do JuiceHole
     private GameObject currentWhip;
@@ -303,7 +303,15 @@ public class Player_Main : MonoBehaviour
         HealthBar.fillAmount = Mathf.Clamp(Player_Stats.instance.CurrentLife / Player_Stats.instance.Life, 0, 1);
         //if(Player_Stats.instance.InDash && ImageDash.fillAmount < 1)
 
-
+        if(movement != Vector2.zero || myInput != Vector2.zero)
+        {
+            if(!SoundManager.instance.GameSoundsInGame[11].isPlaying)
+            SoundManager.instance.PlaySound(11);
+        }
+        else
+        {
+            SoundManager.instance.GameSoundsInGame[11].Stop();
+        }
     }
 
 
@@ -515,44 +523,5 @@ public class Player_Main : MonoBehaviour
 
     public bool CanJuiceHole = false;
 
-    public void StartJuiceHoleCoroutine()
-    {
-        StartCoroutine(JuiceHoleCoroutine());
-    }
-    public IEnumerator JuiceHoleCoroutine()
-    {
-        float minDistance = 3.0f; // Distância mínima do player
-        float maxDistance = 10.0f; // Distância máxima do player
-
-        while (CanJuiceHole)
-        {
-            if (currentJuiceHole == null)
-            {
-                Vector3 playerPosition = Player_Main.instance.transform.position;
-
-                // Gera uma posição aleatória dentro do raio especificado
-                Vector3 randomPosition = GetRandomPositionAround(playerPosition, minDistance, maxDistance);
-
-                currentJuiceHole = Instantiate(juiceHolePrefab, randomPosition, Quaternion.identity);
-            }
-            yield return new WaitForSeconds(5f);
-        }
-    }
-
-    private Vector2 GetRandomPositionAround(Vector3 center, float minRadius, float maxRadius)
-    {
-        // Gera um ângulo aleatório
-        float angle = UnityEngine.Random.Range(0f, 2f * Mathf.PI);
-
-        // Gera uma distância aleatória dentro do intervalo especificado
-        float distance = UnityEngine.Random.Range(minRadius, maxRadius);
-
-        // Calcula a posição x e z com base no ângulo e na distância
-        float x = center.x + distance * Mathf.Cos(angle);
-
-        // Mantém a mesma posição y
-        float y = center.y;
-
-        return new Vector2(x, y);
-    }
+   
 }

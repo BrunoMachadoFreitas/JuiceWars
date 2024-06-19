@@ -45,7 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentGameState: 0
+  lastGameState: 0
   sceneGame:
     m_Handle: 0
+  hasTriggeredPauseEvent: 0
   CanvasEnd: {fileID: 2834211476781439538, guid: a47be8f66fc0ad049a3f85757f07a1fc, type: 3}
   CanvasSettings: {fileID: 2689176473421199874, guid: 898d60fcd5d79f9479176b6bf17743cf, type: 3}

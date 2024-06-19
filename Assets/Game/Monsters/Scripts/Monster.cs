@@ -172,7 +172,8 @@ public class Monster : MonoBehaviour
         AnimFlash.SetTrigger("hit");
 
         Instantiate(floatingTextPrefab, PopUpTransform.position, Quaternion.identity);
-        
+
+        if (!SoundManager.instance.GameSoundsInGame[7].isPlaying)
         SoundManager.instance.PlaySound(7);
 
 

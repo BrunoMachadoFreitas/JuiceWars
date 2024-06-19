@@ -98,7 +98,7 @@ public class GameStateController : MonoBehaviour
             {
                 SoundManager.instance.GameSoundsInGame[8].Stop();
             }
-
+            hasTriggeredEndEvent = true;
         }
        
     }
