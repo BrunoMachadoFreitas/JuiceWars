@@ -73,7 +73,7 @@
     <Compile Include="Assets\Game\GamePlay\Scripts\Timer.cs" />
     <Compile Include="Assets\Game\Monsters\Scripts\Monster.cs" />
     <Compile Include="Assets\Game\DataManagment\DataManagment.cs" />
-    <Compile Include="Assets\Game\GamePlay\PrefabsMenus\ButtonsBehaviour.cs" />
+    <Compile Include="Assets\Game\UI\PrefabsMenus\ButtonsBehaviour.cs" />
     <Compile Include="Assets\Game\Sip\Cards\ScriptsCards\VisualCardsHandler.cs" />
     <Compile Include="Assets\Game\Sip\Weapons\Scripts\Bullet_Shotgun.cs" />
     <Compile Include="Assets\Game\Sip\Cards\ScriptsCards\Card.cs" />
