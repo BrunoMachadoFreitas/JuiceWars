@@ -57,7 +57,14 @@ MonoBehaviour:
   - {fileID: 682839573353633929, guid: 51b1351f3e645a440862343138bb54bf, type: 3}
   - {fileID: -3901202434128467894, guid: 1862ae49196f1d74f8180b4525367c62, type: 3}
   - {fileID: -3901202434128467894, guid: 9abe97fc571d90d499d444d72e7fa02b, type: 3}
+  - {fileID: -3901202434128467894, guid: f46953470f378c349ba3828cf705176a, type: 3}
+  - {fileID: -3901202434128467894, guid: 3d25473f63d9d85409fcf0c0bc5f2331, type: 3}
+  - {fileID: -3901202434128467894, guid: 464d723e1999ba9439f6a3e609a342a0, type: 3}
   GameSoundsInGame: []
+  MainMusic: {fileID: -3901202434128467894, guid: 1e60d0861b4e7e447a3439eea56cda7e, type: 3}
+  MainMusicX: {fileID: 0}
+  MainMusicEnd: {fileID: -3901202434128467894, guid: 4eb7c4b1367ff704281eb74d4cbd728e, type: 3}
+  MainMusicEndX: {fileID: 0}
   Volume1: 0
   Volume2: 0
   Volume3: 0

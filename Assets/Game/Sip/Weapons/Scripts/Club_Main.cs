@@ -14,14 +14,12 @@ public class Club_Main : MonoBehaviour
     Vector2 targetPosPArent = Vector2.zero;
 
     [SerializeField] private GameObject SpriteObjectSword;
-    [SerializeField] private SoundManager soundManager;
     [SerializeField] private Animator SwordAnim;
     Transform closestMonsterTransform;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        soundManager = RoundsManager.instance.soundManagerX;
         if (transform.parent != null)
         {
             aimTransform = transform.parent;
@@ -178,7 +176,7 @@ public class Club_Main : MonoBehaviour
     {
         if (other.CompareTag("Monster"))
         {
-            RoundsManager.instance.soundManagerX.GameSounds[1].Play();
+            SoundManager.instance.PlaySound(1);
             other.gameObject.SendMessage("ApplyDamage", 8f);
         }
     }

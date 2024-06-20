@@ -14,7 +14,6 @@ public class MiniGun_Main : MonoBehaviour
     bool reloading = false;
     bool isShooting = false;
     int bulletCount = 0;
-    int maxBullets = 50; // Número máximo de balas
     int bulletBag = 1; // Número de balas por rajada
     float reloadTime = 5f; // Tempo de recarga
     public float lvlUpgrade = 0f;
@@ -133,7 +132,7 @@ public class MiniGun_Main : MonoBehaviour
         isShooting = true;
         for (int i = 0; i < bulletBag; i++)
         {
-            if (bulletCount >= maxBullets)
+            if (bulletCount >= Player_Stats.instance.maxBulletsMiniGun)
             {
                 break;
             }
@@ -146,7 +145,7 @@ public class MiniGun_Main : MonoBehaviour
 
         isShooting = false;
 
-        if (bulletCount >= maxBullets)
+        if (bulletCount >= Player_Stats.instance.maxBulletsMiniGun)
         {
             StartCoroutine(Reload());
         }
@@ -195,6 +194,7 @@ public class MiniGun_Main : MonoBehaviour
     [SerializeField] private UnityEngine.UI.Image ImageMinigunWaiter;
     private IEnumerator RechargeCoroutine()
     {
+        ImageMinigunWaiter.gameObject.SetActive(true);
         float rechargeTime = reloadTime;
         float elapsedTime = 0f;
 
@@ -207,5 +207,6 @@ public class MiniGun_Main : MonoBehaviour
 
         // Ao final do timer, garantir que o fillAmount esteja em 1
         ImageMinigunWaiter.fillAmount = 1f;
+        ImageMinigunWaiter.gameObject.SetActive(false);
     }
 }

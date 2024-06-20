@@ -20,7 +20,7 @@ public class Exp_Main : MonoBehaviour
             Vector2 directionAngle = (Player_Main.instance.transform.position - this.transform.position).normalized;
             // Verifica a distância entre o jogador e o monstro
             float distanceToPlayer = Vector2.Distance(this.transform.position, Player_Main.instance.transform.position);
-            if (distanceToPlayer < 2f)
+            if (distanceToPlayer < Player_Stats.instance.MagnetismFactor)
             {
                 rb.velocity = directionAngle * 10f;
             }

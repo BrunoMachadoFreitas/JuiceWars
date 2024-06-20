@@ -73,6 +73,7 @@
     <Compile Include="Assets\Game\GamePlay\Scripts\Timer.cs" />
     <Compile Include="Assets\Game\Monsters\Scripts\Monster.cs" />
     <Compile Include="Assets\Game\DataManagment\DataManagment.cs" />
+    <Compile Include="Assets\Game\GamePlay\PrefabsMenus\ButtonsBehaviour.cs" />
     <Compile Include="Assets\Game\Sip\Cards\ScriptsCards\VisualCardsHandler.cs" />
     <Compile Include="Assets\Game\Sip\Weapons\Scripts\Bullet_Shotgun.cs" />
     <Compile Include="Assets\Game\Sip\Cards\ScriptsCards\Card.cs" />
@@ -125,6 +126,7 @@
     <Compile Include="Assets\Game\UI\Menu\ControlMenu.cs" />
     <Compile Include="Assets\Game\Sip\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Game\Sip\Scripts\DashPlayer.cs" />
+    <Compile Include="Assets\Game\GamePlay\Scripts\DeviceController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

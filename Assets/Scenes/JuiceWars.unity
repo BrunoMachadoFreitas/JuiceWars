@@ -3929,8 +3929,12 @@ PrefabInstance:
       objectReference: {fileID: 1438724375}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: Prices.Array.size
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
+      propertyPath: CanvasFlipCoinOnBuy
+      value: 
+      objectReference: {fileID: 4950254240670400800, guid: e48a28f3f7155f4418cb94fc114860b8, type: 3}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: Prices.Array.data[6]
       value: 10
@@ -3948,8 +3952,12 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
-      propertyPath: Descriptions.Array.size
+      propertyPath: Prices.Array.data[10]
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
+      propertyPath: Descriptions.Array.size
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: Descriptions.Array.data[6]
@@ -3968,8 +3976,12 @@ PrefabInstance:
       value: Broke the chain of a card spot
       objectReference: {fileID: 0}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
+      propertyPath: Descriptions.Array.data[10]
+      value: Don't run anymore to collect
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: ImagesForButtons.Array.size
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: PowerUpObject.Array.data[0]
@@ -4006,7 +4018,7 @@ PrefabInstance:
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: ImagesForButtons.Array.data[10]
       value: 
-      objectReference: {fileID: 21300000, guid: c5d9cac71aaff39468c642311dfba6b5, type: 3}
+      objectReference: {fileID: 21300000, guid: b7d2cbfbc67812c4c9c03626c9d03b52, type: 3}
     - target: {fileID: 5260209740749482451, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: m_Name
       value: PowerUpManager

@@ -36,6 +36,10 @@ public class PowerUpsManager : MonoBehaviour
     private GameObject CardX;
 
     List<GameObject> Cards;
+
+
+    public GameObject CanvasFlipCoinOnBuy;
+    [SerializeField] private GameObject CanvasFlipCoinOffBuy;
     private void Awake()
     {
         if (instance == null)
@@ -58,6 +62,7 @@ public class PowerUpsManager : MonoBehaviour
         powerUps.Add("TequillaCard", DataManagment.instance.objectData.FoundTequillaCard);
         powerUps.Add("JuiceHole", DataManagment.instance.objectData.FoundJuiceHoleCard);
         powerUps.Add("BreakCardSpot", DataManagment.instance.objectData.FoundBreakCardSpot);
+        powerUps.Add("JuiceCollect", DataManagment.instance.objectData.FoundBreakCardSpot);
     }
     void Start()
     {
@@ -194,6 +199,11 @@ public class PowerUpsManager : MonoBehaviour
         switchPowerups(0);
         PowerUpObject[0].transform.GetChild(2).gameObject.SetActive(false);
         SoundManager.instance.GameSounds[3].Play();
+
+        for(int i = 0; i < 10; i++)
+        {
+            CanvasFlipCoinOffBuy = Instantiate(CanvasFlipCoinOnBuy, Player_Main.instance.transform.GetChild(0).GetChild(27));
+        }
         ResumeGame();
 
     }
@@ -205,6 +215,10 @@ public class PowerUpsManager : MonoBehaviour
         switchPowerups(1);
         SoundManager.instance.GameSounds[3].Play();
         PowerUpObject[1].transform.GetChild(2).gameObject.SetActive(false);
+        for (int i = 0; i < 10; i++)
+        {
+            CanvasFlipCoinOffBuy = Instantiate(CanvasFlipCoinOnBuy, Player_Main.instance.transform.GetChild(0).GetChild(27));
+        }
         ResumeGame();
     }
 
@@ -213,6 +227,10 @@ public class PowerUpsManager : MonoBehaviour
         switchPowerups(2);
         SoundManager.instance.GameSounds[3].Play();
         PowerUpObject[2].transform.GetChild(2).gameObject.SetActive(false);
+        for (int i = 0; i < 10; i++)
+        {
+            CanvasFlipCoinOffBuy = Instantiate(CanvasFlipCoinOnBuy, Player_Main.instance.transform.GetChild(0).GetChild(27));
+        }
         ResumeGame();
     }
 
@@ -221,6 +239,10 @@ public class PowerUpsManager : MonoBehaviour
         switchPowerups(3);
         SoundManager.instance.GameSounds[3].Play();
         PowerUpObject[3].transform.GetChild(2).gameObject.SetActive(false);
+        for (int i = 0; i < 10; i++)
+        {
+            CanvasFlipCoinOffBuy = Instantiate(CanvasFlipCoinOnBuy, Player_Main.instance.transform.GetChild(0).GetChild(27));
+        }
         ResumeGame();
     }
 
@@ -238,7 +260,7 @@ public class PowerUpsManager : MonoBehaviour
         PowerUpsManager.instance.resetEveryThing();
         GameStateController.instance.currentGameState = GameState.Playing;
 
-        if (Player_Main.instance.TargetPlatform == TargetPlatform.Android || Player_Main.instance.TargetPlatform == TargetPlatform.IOS)
+        if (DeviceController.instance.TargetPlatform == TargetPlatform.Android || DeviceController.instance.TargetPlatform == TargetPlatform.IOS)
             RoundsManager.instance.CanvasMobile.gameObject.SetActive(true);
 
         Player_Main.instance.CanvasExp.gameObject.SetActive(true);
@@ -575,6 +597,15 @@ public class PowerUpsManager : MonoBehaviour
                 cardSpotList[randomCardSpotIndex].ImageCardSpotStucked.SetActive(false);
                 break;
 
+            case "JuiceCollect":
+                ManageCardEffects("JuiceCollect");
+                DataManagment.instance.objectData.FoundJuiceHoleCard = true;
+                //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[7]);
+
+                powerUps["JuiceCollect"] = DataManagment.instance.objectData.FoundJuiceCollectCard;
+                DataManagment.instance.SaveData();
+                break;
+
         }
         PlayerItemOnUiManager.instance.ManageItemsOfPLayer();
 
@@ -595,6 +626,11 @@ public class PowerUpsManager : MonoBehaviour
         if (CardPower == "JuiceHole")
         {
             AtributteCardPowerImagesAndStats(8);
+        }
+
+        if (CardPower == "JuiceCollect")
+        {
+            AtributteCardPowerImagesAndStats(10);
         }
     }
 
@@ -620,6 +656,12 @@ public class PowerUpsManager : MonoBehaviour
                 else if (IndexCardForImageOnListImages == 8 && !Player_Stats.instance.CardsActive.Contains(CardType.JuiceHole))
                 {
                     o.GetComponent<CardSpot>().CardType = CardType.JuiceHole;
+                    o.InstantiateCard();
+                }
+
+                else if (IndexCardForImageOnListImages == 10 && !Player_Stats.instance.CardsActive.Contains(CardType.JuiceCollect))
+                {
+                    o.GetComponent<CardSpot>().CardType = CardType.JuiceCollect;
                     o.InstantiateCard();
                 }
                 break; // Para a iteração assim que encontrar um CardSpot sem card e atribuir o tipo de card.

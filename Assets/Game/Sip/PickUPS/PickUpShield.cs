@@ -20,6 +20,7 @@ public class PickUpShield : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            SoundManager.instance.PlaySound(13);
             Destroy(this.gameObject);
         }
 

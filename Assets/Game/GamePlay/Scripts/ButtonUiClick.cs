@@ -24,7 +24,7 @@ public class ButtonUiClick : MonoBehaviour
     private float PercentStealLife = 0;
 
 
-    [SerializeField] private CheckDevice deviceCheck;
+    
     [SerializeField] private GameObject CanvasMobile;
     [SerializeField] private GameObject GameStateObject;
     private GameObject GameStateObjectAux;
@@ -61,7 +61,7 @@ public class ButtonUiClick : MonoBehaviour
             BackgroundStats.SetActive(true);
         }
         CharacterId = 0;
-        Life = 20f;
+        Life = 120f;
         Speed = 7f;
         ReloadTime = 2f;
         Range = 8f;
@@ -79,7 +79,7 @@ public class ButtonUiClick : MonoBehaviour
             BackgroundStats.SetActive(true);
         }
         CharacterId = 2;
-        Life = 30f;
+        Life = 150f;
         Speed = 3f;
         ReloadTime = 1f;
         Range = 4f;
@@ -133,17 +133,15 @@ public class ButtonUiClick : MonoBehaviour
             //ControlMenu.instance.CardsUp();
             //ControlMenu.instance.initialPosition = playerInstance.transform.GetChild(0).GetChild(10).transform.position;
             //playerInstance.transform.GetChild(0).GetChild(11).GetComponent<Button>().onClick.AddListener(delegate () { ControlMenu.instance.CardsDown(); });
-            if (deviceCheck.isTouchInterface)
+            if (DeviceController.instance.TargetPlatform == TargetPlatform.Android)
             {
                 CanvasMobile.SetActive(true);
-                playerInstance.TargetPlatform = TargetPlatform.Android;
                 CanvasMobile.transform.GetChild(1).GetComponent<Button>().onClick.AddListener(delegate () { Player_Stats.instance.PauseGame(); });
                 
             }
             else
             {
                 CanvasMobile.SetActive(false);
-                playerInstance.TargetPlatform = TargetPlatform.PC;
             }
         }catch(Exception ex)
         {

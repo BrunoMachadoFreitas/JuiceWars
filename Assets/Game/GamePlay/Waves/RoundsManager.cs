@@ -36,8 +36,7 @@ public class RoundsManager : MonoBehaviour
     public delegate void WaveManagerReadyHandler();
     //public event WaveManagerReadyHandler WaveManagerReady;
 
-    [SerializeField] private SoundManager soundManager;
-     public SoundManager soundManagerX;
+    
 
     [SerializeField] private GameObject TimerGameObject;
     //[SerializeField] private GameObject MapController;
@@ -68,7 +67,7 @@ public class RoundsManager : MonoBehaviour
     void Start()
     {
         instantiateWaveManager();
-        soundManagerX = Instantiate(soundManager, new Vector3(-487.442993f, 1.04410005f, 0), Quaternion.identity);
+        
         //MapControllerX = Instantiate(MapController, new Vector3(-487.442993f, 1.04410005f, 0), Quaternion.identity);
         //ChunckX = Instantiate(Chunck, new Vector3(-487.442993f, 1.04410005f, 0), Quaternion.identity);
         

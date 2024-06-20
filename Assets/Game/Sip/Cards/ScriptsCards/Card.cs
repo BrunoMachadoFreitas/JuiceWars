@@ -76,11 +76,14 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 Player_Main.instance.CanJuiceHole = true;
                 textDesc.text = "Spawns a mini black hole at a time";
                 PlayerCardsManager.instance.StartJuiceHoleCoroutine();
-                //if (juiceHoleCoroutine != null)
-                //{
-                //    StopCoroutine(juiceHoleCoroutine);
-                //}
-                //StartCoroutine(JuiceHoleCoroutine());
+                break;
+
+            case CardType.JuiceCollect:
+                thisCardType = CardType.JuiceCollect;
+                Player_Stats.instance.CardsActive.Add(thisCardType);
+                Player_Stats.instance.MagnetismFactor += 5 + AssociatedCardSpot.cardPowerModifier;
+                textDesc.text = "More magnetism";
+                PlayerCardsManager.instance.StartJuiceHoleCoroutine();
                 break;
         }
     }
@@ -115,6 +118,14 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
                 PlayerCardsManager.instance.StartJuiceHoleCoroutine();
 
+                break;
+
+            case CardType.JuiceCollect:
+                thisCardType = CardType.JuiceCollect;
+                Player_Stats.instance.CardsActive.Add(thisCardType);
+                Player_Stats.instance.MagnetismFactor += 5 + AssociatedCardSpot.cardPowerModifier;
+                textDesc.text = "More magnetism";
+                PlayerCardsManager.instance.StartJuiceHoleCoroutine();
                 break;
         }
     }

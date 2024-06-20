@@ -10,8 +10,7 @@ using UnityEngine.UIElements;
 
 public class Player_Main : MonoBehaviour
 {
-    //Variavel para controlo da plaforma
-    public TargetPlatform TargetPlatform;
+    
 
 
     // Implementação dos membros da interface
@@ -185,7 +184,7 @@ public class Player_Main : MonoBehaviour
         // Define o vetor de movimento baseado no input
         movement = new Vector2(moveX, moveY).normalized;
 
-        if (movement == Vector2.zero) TargetPlatform = TargetPlatform.PC;
+        //if (movement == Vector2.zero) TargetPlatform = TargetPlatform.PC;
 
 
 
@@ -210,10 +209,10 @@ public class Player_Main : MonoBehaviour
 
     public void MovePlayer(InputAction.CallbackContext value)
     {
-        TargetPlatform = TargetPlatform.Android;
+        //TargetPlatform = TargetPlatform.Android;
         myInput = value.ReadValue<Vector2>();
         Vector2 lastMovement = Vector2.right;
-        if (myInput == Vector2.zero) TargetPlatform = TargetPlatform.Android;
+        //if (myInput == Vector2.zero) TargetPlatform = TargetPlatform.Android;
 
         if (myInput != Vector2.zero)
         {
@@ -243,7 +242,7 @@ public class Player_Main : MonoBehaviour
 
         if (CanMov)
         {
-            if (TargetPlatform == TargetPlatform.PC)
+            if (DeviceController.instance.TargetPlatform == TargetPlatform.PC)
                 MovePlayerKeyboard();
 
 

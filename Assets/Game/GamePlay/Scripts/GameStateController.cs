@@ -88,7 +88,7 @@ public class GameStateController : MonoBehaviour
         if (GameObject.Find("CanvasEnd(Clone)") == null)
         {
             Instantiate(CanvasEnd);
-          
+            CanvasEnd.SetActive(true);
             Destroy(Player_Main.instance.gameObject);
             for(int i = 0; i < WaveManager.instance.Monsters.Count; i++)
             {
@@ -116,7 +116,10 @@ public class GameStateController : MonoBehaviour
 
     public void LoadSceneMenu()
     {
-        SceneManager.LoadScene("Menu", LoadSceneMode.Single);
+        
+        SceneManager.LoadScene(0, LoadSceneMode.Single);
+        CanvasEnd.SetActive(false);
+        ControlMenu.instance.MainMenuX.SetActive(true);
     }
 
     // Função para verificar se uma cena está carregada

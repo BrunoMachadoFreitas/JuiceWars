@@ -83,6 +83,7 @@ public class DataInfo
     public string nome;
 
     public float SoundValue;
+    public float SoundMusicValue;
 
 
     //Items
@@ -110,6 +111,12 @@ public class DataInfo
     public bool FoundTequillaCard;
     public bool FoundJuiceHoleCard;
     public bool FoundBreakCardSpot;
+    public bool FoundJuiceCollectCard;
+
+    public bool CanPlayGameSounds;
+    public bool CanPlayGameMusic;
+
+
     public string imageTequillaCard;
 
     

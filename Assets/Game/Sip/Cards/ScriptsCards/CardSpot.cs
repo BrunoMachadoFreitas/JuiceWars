@@ -105,6 +105,16 @@ public class CardSpot : MonoBehaviour
                 CardX.InitializePowerUp(CardType);
                 textDescCard = CardX.textDesc;
                 break;
+            case CardType.JuiceCollect:
+                CardX = Instantiate(Card, this.transform.position, Quaternion.identity);
+                CardX.gameObject.SetActive(true);
+                CardX.transform.SetParent(this.transform);
+                CardX.transform.GetChild(1).GetComponent<Image>().sprite = PowerUpsManager.instance.ImagesForButtons[10];
+                CardX.AssociatedCardSpot = this;
+                HasCard = true;
+                CardX.InitializePowerUp(CardType);
+                textDescCard = CardX.textDesc;
+                break;
 
         }
     }

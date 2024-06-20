@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -33,10 +34,22 @@ public class ControlMenu : MonoBehaviour
     public float AudioVolumeMusic;
 
     [SerializeField] private Slider valueSlider;
+    [SerializeField] private Slider valueSliderMusic;
 
     [SerializeField] private TextMeshProUGUI SoundValueOnUISettings;
+    [SerializeField] private TextMeshProUGUI SoundValueMusicOnUISettings;
+
+
+    [SerializeField] private SoundManager soundManager;
+    public SoundManager soundManagerX;
+
+
+    [SerializeField] private Toggle toggleCanPlaySounds;
+    [SerializeField] private Toggle toggleCanPlayGameMusic;
 
     public DataInfo objectData = new DataInfo();
+
+
     private void Awake()
     {
         if (instance == null)
@@ -48,20 +61,21 @@ public class ControlMenu : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
+        objectData = DataManagment.instance.LoadData();
+        DataManagment.instance.objectData = objectData;
     }
     // Start is called before the first frame update
     void Start()
     {
-        objectData = DataManagment.instance.LoadData();
+        
         MainMenuX = Instantiate(MainMenu);
         //GameSoundX = Instantiate(GameSound);
         MenuSettingsX = Instantiate(MenuSettings);
         MenuAchievementsX = Instantiate(MenuAchievements);
         MenuSettingsX.SetActive(false);
         MenuAchievementsX.SetActive(false);
-
-
-
+        soundManagerX = Instantiate(soundManager, new Vector3(-487.442993f, 1.04410005f, 0), Quaternion.identity);
+        
         BackgroundTab1 = MenuSettingsX.GetComponent<Transform>().GetChild(1).GetChild(2).gameObject;
         BackgroundTab2 = MenuSettingsX.GetComponent<Transform>().GetChild(1).GetChild(4).gameObject;
         BackgroundTab3 = MenuSettingsX.GetComponent<Transform>().GetChild(1).GetChild(6).gameObject;
@@ -77,8 +91,29 @@ public class ControlMenu : MonoBehaviour
         MenuSettingsX.transform.GetChild(1).GetChild(7).GetComponent<Button>().onClick.AddListener(delegate () { OpenTab3HideOthers(); });
 
         valueSlider = MenuSettingsX.transform.GetChild(1).GetChild(2).GetChild(1).GetChild(0).GetComponent<Slider>();
+        valueSliderMusic = MenuSettingsX.transform.GetChild(1).GetChild(2).GetChild(2).GetChild(0).GetComponent<Slider>();
+        toggleCanPlaySounds = MenuSettingsX.transform.GetChild(1).GetChild(2).GetChild(3).GetChild(0).GetComponent<Toggle>();
+        toggleCanPlayGameMusic = MenuSettingsX.transform.GetChild(1).GetChild(2).GetChild(4).GetChild(0).GetComponent<Toggle>();
+
+        toggleCanPlaySounds.onValueChanged.AddListener(delegate { OnChangeValueCheckCanPlayGameSounds(); });
+        toggleCanPlayGameMusic.onValueChanged.AddListener(delegate { OnChangeValueCheckCanPlayGameMusic(); });
+
         SoundValueOnUISettings = MenuSettingsX.transform.GetChild(1).GetChild(2).GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>();
+        SoundValueMusicOnUISettings = MenuSettingsX.transform.GetChild(1).GetChild(2).GetChild(2).GetChild(1).GetComponent<TextMeshProUGUI>();
         valueSlider.onValueChanged.AddListener(delegate { OnChangeValueSoundSlider(); });
+        valueSliderMusic.onValueChanged.AddListener(delegate { OnChangeValueMusicSlider(); });
+
+        valueSlider.value = objectData.SoundValue;
+        valueSliderMusic.value = objectData.SoundMusicValue;
+
+        toggleCanPlaySounds.isOn = objectData.CanPlayGameSounds;
+        toggleCanPlayGameMusic.isOn = objectData.CanPlayGameMusic;
+
+        SoundManager.instance.MainMusicX.volume = valueSliderMusic.value;
+        for (int i = 0; i < SoundManager.instance.GameSoundsInGame.Count; i++)
+        {
+            SoundManager.instance.GameSoundsInGame[i].volume = valueSlider.value;
+        }
     }
 
     // Update is called once per frame
@@ -92,6 +127,7 @@ public class ControlMenu : MonoBehaviour
         BackgroundTab1.SetActive(true);
         BackgroundTab2.SetActive(false);
         BackgroundTab3.SetActive(false);
+        SoundManager.instance.PlaySound(12);
     }
 
     public void OpenTab2HideOthers()
@@ -99,25 +135,31 @@ public class ControlMenu : MonoBehaviour
         BackgroundTab2.SetActive(true);
         BackgroundTab1.SetActive(false);
         BackgroundTab3.SetActive(false);
+        SoundManager.instance.PlaySound(12);
     }
 
     public void OpenTab3HideOthers()
     {
-        BackgroundTab3.SetActive(true);
-        BackgroundTab1.SetActive(false);
-        BackgroundTab2.SetActive(false);
-        MenuSettingsX.transform.GetChild(1).GetChild(1).gameObject.SetActive(true);
+        if (DeviceController.instance.TargetPlatform == TargetPlatform.PC) { 
+            BackgroundTab3.SetActive(true);
+            BackgroundTab1.SetActive(false);
+            BackgroundTab2.SetActive(false);
+            MenuSettingsX.transform.GetChild(1).GetChild(1).gameObject.SetActive(true);
+            SoundManager.instance.PlaySound(12);
+        }
     }
 
     public void HideMainMenuShowSettings()
     {
         MenuSettingsX.SetActive(true);
         MainMenuX.SetActive(false);
+        SoundManager.instance.PlaySound(12);
     }
     public void HideMainMenuShowAchievements()
     {
         MenuAchievementsX.SetActive(true);
         MainMenuX.SetActive(false);
+        SoundManager.instance.PlaySound(12);
     }
     public void HideSettingsMenuShowMainMenu()
     {
@@ -137,22 +179,43 @@ public class ControlMenu : MonoBehaviour
             MainMenuX.SetActive(true);
             //MainMenu.SetActive(true);
         }
-        
+        SoundManager.instance.PlaySound(12);
     }
 
     public void startGame()
     {
         // Registra o callback para quando a cena for carregada
         //SceneManager.sceneLoaded += OnSceneLoaded;
+        if (SoundManager.instance.MainMusicX.isPlaying)
+        {
+            SoundManager.instance.MainMusicX.Stop();
+            SoundManager.instance.MainMusicEndX.Play();
+            new Thread(() => //You should use socket right here.
+            {
+                StartCoroutine(WaitSoundEnd());
 
-        // Carrega a cena pelo índice (ou pelo nome)
-        SceneManager.LoadScene(1, LoadSceneMode.Single);
+            }).Start();
+        }
 
+        
+
+
+        //Carrega a cena pelo índice(ou pelo nome)
+            SceneManager.LoadScene(1, LoadSceneMode.Single);
         //SceneManager.SetActiveScene(sceneJuice);
 
         MainMenuX.gameObject.SetActive(false);
-    }
+        SoundManager.instance.PlaySound(12);
 
+        
+    }
+    private IEnumerator WaitSoundEnd()
+    {
+       
+            yield return new WaitForSeconds(10f);
+       
+
+    }
     // Callback que é chamado quando a cena é carregada
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
@@ -164,7 +227,9 @@ public class ControlMenu : MonoBehaviour
 
             // Desregistra o callback para evitar chamadas repetidas
             SceneManager.sceneLoaded -= OnSceneLoaded;
+            SoundManager.instance.PlaySound(12);
         }
+
     }
 
 
@@ -174,59 +239,61 @@ public class ControlMenu : MonoBehaviour
 
         SoundValueOnUISettings.text = Mathf.FloorToInt(valueSlider.value * 100).ToString();
 
-        DataManagment.instance.objectData.SoundValue = AudioVolumeSoundsGeneral;
+        for(int i = 0; i < SoundManager.instance.GameSoundsInGame.Count; i++)
+        {
+            SoundManager.instance.GameSoundsInGame[i].volume = AudioVolumeSoundsGeneral;
+        }
+        objectData.SoundValue = AudioVolumeSoundsGeneral;
+        DataManagment.instance.SaveData();
+    }
+    public void OnChangeValueMusicSlider()
+    {
+        AudioVolumeMusic = valueSliderMusic.value;
+
+        SoundValueMusicOnUISettings.text = Mathf.FloorToInt(valueSliderMusic.value * 100).ToString();
+
+        
+        SoundManager.instance.MainMusicX.volume = AudioVolumeMusic;
+
+        objectData.SoundMusicValue = AudioVolumeMusic;
         DataManagment.instance.SaveData();
     }
 
-    // Posição inicial das cartas
-    public Vector3 initialPosition;
-    // Referência ao GameObject UI Image
-    public GameObject cards;
-
-    // Função que inicia o movimento das cartas para cima
-    public void CardsUp()
+    public void OnChangeValueCheckCanPlayGameSounds()
     {
-        // Inicia a coroutine que move as cartas para cima
-        StartCoroutine(MoveCardsUp());
-    }
+        if (toggleCanPlaySounds.isOn)
+        {
+            SoundManager.instance.canPlayGameSounds = true;
+            objectData.CanPlayGameSounds = true;
+            
+        }
+        else if (!toggleCanPlaySounds.isOn)
+        {
+            SoundManager.instance.canPlayGameSounds = false;
+            objectData.CanPlayGameSounds = false;
+        }
 
-    // Coroutine que espera 5 segundos e move as cartas para cima
-    private IEnumerator MoveCardsUp()
+        DataManagment.instance.SaveData();
+
+    }
+    public void OnChangeValueCheckCanPlayGameMusic()
     {
-        // Espera 5 segundos
-        yield return new WaitForSeconds(5f);
-
-        // Pega a posição atual das cartas
-        Vector3 currentPosition = cards.transform.position;
-
-        // Define a nova posição para onde as cartas irão se mover (aumentando o valor de Y)
-        Vector3 newPosition = new Vector3(currentPosition.x, currentPosition.y + 120, currentPosition.z);
-
-        // Move as cartas para a nova posição
-        cards.transform.position = newPosition;
-        Player_Main.instance.transform.GetChild(0).GetChild(11).gameObject.SetActive(true);
-        Player_Main.instance.transform.GetChild(0).GetChild(11).GetComponent<Button>().onClick.AddListener(delegate () {CardsDown(); });
+        if (toggleCanPlayGameMusic.isOn)
+        {
+            SoundManager.instance.canPlayGameMusic = true;
+            if (!SoundManager.instance.MainMusicX.isPlaying)
+            {
+                SoundManager.instance.MainMusicX.Play();
+            }
+            objectData.CanPlayGameMusic = true;
+        }
+        else if (!toggleCanPlayGameMusic.isOn)
+        {
+            SoundManager.instance.canPlayGameMusic = false;
+            SoundManager.instance.MainMusicX.Stop();
+            objectData.CanPlayGameMusic = false;
+        }
+        DataManagment.instance.SaveData();
     }
-
-    // Função que move as cartas de volta para a posição inicial
-    public void CardsDown()
-    {
-        // Inicia a coroutine que move as cartas de volta para a posição inicial
-        StartCoroutine(MoveCardsDown());
-    }
-
-    // Coroutine que move as cartas de volta para a posição inicial
-    private IEnumerator MoveCardsDown()
-    {
-        // Aguarda 5 segundos
-        yield return new WaitForSeconds(5f);
-        Player_Main.instance.transform.GetChild(0).GetChild(11).gameObject.SetActive(false);
-        // Move as cartas para a posição inicial
-        cards.transform.position = initialPosition;
-        // Aguarda 5 segundos
-        yield return new WaitForSeconds(5f);
-
-        // Chama CardsUp para mover as cartas para cima novamente
-        CardsUp();
-    }
+    
 }

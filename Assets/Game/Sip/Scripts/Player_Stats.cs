@@ -17,6 +17,7 @@ public class Player_Stats : MonoBehaviour
     public float PlayerDodge = 0f;
     public float DropMoneyRate = 50f;
     public float VelocityMiniGun = 1f;
+    public float maxBulletsMiniGun = 20f;
     public float VelocityShootGun = 1f;
     public float VelocityBoomerang = 1f;
     public float VelocityPistol = 1f;
@@ -24,6 +25,8 @@ public class Player_Stats : MonoBehaviour
     public float VelocityClub = 1f;
     public float spawnRate = 1f;
     public float LuckyValue = 10f;
+    public float MagnetismFactor = 5f;
+    
     public bool HasLuck = false;
    
     public float ExpToGive = 2;

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7618348512895437632}
   - component: {fileID: 7618348512895437635}
+  - component: {fileID: 7624760385870672738}
   m_Layer: 0
   m_Name: LowLifeSound
   m_TagString: Untagged
@@ -128,3 +129,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7624760385870672738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7618348512895437634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aa9be656de6d2641a6077bab12811ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

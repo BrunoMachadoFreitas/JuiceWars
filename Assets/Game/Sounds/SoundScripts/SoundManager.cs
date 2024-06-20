@@ -9,11 +9,19 @@ public class SoundManager : MonoBehaviour
     public List<AudioSource> GameSounds;
     public List<AudioSource> GameSoundsInGame;
 
+    public AudioSource MainMusic;
+    public AudioSource MainMusicX;
+    public AudioSource MainMusicEnd;
+    public AudioSource MainMusicEndX;
+
     public float Volume1;
     public float Volume2;
     public float Volume3;
     public float Volume4;
     public float Volume5;
+
+    public bool canPlayGameSounds = true;
+    public bool canPlayGameMusic = true;
     private void Awake()
     {
         if (instance == null)
@@ -25,6 +33,9 @@ public class SoundManager : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
+        MainMusicX = Instantiate(MainMusic);
+        MainMusicEndX = Instantiate(MainMusicEnd);
+        
     }
 
 
@@ -32,6 +43,13 @@ public class SoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        canPlayGameMusic = ControlMenu.instance.objectData.CanPlayGameMusic;
+        canPlayGameSounds = ControlMenu.instance.objectData.CanPlayGameSounds;
+
+        if (canPlayGameMusic)
+        {
+            MainMusicX.Play();
+        }
         for (int i = 0; i < GameSounds.Count; i++)
         {
            var AudioSource = Instantiate(GameSounds[i]);
@@ -40,7 +58,7 @@ public class SoundManager : MonoBehaviour
         }
         if (ControlMenu.instance)
         {
-            ChangeVolume(DataManagment.instance.objectData.SoundValue);
+            ChangeVolume(ControlMenu.instance.objectData.SoundValue);
         }
         else
         {
@@ -71,6 +89,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySound(int soundIndex)
     {
+        if(canPlayGameSounds)
         GameSoundsInGame[soundIndex].PlayOneShot(GameSoundsInGame[soundIndex].clip);
     }
 }
