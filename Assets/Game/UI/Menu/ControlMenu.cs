@@ -1,4 +1,5 @@
 using System.Collections;
+using Game.GamePlay.Scripts;
 using Game.SaveManager;
 using Game.Sounds.SoundScripts;
 using TMPro;
@@ -10,7 +11,7 @@ public class ControlMenu : MonoBehaviour
 {
     public static ControlMenu instance;
 
-    [SerializeField] Canvas canvasMenu;
+    [SerializeField] MainMenu MainMenu;
     [SerializeField] SettingsPopUp MenuSettings;
     
 
@@ -44,8 +45,8 @@ public class ControlMenu : MonoBehaviour
 
 
         soundManagerX = Instantiate(soundManager, new Vector3(-487.442993f, 1.04410005f, 0), Quaternion.identity);
-        
-       
+
+        soundManagerX.MainMusic.volume = objectData.SoundMusicValue;
 
         if (DeviceController.instance.TargetPlatform != TargetPlatform.PC)
         {
@@ -78,9 +79,8 @@ public class ControlMenu : MonoBehaviour
         }
         else
         {
-            //MenuSettingsX.SetActive(false);
-            //MainMenuX.SetActive(true);
-            //MainMenu.SetActive(true);
+            MenuSettings.gameObject.SetActive(false);
+            MainMenu.gameObject.SetActive(true);
         }
         SoundManager.instance.PlaySound(12);
     }

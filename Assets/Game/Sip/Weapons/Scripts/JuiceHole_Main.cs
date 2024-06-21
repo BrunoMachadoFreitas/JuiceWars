@@ -8,9 +8,11 @@ public class JuiceHole_Main : MonoBehaviour
     public float damagePerSecond = 1f; // Dano por segundo causado aos inimigos
     public float duration = 5f; // Duração do efeito
     public float orbitSpeed = .2f; // Velocidade da órbita em torno do buraco negro
+    public float spaghettificationTime = 1f; // Tempo para espaguetificação
 
     private List<GameObject> objectsInRange = new List<GameObject>();
     private Dictionary<GameObject, Coroutine> damageCoroutines = new Dictionary<GameObject, Coroutine>();
+    private Dictionary<GameObject, Vector3> originalScales = new Dictionary<GameObject, Vector3>();
 
     void Start()
     {
@@ -33,6 +35,12 @@ public class JuiceHole_Main : MonoBehaviour
                 Coroutine damageCoroutine = StartCoroutine(ApplyDamage(other.gameObject));
                 damageCoroutines.Add(other.gameObject, damageCoroutine);
             }
+
+            if (!originalScales.ContainsKey(other.gameObject))
+            {
+                originalScales.Add(other.gameObject, other.transform.localScale);
+                StartCoroutine(Spaghettify(other.transform, true));
+            }
         }
     }
 
@@ -52,6 +60,12 @@ public class JuiceHole_Main : MonoBehaviour
             {
                 StopCoroutine(damageCoroutines[other.gameObject]);
                 damageCoroutines.Remove(other.gameObject);
+            }
+
+            if (originalScales.ContainsKey(other.gameObject))
+            {
+                StartCoroutine(Spaghettify(other.transform, false));
+                originalScales.Remove(other.gameObject);
             }
         }
     }
@@ -94,5 +108,20 @@ public class JuiceHole_Main : MonoBehaviour
     {
         yield return new WaitForSeconds(duration);
         Destroy(gameObject);
+    }
+
+    IEnumerator Spaghettify(Transform monsterTransform, bool isEntering)
+    {
+        Vector3 originalScale = monsterTransform.localScale;
+        Vector3 targetScale = isEntering ? new Vector3(originalScale.x * 0.5f, originalScale.y * 2f, originalScale.z) : originalScale;
+
+        float elapsedTime = 0f;
+        while (elapsedTime < spaghettificationTime)
+        {
+            monsterTransform.localScale = Vector3.Lerp(monsterTransform.localScale, targetScale, (elapsedTime / spaghettificationTime));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        monsterTransform.localScale = targetScale;
     }
 }
