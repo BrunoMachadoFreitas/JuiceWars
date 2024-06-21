@@ -3397,6 +3397,7 @@ MonoBehaviour:
   PlayerDodge: 0
   DropMoneyRate: 50
   VelocityMiniGun: 0.6
+  maxBulletsMiniGun: 20
   VelocityShootGun: 1
   VelocityBoomerang: 1
   VelocityPistol: 1
@@ -3404,6 +3405,7 @@ MonoBehaviour:
   VelocityClub: 1
   spawnRate: 1
   LuckyValue: 10
+  MagnetismFactor: 5
   HasLuck: 0
   ExpToGive: 2
   CurrentSpeed: 0
@@ -3443,7 +3445,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d03e7d4e126949040a85e6bf82d252d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetPlatform: 0
   textMoney: {fileID: 1397378071226664658}
   shakeIntensity: 0.5
   shakeDuration: 0.1
@@ -4667,7 +4668,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1938015621918443017, guid: d7e23439f3971b34482b4d2b783cddbb, type: 3}
       propertyPath: IsCardSpotStucked
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1938015621918443017, guid: d7e23439f3971b34482b4d2b783cddbb, type: 3}
       propertyPath: ImageCardSpotStucked
@@ -5600,7 +5601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1310779407571404685, guid: c41661fa975ca2348ba32c378f817e14, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2915282164682409334, guid: c41661fa975ca2348ba32c378f817e14, type: 3}
       propertyPath: m_RootOrder
@@ -5924,7 +5925,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1938015621918443017, guid: d7e23439f3971b34482b4d2b783cddbb, type: 3}
       propertyPath: IsCardSpotStucked
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1938015621918443017, guid: d7e23439f3971b34482b4d2b783cddbb, type: 3}
       propertyPath: ImageCardSpotStucked
@@ -6113,7 +6114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1938015621918443017, guid: d7e23439f3971b34482b4d2b783cddbb, type: 3}
       propertyPath: IsCardSpotStucked
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1938015621918443017, guid: d7e23439f3971b34482b4d2b783cddbb, type: 3}
       propertyPath: ImageCardSpotStucked
@@ -7040,7 +7041,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1938015621918443017, guid: d7e23439f3971b34482b4d2b783cddbb, type: 3}
       propertyPath: IsCardSpotStucked
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1938015621918443017, guid: d7e23439f3971b34482b4d2b783cddbb, type: 3}
       propertyPath: ImageCardSpotStucked
@@ -7346,7 +7347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1938015621918443017, guid: d7e23439f3971b34482b4d2b783cddbb, type: 3}
       propertyPath: IsCardSpotStucked
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1938015621918443017, guid: d7e23439f3971b34482b4d2b783cddbb, type: 3}
       propertyPath: ImageCardSpotStucked

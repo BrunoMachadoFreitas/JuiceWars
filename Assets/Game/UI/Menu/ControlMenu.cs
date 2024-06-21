@@ -12,8 +12,12 @@ public class ControlMenu : MonoBehaviour
     public static ControlMenu instance;
 
     [SerializeField] Canvas canvasMenu;
+
+
     [SerializeField] public GameObject MainMenu;
     public GameObject MainMenuX;
+
+
     [SerializeField] public GameObject MenuSettings;
     public GameObject MenuSettingsX;
 
@@ -74,6 +78,8 @@ public class ControlMenu : MonoBehaviour
         MenuAchievementsX = Instantiate(MenuAchievements);
         MenuSettingsX.SetActive(false);
         MenuAchievementsX.SetActive(false);
+
+
         soundManagerX = Instantiate(soundManager, new Vector3(-487.442993f, 1.04410005f, 0), Quaternion.identity);
         
         BackgroundTab1 = MenuSettingsX.GetComponent<Transform>().GetChild(1).GetChild(2).gameObject;
@@ -100,6 +106,7 @@ public class ControlMenu : MonoBehaviour
 
         SoundValueOnUISettings = MenuSettingsX.transform.GetChild(1).GetChild(2).GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>();
         SoundValueMusicOnUISettings = MenuSettingsX.transform.GetChild(1).GetChild(2).GetChild(2).GetChild(1).GetComponent<TextMeshProUGUI>();
+
         valueSlider.onValueChanged.AddListener(delegate { OnChangeValueSoundSlider(); });
         valueSliderMusic.onValueChanged.AddListener(delegate { OnChangeValueMusicSlider(); });
 
@@ -194,13 +201,7 @@ public class ControlMenu : MonoBehaviour
         //SceneManager.sceneLoaded += OnSceneLoaded;
         if (SoundManager.instance.MainMusicX.isPlaying)
         {
-            SoundManager.instance.MainMusicX.Stop();
-            SoundManager.instance.MainMusicEndX.Play();
-            new Thread(() => //You should use socket right here.
-            {
-                StartCoroutine(WaitSoundEnd());
-
-            }).Start();
+         
         }
 
         

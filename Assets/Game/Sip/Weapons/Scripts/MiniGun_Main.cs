@@ -164,7 +164,7 @@ public class MiniGun_Main : MonoBehaviour
         Monster.GetComponent<Monster>().isBeingAttacked = true;
         anim.SetTrigger("Shoot");
 
-        //SoundManager.instance.PlaySound(4);
+        SoundManager.instance.PlaySound(4);
 
         StartCoroutine(ResetIsBeingAttacked(Monster));
         Invoke("ResetShootingFlag", Player_Stats.instance.VelocityMiniGun);
