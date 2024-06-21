@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using Game.SaveManager;
+using Game.Sounds.SoundScripts;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -306,7 +308,7 @@ public class PowerUpsManager : MonoBehaviour
                     ControlMenu.instance.objectData.FoundPistol = true;
                     
                     powerUps["Pistol"] = ControlMenu.instance.objectData.FoundPistol;
-                    DataManagment.instance.SaveData();
+                    SaveManager.SaveData();
                 }
                 break;
 
@@ -370,39 +372,7 @@ public class PowerUpsManager : MonoBehaviour
                     //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[2]);
                     
                     powerUps["MiniGun"] = ControlMenu.instance.objectData.FoundMinigun;
-                    DataManagment.instance.SaveData();
-                    // Se houver pelo menos dois spots com MiniGun_Main
-                    //if (miniGunCount >= 1)
-                    //{
-                    //    // Faça upgrade no primeiro MiniGun_Main
-                    //    firstMiniGun.lvlUpgrade++;
-                    //    int indexSecondMiniGunSpot = -1;
-
-                    //    // Destrua o segundo MiniGun_Main
-                    //    if (secondMiniGunSpot != null)
-                    //    {
-
-                    //        MiniGun_Main secondMiniGun = secondMiniGunSpot.GetComponentInChildren<MiniGun_Main>();
-                    //        if (secondMiniGun != null)
-                    //        {
-                    //            secondMiniGunSpot.WpType = WeaponType.None;
-                    //            Destroy(secondMiniGunSpot.transform.GetChild(0).gameObject);
-                    //            secondMiniGunSpot.gameObject.SetActive(false);
-                    //            secondMiniGun = null;
-                    //            firstMiniGun = null;
-                    //            miniGunCount = 0;
-                    //        }
-                    //    }
-                    //}
-                    //else
-                    //{
-
-
-                    //}
-
-
-
-
+                    SaveManager.SaveData();
                 }
                 break;
             case "JuiceLife":
@@ -410,14 +380,14 @@ public class PowerUpsManager : MonoBehaviour
                 //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[0]);
                 
                 powerUps["JuiceLife"] = ControlMenu.instance.objectData.FoundJuiceLife;
-                DataManagment.instance.SaveData();
+                SaveManager.SaveData();
                 break;
             case "JuiceReg":
                 RegLife(); ControlMenu.instance.objectData.FoundReg = true;
                 //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[3]);
                 
                 powerUps["JuiceReg"] = ControlMenu.instance.objectData.FoundReg;
-                DataManagment.instance.SaveData();
+                SaveManager.SaveData();
                 break;
             case "JuiceClub":
                 if (Player_Main.instance.Money >= 0)
@@ -453,8 +423,8 @@ public class PowerUpsManager : MonoBehaviour
                     ControlMenu.instance.objectData.FoundJuiceClub = true;
                     //DataManagment.instance.objectData.imagePistol = ControlMenu.instance.SpriteToBase64(ImagesForButtons[4]);
 
-                    powerUps["JuiceClub"] = DataManagment.instance.objectData.FoundJuiceClub;
-                    DataManagment.instance.SaveData();
+                    powerUps["JuiceClub"] = SaveManager.objectData.FoundJuiceClub;
+                    SaveManager.SaveData();
                 }
                 break;
 
@@ -515,40 +485,7 @@ public class PowerUpsManager : MonoBehaviour
                     //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[5]);
                     
                     powerUps["Boomerang"] = ControlMenu.instance.objectData.FoundBoomerang;
-                    DataManagment.instance.SaveData();
-
-                    //// Se houver pelo menos dois spots com MiniGun_Main
-                    //if (BoomerangCount >= 1)
-                    //{
-                    //    // Faça upgrade no primeiro MiniGun_Main
-                    //    firstBoomerang.lvlUpgrade++;
-                    //    int indexSecondBoomerangSpot = -1;
-
-                    //    // Destrua o segundo MiniGun_Main
-                    //    if (secondBoomerangSpot != null)
-                    //    {
-
-                    //        Boomerang_Main secondBoomerang = secondBoomerangSpot.GetComponentInChildren<Boomerang_Main>();
-                    //        if (secondBoomerang != null)
-                    //        {
-                    //            secondBoomerangSpot.WpType = WeaponType.None;
-                    //            Destroy(secondBoomerangSpot.transform.GetChild(0).gameObject);
-                    //            secondBoomerangSpot.gameObject.SetActive(false);
-                    //            secondBoomerang = null;
-                    //            firstBoomerang = null;
-                    //            BoomerangCount = 0;
-                    //        }
-                    //    }
-                    //}
-                    //else
-                    //{
-
-
-                    //}
-
-
-
-
+                    SaveManager.SaveData();
                 }
                 break;
 
@@ -560,7 +497,7 @@ public class PowerUpsManager : MonoBehaviour
                 
 
                 powerUps["RedWineCard"] = ControlMenu.instance.objectData.FoundCardWine;
-                DataManagment.instance.SaveData();
+                SaveManager.SaveData();
                 break;
             case "TequillaCard":
 
@@ -569,7 +506,7 @@ public class PowerUpsManager : MonoBehaviour
                 //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[7]);
                
                 powerUps["TequillaCard"] = ControlMenu.instance.objectData.FoundTequillaCard;
-                DataManagment.instance.SaveData();
+                SaveManager.SaveData();
                 break;
 
             case "JuiceHole":
@@ -579,7 +516,7 @@ public class PowerUpsManager : MonoBehaviour
                 //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[7]);
                 
                 powerUps["JuiceHole"] = ControlMenu.instance.objectData.FoundJuiceHoleCard;
-                DataManagment.instance.SaveData();
+                SaveManager.SaveData();
                 break;
             case "BreakCardSpot":
                 int countCardSpotsStucked = 0;
@@ -603,7 +540,7 @@ public class PowerUpsManager : MonoBehaviour
                 //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[7]);
 
                 powerUps["JuiceCollect"] = ControlMenu.instance.objectData.FoundJuiceCollectCard;
-                DataManagment.instance.SaveData();
+                SaveManager.SaveData();
                 break;
 
         }

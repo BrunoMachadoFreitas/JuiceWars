@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Game.Sounds.SoundScripts;
 using UnityEngine;
 
 public class Shotgun_Main : MonoBehaviour
@@ -10,7 +11,7 @@ public class Shotgun_Main : MonoBehaviour
     private Animator anim;
     [SerializeField] public Animator animParent;
 
-    float nextFireTime = 0f; // Tempo atÈ o prÛximo disparo
+    float nextFireTime = 0f; // Tempo at√© o pr√≥ximo disparo
     bool reloading = false;
     int bulletCount = 0;
     int maxBulletCount = 3; // Limite de balas por rajada
@@ -61,7 +62,7 @@ public class Shotgun_Main : MonoBehaviour
                 {
                     if (closestMonster.GetComponent<Monster>().isBeingAttacked)
                     {
-                        // Se o monstro mais prÛximo est· sendo atacado, encontrar o prÛximo mais prÛximo
+                        // Se o monstro mais pr√≥ximo est√° sendo atacado, encontrar o pr√≥ximo mais pr√≥ximo
                         closestMonster = GetNextClosestMonster(closestMonster);
                     }
 
@@ -136,13 +137,13 @@ public class Shotgun_Main : MonoBehaviour
             foreach (var spawnPoint in bulletSpawnPoints)
             {
 
-                // Instancia a bala na posiÁ„o do spawnPoint
+                // Instancia a bala na posi√ß√£o do spawnPoint
                 Bullet_Shotgun instanceBullet = Instantiate(Bullet, spawnPoint.position, Quaternion.identity);
 
-                // Define a direÁ„o da bala
+                // Define a dire√ß√£o da bala
                 if (instanceBullet != null)
                 {
-                    instanceBullet.dir = direction; // Normaliza a direÁ„o da bala
+                    instanceBullet.dir = direction; // Normaliza a dire√ß√£o da bala
                     bulletCount++;
                 }
             }

@@ -1,4 +1,5 @@
 using System.Collections;
+using Game.Sounds.SoundScripts;
 using UnityEngine;
 
 public class Whip_Main : MonoBehaviour
@@ -9,7 +10,7 @@ public class Whip_Main : MonoBehaviour
     private Vector3 whipEndPos;
     public float whipLength = 10f; // Comprimento do chicote (10 unidades)
     public float whipSpeed = .7f; // Velocidade de esticamento do chicote
-    public float pauseDuration = .4f; // Duração da pausa entre os movimentos
+    public float pauseDuration = .4f; // DuraÃ§Ã£o da pausa entre os movimentos
     public Transform WhipPosRight;
     public Transform WhipPosLeft;
 
@@ -24,11 +25,11 @@ public class Whip_Main : MonoBehaviour
         lineRenderer.startWidth = 0.1f;
         lineRenderer.endWidth = 0.1f;
 
-        // Inicializa o tamanho e a posição do BoxCollider2D
+        // Inicializa o tamanho e a posiÃ§Ã£o do BoxCollider2D
         boxCollider.size = new Vector2(0f, 0.1f); // Inicialmente colapsado
         boxCollider.offset = Vector2.zero;
 
-        // Começa a corrotina de animação
+        // ComeÃ§a a corrotina de animaÃ§Ã£o
         StartCoroutine(WhipAnimation());
     }
 
@@ -51,12 +52,12 @@ public class Whip_Main : MonoBehaviour
     {
         float elapsedTime = 0f;
 
-        // Determina a direção do chicote baseado na direção do movimento do player
+        // Determina a direÃ§Ã£o do chicote baseado na direÃ§Ã£o do movimento do player
         Vector3 whipDirection = Player_Main.instance.movement.x >= 0 ? Vector3.right : Vector3.left;
 
         while (elapsedTime < whipSpeed)
         {
-            // Atualiza a posição do jogador durante a animação
+            // Atualiza a posiÃ§Ã£o do jogador durante a animaÃ§Ã£o
             whipStartPos = Player_Main.instance.movement.x >= 0 ? WhipPosRight.position : WhipPosLeft.position;
             whipEndPos = whipStartPos + whipDirection * whipLength;
 
@@ -89,12 +90,12 @@ public class Whip_Main : MonoBehaviour
     {
         float elapsedTime = 0f;
 
-        // Determina a direção do chicote baseado na direção do movimento do player
+        // Determina a direÃ§Ã£o do chicote baseado na direÃ§Ã£o do movimento do player
         Vector3 whipDirection = Player_Main.instance.movement.x >= 0 ? Vector3.right : Vector3.left;
 
         while (elapsedTime < whipSpeed)
         {
-            // Atualiza a posição do jogador durante a animação
+            // Atualiza a posiÃ§Ã£o do jogador durante a animaÃ§Ã£o
             whipStartPos = Player_Main.instance.movement.x >= 0 ? WhipPosRight.position : WhipPosLeft.position;
             whipEndPos = whipStartPos + whipDirection * whipLength;
 
@@ -124,15 +125,15 @@ public class Whip_Main : MonoBehaviour
 
     void Update()
     {
-        // Atualiza a posição inicial e final do chicote
+        // Atualiza a posiÃ§Ã£o inicial e final do chicote
         if (Player_Main.instance) { 
             whipStartPos = Player_Main.instance.movement.x >= 0 ? WhipPosRight.position : WhipPosLeft.position;
             whipEndPos = whipStartPos + (Player_Main.instance.movement.x >= 0 ? Vector3.right : Vector3.left) * whipLength;
         
-            // Calcula o vetor de direção do jogador para o inimigo
+            // Calcula o vetor de direÃ§Ã£o do jogador para o inimigo
             Vector2 direction = whipStartPos - transform.position;
             direction.Normalize();
-            // Move o inimigo na direção do jogador com a velocidade especificada
+            // Move o inimigo na direÃ§Ã£o do jogador com a velocidade especificada
             this.gameObject.GetComponent<Rigidbody2D>().MovePosition(this.gameObject.GetComponent<Rigidbody2D>().position + direction * 5f * Time.fixedDeltaTime);
 
             this.transform.position = Player_Main.instance.movement.x >= 0 ? WhipPosRight.position : WhipPosLeft.position;

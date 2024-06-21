@@ -1,7 +1,6 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
+using Game.SaveManager;
+using Game.Sounds.SoundScripts;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -65,8 +64,8 @@ public class ControlMenu : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
-        objectData = DataManagment.instance.LoadData();
-        DataManagment.instance.objectData = objectData;
+        // objectData = SaveManager.instance.LoadData();
+        // SaveManager.instance.objectData = objectData;
     }
     // Start is called before the first frame update
     void Start()
@@ -207,7 +206,7 @@ public class ControlMenu : MonoBehaviour
         
 
 
-        //Carrega a cena pelo índice(ou pelo nome)
+        //Carrega a cena pelo ï¿½ndice(ou pelo nome)
             SceneManager.LoadScene(1, LoadSceneMode.Single);
         //SceneManager.SetActiveScene(sceneJuice);
 
@@ -223,10 +222,10 @@ public class ControlMenu : MonoBehaviour
        
 
     }
-    // Callback que é chamado quando a cena é carregada
+    // Callback que ï¿½ chamado quando a cena ï¿½ carregada
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Verifica se a cena carregada é a que estamos esperando
+        // Verifica se a cena carregada ï¿½ a que estamos esperando
         if (scene.buildIndex == 1)
         {
             // Mover o objeto GameSound para a nova cena
@@ -251,7 +250,7 @@ public class ControlMenu : MonoBehaviour
             SoundManager.instance.GameSoundsInGame[i].volume = AudioVolumeSoundsGeneral;
         }
         objectData.SoundValue = AudioVolumeSoundsGeneral;
-        DataManagment.instance.SaveData();
+        SaveManager.SaveData();
     }
     public void OnChangeValueMusicSlider()
     {
@@ -263,7 +262,7 @@ public class ControlMenu : MonoBehaviour
         SoundManager.instance.MainMusicX.volume = AudioVolumeMusic;
 
         objectData.SoundMusicValue = AudioVolumeMusic;
-        DataManagment.instance.SaveData();
+        SaveManager.SaveData();
     }
 
     public void OnChangeValueCheckCanPlayGameSounds()
@@ -280,7 +279,7 @@ public class ControlMenu : MonoBehaviour
             objectData.CanPlayGameSounds = false;
         }
 
-        DataManagment.instance.SaveData();
+        SaveManager.SaveData();
 
     }
     public void OnChangeValueCheckCanPlayGameMusic()
@@ -300,7 +299,7 @@ public class ControlMenu : MonoBehaviour
             SoundManager.instance.MainMusicX.Stop();
             objectData.CanPlayGameMusic = false;
         }
-        DataManagment.instance.SaveData();
+        SaveManager.SaveData();
     }
     
 }

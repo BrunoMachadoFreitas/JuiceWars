@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Game.Sounds.SoundScripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public enum GameState
@@ -48,7 +49,7 @@ public class GameStateController : MonoBehaviour
         currentGameState = GameState.Playing;
         sceneGame = SceneManager.GetActiveScene();
 
-        // Inscreve o mÈtodo LoadMenuScene no evento OnGameEnded
+        // Inscreve o m√©todo LoadMenuScene no evento OnGameEnded
         OnGameEnded += LoadCanvasEnd;
         OnGamePaused += LoadCanvasGamePaused;
     }
@@ -75,14 +76,14 @@ public class GameStateController : MonoBehaviour
                 break;
         }
 
-        //// Verifica se o bot„o "Pause" foi pressionado
+        //// Verifica se o bot√£o "Pause" foi pressionado
         //if (Input.GetKeyDown("Pause") && currentGameState != GameState.Paused)
         //{
         //    currentGameState = GameState.Paused;
         //}
     }
 
-    // FunÁ„o para carregar a cena "Menu"
+    // Fun√ß√£o para carregar a cena "Menu"
     private void LoadCanvasEnd()
     {
         if (GameObject.Find("CanvasEnd(Clone)") == null)
@@ -122,7 +123,7 @@ public class GameStateController : MonoBehaviour
         ControlMenu.instance.MainMenuX.SetActive(true);
     }
 
-    // FunÁ„o para verificar se uma cena est· carregada
+    // Fun√ß√£o para verificar se uma cena est√° carregada
     private bool IsSceneLoaded(string sceneName)
     {
         // Create a temporary reference to the current scene.

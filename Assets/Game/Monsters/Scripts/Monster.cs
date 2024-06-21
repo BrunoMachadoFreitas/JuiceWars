@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Dynamic;
+using Game.Sounds.SoundScripts;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -47,7 +48,7 @@ public class Monster : MonoBehaviour
     }
     private void ToggleCollider()
     {
-        // Verifica a dist‚ncia entre o jogador e o monstro
+        // Verifica a dist√¢ncia entre o jogador e o monstro
         if (Player_Main.instance) { 
             float distanceToPlayer = Vector2.Distance(this.transform.position, Player_Main.instance.transform.position);
             if (distanceToPlayer < closestDistance)
@@ -73,7 +74,7 @@ public class Monster : MonoBehaviour
     // Chamado quando o player atira uma bala
     public float CriticalChanceCalculation()
     {
-        // Calcula um n˙mero aleatÛrio entre 0 e 100
+        // Calcula um n√∫mero aleat√≥rio entre 0 e 100
         int randomValue = Random.Range(0, 100);
         if (randomValue <= PlayerCriticalChance)
         {
@@ -93,7 +94,7 @@ public class Monster : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             //Player_Main.instance.CurrentLife -= 1;
-            // Inicia a repetiÁ„o para ativar e desativar o collider
+            // Inicia a repeti√ß√£o para ativar e desativar o collider
             InvokeRepeating("ToggleCollider", 2f, 2f);
             collidingPlayer = true;
 
@@ -114,14 +115,14 @@ public class Monster : MonoBehaviour
 
         else if (other.CompareTag("Whip"))
         {
-            // Calcula a direÁ„o de empurr„o
+            // Calcula a dire√ß√£o de empurr√£o
             Vector2 pushDirection = (transform.position - other.transform.position).normalized;
 
-            // Empurra o monstro para tr·s
+            // Empurra o monstro para tr√°s
             Rigidbody2D monsterRigidbody = GetComponent<Rigidbody2D>();
             if (monsterRigidbody != null)
             {
-                float pushForce = 5f; // ForÁa do empurr„o
+                float pushForce = 5f; // For√ßa do empurr√£o
                 monsterRigidbody.AddForce(pushDirection * pushForce, ForceMode2D.Impulse);
             }
         }

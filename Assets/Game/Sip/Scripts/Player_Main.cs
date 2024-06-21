@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Game.Sounds.SoundScripts;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -13,7 +14,7 @@ public class Player_Main : MonoBehaviour
     
 
 
-    // Implementação dos membros da interface
+    // ImplementaÃ§Ã£o dos membros da interface
 
 
     public static Player_Main instance;
@@ -21,15 +22,15 @@ public class Player_Main : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI textMoney;
 
-    // Variáveis para controlar a intensidade e duração do shake
+    // VariÃ¡veis para controlar a intensidade e duraÃ§Ã£o do shake
     public float shakeIntensity = 0.0001f;
     public float shakeDuration = 0.1f;
 
-    // Posição original da câmera
+    // PosiÃ§Ã£o original da cÃ¢mera
     private Vector3 originalPosition;
 
     [SerializeField] public Animator AnimPlayer;
-    Rigidbody2D rb; // Referência ao Rigidbody2D do personagem
+    Rigidbody2D rb; // ReferÃªncia ao Rigidbody2D do personagem
 
     public Vector2 myInput; // Vetor para armazenar o movimento mobile
     public Vector2 movement; // Vetor para armazenar o movimento
@@ -88,10 +89,10 @@ public class Player_Main : MonoBehaviour
     public RectTransform movementButtonRect;
 
 
-    public GameObject juiceHolePrefab; // Referência ao prefab do JuiceHole
+    public GameObject juiceHolePrefab; // ReferÃªncia ao prefab do JuiceHole
     public GameObject currentJuiceHole;
 
-    public GameObject WhipPrefab; // Referência ao prefab do JuiceHole
+    public GameObject WhipPrefab; // ReferÃªncia ao prefab do JuiceHole
     private GameObject currentWhip;
 
     private void Awake()
@@ -104,7 +105,7 @@ public class Player_Main : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        AnimPlayer = GetComponent<Animator>(); // Obtém o componente Rigidbody2D do personagem
+        AnimPlayer = GetComponent<Animator>(); // ObtÃ©m o componente Rigidbody2D do personagem
 
         //CanvasInGamePlayerAux =  Instantiate(CanvasInGamePlayer, new Vector2(), Quaternion.identity);
         MainCameraAux = Instantiate(MainCamera, this.transform.position, Quaternion.identity);
@@ -115,8 +116,8 @@ public class Player_Main : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>(); // Obtém o componente Rigidbody2D do personagem
-        ColliderDamage = GetComponent<BoxCollider2D>(); // Obtém o componente Rigidbody2D do personagem
+        rb = GetComponent<Rigidbody2D>(); // ObtÃ©m o componente Rigidbody2D do personagem
+        ColliderDamage = GetComponent<BoxCollider2D>(); // ObtÃ©m o componente Rigidbody2D do personagem
 
 
         // Inicializa a vida atual com o valor da vida total
@@ -154,7 +155,7 @@ public class Player_Main : MonoBehaviour
     {
         int randomValue = UnityEngine.Random.Range(0, 100);
 
-        // Verifica se o valor aleatório é maior que 50 para aplicar o efeito
+        // Verifica se o valor aleatÃ³rio Ã© maior que 50 para aplicar o efeito
         if (randomValue < Player_Stats.instance.LuckyValue)
         {
             for (int i = 0; i < WaveManager.instance.Monsters.Count; i++)
@@ -177,7 +178,7 @@ public class Player_Main : MonoBehaviour
     {
         Vector2 lastMovement = Vector2.right;
         UsedMobile = false;
-        // Input do jogador nas direções horizontal e vertical
+        // Input do jogador nas direÃ§Ãµes horizontal e vertical
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
 
@@ -188,7 +189,7 @@ public class Player_Main : MonoBehaviour
 
 
 
-        // Aplica a escala de acordo com a última direção de movimento
+        // Aplica a escala de acordo com a Ãºltima direÃ§Ã£o de movimento
         Vector3 localScale = transform.localScale;
         if (movement.x < 0)
         {
@@ -394,7 +395,7 @@ public class Player_Main : MonoBehaviour
                         Player_Stats.instance.CurrentLife -= 2;
                         GameObject floatingTextObject = Instantiate(floatingTextPrefab, PopUpTransform.position, Quaternion.identity);
                         floatingTextObject.transform.SetParent(PopUpTransform);
-                        // Configura o texto do Floating Text com o número do dano infligido
+                        // Configura o texto do Floating Text com o nÃºmero do dano infligido
                         TextMeshPro floatingText = floatingTextObject.GetComponentInChildren<TextMeshPro>();
                         floatingText.color = Color.white;
                         floatingText.text = "OUCH!";
@@ -416,7 +417,7 @@ public class Player_Main : MonoBehaviour
                         Player_Stats.instance.CurrentLife -= 2;
                         GameObject floatingTextObject = Instantiate(floatingTextPrefab, PopUpTransform.position, Quaternion.identity);
                         floatingTextObject.transform.SetParent(PopUpTransform);
-                        // Configura o texto do Floating Text com o número do dano infligido
+                        // Configura o texto do Floating Text com o nÃºmero do dano infligido
                         TextMeshPro floatingText = floatingTextObject.GetComponentInChildren<TextMeshPro>();
                         floatingText.color = Color.white;
                         floatingText.text = "OUCH!";
@@ -436,7 +437,7 @@ public class Player_Main : MonoBehaviour
             {
                 ActiveJuice = true;
                 JuiceShieldChild.SetActive(true);
-                StartCoroutine(DeactivateJuiceShieldAfterDelay(5f)); // Inicia a coroutine para desativar após 5 segundos
+                StartCoroutine(DeactivateJuiceShieldAfterDelay(5f)); // Inicia a coroutine para desativar apÃ³s 5 segundos
 
             }
 
@@ -451,7 +452,7 @@ public class Player_Main : MonoBehaviour
     }
     public float DodgeCalculation()
     {
-        // Calcula um número aleatório entre 0 e 100
+        // Calcula um nÃºmero aleatÃ³rio entre 0 e 100
         int randomValue = UnityEngine.Random.Range(0, 100);
         if (randomValue <= Player_Stats.instance.PlayerDodge)
         {
@@ -476,7 +477,7 @@ public class Player_Main : MonoBehaviour
                 Player_Stats.instance.CurrentLife -= 1f;
                 GameObject floatingTextObject = Instantiate(floatingTextPrefab, PopUpTransform.position, Quaternion.identity);
                 floatingTextObject.transform.SetParent(PopUpTransform);
-                // Configura o texto do Floating Text com o número do dano infligido
+                // Configura o texto do Floating Text com o nÃºmero do dano infligido
                 TextMeshPro floatingText = floatingTextObject.GetComponentInChildren<TextMeshPro>();
                 floatingText.color = Color.white;
                 floatingText.text = "OUCH!";
@@ -496,28 +497,28 @@ public class Player_Main : MonoBehaviour
         {
 
 
-            originalPosition = Camera.main.gameObject.transform.localPosition; // Salva a posição original da câmera
-            InvokeRepeating("DoShake", 0, shakeIntensity); // Começa a chamar a função DoShake repetidamente
-            Invoke("StopShaking", shakeDuration); // Para o shake após a duração especificada
+            originalPosition = Camera.main.gameObject.transform.localPosition; // Salva a posiÃ§Ã£o original da cÃ¢mera
+            InvokeRepeating("DoShake", 0, shakeIntensity); // ComeÃ§a a chamar a funÃ§Ã£o DoShake repetidamente
+            Invoke("StopShaking", shakeDuration); // Para o shake apÃ³s a duraÃ§Ã£o especificada
 
         }
     }
 
-    // Função para realizar o shake
+    // FunÃ§Ã£o para realizar o shake
     private void DoShake()
     {
         float shakeAmountX = UnityEngine.Random.Range(-1f, 1f) * shakeIntensity;
         float shakeAmountY = UnityEngine.Random.Range(-1f, 1f) * shakeIntensity;
 
-        // Aplica o shake à posição da câmera
+        // Aplica o shake Ã  posiÃ§Ã£o da cÃ¢mera
         Camera.main.gameObject.transform.localPosition = originalPosition + new Vector3(shakeAmountX, shakeAmountY, 0);
     }
 
-    // Função para parar o shake
+    // FunÃ§Ã£o para parar o shake
     private void StopShaking()
     {
-        CancelInvoke("DoShake"); // Para de chamar a função DoShake
-        Camera.main.gameObject.transform.localPosition = originalPosition; // Retorna a câmera à sua posição original
+        CancelInvoke("DoShake"); // Para de chamar a funÃ§Ã£o DoShake
+        Camera.main.gameObject.transform.localPosition = originalPosition; // Retorna a cÃ¢mera Ã  sua posiÃ§Ã£o original
     }
 
     public bool CanJuiceHole = false;

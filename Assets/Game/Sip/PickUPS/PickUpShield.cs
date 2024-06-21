@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Game.Sounds.SoundScripts;
 using UnityEngine;
 
 public class PickUpShield : MonoBehaviour
