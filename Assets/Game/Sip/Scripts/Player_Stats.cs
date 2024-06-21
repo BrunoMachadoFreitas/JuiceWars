@@ -79,7 +79,7 @@ public class Player_Stats : MonoBehaviour
     {
         GameStateController.instance.lastGameState = GameStateController.instance.currentGameState;
         GameStateController.instance.currentGameState = GameState.Paused;
-        ControlMenu.instance.MenuSettingsX.SetActive(true);
+        //ControlMenu.instance.MenuSettingsX.SetActive(true);
     }
 
     public void ApplyDamage(Collider2D ToSend)

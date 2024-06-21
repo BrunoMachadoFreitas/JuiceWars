@@ -120,7 +120,7 @@ public class GameStateController : MonoBehaviour
         
         SceneManager.LoadScene(0, LoadSceneMode.Single);
         CanvasEnd.SetActive(false);
-        ControlMenu.instance.MainMenuX.SetActive(true);
+        //ControlMenu.instance.MainMenuX.SetActive(true);
     }
 
     // Função para verificar se uma cena está carregada

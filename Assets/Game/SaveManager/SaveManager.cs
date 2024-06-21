@@ -3,26 +3,26 @@ using UnityEngine;
 
 namespace Game.SaveManager
 {
-    public abstract class SaveManager 
+    public abstract class SaveManager
     {
         static string filePath;
         public static DataInfo objectData;
-        
+
         public static void SaveData()
         {
             string json = JsonUtility.ToJson(objectData);
-            
+
             File.WriteAllText(filePath, json);
         }
 
-        public DataInfo LoadData()
+        public static DataInfo LoadData()
         {
             filePath = Application.persistentDataPath + "/dados.json";
-            
+
             if (File.Exists(filePath))
             {
                 string json = File.ReadAllText(filePath);
-                
+
                 DataInfo data = JsonUtility.FromJson<DataInfo>(json);
                 return data;
             }
@@ -77,6 +77,6 @@ namespace Game.SaveManager
 
         public string imageTequillaCard;
 
-    
+
     }
 }
