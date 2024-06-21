@@ -12,7 +12,7 @@ public class ControlMenu : MonoBehaviour
 
     [SerializeField] Canvas canvasMenu;
     [SerializeField] SettingsPopUp MenuSettings;
-    [SerializeField] GameObject canvasAchievements;
+    
 
 
     [SerializeField] private SoundManager soundManager;
@@ -62,20 +62,8 @@ public class ControlMenu : MonoBehaviour
 
   
 
-    public void HideMainMenuShowSettings()
-    {
-        MenuSettings.gameObject.SetActive(true);
-        canvasMenu.gameObject.SetActive(false);
-        //MenuSettingsX.SetActive(true);
-        //MainMenuX.SetActive(false);
-        SoundManager.instance.PlaySound(12);
-    }
-    public void HideMainMenuShowAchievements()
-    {
-        //MenuAchievementsX.SetActive(true);
-        //MainMenuX.SetActive(false);
-        SoundManager.instance.PlaySound(12);
-    }
+   
+    
     public void HideSettingsMenuShowMainMenu()
     {
         if (GameStateController.instance) { 
@@ -97,27 +85,7 @@ public class ControlMenu : MonoBehaviour
         SoundManager.instance.PlaySound(12);
     }
 
-    public void startGame()
-    {
-        // Registra o callback para quando a cena for carregada
-        //SceneManager.sceneLoaded += OnSceneLoaded;
-        if (SoundManager.instance.MainMusicX.isPlaying)
-        {
-         
-        }
-
-        
-
-
-        //Carrega a cena pelo �ndice(ou pelo nome)
-            SceneManager.LoadScene(1, LoadSceneMode.Single);
-        //SceneManager.SetActiveScene(sceneJuice);
-
-        //MainMenuX.gameObject.SetActive(false);
-        SoundManager.instance.PlaySound(12);
-
-        
-    }
+    
     private IEnumerator WaitSoundEnd()
     {
        
