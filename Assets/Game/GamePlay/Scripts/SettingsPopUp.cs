@@ -25,7 +25,11 @@ public class SettingsPopUp : MonoBehaviour
     public GameObject BackgroundTab1;
     public GameObject BackgroundTab2;
     public GameObject BackgroundTab3;
-
+    public Image TabDisplay;
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +46,12 @@ public class SettingsPopUp : MonoBehaviour
         {
             SoundManager.instance.GameSoundsInGame[i].volume = valueSlider.value;
         }
+        this.gameObject.SetActive(false);
 
+        if(DeviceController.instance.TargetPlatform != TargetPlatform.PC)
+        {
+            TabDisplay.gameObject.SetActive(false);
+        }
     }
     // Update is called once per frame
     void Update()

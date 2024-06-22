@@ -13,6 +13,7 @@ public class Club_Main : MonoBehaviour
     bool reloading = false;
     float moveSpeed = 20f;
     Vector2 targetPosPArent = Vector2.zero;
+    private bool stopMovement = false;
 
     [SerializeField] private GameObject SpriteObjectSword;
     [SerializeField] private Animator SwordAnim;
@@ -31,29 +32,29 @@ public class Club_Main : MonoBehaviour
 
     void Update()
     {
-        if (Player_Main.instance) { 
-            targetPosPArent = aimTransform.position;
-        ReloadTime = Player_Stats.instance.RealoadTime - 3f;
-
-        Vector3 playerPosition = Vector3.zero;
-
-        playerPosition = Player_Main.instance.transform.position;
-
-        float playerRadius = Player_Stats.instance.Range;
-        Vector3 playerWithRadius = playerPosition + new Vector3(playerRadius, playerRadius, 0);
-
-        float closestDistance = playerRadius;
-        if (transform.parent != null)
+        if (Player_Main.instance)
         {
-            if (Player_Main.instance)
+            targetPosPArent = aimTransform.position;
+            ReloadTime = Player_Stats.instance.RealoadTime - 3f;
+
+            Vector3 playerPosition = Player_Main.instance.transform.position;
+
+            float playerRadius = Player_Stats.instance.Range;
+            Vector3 playerWithRadius = playerPosition + new Vector3(playerRadius, playerRadius, 0);
+
+            float closestDistance = playerRadius;
+            if (transform.parent != null)
             {
-                if (WaveManager.instance != null)
+                if (Player_Main.instance)
                 {
-                    if (WaveManager.instance.Monsters.Count > 0)
+                    if (WaveManager.instance != null)
                     {
+                        if (WaveManager.instance.Monsters.Count > 0)
+                        {
                             // Encontrar o monstro mais próximo
                             closestMonster = GetClosestMonster();
-                            if (closestMonster) {
+                            if (closestMonster)
+                            {
                                 if (closestMonster.GetComponent<Monster>().isBeingAttacked)
                                 {
                                     // Se o monstro mais próximo está sendo atacado, encontrar o próximo mais próximo
@@ -62,7 +63,6 @@ public class Club_Main : MonoBehaviour
                             }
                             if (closestMonster != null && !closestMonster.GetComponent<Monster>().isBeingAttacked)
                             {
-
                                 closestMonsterTransform = closestMonster.transform;
                                 Vector2 direction = (closestMonster.transform.position - transform.position).normalized;
                                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -93,12 +93,13 @@ public class Club_Main : MonoBehaviour
                                 closestMonster = null;
                                 closestMonsterTransform = null;
                             }
+                        }
                     }
                 }
             }
         }
     }
-    }
+
     GameObject GetClosestMonster()
     {
         float closestDistance = Player_Stats.instance.Range;
@@ -162,6 +163,7 @@ public class Club_Main : MonoBehaviour
     private void MoveToEnemyAndDamage(Vector3 initialPosition, Vector3 targetPosition)
     {
         reloading = true;
+        stopMovement = false;
         closestMonster.GetComponent<Monster>().isBeingAttacked = true;
         StartCoroutine(ResetIsBeingAttacked(closestMonster.GetComponent<Monster>()));
         StartCoroutine(MoveAndReturn(initialPosition, targetPosition));
@@ -179,6 +181,7 @@ public class Club_Main : MonoBehaviour
         {
             SoundManager.instance.PlaySound(1);
             other.gameObject.SendMessage("ApplyDamage", 8f);
+            stopMovement = true;
         }
     }
 
@@ -187,32 +190,39 @@ public class Club_Main : MonoBehaviour
         float journeyLength = Vector2.Distance(initialPos, targetPos);
         float startTime = Time.time;
 
-        while (Time.time - startTime < 0.4f)
+        // Movendo-se em direção ao inimigo
+        while (Time.time - startTime < 0.4f && !stopMovement)
         {
             float distanceCovered = (Time.time - startTime) * moveSpeed;
             float fractionOfJourney = distanceCovered / journeyLength;
             transform.position = Vector2.Lerp(initialPos, targetPos, fractionOfJourney);
-            if(closestMonster)
-            closestMonster.GetComponent<Monster>().isBeingAttacked = true;
+            if (closestMonster)
+                closestMonster.GetComponent<Monster>().isBeingAttacked = true;
             rb.simulated = true;
             this.transform.parent = null;
             yield return null;
         }
 
+        // Parando movimento ao colidir
+        if (stopMovement)
+        {
+            transform.position = targetPos;
+        }
+
+        // Retornando ao jogador
         startTime = Time.time;
-        Vector2 initialPosition = transform.position;
-        while (Time.time - startTime < 1f)
+        Vector2 currentPos = transform.position;
+        while (Time.time - startTime < 0.4f)
         {
             float distanceCovered = (Time.time - startTime) * moveSpeed;
             float fractionOfJourney = distanceCovered / journeyLength;
-            if(aimTransform)
-            transform.position = Vector2.Lerp(initialPosition, aimTransform.position, fractionOfJourney);
-            if (closestMonster)
-                closestMonster.GetComponent<Monster>().isBeingAttacked = false;
-            rb.simulated = false;
-            this.transform.parent = aimTransform;
+            transform.position = Vector2.Lerp(currentPos, aimTransform.position, fractionOfJourney);
             yield return null;
         }
+
+        transform.position = aimTransform.position;
+        this.transform.parent = aimTransform;
+        rb.simulated = false;
 
         yield return new WaitForSeconds(Player_Stats.instance.VelocityClub);
         reloading = false;

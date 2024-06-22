@@ -134,6 +134,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fafc060b1efc6841965eef5a14a4f33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &351673929 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6340265373139884785, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
+  m_PrefabInstance: {fileID: 2052269280}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &817707329
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,6 +329,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1132722082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132722072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 846857389ed4b0d419cf8b68b02814b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1452455825
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,6 +443,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1570878990, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
+      propertyPath: TabDisplay
+      value: 
+      objectReference: {fileID: 351673929}
     - target: {fileID: 2052269282, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
       propertyPath: MenuSettings
       value: 
@@ -440,6 +467,10 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SettingsPopUp, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 1810073746067161223, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 965434499, guid: 0c4eb190f1c10f345a07824eca9a6000, type: 3}
     - target: {fileID: 1994535535862942082, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
       propertyPath: m_Name
       value: MainMenuCanvas
@@ -528,6 +559,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2226407152165595159, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2226407152165595159, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2226407152165595159, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2796143204317652474, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -539,6 +582,18 @@ PrefabInstance:
     - target: {fileID: 2796143204317652474, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SettingsPopUp, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549953326496986191, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549953326496986191, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549953326496986191, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5898684306663670511, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -552,6 +607,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Game.GamePlay.Scripts.AchievementsMenu, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 6073843423250220795, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073843423250220795, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340265373139884785, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 932169952, guid: 0c4eb190f1c10f345a07824eca9a6000, type: 3}
     - target: {fileID: 6638193528063091178, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -563,6 +630,14 @@ PrefabInstance:
     - target: {fileID: 6638193528063091178, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SettingsPopUp, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7394462136391352934, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1703309630, guid: 0c4eb190f1c10f345a07824eca9a6000, type: 3}
+    - target: {fileID: 7448755879981704430, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7543906598782699929, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
@@ -603,6 +678,14 @@ PrefabInstance:
     - target: {fileID: 8039372769113986962, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SettingsPopUp, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245824418280289405, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245824418280289405, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8310092449517736553, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
@@ -656,7 +739,8 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: HideSettingsMenuShowMainMenu
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6018731137929870700, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
 --- !u!114 &2052269281 stripped
 MonoBehaviour:

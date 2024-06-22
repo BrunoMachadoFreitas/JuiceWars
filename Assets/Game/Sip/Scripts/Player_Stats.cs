@@ -37,6 +37,8 @@ public class Player_Stats : MonoBehaviour
 
     public bool HasWhip = false;
 
+    public List<Card> ListCards = new List<Card>();
+
     // Sound
     public float GeneralVolume = 0.5f;
 
@@ -79,7 +81,7 @@ public class Player_Stats : MonoBehaviour
     {
         GameStateController.instance.lastGameState = GameStateController.instance.currentGameState;
         GameStateController.instance.currentGameState = GameState.Paused;
-        //ControlMenu.instance.MenuSettingsX.SetActive(true);
+        ControlMenu.instance.MenuSettings.gameObject.SetActive(true);
     }
 
     public void ApplyDamage(Collider2D ToSend)

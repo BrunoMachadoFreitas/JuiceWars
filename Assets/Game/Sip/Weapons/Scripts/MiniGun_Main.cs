@@ -158,8 +158,10 @@ public class MiniGun_Main : MonoBehaviour
         Bullet_MiniGun BulletNew = Instantiate(Bullet, new Vector3(muzzle.transform.position.x, muzzle.transform.position.y, 0f), Quaternion.identity);
         if (BulletNew != null)
         {
-            BulletNew.Monster = Monster;
+            Vector3 monsterPosition = Monster.transform.position;
+            BulletNew.SetTarget(monsterPosition);
             BulletNew.damageLvlWeapon = (Player_Stats.instance.Power + lvlUpgrade) / 2;
+            BulletNew.SetDirection((monsterPosition - muzzle.transform.position).normalized);
         }
 
         Monster.GetComponent<Monster>().isBeingAttacked = true;

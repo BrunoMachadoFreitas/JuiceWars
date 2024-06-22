@@ -7,51 +7,52 @@ public class Bullet_MiniGun : MonoBehaviour
 {
     float moveSpeed = 40f;
     Rigidbody2D rb;
-    public Vector2 dir;
-
+    Vector2 direction;
     public float damageLvlWeapon = 0;
 
-    public GameObject Monster;
-    Vector2 direction;
-    
-    // Start is called before the first frame update
+    private Vector3 targetPosition;
+    bool willBeDestroyed = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        // Calcula o vetor de direção do jogador para o inimigo
-        //if (Monster) { 
-        direction = Monster.transform.position - transform.position;
-        direction.Normalize();
-        //}
-        //else
-        //{
-        //    direction = new Vector3(this.transform.position.x, this.transform.position.y) - transform.position;
-        //}
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
-       
-
-
-        rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
+        MoveBullet();
     }
 
-    public void MoveBullet(Vector2 dir)
+    public void SetDirection(Vector2 dir)
     {
-        
+        direction = dir.normalized;
+    }
+
+    public void SetTarget(Vector3 targetPos)
+    {
+        targetPosition = targetPos;
+    }
+
+    private void MoveBullet()
+    {
+        Vector3 relativePos = targetPosition - transform.position;
+        float angle = Mathf.Atan2(relativePos.y, relativePos.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+        rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         // Verifica se o objeto colidido é o Monstro
-        if (other.CompareTag("Monster") )
+        if (other.CompareTag("Monster"))
         {
             Player_Stats.instance.ApplyDamage(other);
-            Destroy(this.gameObject);
+            if (willBeDestroyed == false)
+            {
+                Destroy(this.gameObject, 1f);
+                willBeDestroyed = true;
+            }
         }
 
         // Verifica se o objeto colidido é uma borda

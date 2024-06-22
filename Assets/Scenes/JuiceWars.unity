@@ -393,7 +393,6 @@ MonoBehaviour:
   RoundsManager: {fileID: 1118437550237714956}
   TimerObj: {fileID: 0}
   CanvasInGame: {fileID: 0}
-  deviceCheck: {fileID: 786854448}
   CanvasMobile: {fileID: 1050219619}
   GameStateObject: {fileID: 7802345708386199964, guid: 6b72f07d3dae7bc409a128c13534921f, type: 3}
   player: {fileID: 6060381099345378762, guid: aa35242c603e44a408f25bfbb4fcd205, type: 3}

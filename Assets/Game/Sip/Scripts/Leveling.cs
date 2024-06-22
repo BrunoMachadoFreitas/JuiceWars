@@ -23,7 +23,7 @@ public class Leveling : MonoBehaviour
     [SerializeField] private UnityEngine.UI.Image ExpBar;
     [SerializeField] private TextMeshProUGUI TextExp;
     [SerializeField] private TextMeshProUGUI TextLvl;
-    [SerializeField] private float NextLvlMultiplier = 1.5f;
+    [SerializeField] private float NextLvlMultiplier = .5f;
 
     [SerializeField] private GameObject CanvasPowerUps;
 

@@ -83,6 +83,7 @@ public class CardSpot : MonoBehaviour
                 HasCard = true;
                 CardX.InitializePowerUp(CardType);
                 textDescCard = CardX.textDesc;
+                Player_Stats.instance.ListCards.Add(CardX);
                 break;
 
 
@@ -94,6 +95,7 @@ public class CardSpot : MonoBehaviour
                 HasCard = true;
                 CardX.InitializePowerUp(CardType);
                 textDescCard = CardX.textDesc;
+                Player_Stats.instance.ListCards.Add(CardX);
                 break;
             case CardType.JuiceHole:
                 CardX = Instantiate(Card, this.transform.position, Quaternion.identity);
@@ -114,6 +116,7 @@ public class CardSpot : MonoBehaviour
                 HasCard = true;
                 CardX.InitializePowerUp(CardType);
                 textDescCard = CardX.textDesc;
+                Player_Stats.instance.ListCards.Add(CardX);
                 break;
 
         }

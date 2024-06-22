@@ -19,10 +19,6 @@ public class DeviceController : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
         if (deviceCheck.isTouchInterface)
         {
             TargetPlatform = TargetPlatform.Android;
@@ -32,7 +28,12 @@ public class DeviceController : MonoBehaviour
         {
             TargetPlatform = TargetPlatform.PC;
         }
+    
     }
+    // Start is called before the first frame update
+    void Start()
+    {
+    } 
 
     // Update is called once per frame
     void Update()

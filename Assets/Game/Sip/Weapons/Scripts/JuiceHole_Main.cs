@@ -27,7 +27,7 @@ public class JuiceHole_Main : MonoBehaviour
             Move_Monster monster = other.GetComponent<Move_Monster>();
             if (monster != null)
             {
-                monster.moveSpeed = 0; // Supondo que a classe Monster tenha uma propriedade MoveSpeed
+                monster.moveSpeed = 0; // Supondo que a classe Move_Monster tenha uma propriedade moveSpeed
             }
 
             if (!damageCoroutines.ContainsKey(other.gameObject))
@@ -52,8 +52,8 @@ public class JuiceHole_Main : MonoBehaviour
             Move_Monster monster = other.GetComponent<Move_Monster>();
             if (monster != null)
             {
-                monster.moveSpeed = monster.CurrentMoveSpeed; // Supondo que a classe Monster tenha um método para redefinir a velocidade de movimento
-                monster.transform.rotation = Quaternion.identity; // Supondo que a classe Monster tenha um método para redefinir a velocidade de movimento
+                monster.moveSpeed = monster.CurrentMoveSpeed; // Supondo que a classe Move_Monster tenha um método para redefinir a velocidade de movimento
+                monster.transform.rotation = Quaternion.identity; // Supondo que a classe Move_Monster tenha um método para redefinir a rotação
             }
 
             if (damageCoroutines.ContainsKey(other.gameObject))
@@ -112,16 +112,26 @@ public class JuiceHole_Main : MonoBehaviour
 
     IEnumerator Spaghettify(Transform monsterTransform, bool isEntering)
     {
+        if (monsterTransform == null)
+            yield break;
+
         Vector3 originalScale = monsterTransform.localScale;
         Vector3 targetScale = isEntering ? new Vector3(originalScale.x * 0.5f, originalScale.y * 2f, originalScale.z) : originalScale;
 
         float elapsedTime = 0f;
         while (elapsedTime < spaghettificationTime)
         {
+            if (monsterTransform == null)
+                yield break;
+
             monsterTransform.localScale = Vector3.Lerp(monsterTransform.localScale, targetScale, (elapsedTime / spaghettificationTime));
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        monsterTransform.localScale = targetScale;
+
+        if (monsterTransform != null)
+        {
+            monsterTransform.localScale = targetScale;
+        }
     }
 }

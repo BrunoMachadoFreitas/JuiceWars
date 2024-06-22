@@ -18,14 +18,11 @@ namespace Game.GamePlay.Scripts
 
             }
 
-
-
-
             //Carrega a cena pelo �ndice(ou pelo nome)
             SceneManager.LoadScene(1, LoadSceneMode.Single);
             //SceneManager.SetActiveScene(sceneJuice);
 
-            //MainMenuX.gameObject.SetActive(false);
+            this.gameObject.SetActive(false);
             SoundManager.instance.PlaySound(12);
 
 

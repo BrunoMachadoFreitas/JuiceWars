@@ -12,7 +12,7 @@ public class ControlMenu : MonoBehaviour
     public static ControlMenu instance;
 
     [SerializeField] MainMenu MainMenu;
-    [SerializeField] SettingsPopUp MenuSettings;
+    public SettingsPopUp MenuSettings;
     
 
 
@@ -23,6 +23,9 @@ public class ControlMenu : MonoBehaviour
     
 
     public DataInfo objectData = new DataInfo();
+
+
+    public SettingsPopUp SettingsMenu;
 
 
     private void Awake()
@@ -52,7 +55,6 @@ public class ControlMenu : MonoBehaviour
         {
             //MenuSettingsX.transform.GetChild(1).GetChild(7).gameObject.SetActive(false);
         }
-
      }
 
     // Update is called once per frame

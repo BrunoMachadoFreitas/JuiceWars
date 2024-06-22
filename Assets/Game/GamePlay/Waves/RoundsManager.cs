@@ -34,17 +34,11 @@ public class RoundsManager : MonoBehaviour
 
 
     public delegate void WaveManagerReadyHandler();
-    //public event WaveManagerReadyHandler WaveManagerReady;
 
     
 
     [SerializeField] private GameObject TimerGameObject;
-    //[SerializeField] private GameObject MapController;
-    //[SerializeField] private GameObject MapControllerX;
 
-
-    //[SerializeField] private GameObject Chunck;
-    //[SerializeField] private GameObject ChunckX;
 
 
 
@@ -68,8 +62,6 @@ public class RoundsManager : MonoBehaviour
     {
         instantiateWaveManager();
         
-        //MapControllerX = Instantiate(MapController, new Vector3(-487.442993f, 1.04410005f, 0), Quaternion.identity);
-        //ChunckX = Instantiate(Chunck, new Vector3(-487.442993f, 1.04410005f, 0), Quaternion.identity);
         
         Timer.instance.StartTimer(0f);
     }
@@ -96,11 +88,6 @@ public class RoundsManager : MonoBehaviour
 
         isChoosing = true;
         
-       
-     
-        //newwaveManagerPrefab.SetActive(false); 
-
-
         powerUpsManagerPrefab.gameObject.SetActive(true);
 
         for (int i = 0; i < PowerUpsManager.instance.PowerUpObject.Count; i++)

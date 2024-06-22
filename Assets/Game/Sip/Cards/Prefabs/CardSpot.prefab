@@ -99,6 +99,10 @@ MonoBehaviour:
   HasCard: 0
   Card: {fileID: 8532672425252753638, guid: 76b7f651c3645684aad8667e8b5a41e0, type: 3}
   textDescCard: {fileID: 0}
+  IsCardSpotStucked: 0
+  ImageCardSpotStucked: {fileID: 0}
+  cardPowerModifier: 0
+  txtcardPowerModifier: {fileID: 0}
 --- !u!95 &6284371561148089440
 Animator:
   serializedVersion: 5
