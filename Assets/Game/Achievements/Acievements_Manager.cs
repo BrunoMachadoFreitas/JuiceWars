@@ -24,25 +24,28 @@ public class Acievements_Manager : MonoBehaviour
         List<Sprite> foundItems = new List<Sprite>();
 
         // Verifica quais itens foram encontrados e adiciona à lista
-        if (ControlMenu.instance.objectData.FoundMinigun)
+        if (ControlMenu.instance.objectData.FoundJuiceLife)
         {
-            foundItems.Add(spritesItemsSaved[2]);
+            foundItems.Add(spritesItemsSaved[0]);
         }
 
         if (ControlMenu.instance.objectData.FoundPistol)
         {
             foundItems.Add(spritesItemsSaved[1]);
         }
+        if (ControlMenu.instance.objectData.FoundMinigun)
+        {
+            foundItems.Add(spritesItemsSaved[2]);
+        }
+
+        
 
         if (ControlMenu.instance.objectData.FoundReg)
         {
             foundItems.Add(spritesItemsSaved[3]);
         }
 
-        if (ControlMenu.instance.objectData.FoundJuiceLife)
-        {
-            foundItems.Add(spritesItemsSaved[0]);
-        }
+       
 
         if (ControlMenu.instance.objectData.FoundJuiceClub)
         {
@@ -63,7 +66,20 @@ public class Acievements_Manager : MonoBehaviour
         {
             foundItems.Add(spritesItemsSaved[7]);
         }
+        if (ControlMenu.instance.objectData.FoundJuiceHoleCard)
+        {
+            foundItems.Add(spritesItemsSaved[8]);
+        }
 
+        if (ControlMenu.instance.objectData.FoundBreakCardSpot)
+        {
+            foundItems.Add(spritesItemsSaved[9]);
+        }
+
+        if (ControlMenu.instance.objectData.FoundJuiceCollectCard)
+        {
+            foundItems.Add(spritesItemsSaved[10]);
+        }
         // Define o número de itens por linha e o espaçamento entre os itens
         int itemsPerRow = 3;
         float itemSpacing = 100f; // Ajuste esse valor conforme necessário

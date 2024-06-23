@@ -46,25 +46,18 @@ namespace Game.SaveManager
 
         //Items
         public bool FoundMinigun;
-        public string imageMinigun;
 
         public bool FoundPistol;
-        public string imagePistol;
 
         public bool FoundReg;
-        public string imageReg;
 
         public bool FoundJuiceLife;
-        public string imageJuiceLife;
 
         public bool FoundJuiceClub;
-        public string imageJuiceClub;
 
         public bool FoundBoomerang;
-        public string imageBoomerang;
 
         public bool FoundCardWine;
-        public string imageCardWine;
 
         public bool FoundTequillaCard;
         public bool FoundJuiceHoleCard;
@@ -75,7 +68,6 @@ namespace Game.SaveManager
         public bool CanPlayGameMusic;
 
 
-        public string imageTequillaCard;
 
 
     }

@@ -71,18 +71,10 @@ public class Player_Stats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Pause"))
-        {
-            PauseGame();
-        }
+        
     }
 
-    public void PauseGame()
-    {
-        GameStateController.instance.lastGameState = GameStateController.instance.currentGameState;
-        GameStateController.instance.currentGameState = GameState.Paused;
-        ControlMenu.instance.MenuSettings.gameObject.SetActive(true);
-    }
+   
 
     public void ApplyDamage(Collider2D ToSend)
     {

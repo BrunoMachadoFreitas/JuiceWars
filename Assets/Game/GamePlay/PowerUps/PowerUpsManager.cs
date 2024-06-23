@@ -494,8 +494,8 @@ public class PowerUpsManager : MonoBehaviour
                 ManageCardEffects("RedWineCard");
                 ControlMenu.instance.objectData.FoundCardWine = true;
                 //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[6]);
-                
 
+               
                 powerUps["RedWineCard"] = ControlMenu.instance.objectData.FoundCardWine;
                 SaveManager.SaveData();
                 break;
@@ -504,7 +504,7 @@ public class PowerUpsManager : MonoBehaviour
                 ManageCardEffects("TequillaCard");
                 ControlMenu.instance.objectData.FoundCardWine = true;
                 //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[7]);
-               
+                ControlMenu.instance.objectData.FoundTequillaCard = true;
                 powerUps["TequillaCard"] = ControlMenu.instance.objectData.FoundTequillaCard;
                 SaveManager.SaveData();
                 break;
@@ -528,7 +528,7 @@ public class PowerUpsManager : MonoBehaviour
                         cardSpotList.Add(CardSpotsManager.instance.cardSpots[i]);
                     }
                 }
-
+                ControlMenu.instance.objectData.FoundBreakCardSpot = true;
                 int randomCardSpotIndex = UnityEngine.Random.Range(0, cardSpotList.Count);
                 cardSpotList[randomCardSpotIndex].IsCardSpotStucked = false;
                 cardSpotList[randomCardSpotIndex].ImageCardSpotStucked.SetActive(false);
@@ -540,6 +540,7 @@ public class PowerUpsManager : MonoBehaviour
                 //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[7]);
 
                 powerUps["JuiceCollect"] = ControlMenu.instance.objectData.FoundJuiceCollectCard;
+                ControlMenu.instance.objectData.FoundJuiceCollectCard = true;
                 SaveManager.SaveData();
                 break;
 

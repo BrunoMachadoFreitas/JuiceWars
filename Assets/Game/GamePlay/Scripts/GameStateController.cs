@@ -75,14 +75,22 @@ public class GameStateController : MonoBehaviour
                 }
                 break;
         }
-
+        if (Input.GetButtonDown("Pause"))
+        {
+            PauseGame();
+        }
         //// Verifica se o botão "Pause" foi pressionado
         //if (Input.GetKeyDown("Pause") && currentGameState != GameState.Paused)
         //{
         //    currentGameState = GameState.Paused;
         //}
     }
-
+    public void PauseGame()
+    {
+        lastGameState = currentGameState;
+        currentGameState = GameState.Paused;
+        ControlMenu.instance.MenuSettings.gameObject.SetActive(true);
+    }
     // Função para carregar a cena "Menu"
     private void LoadCanvasEnd()
     {

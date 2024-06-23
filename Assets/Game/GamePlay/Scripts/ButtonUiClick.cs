@@ -136,7 +136,7 @@ public class ButtonUiClick : MonoBehaviour
             if (DeviceController.instance.TargetPlatform == TargetPlatform.Android)
             {
                 CanvasMobile.SetActive(true);
-                CanvasMobile.transform.GetChild(1).GetComponent<Button>().onClick.AddListener(delegate () { Player_Stats.instance.PauseGame(); });
+                CanvasMobile.transform.GetChild(1).GetComponent<Button>().onClick.AddListener(delegate () { GameStateController.instance.PauseGame(); });
                 
             }
             else
