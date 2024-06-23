@@ -202,10 +202,7 @@ public class PowerUpsManager : MonoBehaviour
         PowerUpObject[0].transform.GetChild(2).gameObject.SetActive(false);
         SoundManager.instance.GameSounds[3].Play();
 
-        for(int i = 0; i < 10; i++)
-        {
-            CanvasFlipCoinOffBuy = Instantiate(CanvasFlipCoinOnBuy, Player_Main.instance.transform.GetChild(0).GetChild(27));
-        }
+       
         ResumeGame();
 
     }
@@ -217,10 +214,7 @@ public class PowerUpsManager : MonoBehaviour
         switchPowerups(1);
         SoundManager.instance.GameSounds[3].Play();
         PowerUpObject[1].transform.GetChild(2).gameObject.SetActive(false);
-        for (int i = 0; i < 10; i++)
-        {
-            CanvasFlipCoinOffBuy = Instantiate(CanvasFlipCoinOnBuy, Player_Main.instance.transform.GetChild(0).GetChild(27));
-        }
+       
         ResumeGame();
     }
 
@@ -229,10 +223,7 @@ public class PowerUpsManager : MonoBehaviour
         switchPowerups(2);
         SoundManager.instance.GameSounds[3].Play();
         PowerUpObject[2].transform.GetChild(2).gameObject.SetActive(false);
-        for (int i = 0; i < 10; i++)
-        {
-            CanvasFlipCoinOffBuy = Instantiate(CanvasFlipCoinOnBuy, Player_Main.instance.transform.GetChild(0).GetChild(27));
-        }
+        
         ResumeGame();
     }
 
@@ -241,10 +232,7 @@ public class PowerUpsManager : MonoBehaviour
         switchPowerups(3);
         SoundManager.instance.GameSounds[3].Play();
         PowerUpObject[3].transform.GetChild(2).gameObject.SetActive(false);
-        for (int i = 0; i < 10; i++)
-        {
-            CanvasFlipCoinOffBuy = Instantiate(CanvasFlipCoinOnBuy, Player_Main.instance.transform.GetChild(0).GetChild(27));
-        }
+        
         ResumeGame();
     }
 

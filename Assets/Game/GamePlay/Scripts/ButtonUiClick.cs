@@ -98,9 +98,9 @@ public class ButtonUiClick : MonoBehaviour
         
             if (CharacterId == 0)
             {
-            playerInstance = Instantiate(player, new Vector3(-488.380005f, 0.0943644196f, 0f), Quaternion.identity);
-            GameStateObjectAux = Instantiate(GameStateObject, new Vector3(-488.380005f, 0.0943644196f, 0f), Quaternion.identity);
-            playerInstance.AnimPlayer.runtimeAnimatorController = PlayerAnims[CharacterId];
+                playerInstance = Instantiate(player, new Vector3(-488.380005f, 0.0943644196f, 0f), Quaternion.identity);
+                GameStateObjectAux = Instantiate(GameStateObject, new Vector3(-488.380005f, 0.0943644196f, 0f), Quaternion.identity);
+                playerInstance.AnimPlayer.runtimeAnimatorController = PlayerAnims[CharacterId];
 
             }
             playerInstance.gameObject.SetActive(true);

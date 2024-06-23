@@ -36,8 +36,8 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     void Start()
     {
-        canvas = transform.parent.parent.GetComponent<Canvas>();
-        BackGround = transform.parent.parent.GetChild(10).GetComponent<UnityEngine.UI.Image>();
+        canvas = transform.parent.parent.parent.GetComponent<Canvas>();
+        BackGround = transform.parent.parent.parent.GetChild(10).GetComponent<UnityEngine.UI.Image>();
         initialPosition = transform.position;
 
         canvasRectTransform = canvas.GetComponent<RectTransform>();
@@ -63,10 +63,13 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 break;
 
             case CardType.Tequilla:
-                Player_Stats.instance.CurrentSpeed = 10 + AssociatedCardSpot.cardPowerModifier;
-                Player_Stats.instance.moveSpeed = 10 + AssociatedCardSpot.cardPowerModifier;
+                float velocityCalculator = Player_Stats.instance.CurrentSpeed * 0.1f;
+                Player_Stats.instance.CurrentSpeed += (velocityCalculator) + AssociatedCardSpot.cardPowerModifier;
+                Player_Stats.instance.moveSpeed += (velocityCalculator) + AssociatedCardSpot.cardPowerModifier;
+
                 thisCardType = CardType.Tequilla;
                 Player_Stats.instance.CardsActive.Add(thisCardType);
+
                 textDesc.text = "More Velocity";
                 break;
 
@@ -103,10 +106,11 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 break;
 
             case CardType.Tequilla:
-                Player_Stats.instance.CurrentSpeed = 8;
-                Player_Stats.instance.moveSpeed = 8;
-                Player_Stats.instance.CurrentSpeed = 10 + AssociatedCardSpot.cardPowerModifier; ;
-                Player_Stats.instance.moveSpeed = 10 + AssociatedCardSpot.cardPowerModifier;
+                Player_Stats.instance.CurrentSpeed = 7;
+                Player_Stats.instance.moveSpeed = 7;
+                float velocityCalculator = Player_Stats.instance.CurrentSpeed * 0.1f;
+                Player_Stats.instance.CurrentSpeed += (velocityCalculator) + AssociatedCardSpot.cardPowerModifier;
+                Player_Stats.instance.moveSpeed += (velocityCalculator) + AssociatedCardSpot.cardPowerModifier;
                 thisCardType = CardType.Tequilla;
                 textDesc.text = "More Velocity";
                 break;

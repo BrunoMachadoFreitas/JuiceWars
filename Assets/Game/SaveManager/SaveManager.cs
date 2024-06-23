@@ -39,6 +39,7 @@ namespace Game.SaveManager
         public int nivel;
         public float pontos;
         public string nome;
+        public int Money;
 
         public float SoundValue;
         public float SoundMusicValue;

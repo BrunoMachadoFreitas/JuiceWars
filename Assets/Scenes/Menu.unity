@@ -167,7 +167,18 @@ MonoBehaviour:
   itemsPerRow: 3
   itemSpacing: 100
   startOffset: {x: 0, y: 0}
-  spritesItemsSaved: []
+  spritesItemsSaved:
+  - {fileID: 21300000, guid: ab0b102854090974a93c245336e87ff1, type: 3}
+  - {fileID: 21300000, guid: ea3b3190a00bda54d946e46dc19b237b, type: 3}
+  - {fileID: 21300000, guid: 60c32267453e7154d999d3306b6a1ef1, type: 3}
+  - {fileID: 21300000, guid: 663c7327067dbb4419661fd25869ccc1, type: 3}
+  - {fileID: 21300000, guid: 69d337a6f50910543af61f353a9cf3f7, type: 3}
+  - {fileID: 21300000, guid: df0f9f0c66494264b9dde2595dc88f34, type: 3}
+  - {fileID: 21300000, guid: 38bc5130ce3b2404088c61eea4a568d1, type: 3}
+  - {fileID: 21300000, guid: d1dc5ee595d490143ac5a27f4328a222, type: 3}
+  - {fileID: 21300000, guid: 51cd9602a84e6e04882acdb9f1f376e9, type: 3}
+  - {fileID: 21300000, guid: c5d9cac71aaff39468c642311dfba6b5, type: 3}
+  - {fileID: 21300000, guid: b7d2cbfbc67812c4c9c03626c9d03b52, type: 3}
 --- !u!1 &817707329
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +233,7 @@ GameObject:
   m_Component:
   - component: {fileID: 840884986}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: PosAchievements
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -235,9 +246,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 840884985}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -559, y: 245, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -243, y: 211, z: 0.0000038146973}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2052269282}
@@ -775,7 +786,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7087975102237792047, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7394462136391352934, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
       propertyPath: m_Sprite
@@ -783,7 +794,7 @@ PrefabInstance:
       objectReference: {fileID: 1703309630, guid: 0c4eb190f1c10f345a07824eca9a6000, type: 3}
     - target: {fileID: 7448755879981704430, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7543906598782699929, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
@@ -863,7 +874,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8614685975881757608, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8831110781971274815, guid: 86e9af1560e14364a8ba47753756067c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

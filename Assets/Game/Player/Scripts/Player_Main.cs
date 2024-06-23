@@ -75,7 +75,8 @@ public class Player_Main : MonoBehaviour
 
     //Shield
     private bool ActiveJuice = false;
-    [SerializeField] private GameObject JuiceShieldChild;
+    [SerializeField] private GameObject JuiceShield;
+    [HideInInspector] private GameObject JuiceShieldToUse;
     [SerializeField] private GameObject Whip;
     [SerializeField] private GameObject ImageLowLife;
 
@@ -131,7 +132,9 @@ public class Player_Main : MonoBehaviour
             currentWhip.transform.position = new Vector3(0, 0);
             currentWhip.transform.SetParent(this.transform, false);
         }
-
+        JuiceShieldToUse = Instantiate(JuiceShield, this.transform.position, Quaternion.identity);
+        JuiceShieldToUse.transform.SetParent(this.transform);
+        JuiceShieldToUse.SetActive(false);
         //Instantiate(Whip, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
     }
    
@@ -387,7 +390,7 @@ public class Player_Main : MonoBehaviour
             if (!ActiveJuice)
             {
 
-                if (collision.gameObject.CompareTag("Monster"))
+                if (collision.gameObject.CompareTag("Monster") || collision.gameObject.CompareTag("MonsterBrainBullet"))
                 {
                     float dodgeValue = DodgeCalculation();
                     if (dodgeValue > Player_Stats.instance.PlayerDodge)
@@ -397,7 +400,7 @@ public class Player_Main : MonoBehaviour
                         floatingTextObject.transform.SetParent(PopUpTransform);
                         // Configura o texto do Floating Text com o número do dano infligido
                         TextMeshPro floatingText = floatingTextObject.GetComponentInChildren<TextMeshPro>();
-                        floatingText.color = Color.white;
+                        floatingText.color = Color.red;
                         floatingText.text = "OUCH!";
                         if (Player_Stats.instance.CurrentLife <= 0f)
                         {
@@ -407,36 +410,19 @@ public class Player_Main : MonoBehaviour
                     }
                     else
                     {
-                    }
-                }
-                if (collision.gameObject.CompareTag("MonsterBrainBullet"))
-                {
-                    float dodgeValue = DodgeCalculation();
-                    if (dodgeValue > Player_Stats.instance.PlayerDodge)
-                    {
-                        Player_Stats.instance.CurrentLife -= 2;
                         GameObject floatingTextObject = Instantiate(floatingTextPrefab, PopUpTransform.position, Quaternion.identity);
                         floatingTextObject.transform.SetParent(PopUpTransform);
-                        // Configura o texto do Floating Text com o número do dano infligido
                         TextMeshPro floatingText = floatingTextObject.GetComponentInChildren<TextMeshPro>();
-                        floatingText.color = Color.white;
-                        floatingText.text = "OUCH!";
-                        if (Player_Stats.instance.CurrentLife <= 0f)
-                        {
-                            GameStateController.instance.currentGameState = GameState.Ended;
-                        }
-                        ShakeCamera();
-                    }
-                    else
-                    {
+                        floatingText.color = Color.green;
+                        floatingText.text = "DODGE!";
                     }
                 }
-
+               
             }
             if (collision.gameObject.CompareTag("JuiceShield"))
             {
                 ActiveJuice = true;
-                JuiceShieldChild.SetActive(true);
+                JuiceShieldToUse.SetActive(true);
                 StartCoroutine(DeactivateJuiceShieldAfterDelay(5f)); // Inicia a coroutine para desativar após 5 segundos
 
             }
@@ -448,7 +434,7 @@ public class Player_Main : MonoBehaviour
     {
         yield return new WaitForSeconds(delay); // Espera pelo tempo especificado
         ActiveJuice = false; // Desativa o Juice
-        JuiceShieldChild.SetActive(false); // Desativa o objeto
+        JuiceShieldToUse.SetActive(false); // Desativa o objeto
     }
     public float DodgeCalculation()
     {

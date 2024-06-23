@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Game.SaveManager;
 using Game.Sounds.SoundScripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -107,6 +108,9 @@ public class GameStateController : MonoBehaviour
             {
                 SoundManager.instance.GameSoundsInGame[8].Stop();
             }
+
+            ControlMenu.instance.objectData.Money += Player_Main.instance.Money;
+            SaveManager.SaveData();
             hasTriggeredEndEvent = true;
         }
        
