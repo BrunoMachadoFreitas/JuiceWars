@@ -33,7 +33,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     void Start()
     {
         canvas = transform.parent.parent.parent.GetComponent<Canvas>();
-        BackGround = transform.parent.parent.parent.GetChild(10).GetComponent<UnityEngine.UI.Image>();
+        BackGround = transform.parent.parent.GetComponent<UnityEngine.UI.Image>();
         initialPosition = transform.position;
 
         canvasRectTransform = canvas.GetComponent<RectTransform>();
@@ -150,12 +150,9 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         AssociatedCardSpot.HasCard = false;
         switch (thisCardType)
         {
-
             case CardType.RedWine:
                 Player_Stats.instance.ExpToGive = 2;
                 break;
-
-
             case CardType.Tequilla:
                 Player_Stats.instance.CurrentSpeed = 7;
                 Player_Stats.instance.moveSpeed = 7;

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Whip_Weapon : MonoBehaviour
 {
-    public float minWidth = 1.0f; // Largura mínima da sprite
+    public float minWidth = 0f; // Largura mínima da sprite
     public float maxWidth = 2.0f; // Largura máxima da sprite
     public float stretchSpeed = 2.0f; // Velocidade do esticamento e retração
     public float intervalDuration = 1.0f; // Intervalo entre esticamentos

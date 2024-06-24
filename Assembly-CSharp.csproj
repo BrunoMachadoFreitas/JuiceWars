@@ -130,6 +130,7 @@
     <Compile Include="Assets\Game\UI\Menu\ControlMenu.cs" />
     <Compile Include="Assets\Game\Player\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Game\Player\Scripts\DashPlayer.cs" />
+    <Compile Include="Assets\PlayerStatsOnUiPowerUps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

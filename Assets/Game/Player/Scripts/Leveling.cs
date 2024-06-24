@@ -23,7 +23,7 @@ public class Leveling : MonoBehaviour
     [SerializeField] private UnityEngine.UI.Image ExpBar;
     [SerializeField] private TextMeshProUGUI TextExp;
     [SerializeField] private TextMeshProUGUI TextLvl;
-    [SerializeField] private float NextLvlMultiplier = .1f;
+    [SerializeField] private float NextLvlMultiplier = .01f;
 
     [SerializeField] private GameObject CanvasPowerUps;
 
@@ -75,7 +75,7 @@ public class Leveling : MonoBehaviour
         
         currentLvl++;
         NextLevel++;
-        NextLvlExpNeed *= NextLvlMultiplier;
+        NextLvlExpNeed += 10;
         currentExp = 0;
         
 

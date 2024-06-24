@@ -135,11 +135,11 @@ public class PowerUpsManager : MonoBehaviour
     }
     public void Rerool()
     {
-        resetEveryThing();
+        
         if (Player_Main.instance.Money >= 0)
         {
             CanVerify = false;
-
+            WhatToBuy.Clear();
             for (int i = 0; i < PowerUpObject.Count; i++)
             {
                 RandomizePowerUpsForButtons(i);
@@ -155,6 +155,8 @@ public class PowerUpsManager : MonoBehaviour
         {
             if(Leveling.instance.currentLvl % 5 != 0) { 
                 int randomPowerUp = UnityEngine.Random.Range(0, powerUps.Count);
+                UnityEngine.Debug.LogError(randomPowerUp);
+                PowerUpObject[i].SetActive(true);
                 PowerUpObject[i].GetComponentInChildren<Button>().image.sprite = ImagesForButtons[randomPowerUp];
                 PowerUpObject[i].GetComponentInChildren<Button>().gameObject.GetComponentInChildren<TextMeshProUGUI>().text = Descriptions[randomPowerUp];
                 PowerUpObject[i].GetComponentInChildren<Image>().transform.GetChild(1).gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "0";
@@ -169,6 +171,7 @@ public class PowerUpsManager : MonoBehaviour
             else
             {
                 int randomPowerUp = UnityEngine.Random.Range(0, powerUpsCards.Count);
+                PowerUpObject[i].SetActive(true);
                 PowerUpObject[i].GetComponentInChildren<Button>().image.sprite = ImagesForButtonsCards[randomPowerUp];
                 PowerUpObject[i].GetComponentInChildren<Button>().gameObject.GetComponentInChildren<TextMeshProUGUI>().text = DescriptionsCards[randomPowerUp];
                 PowerUpObject[i].GetComponentInChildren<Image>().transform.GetChild(1).gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "0";
@@ -188,14 +191,22 @@ public class PowerUpsManager : MonoBehaviour
     }
 
 
-    public void resetEveryThing()
+    public void resetEveryThing(int i)
+    {
+        //WhatToBuy.Clear();
+        
+        PowerUpObject[i].GetComponentInChildren<Button>().image.sprite = null;
+        PowerUpObject[i].GetComponentInChildren<Button>().gameObject.GetComponentInChildren<TextMeshProUGUI>().text = null;
+        PowerUpObject[i].GetComponentInChildren<Image>().transform.GetChild(1).gameObject.GetComponentInChildren<TextMeshProUGUI>().text = null;
+        
+    }
+    public void resetEveryThingResume()
     {
         WhatToBuy.Clear();
-        for (int i = 0; i < PowerUpObject.Count; i++)
-        {
-            PowerUpObject[i].GetComponentInChildren<Button>().image.sprite = null;
-            PowerUpObject[i].GetComponentInChildren<Button>().gameObject.GetComponentInChildren<TextMeshProUGUI>().text = null;
-            PowerUpObject[i].GetComponentInChildren<Image>().transform.GetChild(1).gameObject.GetComponentInChildren<TextMeshProUGUI>().text = null;
+        for(int i = 0; i < PowerUpObject.Count; i++) { 
+        PowerUpObject[i].GetComponentInChildren<Button>().image.sprite = null;
+        PowerUpObject[i].GetComponentInChildren<Button>().gameObject.GetComponentInChildren<TextMeshProUGUI>().text = null;
+        PowerUpObject[i].GetComponentInChildren<Image>().transform.GetChild(1).gameObject.GetComponentInChildren<TextMeshProUGUI>().text = null;
         }
     }
     private void IncreaseLife()
@@ -230,11 +241,11 @@ public class PowerUpsManager : MonoBehaviour
     public void BuyBtn1()
     {
         switchPowerups(0);
-        PowerUpObject[0].transform.GetChild(2).gameObject.SetActive(false);
+        //PowerUpObject[0].transform.GetChild(2).gameObject.SetActive(false);
+        PowerUpObject[0].SetActive(false);
         SoundManager.instance.GameSounds[3].Play();
 
-        resetEveryThing();
-        ResumeGame();
+        resetEveryThing(0);
 
     }
 
@@ -244,27 +255,27 @@ public class PowerUpsManager : MonoBehaviour
     {
         switchPowerups(1);
         SoundManager.instance.GameSounds[3].Play();
-        PowerUpObject[1].transform.GetChild(2).gameObject.SetActive(false);
-        resetEveryThing();
-        ResumeGame();
+        //PowerUpObject[1].transform.GetChild(2).gameObject.SetActive(false);
+        PowerUpObject[1].SetActive(false);
+        resetEveryThing(1);
     }
 
     public void BuyBtn3()
     {
         switchPowerups(2);
         SoundManager.instance.GameSounds[3].Play();
-        PowerUpObject[2].transform.GetChild(2).gameObject.SetActive(false);
-        resetEveryThing();
-        ResumeGame();
+        //PowerUpObject[2].transform.GetChild(2).gameObject.SetActive(false);
+        PowerUpObject[2].SetActive(false);
+        resetEveryThing(2);
     }
 
     public void BuyBtn4()
     {
         switchPowerups(3);
         SoundManager.instance.GameSounds[3].Play();
-        PowerUpObject[3].transform.GetChild(2).gameObject.SetActive(false);
-        resetEveryThing();
-        ResumeGame();
+        //PowerUpObject[3].transform.GetChild(2).gameObject.SetActive(false);
+        PowerUpObject[3].SetActive(false);
+        resetEveryThing(3);
     }
 
     public void ResumeGame()
@@ -278,7 +289,7 @@ public class PowerUpsManager : MonoBehaviour
 
 
 
-        PowerUpsManager.instance.resetEveryThing();
+        PowerUpsManager.instance.resetEveryThingResume();
         GameStateController.instance.currentGameState = GameState.Playing;
 
         if (DeviceController.instance.TargetPlatform == TargetPlatform.Android || DeviceController.instance.TargetPlatform == TargetPlatform.IOS)
