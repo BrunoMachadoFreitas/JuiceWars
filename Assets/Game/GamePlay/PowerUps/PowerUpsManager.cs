@@ -15,16 +15,28 @@ public class PowerUpsManager : MonoBehaviour
 {
 
     public static PowerUpsManager instance;
+
+
     public Dictionary<string, bool> powerUps = new Dictionary<string, bool>();
+    public Dictionary<string, bool> powerUpsCards = new Dictionary<string, bool>();
 
     public int valueRerool = 3;
 
 
     [SerializeField] private GameObject hideCanvasChoose;
-    public List<GameObject> PowerUpObject; // Lista que vai guardar o objeto pai que tem 1 botao 1 imagem 1 text para descri��o 1 text para pre�o
+    public List<GameObject> PowerUpObject; // Lista que vai guardar o objeto pai que tem 1 botao 1 imagem 1 text para descri��o 1 text para pre�o **BOTOES PARA CLICAR PARA ESCOLHER UM POWERUP**
+
+
     public List<Sprite> ImagesForButtons; // Lista que vai guardar o objeto pai que tem 1 botao 1 imagem 1 text para descri��o 1 text para pre�o
+
+    public List<Sprite> ImagesForButtonsCards; // Lista que vai guardar o objeto pai que tem 1 botao 1 imagem 1 text para descri��o 1 text para pre�o
+
+
+
     [SerializeField] List<string> Prices; // Lista que vai guardar o objeto pai que tem 1 botao 1 imagem 1 text para descri��o 1 text para pre�o
+    [SerializeField] List<string> PricesCards; // Lista que vai guardar o objeto pai que tem 1 botao 1 imagem 1 text para descri��o 1 text para pre�o
     [SerializeField] List<string> Descriptions; // Lista que vai guardar o objeto pai que tem 1 botao 1 imagem 1 text para descri��o 1 text para pre�o
+    [SerializeField] List<string> DescriptionsCards; // Lista que vai guardar o objeto pai que tem 1 botao 1 imagem 1 text para descri��o 1 text para pre�o
 
     [SerializeField] List<string> WhatToBuy = new List<string>();
     public List<string> ListToSave = new List<string>();
@@ -60,11 +72,14 @@ public class PowerUpsManager : MonoBehaviour
         powerUps.Add("JuiceReg", ControlMenu.instance.objectData.FoundReg);
         powerUps.Add("JuiceClub", ControlMenu.instance.objectData.FoundJuiceClub);
         powerUps.Add("Boomerang", ControlMenu.instance.objectData.FoundBoomerang);
-        powerUps.Add("CardWine", ControlMenu.instance.objectData.FoundCardWine);
-        powerUps.Add("TequillaCard", ControlMenu.instance.objectData.FoundTequillaCard);
-        powerUps.Add("JuiceHole", ControlMenu.instance.objectData.FoundJuiceHoleCard);
         powerUps.Add("BreakCardSpot", ControlMenu.instance.objectData.FoundBreakCardSpot);
-        powerUps.Add("JuiceCollect", ControlMenu.instance.objectData.FoundBreakCardSpot);
+
+        powerUpsCards.Add("JuiceCollect", ControlMenu.instance.objectData.FoundBreakCardSpot);
+        powerUpsCards.Add("JuiceHole", ControlMenu.instance.objectData.FoundJuiceHoleCard);
+        powerUpsCards.Add("TequillaCard", ControlMenu.instance.objectData.FoundTequillaCard);
+        powerUpsCards.Add("CardWine", ControlMenu.instance.objectData.FoundCardWine);
+
+
     }
     void Start()
     {
@@ -138,17 +153,33 @@ public class PowerUpsManager : MonoBehaviour
     {
         try
         {
-            int randomPowerUp = UnityEngine.Random.Range(0, powerUps.Count);
-            PowerUpObject[i].GetComponentInChildren<Button>().image.sprite = ImagesForButtons[randomPowerUp];
-            PowerUpObject[i].GetComponentInChildren<Button>().gameObject.GetComponentInChildren<TextMeshProUGUI>().text = Descriptions[randomPowerUp];
-            PowerUpObject[i].GetComponentInChildren<Image>().transform.GetChild(1).gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "0";
+            if(Leveling.instance.currentLvl % 5 != 0) { 
+                int randomPowerUp = UnityEngine.Random.Range(0, powerUps.Count);
+                PowerUpObject[i].GetComponentInChildren<Button>().image.sprite = ImagesForButtons[randomPowerUp];
+                PowerUpObject[i].GetComponentInChildren<Button>().gameObject.GetComponentInChildren<TextMeshProUGUI>().text = Descriptions[randomPowerUp];
+                PowerUpObject[i].GetComponentInChildren<Image>().transform.GetChild(1).gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "0";
 
-            WhatToBuy.Add(powerUps.ElementAt(randomPowerUp).Key);
-            if (powerUps.ElementAt(randomPowerUp).Value == false)
-            {
-                PowerUpObject[i].transform.GetChild(2).gameObject.SetActive(true);
+                WhatToBuy.Add(powerUps.ElementAt(randomPowerUp).Key);
+                if (powerUps.ElementAt(randomPowerUp).Value == false)
+                {
+                    PowerUpObject[i].transform.GetChild(2).gameObject.SetActive(true);
+                }
+                CanVerify = true;
             }
-            CanVerify = true;
+            else
+            {
+                int randomPowerUp = UnityEngine.Random.Range(0, powerUpsCards.Count);
+                PowerUpObject[i].GetComponentInChildren<Button>().image.sprite = ImagesForButtonsCards[randomPowerUp];
+                PowerUpObject[i].GetComponentInChildren<Button>().gameObject.GetComponentInChildren<TextMeshProUGUI>().text = DescriptionsCards[randomPowerUp];
+                PowerUpObject[i].GetComponentInChildren<Image>().transform.GetChild(1).gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "0";
+
+                WhatToBuy.Add(powerUpsCards.ElementAt(randomPowerUp).Key);
+                if (powerUpsCards.ElementAt(randomPowerUp).Value == false)
+                {
+                    PowerUpObject[i].transform.GetChild(2).gameObject.SetActive(true);
+                }
+                CanVerify = true;
+            }
         }
         catch (Exception ex)
         {
@@ -202,7 +233,7 @@ public class PowerUpsManager : MonoBehaviour
         PowerUpObject[0].transform.GetChild(2).gameObject.SetActive(false);
         SoundManager.instance.GameSounds[3].Play();
 
-       
+        resetEveryThing();
         ResumeGame();
 
     }
@@ -214,7 +245,7 @@ public class PowerUpsManager : MonoBehaviour
         switchPowerups(1);
         SoundManager.instance.GameSounds[3].Play();
         PowerUpObject[1].transform.GetChild(2).gameObject.SetActive(false);
-       
+        resetEveryThing();
         ResumeGame();
     }
 
@@ -223,7 +254,7 @@ public class PowerUpsManager : MonoBehaviour
         switchPowerups(2);
         SoundManager.instance.GameSounds[3].Play();
         PowerUpObject[2].transform.GetChild(2).gameObject.SetActive(false);
-        
+        resetEveryThing();
         ResumeGame();
     }
 
@@ -232,7 +263,7 @@ public class PowerUpsManager : MonoBehaviour
         switchPowerups(3);
         SoundManager.instance.GameSounds[3].Play();
         PowerUpObject[3].transform.GetChild(2).gameObject.SetActive(false);
-        
+        resetEveryThing();
         ResumeGame();
     }
 

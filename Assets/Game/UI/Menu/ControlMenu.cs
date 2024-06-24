@@ -72,6 +72,7 @@ public class ControlMenu : MonoBehaviour
         if (GameStateController.instance) { 
             if(GameStateController.instance.lastGameState == GameState.Playing)
             {
+                Player_Main.instance.transform.GetChild(0).gameObject.SetActive(true);
                 MenuSettings.gameObject.SetActive(false);
                 GameStateController.instance.lastGameState = GameState.Paused;
                 GameStateController.instance.currentGameState = GameState.Playing;

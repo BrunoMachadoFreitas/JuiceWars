@@ -74,3 +74,5 @@ MonoBehaviour:
   MoobMultiplier: 1
   alreadyExists: 0
   spawnArea: {x: 75, y: 75}
+  minSpawnDistance: 15
+  maxSpawnDistance: 25

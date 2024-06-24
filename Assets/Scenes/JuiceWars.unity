@@ -3928,7 +3928,7 @@ PrefabInstance:
       objectReference: {fileID: 1438724375}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: Prices.Array.size
-      value: 11
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: CanvasFlipCoinOnBuy
@@ -3955,20 +3955,40 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
+      propertyPath: PricesCards.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: Descriptions.Array.size
-      value: 11
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
+      propertyPath: PricesCards.Array.data[0]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
+      propertyPath: PricesCards.Array.data[1]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
+      propertyPath: PricesCards.Array.data[2]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
+      propertyPath: PricesCards.Array.data[3]
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: Descriptions.Array.data[6]
-      value: Gain  10% more Exp!
+      value: Broke the chain of a card spot
       objectReference: {fileID: 0}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: Descriptions.Array.data[7]
-      value: Gain  10% speed boost!
+      value: Broke the chain of a card spot
       objectReference: {fileID: 0}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: Descriptions.Array.data[8]
-      value: Create black holes
+      value: Broke the chain of a card spot
       objectReference: {fileID: 0}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: Descriptions.Array.data[9]
@@ -3979,8 +3999,12 @@ PrefabInstance:
       value: Don't run anymore to collect
       objectReference: {fileID: 0}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
+      propertyPath: Descriptions.Array.data[11]
+      value: Don't run anymore to collect
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: ImagesForButtons.Array.size
-      value: 11
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: PowerUpObject.Array.data[0]
@@ -3999,25 +4023,65 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1438724376}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
+      propertyPath: DescriptionsCards.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: ImagesForButtons.Array.data[6]
       value: 
-      objectReference: {fileID: 21300000, guid: 38bc5130ce3b2404088c61eea4a568d1, type: 3}
+      objectReference: {fileID: 21300000, guid: c5d9cac71aaff39468c642311dfba6b5, type: 3}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: ImagesForButtons.Array.data[7]
       value: 
-      objectReference: {fileID: 21300000, guid: d1dc5ee595d490143ac5a27f4328a222, type: 3}
+      objectReference: {fileID: 21300000, guid: c5d9cac71aaff39468c642311dfba6b5, type: 3}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: ImagesForButtons.Array.data[8]
       value: 
-      objectReference: {fileID: 21300000, guid: 51cd9602a84e6e04882acdb9f1f376e9, type: 3}
+      objectReference: {fileID: 21300000, guid: c5d9cac71aaff39468c642311dfba6b5, type: 3}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: ImagesForButtons.Array.data[9]
       value: 
       objectReference: {fileID: 21300000, guid: c5d9cac71aaff39468c642311dfba6b5, type: 3}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
+      propertyPath: DescriptionsCards.Array.data[0]
+      value: Don't run anymore to collect
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
+      propertyPath: DescriptionsCards.Array.data[1]
+      value: Create black holes
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
+      propertyPath: DescriptionsCards.Array.data[2]
+      value: Gain  10% speed boost!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
+      propertyPath: DescriptionsCards.Array.data[3]
+      value: Gain  10% more Exp!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: ImagesForButtons.Array.data[10]
       value: 
       objectReference: {fileID: 21300000, guid: b7d2cbfbc67812c4c9c03626c9d03b52, type: 3}
+    - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
+      propertyPath: ImagesForButtonsCards.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
+      propertyPath: ImagesForButtonsCards.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: b7d2cbfbc67812c4c9c03626c9d03b52, type: 3}
+    - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
+      propertyPath: ImagesForButtonsCards.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 51cd9602a84e6e04882acdb9f1f376e9, type: 3}
+    - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
+      propertyPath: ImagesForButtonsCards.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: d1dc5ee595d490143ac5a27f4328a222, type: 3}
+    - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
+      propertyPath: ImagesForButtonsCards.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 38bc5130ce3b2404088c61eea4a568d1, type: 3}
     - target: {fileID: 5260209740749482451, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: m_Name
       value: PowerUpManager

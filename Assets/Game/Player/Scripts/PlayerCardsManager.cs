@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerCardsManager : MonoBehaviour
 {
     public static PlayerCardsManager instance;
+    private Coroutine juiceHoleCoroutine;
 
     private void Awake()
     {
@@ -17,23 +18,27 @@ public class PlayerCardsManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    // Start is called before the first frame update
+
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
-    }
 
+    }
 
     public void StartJuiceHoleCoroutine()
     {
         StartCoroutine(JuiceHoleCoroutine());
     }
+
+    public void StopJuiceHoleCoroutine()
+    {
+        StopCoroutine(JuiceHoleCoroutine());
+    }
+
     public IEnumerator JuiceHoleCoroutine()
     {
         float minDistance = 10.0f; // Distância mínima do player

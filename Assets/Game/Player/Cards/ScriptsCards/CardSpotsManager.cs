@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CardSpotsManager : MonoBehaviour
 {
     public static CardSpotsManager instance;
     public List<CardSpot> cardSpots;
     public string CardType;
+    public Image ImageDelete;
     private void Awake()
     {
         if (instance == null)

@@ -5,8 +5,6 @@ using UnityEngine;
 public class JuiceHole_Main : MonoBehaviour
 {
     public float pullForce = 1f; // Força com a qual os inimigos serão puxados
-    public float damagePerSecond = 1f; // Dano por segundo causado aos inimigos
-    public float duration = 5f; // Duração do efeito
     public float orbitSpeed = .2f; // Velocidade da órbita em torno do buraco negro
     public float spaghettificationTime = 1f; // Tempo para espaguetificação
 
@@ -24,7 +22,7 @@ public class JuiceHole_Main : MonoBehaviour
         if (other.CompareTag("Monster"))
         {
             objectsInRange.Add(other.gameObject);
-            Move_Monster monster = other.GetComponent<Move_Monster>();
+            Monster monster = other.GetComponent<Monster>();
             if (monster != null)
             {
                 monster.moveSpeed = 0; // Supondo que a classe Move_Monster tenha uma propriedade moveSpeed
@@ -49,7 +47,7 @@ public class JuiceHole_Main : MonoBehaviour
         if (other.CompareTag("Monster"))
         {
             objectsInRange.Remove(other.gameObject);
-            Move_Monster monster = other.GetComponent<Move_Monster>();
+            Monster monster = other.GetComponent<Monster>();
             if (monster != null)
             {
                 monster.moveSpeed = monster.CurrentMoveSpeed; // Supondo que a classe Move_Monster tenha um método para redefinir a velocidade de movimento
@@ -99,14 +97,14 @@ public class JuiceHole_Main : MonoBehaviour
         Monster monster = monsterObject.GetComponent<Monster>();
         while (monster != null)
         {
-            monster.TakeDamageMonsterBlackHole(damagePerSecond);
+            monster.TakeDamageMonsterBlackHole(Player_Stats.instance.damagePerSecondJuiceHole);
             yield return new WaitForSeconds(1f);
         }
     }
 
     IEnumerator BuracoNegroEffect()
     {
-        yield return new WaitForSeconds(duration);
+        yield return new WaitForSeconds(Player_Stats.instance.JuiceHoleDuration);
         Destroy(gameObject);
     }
 

@@ -26,6 +26,8 @@ public class Player_Stats : MonoBehaviour
     public float spawnRate = 1f;
     public float LuckyValue = 10f;
     public float MagnetismFactor = 5f;
+    public float JuiceHoleDuration = 5f;
+    public float damagePerSecondJuiceHole = 1f;
     
     public bool HasLuck = false;
    

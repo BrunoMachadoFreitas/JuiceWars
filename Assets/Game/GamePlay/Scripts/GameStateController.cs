@@ -90,6 +90,7 @@ public class GameStateController : MonoBehaviour
     {
         lastGameState = currentGameState;
         currentGameState = GameState.Paused;
+        GameObject.Find("CanvasItemsAndExp").SetActive(false);
         ControlMenu.instance.MenuSettings.gameObject.SetActive(true);
     }
     // Função para carregar a cena "Menu"

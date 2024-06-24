@@ -23,7 +23,7 @@ public class CardSpot : MonoBehaviour
     public bool HasCard;
 
     [SerializeField] private Card Card;
-    private Card CardX;
+    public Card CardX;
 
     [SerializeField] private TextMeshProUGUI textDescCard;
 
@@ -33,6 +33,9 @@ public class CardSpot : MonoBehaviour
 
     public float cardPowerModifier;
     [SerializeField] private TextMeshProUGUI txtcardPowerModifier;
+
+
+    
 
 
 
@@ -77,7 +80,7 @@ public class CardSpot : MonoBehaviour
                 CardX = Instantiate(Card, this.transform.position, Quaternion.identity);
 
                 CardX.transform.SetParent(this.transform);
-                CardX.transform.GetChild(1).GetComponent<Image>().sprite = PowerUpsManager.instance.ImagesForButtons[6];
+                CardX.transform.GetChild(1).GetComponent<Image>().sprite = PowerUpsManager.instance.ImagesForButtonsCards[3];
                 CardX.transform.localScale = new Vector3(1f, 1f, 0f);
                 CardX.AssociatedCardSpot = this;
                 HasCard = true;
@@ -90,7 +93,7 @@ public class CardSpot : MonoBehaviour
             case CardType.Tequilla:
                 CardX = Instantiate(Card, this.transform.position, Quaternion.identity);
                 CardX.transform.SetParent(this.transform);
-                CardX.transform.GetChild(1).GetComponent<Image>().sprite = PowerUpsManager.instance.ImagesForButtons[7];
+                CardX.transform.GetChild(1).GetComponent<Image>().sprite = PowerUpsManager.instance.ImagesForButtonsCards[2];
                 CardX.AssociatedCardSpot = this;
                 HasCard = true;
                 CardX.InitializePowerUp(CardType);
@@ -101,7 +104,7 @@ public class CardSpot : MonoBehaviour
                 CardX = Instantiate(Card, this.transform.position, Quaternion.identity);
                 CardX.gameObject.SetActive(true);
                 CardX.transform.SetParent(this.transform);
-                CardX.transform.GetChild(1).GetComponent<Image>().sprite = PowerUpsManager.instance.ImagesForButtons[8];
+                CardX.transform.GetChild(1).GetComponent<Image>().sprite = PowerUpsManager.instance.ImagesForButtonsCards[1];
                 CardX.AssociatedCardSpot = this;
                 HasCard = true;
                 CardX.InitializePowerUp(CardType);
@@ -111,7 +114,7 @@ public class CardSpot : MonoBehaviour
                 CardX = Instantiate(Card, this.transform.position, Quaternion.identity);
                 CardX.gameObject.SetActive(true);
                 CardX.transform.SetParent(this.transform);
-                CardX.transform.GetChild(1).GetComponent<Image>().sprite = PowerUpsManager.instance.ImagesForButtons[10];
+                CardX.transform.GetChild(1).GetComponent<Image>().sprite = PowerUpsManager.instance.ImagesForButtonsCards[0];
                 CardX.AssociatedCardSpot = this;
                 HasCard = true;
                 CardX.InitializePowerUp(CardType);
@@ -121,6 +124,8 @@ public class CardSpot : MonoBehaviour
 
         }
     }
+
+   
     public void ShowText()
     {
         if (countRotates == 0)

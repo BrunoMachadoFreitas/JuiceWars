@@ -66,7 +66,7 @@ public class CurvedMovement : MonoBehaviour
         Rigidbody2D monsterRb = monster.GetComponent<Rigidbody2D>();
         if (monsterRb != null)
         {
-            monster.GetComponent<Move_Monster>().moveSpeed = 0;
+            monster.GetComponent<Monster>().moveSpeed = 0;
             // Aplica uma força contrária na direção horizontal ao monstro
             Vector2 knockbackDirection = horizontalDirection.normalized;
             monsterRb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);

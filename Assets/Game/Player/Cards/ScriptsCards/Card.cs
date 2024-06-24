@@ -30,10 +30,6 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     private float clickTime = 0f;
     private Coroutine hideTextCoroutine;
 
-
-
-    
-
     void Start()
     {
         canvas = transform.parent.parent.parent.GetComponent<Canvas>();
@@ -76,6 +72,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
             case CardType.JuiceHole:
                 thisCardType = CardType.JuiceHole;
                 Player_Stats.instance.CardsActive.Add(thisCardType);
+                Player_Stats.instance.JuiceHoleDuration += AssociatedCardSpot.cardPowerModifier;
                 Player_Main.instance.CanJuiceHole = true;
                 textDesc.text = "Spawns a mini black hole at a time";
                 PlayerCardsManager.instance.StartJuiceHoleCoroutine();
@@ -86,7 +83,6 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 Player_Stats.instance.CardsActive.Add(thisCardType);
                 Player_Stats.instance.MagnetismFactor += 5 + AssociatedCardSpot.cardPowerModifier;
                 textDesc.text = "More magnetism";
-                PlayerCardsManager.instance.StartJuiceHoleCoroutine();
                 break;
         }
     }
@@ -119,9 +115,10 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 thisCardType = CardType.JuiceHole;
                 Player_Stats.instance.CardsActive.Add(thisCardType);
                 textDesc.text = "Spawns a mini black hole at a time";
-
+                Player_Stats.instance.JuiceHoleDuration += AssociatedCardSpot.cardPowerModifier;
+                Player_Stats.instance.damagePerSecondJuiceHole += AssociatedCardSpot.cardPowerModifier;
                 PlayerCardsManager.instance.StartJuiceHoleCoroutine();
-
+                Player_Main.instance.CanJuiceHole = true;
                 break;
 
             case CardType.JuiceCollect:
@@ -129,14 +126,14 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 Player_Stats.instance.CardsActive.Add(thisCardType);
                 Player_Stats.instance.MagnetismFactor += 5 + AssociatedCardSpot.cardPowerModifier;
                 textDesc.text = "More magnetism";
-                PlayerCardsManager.instance.StartJuiceHoleCoroutine();
                 break;
         }
     }
-   
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         isDragging = true;
+        CardSpotsManager.instance.ImageDelete.gameObject.SetActive(true);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -147,15 +144,43 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         Vector3 newPosition = canvas.transform.TransformPoint(position);
         cardRectTransform.position = newPosition;
     }
+    public void DeletedCard()
+    {
+        Player_Stats.instance.CardsActive.Remove(thisCardType);
+        AssociatedCardSpot.HasCard = false;
+        switch (thisCardType)
+        {
 
+            case CardType.RedWine:
+                Player_Stats.instance.ExpToGive = 2;
+                break;
+
+
+            case CardType.Tequilla:
+                Player_Stats.instance.CurrentSpeed = 7;
+                Player_Stats.instance.moveSpeed = 7;
+                break;
+            case CardType.JuiceHole:
+                Player_Main.instance.CanJuiceHole = false;
+                break;
+            case CardType.JuiceCollect:
+                Player_Stats.instance.MagnetismFactor -= 5 + AssociatedCardSpot.cardPowerModifier;
+                PlayerCardsManager.instance.StopJuiceHoleCoroutine();
+                break;
+
+        }
+    }
     public void OnEndDrag(PointerEventData eventData)
     {
         isDragging = false;
 
-        if (!IsWithinBackground())
+        if (IsOverDeleteArea())
         {
-            //this.transform.position = this.transform.parent.position;
-            // Move the cards to their new parents smoothly
+            DeletedCard();
+            Destroy(this.gameObject);
+        }
+        else if (!IsWithinBackground())
+        {
             StartCoroutine(MoveToPosition(this.transform, this.transform.parent.position, 0.5f));
         }
         else
@@ -169,6 +194,8 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 initialPosition = cardRectTransform.position;  // Update the initial position after moving
             }
         }
+
+        CardSpotsManager.instance.ImageDelete.gameObject.SetActive(false);
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -202,6 +229,14 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         return backgroundRectTransform.rect.Contains(localPoint);
     }
 
+    private bool IsOverDeleteArea()
+    {
+        RectTransform deleteRectTransform = CardSpotsManager.instance.ImageDelete.GetComponent<RectTransform>();
+        Vector2 localPoint;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(deleteRectTransform, Input.mousePosition, canvas.worldCamera, out localPoint);
+        return deleteRectTransform.rect.Contains(localPoint);
+    }
+
     private bool MoveToCardSpot()
     {
         foreach (CardSpot spot in backgroundScript.cardSpots)
@@ -209,34 +244,26 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
             RectTransform spotRectTransform = spot.GetComponent<RectTransform>();
             if (RectTransformUtility.RectangleContainsScreenPoint(spotRectTransform, Input.mousePosition, canvas.worldCamera))
             {
-
                 if (spot.transform.childCount > 0)
                 {
-                    // If the spot already has a card, swap positions
                     Card otherCard = spot.transform.GetChild(0).GetComponent<Card>();
 
-                    // Store the original parents
                     Transform originalParent = this.transform.parent;
                     Transform otherCardParent = otherCard.transform.parent;
 
-                    // Move the cards to their new parents smoothly
                     StartCoroutine(MoveToPosition(this.transform, otherCardParent.position, 0.5f));
                     StartCoroutine(MoveToPosition(otherCard.transform, originalParent.position, 0.5f));
 
-                    // Swap the parents after the move
                     this.transform.SetParent(otherCardParent);
                     otherCard.transform.SetParent(originalParent);
 
-                    // Update associated spots
                     CardSpot originalSpot = this.AssociatedCardSpot;
                     this.AssociatedCardSpot = otherCard.AssociatedCardSpot;
                     otherCard.AssociatedCardSpot = originalSpot;
 
-                    // Update the child references in the CardSpots
                     this.AssociatedCardSpot.UpdateChild();
                     otherCard.AssociatedCardSpot.UpdateChild();
 
-                    // Update initial positions
                     this.UpdateInitialPosition();
                     otherCard.UpdateInitialPosition();
                     initialPosition = otherCardParent.transform.position;
@@ -246,14 +273,12 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 {
                     if (!spot.IsCardSpotStucked)
                     {
-                        // Move to the empty spot smoothly
                         StartCoroutine(MoveToPosition(this.transform, spot.transform.position, 0.5f));
                         this.AssociatedCardSpot.HasCard = false;
                         this.transform.SetParent(spot.transform);
 
                         this.AssociatedCardSpot = spot;
 
-                        // Update the child reference
                         spot.UpdateChild();
                         spot.HasCard = true;
                         initialPosition = spot.transform.position;
@@ -261,7 +286,6 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                     }
                     else
                     {
-                        // Move to the empty spot smoothly
                         StartCoroutine(MoveToPosition(this.transform, this.transform.parent.position, 0.5f));
                         this.transform.position = this.transform.parent.position;
                         initialPosition = this.transform.parent.position;

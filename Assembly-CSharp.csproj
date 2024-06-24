@@ -85,7 +85,6 @@
     <Compile Include="Assets\Game\Map\Scripts\ChunkOptimizer.cs" />
     <Compile Include="Assets\Game\Map\Scripts\ChunkTrigger.cs" />
     <Compile Include="Assets\Game\Monsters\Scripts\BrainBullet_Main.cs" />
-    <Compile Include="Assets\Game\Monsters\Scripts\Move_Monster.cs" />
     <Compile Include="Assets\Game\GamePlay\PowerUps\PowerUpsManager.cs" />
     <Compile Include="Assets\Game\Player\Cards\Prefabs\CardS\CardVisual.cs" />
     <Compile Include="Assets\Game\Player\Weapons\Scripts\Sword_Main.cs" />
