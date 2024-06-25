@@ -54,7 +54,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 Player_Stats.instance.ExpToGive += ExpCalculatorFinal;
 
                 thisCardType = CardType.RedWine;
-                Player_Stats.instance.CardsActive.Add(thisCardType);
+                Player_Stats.instance.CardsActive.Add(this);
                 textDesc.text = "More Exp";
                 break;
 
@@ -64,14 +64,14 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 Player_Stats.instance.moveSpeed += (velocityCalculator) + AssociatedCardSpot.cardPowerModifier;
 
                 thisCardType = CardType.Tequilla;
-                Player_Stats.instance.CardsActive.Add(thisCardType);
+                Player_Stats.instance.CardsActive.Add(this);
 
                 textDesc.text = "More Velocity";
                 break;
 
             case CardType.JuiceHole:
                 thisCardType = CardType.JuiceHole;
-                Player_Stats.instance.CardsActive.Add(thisCardType);
+                Player_Stats.instance.CardsActive.Add(this);
                 Player_Stats.instance.JuiceHoleDuration += AssociatedCardSpot.cardPowerModifier;
                 Player_Main.instance.CanJuiceHole = true;
                 textDesc.text = "Spawns a mini black hole at a time";
@@ -80,10 +80,33 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
             case CardType.JuiceCollect:
                 thisCardType = CardType.JuiceCollect;
-                Player_Stats.instance.CardsActive.Add(thisCardType);
+                Player_Stats.instance.CardsActive.Add(this);
                 Player_Stats.instance.MagnetismFactor += 5 + AssociatedCardSpot.cardPowerModifier;
                 textDesc.text = "More magnetism";
                 break;
+
+            case CardType.GreenTea:
+                thisCardType = CardType.GreenTea;
+                Player_Stats.instance.CardsActive.Add(this);
+                Player_Stats.instance.GreenTeaRegneration += AssociatedCardSpot.cardPowerModifier;
+                Player_Main.instance.CanGreenTea = true;
+                textDesc.text = "Regenerates hp over time";
+                PlayerCardsManager.instance.StartGreenTeaCoroutine();
+                break;
+
+            case CardType.CoffeeCard:
+                thisCardType = CardType.CoffeeCard;
+                Player_Stats.instance.CardsActive.Add(this);
+                Player_Stats.instance.Power += AssociatedCardSpot.cardPowerModifier;
+                textDesc.text = "Increases base power stat";
+                break;
+            case CardType.TonicOfThePhoenixCard:
+                thisCardType = CardType.TonicOfThePhoenixCard;
+                Player_Stats.instance.CardsActive.Add(this);
+                Player_Stats.instance.TonicOfThePhoenixActivated = true;
+                textDesc.text = "You don't die the next time, card it's destroyed";
+                break;
+                
         }
     }
 
@@ -98,7 +121,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 float ExpCalculatorFinal = (ExpCalculator * Player_Stats.instance.ExpToGive) + AssociatedCardSpot.cardPowerModifier;
                 Player_Stats.instance.ExpToGive += ExpCalculatorFinal;
                 thisCardType = CardType.RedWine;
-                textDesc.text = "More Exp";
+                //textDesc.text = "More Exp";
                 break;
 
             case CardType.Tequilla:
@@ -108,24 +131,43 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 Player_Stats.instance.CurrentSpeed += (velocityCalculator) + AssociatedCardSpot.cardPowerModifier;
                 Player_Stats.instance.moveSpeed += (velocityCalculator) + AssociatedCardSpot.cardPowerModifier;
                 thisCardType = CardType.Tequilla;
-                textDesc.text = "More Velocity";
+                //textDesc.text = "More Velocity";
                 break;
 
             case CardType.JuiceHole:
                 thisCardType = CardType.JuiceHole;
-                Player_Stats.instance.CardsActive.Add(thisCardType);
-                textDesc.text = "Spawns a mini black hole at a time";
-                Player_Stats.instance.JuiceHoleDuration += AssociatedCardSpot.cardPowerModifier;
-                Player_Stats.instance.damagePerSecondJuiceHole += AssociatedCardSpot.cardPowerModifier;
+                //textDesc.text = "Spawns a mini black hole at a time";
+                Player_Stats.instance.JuiceHoleDuration -= AssociatedCardSpot.cardPowerModifier;
+                Player_Stats.instance.damagePerSecondJuiceHole -= AssociatedCardSpot.cardPowerModifier;
                 PlayerCardsManager.instance.StartJuiceHoleCoroutine();
                 Player_Main.instance.CanJuiceHole = true;
                 break;
 
             case CardType.JuiceCollect:
                 thisCardType = CardType.JuiceCollect;
-                Player_Stats.instance.CardsActive.Add(thisCardType);
                 Player_Stats.instance.MagnetismFactor += 5 + AssociatedCardSpot.cardPowerModifier;
-                textDesc.text = "More magnetism";
+                //textDesc.text = "More magnetism";
+                break;
+
+            case CardType.GreenTea:
+                thisCardType = CardType.GreenTea;
+                Player_Stats.instance.GreenTeaRegneration += AssociatedCardSpot.cardPowerModifier;
+                Player_Main.instance.CanGreenTea = true;
+                PlayerCardsManager.instance.StartGreenTeaCoroutine();
+                break;
+
+            case CardType.CoffeeCard:
+                thisCardType = CardType.CoffeeCard;
+                Player_Stats.instance.CardsActive.Add(this);
+                Player_Stats.instance.Power -= AssociatedCardSpot.cardPowerModifier;
+                //textDesc.text = "Increases base power stat";
+                break;
+
+            case CardType.TonicOfThePhoenixCard:
+                thisCardType = CardType.TonicOfThePhoenixCard;
+                Player_Stats.instance.CardsActive.Add(this);
+                Player_Stats.instance.TonicOfThePhoenixActivated = true;
+                //textDesc.text = "You don't die the next time, card it's destroyed";
                 break;
         }
     }
@@ -146,7 +188,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     }
     public void DeletedCard()
     {
-        Player_Stats.instance.CardsActive.Remove(thisCardType);
+        Player_Stats.instance.CardsActive.Remove(this);
         AssociatedCardSpot.HasCard = false;
         switch (thisCardType)
         {
@@ -165,7 +207,16 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 PlayerCardsManager.instance.StopJuiceHoleCoroutine();
                 break;
 
+            case CardType.CoffeeCard:
+                Player_Stats.instance.Power -= AssociatedCardSpot.cardPowerModifier;
+                //textDesc.text = "Increases base power stat";
+                break;
+            case CardType.TonicOfThePhoenixCard:
+                thisCardType = CardType.TonicOfThePhoenixCard;
+                Player_Stats.instance.TonicOfThePhoenixActivated = false;
+                break;
         }
+        Destroy(this.gameObject);
     }
     public void OnEndDrag(PointerEventData eventData)
     {
@@ -174,7 +225,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         if (IsOverDeleteArea())
         {
             DeletedCard();
-            Destroy(this.gameObject);
+            
         }
         else if (!IsWithinBackground())
         {

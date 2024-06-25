@@ -122,6 +122,42 @@ public class CardSpot : MonoBehaviour
                 Player_Stats.instance.ListCards.Add(CardX);
                 break;
 
+            case CardType.GreenTea:
+                CardX = Instantiate(Card, this.transform.position, Quaternion.identity);
+                CardX.gameObject.SetActive(true);
+                CardX.transform.SetParent(this.transform);
+                CardX.transform.GetChild(1).GetComponent<Image>().sprite = PowerUpsManager.instance.ImagesForButtonsCards[4];
+                CardX.AssociatedCardSpot = this;
+                HasCard = true;
+                CardX.InitializePowerUp(CardType);
+                textDescCard = CardX.textDesc;
+                Player_Stats.instance.ListCards.Add(CardX);
+                break;
+
+            case CardType.CoffeeCard:
+                CardX = Instantiate(Card, this.transform.position, Quaternion.identity);
+                CardX.gameObject.SetActive(true);
+                CardX.transform.SetParent(this.transform);
+                CardX.transform.GetChild(1).GetComponent<Image>().sprite = PowerUpsManager.instance.ImagesForButtonsCards[5];
+                CardX.AssociatedCardSpot = this;
+                HasCard = true;
+                CardX.InitializePowerUp(CardType);
+                textDescCard = CardX.textDesc;
+                Player_Stats.instance.ListCards.Add(CardX);
+                break;
+
+            case CardType.TonicOfThePhoenixCard:
+                CardX = Instantiate(Card, this.transform.position, Quaternion.identity);
+                CardX.gameObject.SetActive(true);
+                CardX.transform.SetParent(this.transform);
+                CardX.transform.GetChild(1).GetComponent<Image>().sprite = PowerUpsManager.instance.ImagesForButtonsCards[6];
+                CardX.AssociatedCardSpot = this;
+                HasCard = true;
+                CardX.InitializePowerUp(CardType);
+                textDescCard = CardX.textDesc;
+                Player_Stats.instance.ListCards.Add(CardX);
+                break;
+                
         }
     }
 

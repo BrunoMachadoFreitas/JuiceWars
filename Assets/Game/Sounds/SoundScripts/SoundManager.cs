@@ -55,15 +55,16 @@ namespace Game.Sounds.SoundScripts
                 var AudioSource = Instantiate(GameSounds[i]);
                 GameSoundsInGame.Add(AudioSource);
                 GameSounds[i].volume = 1f;
+                GameSoundsInGame[i].volume = ControlMenu.instance.objectData.SoundValue;
             }
-            if (ControlMenu.instance)
-            {
-                ChangeVolume(ControlMenu.instance.objectData.SoundValue);
-            }
-            else
-            {
-                ChangeVolume(.3f);
-            }
+            //if (ControlMenu.instance)
+            //{
+            //    ChangeVolume(ControlMenu.instance.objectData.SoundValue);
+            //}
+            //else
+            //{
+            //    ChangeVolume(.3f);
+            //}
         
         }
         

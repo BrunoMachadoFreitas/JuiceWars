@@ -9,6 +9,9 @@ public class PlayerStatsOnUiPowerUps : MonoBehaviour
     [SerializeField] TextMeshProUGUI txtLife;
     [SerializeField] TextMeshProUGUI txtCurrentLife;
     [SerializeField] TextMeshProUGUI txtSpeed;
+    [SerializeField] TextMeshProUGUI txtPower;
+    [SerializeField] TextMeshProUGUI txtLucky;
+    [SerializeField] TextMeshProUGUI txtMoney;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,5 +24,8 @@ public class PlayerStatsOnUiPowerUps : MonoBehaviour
         txtLife.text = Player_Stats.instance.Life.ToString();
         txtCurrentLife.text = Player_Stats.instance.CurrentLife.ToString();
         txtSpeed.text = Player_Stats.instance.CurrentSpeed.ToString();
+        txtPower.text = Player_Stats.instance.Power.ToString();
+        txtLucky.text = Player_Stats.instance.LuckyValue.ToString();
+        txtMoney.text = Player_Main.instance.Money.ToString();
     }
 }

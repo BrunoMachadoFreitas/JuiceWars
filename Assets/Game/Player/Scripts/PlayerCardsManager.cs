@@ -28,7 +28,25 @@ public class PlayerCardsManager : MonoBehaviour
     {
 
     }
+    
+    public void StartGreenTeaCoroutine()
+    {
+        StartCoroutine(GreenTeaCoroutine());
+    }
+    public IEnumerator GreenTeaCoroutine()
+    {
+        while (Player_Main.instance.CanGreenTea)
+        {
+            Player_Stats.instance.CurrentLife += Player_Stats.instance.GreenTeaRegneration;
 
+            yield return new WaitForSeconds(5f);
+        }
+    }
+
+    public void StopGreenTeaCoroutine()
+    {
+        StopCoroutine(GreenTeaCoroutine());
+    }
     public void StartJuiceHoleCoroutine()
     {
         StartCoroutine(JuiceHoleCoroutine());

@@ -62,8 +62,11 @@ namespace Game.SaveManager
 
         public bool FoundTequillaCard;
         public bool FoundJuiceHoleCard;
+        public bool FoundGreenTeaCard;
+        public bool FoundCoffeeCard;
         public bool FoundBreakCardSpot;
         public bool FoundJuiceCollectCard;
+        public bool FoundTonicOfThePhoenixCard;
 
         public bool CanPlayGameSounds;
         public bool CanPlayGameMusic;

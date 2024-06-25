@@ -395,7 +395,9 @@ public class Player_Main : MonoBehaviour
                     float dodgeValue = DodgeCalculation();
                     if (dodgeValue > Player_Stats.instance.PlayerDodge)
                     {
-                        Player_Stats.instance.CurrentLife -= 2;
+                        //CHANGE THE VALUE "2" TO A VARIABLE THAT REPRESENTS THE MONSTER DAMAGE
+                        float armorCalculator = 2 * Player_Stats.instance.PlayerArmor; 
+                        Player_Stats.instance.CurrentLife -= (2 - armorCalculator);
                         GameObject floatingTextObject = Instantiate(floatingTextPrefab, PopUpTransform.position, Quaternion.identity);
                         floatingTextObject.transform.SetParent(PopUpTransform);
                         // Configura o texto do Floating Text com o número do dano infligido
@@ -404,7 +406,25 @@ public class Player_Main : MonoBehaviour
                         floatingText.text = "OUCH!";
                         if (Player_Stats.instance.CurrentLife <= 0f)
                         {
-                            GameStateController.instance.currentGameState = GameState.Ended;
+                            if (!Player_Stats.instance.TonicOfThePhoenixActivated)
+                            {
+                                GameStateController.instance.currentGameState = GameState.Ended;
+                            }
+                            else
+                            {
+                                Player_Stats.instance.CurrentLife = Player_Stats.instance.Life / 2;
+
+                                
+
+                                for(int i = 0; i < Player_Stats.instance.CardsActive.Count; i++)
+                                {
+                                    if (Player_Stats.instance.CardsActive[i].thisCardType == CardType.TonicOfThePhoenixCard)
+                                    {
+                                        Player_Stats.instance.CardsActive[i].DeletedCard();
+                                    }
+                                }
+                            }
+                            
                         }
                         ShakeCamera();
                     }
@@ -508,6 +528,7 @@ public class Player_Main : MonoBehaviour
     }
 
     public bool CanJuiceHole = false;
+    public bool CanGreenTea = false;
 
    
 }

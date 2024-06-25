@@ -38,7 +38,8 @@ public class PowerUpsManager : MonoBehaviour
     [SerializeField] List<string> Descriptions; // Lista que vai guardar o objeto pai que tem 1 botao 1 imagem 1 text para descri��o 1 text para pre�o
     [SerializeField] List<string> DescriptionsCards; // Lista que vai guardar o objeto pai que tem 1 botao 1 imagem 1 text para descri��o 1 text para pre�o
 
-    [SerializeField] List<string> WhatToBuy = new List<string>();
+    [SerializeField] List<string> WhatToBuy = new List<string>(); // Lista que guarda os itens para comprar depois de serem selecionados no randomizepowerups
+    [SerializeField] List<string> PricesWhatToBuy = new List<string>(); // Lista que guarda os preços para comprar depois de serem selecionados no randomizepowerups
     public List<string> ListToSave = new List<string>();
 
 
@@ -78,6 +79,9 @@ public class PowerUpsManager : MonoBehaviour
         powerUpsCards.Add("JuiceHole", ControlMenu.instance.objectData.FoundJuiceHoleCard);
         powerUpsCards.Add("TequillaCard", ControlMenu.instance.objectData.FoundTequillaCard);
         powerUpsCards.Add("CardWine", ControlMenu.instance.objectData.FoundCardWine);
+        powerUpsCards.Add("GreenTea", ControlMenu.instance.objectData.FoundGreenTeaCard);
+        powerUpsCards.Add("CoffeeCard", ControlMenu.instance.objectData.FoundCoffeeCard);
+        powerUpsCards.Add("TonicOfThePhoenix", ControlMenu.instance.objectData.FoundTonicOfThePhoenixCard);
 
 
     }
@@ -159,7 +163,8 @@ public class PowerUpsManager : MonoBehaviour
                 PowerUpObject[i].SetActive(true);
                 PowerUpObject[i].GetComponentInChildren<Button>().image.sprite = ImagesForButtons[randomPowerUp];
                 PowerUpObject[i].GetComponentInChildren<Button>().gameObject.GetComponentInChildren<TextMeshProUGUI>().text = Descriptions[randomPowerUp];
-                PowerUpObject[i].GetComponentInChildren<Image>().transform.GetChild(1).gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "0";
+                PowerUpObject[i].transform.GetChild(0).gameObject.GetComponentInChildren<TextMeshProUGUI>().text = Prices[randomPowerUp];
+                PricesWhatToBuy.Add(Prices[randomPowerUp]);
 
                 WhatToBuy.Add(powerUps.ElementAt(randomPowerUp).Key);
                 if (powerUps.ElementAt(randomPowerUp).Value == false)
@@ -174,8 +179,8 @@ public class PowerUpsManager : MonoBehaviour
                 PowerUpObject[i].SetActive(true);
                 PowerUpObject[i].GetComponentInChildren<Button>().image.sprite = ImagesForButtonsCards[randomPowerUp];
                 PowerUpObject[i].GetComponentInChildren<Button>().gameObject.GetComponentInChildren<TextMeshProUGUI>().text = DescriptionsCards[randomPowerUp];
-                PowerUpObject[i].GetComponentInChildren<Image>().transform.GetChild(1).gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "0";
-
+                PowerUpObject[i].transform.GetChild(0).gameObject.GetComponentInChildren<TextMeshProUGUI>().text = PricesCards[randomPowerUp];
+                PricesWhatToBuy.Add(Prices[randomPowerUp]);
                 WhatToBuy.Add(powerUpsCards.ElementAt(randomPowerUp).Key);
                 if (powerUpsCards.ElementAt(randomPowerUp).Value == false)
                 {
@@ -197,7 +202,7 @@ public class PowerUpsManager : MonoBehaviour
         
         PowerUpObject[i].GetComponentInChildren<Button>().image.sprite = null;
         PowerUpObject[i].GetComponentInChildren<Button>().gameObject.GetComponentInChildren<TextMeshProUGUI>().text = null;
-        PowerUpObject[i].GetComponentInChildren<Image>().transform.GetChild(1).gameObject.GetComponentInChildren<TextMeshProUGUI>().text = null;
+        PowerUpObject[i].transform.GetChild(0).gameObject.GetComponentInChildren<TextMeshProUGUI>().text = null;
         
     }
     public void resetEveryThingResume()
@@ -206,7 +211,7 @@ public class PowerUpsManager : MonoBehaviour
         for(int i = 0; i < PowerUpObject.Count; i++) { 
         PowerUpObject[i].GetComponentInChildren<Button>().image.sprite = null;
         PowerUpObject[i].GetComponentInChildren<Button>().gameObject.GetComponentInChildren<TextMeshProUGUI>().text = null;
-        PowerUpObject[i].GetComponentInChildren<Image>().transform.GetChild(1).gameObject.GetComponentInChildren<TextMeshProUGUI>().text = null;
+            PowerUpObject[i].transform.GetChild(0).gameObject.GetComponentInChildren<TextMeshProUGUI>().text = null;
         }
     }
     private void IncreaseLife()
@@ -236,17 +241,19 @@ public class PowerUpsManager : MonoBehaviour
 
     }
 
-
+    private bool buyed = false;
 
     public void BuyBtn1()
     {
         switchPowerups(0);
         //PowerUpObject[0].transform.GetChild(2).gameObject.SetActive(false);
-        PowerUpObject[0].SetActive(false);
+        PowerUpObject[0].SetActive(!buyed);
+
         SoundManager.instance.GameSounds[3].Play();
+        if (buyed)
+            resetEveryThing(0);
 
-        resetEveryThing(0);
-
+        buyed = false;
     }
 
 
@@ -256,8 +263,12 @@ public class PowerUpsManager : MonoBehaviour
         switchPowerups(1);
         SoundManager.instance.GameSounds[3].Play();
         //PowerUpObject[1].transform.GetChild(2).gameObject.SetActive(false);
-        PowerUpObject[1].SetActive(false);
+        PowerUpObject[0].SetActive(!buyed);
+        if(buyed)
         resetEveryThing(1);
+
+
+        buyed = false;
     }
 
     public void BuyBtn3()
@@ -265,8 +276,12 @@ public class PowerUpsManager : MonoBehaviour
         switchPowerups(2);
         SoundManager.instance.GameSounds[3].Play();
         //PowerUpObject[2].transform.GetChild(2).gameObject.SetActive(false);
-        PowerUpObject[2].SetActive(false);
-        resetEveryThing(2);
+        PowerUpObject[0].SetActive(!buyed);
+        if (buyed)
+            resetEveryThing(2);
+
+
+        buyed = false;
     }
 
     public void BuyBtn4()
@@ -274,8 +289,12 @@ public class PowerUpsManager : MonoBehaviour
         switchPowerups(3);
         SoundManager.instance.GameSounds[3].Play();
         //PowerUpObject[3].transform.GetChild(2).gameObject.SetActive(false);
-        PowerUpObject[3].SetActive(false);
-        resetEveryThing(3);
+        PowerUpObject[0].SetActive(!buyed);
+        if (buyed)
+            resetEveryThing(3);
+
+
+        buyed = false;
     }
 
     public void ResumeGame()
@@ -305,7 +324,7 @@ public class PowerUpsManager : MonoBehaviour
         switch (WhatToBuy.ElementAt(elementAt))
         {
             case "Pistol":
-                if (Player_Main.instance.Money >= 0)
+                if (Player_Main.instance.Money >= Convert.ToInt32(PricesWhatToBuy[elementAt]))
                 {
 
 
@@ -336,8 +355,10 @@ public class PowerUpsManager : MonoBehaviour
                     {
                     }
                     ControlMenu.instance.objectData.FoundPistol = true;
-                    
+
                     powerUps["Pistol"] = ControlMenu.instance.objectData.FoundPistol;
+                    Player_Main.instance.Money -= Convert.ToInt32(PricesWhatToBuy[elementAt]);
+                    buyed = true;
                     SaveManager.SaveData();
                 }
                 break;
@@ -347,7 +368,7 @@ public class PowerUpsManager : MonoBehaviour
                 MiniGun_Main firstMiniGun = null;
                 WeaponControll secondMiniGunSpot = null;
                 //int countMiniGuns = 0;
-                if (Player_Main.instance.Money >= 0)
+                if (Player_Main.instance.Money >= Convert.ToInt32(PricesWhatToBuy[elementAt]))
                 {
 
 
@@ -400,27 +421,37 @@ public class PowerUpsManager : MonoBehaviour
 
                     ControlMenu.instance.objectData.FoundMinigun = true;
                     //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[2]);
-                    
+
                     powerUps["MiniGun"] = ControlMenu.instance.objectData.FoundMinigun;
+                    Player_Main.instance.Money -= Convert.ToInt32(PricesWhatToBuy[elementAt]);
+                    buyed = true;
                     SaveManager.SaveData();
                 }
                 break;
             case "JuiceLife":
-                IncreaseLife(); ControlMenu.instance.objectData.FoundJuiceLife = true;
-                //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[0]);
-                
-                powerUps["JuiceLife"] = ControlMenu.instance.objectData.FoundJuiceLife;
-                SaveManager.SaveData();
+                if (Player_Main.instance.Money >= Convert.ToInt32(PricesWhatToBuy[elementAt])) {
+                    IncreaseLife(); ControlMenu.instance.objectData.FoundJuiceLife = true;
+                    //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[0]);
+
+                    powerUps["JuiceLife"] = ControlMenu.instance.objectData.FoundJuiceLife;
+                    Player_Main.instance.Money -= Convert.ToInt32(PricesWhatToBuy[elementAt]);
+                    SaveManager.SaveData();
+                }
                 break;
             case "JuiceReg":
-                RegLife(); ControlMenu.instance.objectData.FoundReg = true;
-                //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[3]);
-                
-                powerUps["JuiceReg"] = ControlMenu.instance.objectData.FoundReg;
-                SaveManager.SaveData();
+                if (Player_Main.instance.Money >= Convert.ToInt32(PricesWhatToBuy[elementAt]))
+                {
+                    RegLife(); ControlMenu.instance.objectData.FoundReg = true;
+                    //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[3]);
+
+                    powerUps["JuiceReg"] = ControlMenu.instance.objectData.FoundReg;
+                    Player_Main.instance.Money -= Convert.ToInt32(PricesWhatToBuy[elementAt]);
+                    buyed = true;
+                    SaveManager.SaveData();
+                }
                 break;
             case "JuiceClub":
-                if (Player_Main.instance.Money >= 0)
+                if (Player_Main.instance.Money >= Convert.ToInt32(PricesWhatToBuy[elementAt]))
                 {
 
 
@@ -454,126 +485,189 @@ public class PowerUpsManager : MonoBehaviour
                     //DataManagment.instance.objectData.imagePistol = ControlMenu.instance.SpriteToBase64(ImagesForButtons[4]);
 
                     powerUps["JuiceClub"] = SaveManager.objectData.FoundJuiceClub;
+                    Player_Main.instance.Money -= Convert.ToInt32(PricesWhatToBuy[elementAt]);
+                    buyed = true;
                     SaveManager.SaveData();
                 }
                 break;
 
 
             case "Boomerang":
-                int BoomerangCount = 0;
-                Boomerang_Main firstBoomerang = null;
-                WeaponControll secondBoomerangSpot = null;
-                //int countBoomerangs = 0;
-                if (Player_Main.instance.Money >= 0)
+                if (Player_Main.instance.Money >= Convert.ToInt32(PricesWhatToBuy[elementAt])) {
+                    int BoomerangCount = 0;
+                    Boomerang_Main firstBoomerang = null;
+                    WeaponControll secondBoomerangSpot = null;
+                    //int countBoomerangs = 0;
+                    if (Player_Main.instance.Money >= 0)
+                    {
+
+
+                        GameObject weaponSpotAux = null;
+
+                        for (int i = 0; i < Player_Main.instance.WeaponsSpots.Count; i++)
+                        {
+                            GameObject weaponSpot = Player_Main.instance.WeaponsSpots[i];
+
+                            if (weaponSpot.transform.childCount == 1)
+                            {
+                                Boomerang_Main Boomerang = weaponSpot.transform.GetChild(0).GetComponentInChildren<Boomerang_Main>();
+                                if (Boomerang != null && Boomerang.lvlUpgrade < 1)
+                                {
+                                    BoomerangCount++;
+                                    if (firstBoomerang == null)
+                                    {
+                                        firstBoomerang = Boomerang;
+                                    }
+                                    else if (secondBoomerangSpot == null)
+                                    {
+                                        secondBoomerangSpot = weaponSpot.GetComponent<WeaponControll>();
+                                    }
+                                }
+                            }
+                            else if (weaponSpot.transform.childCount < 1)
+                            {
+                                if (weaponSpot.transform.childCount == 0)
+                                {
+                                    weaponSpotAux = weaponSpot;
+                                    break;
+                                }
+                            }
+                        }
+                        // Se houver um local de arma vazio, ativa e configura a arma
+                        if (weaponSpotAux != null)
+                        {
+                            weaponSpotAux.SetActive(true);
+
+                            weaponSpotAux.GetComponent<WeaponControll>().WpType = WeaponType.Boomerang;
+
+
+                        }
+                        else
+                        {
+                        }
+                        ControlMenu.instance.objectData.FoundBoomerang = true;
+                        buyed = true;
+                        powerUps["Boomerang"] = ControlMenu.instance.objectData.FoundBoomerang;
+                        Player_Main.instance.Money -= Convert.ToInt32(PricesWhatToBuy[elementAt]);
+                        SaveManager.SaveData();
+                    }
+                }
+                break;
+            case "BreakCardSpot":
+                if (Player_Main.instance.Money >= Convert.ToInt32(PricesWhatToBuy[elementAt]))
                 {
-
-
-                    GameObject weaponSpotAux = null;
-
-                    for (int i = 0; i < Player_Main.instance.WeaponsSpots.Count; i++)
+                    int countCardSpotsStucked = 0;
+                    List<CardSpot> cardSpotList = new List<CardSpot>();
+                    for (int i = 0; i < CardSpotsManager.instance.cardSpots.Count; i++)
                     {
-                        GameObject weaponSpot = Player_Main.instance.WeaponsSpots[i];
-
-                        if (weaponSpot.transform.childCount == 1)
+                        if (CardSpotsManager.instance.cardSpots[i].IsCardSpotStucked)
                         {
-                            Boomerang_Main Boomerang = weaponSpot.transform.GetChild(0).GetComponentInChildren<Boomerang_Main>();
-                            if (Boomerang != null && Boomerang.lvlUpgrade < 1)
-                            {
-                                BoomerangCount++;
-                                if (firstBoomerang == null)
-                                {
-                                    firstBoomerang = Boomerang;
-                                }
-                                else if (secondBoomerangSpot == null)
-                                {
-                                    secondBoomerangSpot = weaponSpot.GetComponent<WeaponControll>();
-                                }
-                            }
-                        }
-                        else if (weaponSpot.transform.childCount < 1)
-                        {
-                            if (weaponSpot.transform.childCount == 0)
-                            {
-                                weaponSpotAux = weaponSpot;
-                                break;
-                            }
+                            cardSpotList.Add(CardSpotsManager.instance.cardSpots[i]);
                         }
                     }
-                    // Se houver um local de arma vazio, ativa e configura a arma
-                    if (weaponSpotAux != null)
-                    {
-                        weaponSpotAux.SetActive(true);
+                    ControlMenu.instance.objectData.FoundBreakCardSpot = true;
+                    int randomCardSpotIndex = UnityEngine.Random.Range(0, cardSpotList.Count);
+                    cardSpotList[randomCardSpotIndex].IsCardSpotStucked = false;
+                    cardSpotList[randomCardSpotIndex].ImageCardSpotStucked.SetActive(false);
+                    Player_Main.instance.Money -= Convert.ToInt32(PricesWhatToBuy[elementAt]);
+                    buyed = true;
+                }
+                break;
+            case "CardWine":
+                if (Player_Main.instance.Money >= Convert.ToInt32(PricesCards[1])) { 
+                    ManageCardEffects("RedWineCard");
+                ControlMenu.instance.objectData.FoundCardWine = true;
 
-                        weaponSpotAux.GetComponent<WeaponControll>().WpType = WeaponType.Boomerang;
 
-
-                    }
-                    else
-                    {
-                    }
-                    ControlMenu.instance.objectData.FoundBoomerang = true;
-                    //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[5]);
-                    
-                    powerUps["Boomerang"] = ControlMenu.instance.objectData.FoundBoomerang;
+                powerUps["RedWineCard"] = ControlMenu.instance.objectData.FoundCardWine;
+                    Player_Main.instance.Money -= Convert.ToInt32(PricesCards[1]);
+                    buyed = true;
+                    SaveManager.SaveData();
+        }
+                break;
+            case "TequillaCard":
+                if (Player_Main.instance.Money >= Convert.ToInt32(PricesCards[2]))
+                {
+                    ManageCardEffects("TequillaCard");
+                    ControlMenu.instance.objectData.FoundCardWine = true;
+                    ControlMenu.instance.objectData.FoundTequillaCard = true;
+                    powerUps["TequillaCard"] = ControlMenu.instance.objectData.FoundTequillaCard;
+                    Player_Main.instance.Money -= Convert.ToInt32(PricesCards[2]);
+                    buyed = true;
                     SaveManager.SaveData();
                 }
                 break;
 
-            case "CardWine":
-
-                ManageCardEffects("RedWineCard");
-                ControlMenu.instance.objectData.FoundCardWine = true;
-                //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[6]);
-
-               
-                powerUps["RedWineCard"] = ControlMenu.instance.objectData.FoundCardWine;
-                SaveManager.SaveData();
-                break;
-            case "TequillaCard":
-
-                ManageCardEffects("TequillaCard");
-                ControlMenu.instance.objectData.FoundCardWine = true;
-                //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[7]);
-                ControlMenu.instance.objectData.FoundTequillaCard = true;
-                powerUps["TequillaCard"] = ControlMenu.instance.objectData.FoundTequillaCard;
-                SaveManager.SaveData();
-                break;
-
             case "JuiceHole":
-
-                ManageCardEffects("JuiceHole");
-                ControlMenu.instance.objectData.FoundJuiceHoleCard = true;
-                //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[7]);
-                
-                powerUps["JuiceHole"] = ControlMenu.instance.objectData.FoundJuiceHoleCard;
-                SaveManager.SaveData();
-                break;
-            case "BreakCardSpot":
-                int countCardSpotsStucked = 0;
-                List<CardSpot> cardSpotList = new List<CardSpot>();
-                for (int i = 0; i < CardSpotsManager.instance.cardSpots.Count; i++)
+                if (Player_Main.instance.Money >= Convert.ToInt32(PricesCards[1]))
                 {
-                    if (CardSpotsManager.instance.cardSpots[i].IsCardSpotStucked)
-                    {
-                        cardSpotList.Add(CardSpotsManager.instance.cardSpots[i]);
-                    }
+                    ManageCardEffects("JuiceHole");
+                    ControlMenu.instance.objectData.FoundJuiceHoleCard = true;
+
+                    powerUps["JuiceHole"] = ControlMenu.instance.objectData.FoundJuiceHoleCard;
+                    Player_Main.instance.Money -= Convert.ToInt32(PricesCards[1]);
+                    buyed = true;
+                    SaveManager.SaveData();
                 }
-                ControlMenu.instance.objectData.FoundBreakCardSpot = true;
-                int randomCardSpotIndex = UnityEngine.Random.Range(0, cardSpotList.Count);
-                cardSpotList[randomCardSpotIndex].IsCardSpotStucked = false;
-                cardSpotList[randomCardSpotIndex].ImageCardSpotStucked.SetActive(false);
                 break;
+            
 
             case "JuiceCollect":
-                ManageCardEffects("JuiceCollect");
-                ControlMenu.instance.objectData.FoundJuiceHoleCard = true;
-                //DataManagment.instance.objectData.imagePistol = DataManagment.instance.SpriteToBase64(ImagesForButtons[7]);
+                if (Player_Main.instance.Money >= Convert.ToInt32(PricesCards[0]))
+                {
+                    ManageCardEffects("JuiceCollect");
+                    ControlMenu.instance.objectData.FoundJuiceHoleCard = true;
 
-                powerUps["JuiceCollect"] = ControlMenu.instance.objectData.FoundJuiceCollectCard;
-                ControlMenu.instance.objectData.FoundJuiceCollectCard = true;
-                SaveManager.SaveData();
+                    powerUps["JuiceCollect"] = ControlMenu.instance.objectData.FoundJuiceCollectCard;
+                    ControlMenu.instance.objectData.FoundJuiceCollectCard = true;
+                    Player_Main.instance.Money -= Convert.ToInt32(PricesCards[0]);
+                    buyed = true;
+
+                    SaveManager.SaveData();
+                    
+                 }
+
+
                 break;
 
+            case "GreenTea":
+                if (Player_Main.instance.Money >= Convert.ToInt32(PricesCards[4]))
+                {
+                    ManageCardEffects("GreenTea");
+                    ControlMenu.instance.objectData.FoundGreenTeaCard = true;
+
+                    powerUps["GreenTea"] = ControlMenu.instance.objectData.FoundGreenTeaCard;
+                    Player_Main.instance.Money -= Convert.ToInt32(PricesCards[4]);
+                    buyed = true;
+                    SaveManager.SaveData();
+                }
+                break;
+            case "CoffeeCard":
+                if (Player_Main.instance.Money >= Convert.ToInt32(PricesCards[5]))
+                {
+                    ManageCardEffects("CoffeeCard");
+                    ControlMenu.instance.objectData.FoundCoffeeCard = true;
+
+                    powerUps["CoffeeCard"] = ControlMenu.instance.objectData.FoundCoffeeCard;
+                    Player_Main.instance.Money -= Convert.ToInt32(PricesCards[5]);
+                    buyed = true;
+                    SaveManager.SaveData();
+                }
+                break;
+
+            case "TonicOfThePhoenix":
+                if (Player_Main.instance.Money >= Convert.ToInt32(PricesCards[6]))
+                {
+                    ManageCardEffects("TonicOfThePhoenix");
+                    ControlMenu.instance.objectData.FoundTonicOfThePhoenixCard = true;
+
+                    powerUps["TonicOfThePhoenix"] = ControlMenu.instance.objectData.FoundTonicOfThePhoenixCard;
+                    Player_Main.instance.Money -= Convert.ToInt32(PricesCards[6]);
+                    buyed = true;
+                    SaveManager.SaveData();
+                }
+                break;
+                
         }
         PlayerItemOnUiManager.instance.ManageItemsOfPLayer();
 
@@ -584,54 +678,87 @@ public class PowerUpsManager : MonoBehaviour
     {
         if (CardPower == "RedWineCard")
         {
-            AtributteCardPowerImagesAndStats(6);
+            AtributteCardPowerImagesAndStats("RedWineCard");
         }
         if (CardPower == "TequillaCard")
         {
-            AtributteCardPowerImagesAndStats(7);
+            AtributteCardPowerImagesAndStats("TequillaCard");
         }
 
         if (CardPower == "JuiceHole")
         {
-            AtributteCardPowerImagesAndStats(8);
+            AtributteCardPowerImagesAndStats("JuiceHole");
         }
 
         if (CardPower == "JuiceCollect")
         {
-            AtributteCardPowerImagesAndStats(10);
+            AtributteCardPowerImagesAndStats("JuiceCollect");
         }
+
+        if (CardPower == "GreenTea")
+        {
+            AtributteCardPowerImagesAndStats("GreenTea");
+        }
+        if (CardPower == "CoffeeCard")
+        {
+            AtributteCardPowerImagesAndStats("CoffeeCard");
+        }
+
+        if (CardPower == "TonicOfThePhoenix")
+        {
+            AtributteCardPowerImagesAndStats("TonicOfThePhoenix");
+        }
+        
     }
 
 
-    private void AtributteCardPowerImagesAndStats(int IndexCardForImageOnListImages)
+    private void AtributteCardPowerImagesAndStats(string Type)
     {
         foreach (CardSpot o in CardSpotsManager.instance.cardSpots)
         {
             if (o.GetComponent<CardSpot>().HasCard == false && !o.GetComponent<CardSpot>().IsCardSpotStucked)
             {
-                if (IndexCardForImageOnListImages == 6 && !Player_Stats.instance.CardsActive.Contains(CardType.RedWine))
+                if (Type == "RedWineCard")
                 {
                     o.GetComponent<CardSpot>().CardType = CardType.RedWine;
                     o.InstantiateCard();
 
                 }
-                else if (IndexCardForImageOnListImages == 7 && !Player_Stats.instance.CardsActive.Contains(CardType.Tequilla))
+                else if (Type == "TequillaCard")
                 {
                     o.GetComponent<CardSpot>().CardType = CardType.Tequilla;
                     o.InstantiateCard();
                 }
 
-                else if (IndexCardForImageOnListImages == 8 && !Player_Stats.instance.CardsActive.Contains(CardType.JuiceHole))
+                else if (Type == "JuiceHole")
                 {
                     o.GetComponent<CardSpot>().CardType = CardType.JuiceHole;
                     o.InstantiateCard();
                 }
 
-                else if (IndexCardForImageOnListImages == 10 && !Player_Stats.instance.CardsActive.Contains(CardType.JuiceCollect))
+                else if (Type == "JuiceCollect") 
                 {
                     o.GetComponent<CardSpot>().CardType = CardType.JuiceCollect;
                     o.InstantiateCard();
                 }
+
+                else if (Type == "GreenTea")
+                {
+                    o.GetComponent<CardSpot>().CardType = CardType.GreenTea;
+                    o.InstantiateCard();
+                }
+
+                else if (Type == "CoffeeCard")
+                {
+                    o.GetComponent<CardSpot>().CardType = CardType.CoffeeCard;
+                    o.InstantiateCard();
+                }
+                else if (Type == "TonicOfThePhoenix")
+                {
+                    o.GetComponent<CardSpot>().CardType = CardType.TonicOfThePhoenixCard;
+                    o.InstantiateCard();
+                }
+                
                 break; // Para a iteração assim que encontrar um CardSpot sem card e atribuir o tipo de card.
             }
 

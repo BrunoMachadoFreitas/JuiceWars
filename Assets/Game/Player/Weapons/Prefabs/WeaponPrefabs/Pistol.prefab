@@ -77,6 +77,7 @@ MonoBehaviour:
   bounceHeight: 0.5
   bounceSpeed: 2
   rotationSpeed: 50
+  sound: {fileID: 0}
 --- !u!95 &2843870960078583254
 Animator:
   serializedVersion: 5
@@ -241,7 +242,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8777544597177308858}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.693, y: 0.374, z: 0}
+  m_LocalPosition: {x: 0.408, y: 1.247, z: 0}
   m_LocalScale: {x: 0.68, y: 0.18, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []

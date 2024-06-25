@@ -9,6 +9,7 @@ public class Player_Stats : MonoBehaviour
     public float Power = 1f;
     public float LifeSteal = 0;
     public float PercentStealLife = 90;
+    public float PlayerArmor = .1f;
     public float Life = 0f; // Vida total do personagem
     public float CurrentLife = 0f; // Vida atual do personagem
     public float moveSpeed = 0f;
@@ -27,9 +28,11 @@ public class Player_Stats : MonoBehaviour
     public float LuckyValue = 10f;
     public float MagnetismFactor = 5f;
     public float JuiceHoleDuration = 5f;
+    public float GreenTeaRegneration = 1f;
     public float damagePerSecondJuiceHole = 1f;
     
     public bool HasLuck = false;
+    public bool TonicOfThePhoenixActivated = false;
    
     public float ExpToGive = 2;
     public float CurrentSpeed;
@@ -50,7 +53,7 @@ public class Player_Stats : MonoBehaviour
 
 
     [SerializeField] private GameObject CanvasSettings;
-    public List<CardType> CardsActive = new List<CardType>();
+    public List<Card> CardsActive = new List<Card>();
     private void Awake()
     {
         if (instance == null)

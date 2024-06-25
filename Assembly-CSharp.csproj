@@ -75,7 +75,6 @@
     <Compile Include="Assets\Game\Monsters\Scripts\Monster.cs" />
     <Compile Include="Assets\Game\GamePlay\Scripts\AchievementsMenu.cs" />
     <Compile Include="Assets\Game\SaveManager\SaveManager.cs" />
-    <Compile Include="Assets\Game\Player\Cards\ScriptsCards\VisualCardsHandler.cs" />
     <Compile Include="Assets\Game\Player\Weapons\Scripts\Bullet_Shotgun.cs" />
     <Compile Include="Assets\Game\Player\Cards\ScriptsCards\Card.cs" />
     <Compile Include="Assets\Game\Player\Weapons\Scripts\Dagger_Main.cs" />
@@ -105,13 +104,13 @@
     <Compile Include="Assets\Game\Player\Cards\ScriptsCards\CardSpot.cs" />
     <Compile Include="Assets\Game\GamePlay\PowerUps\PlayerItemOnUiManager.cs" />
     <Compile Include="Assets\Game\UI\ScriptsUI\X_Main.cs" />
+    <Compile Include="Assets\PlayerStatsOnUiPowerUps.cs" />
     <Compile Include="Assets\CanvasDontDestroy.cs" />
     <Compile Include="Assets\Game\Achievements\Acievements_Manager.cs" />
     <Compile Include="Assets\Game\GamePlay\Scripts\CanvasInstantiate.cs" />
     <Compile Include="Assets\Game\GamePlay\PowerUps\JuiceLife.cs" />
     <Compile Include="Assets\Game\Player\Scripts\Player_Main.cs" />
     <Compile Include="Assets\Game\Player\Weapons\Scripts\Cactus_Main.cs" />
-    <Compile Include="Assets\Game\Player\Cards\ScriptsCards\Card_Main.cs" />
     <Compile Include="Assets\Game\Player\Weapons\Scripts\Whip_Main.cs" />
     <Compile Include="Assets\Game\Player\Weapons\Scripts\Turret_Main.cs" />
     <Compile Include="Assets\Game\Sounds\SoundScripts\DestroyGameSound.cs" />
@@ -130,7 +129,6 @@
     <Compile Include="Assets\Game\UI\Menu\ControlMenu.cs" />
     <Compile Include="Assets\Game\Player\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Game\Player\Scripts\DashPlayer.cs" />
-    <Compile Include="Assets\PlayerStatsOnUiPowerUps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
