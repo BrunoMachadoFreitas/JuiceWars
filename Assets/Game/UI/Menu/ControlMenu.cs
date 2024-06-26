@@ -25,8 +25,6 @@ public class ControlMenu : MonoBehaviour
     public DataInfo objectData = new DataInfo();
 
 
-    public SettingsPopUp SettingsMenu;
-
 
     private void Awake()
     {
@@ -45,7 +43,7 @@ public class ControlMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+     
 
         soundManagerX = Instantiate(soundManager, new Vector3(-487.442993f, 1.04410005f, 0), Quaternion.identity);
 
@@ -56,7 +54,12 @@ public class ControlMenu : MonoBehaviour
             //MenuSettingsX.transform.GetChild(1).GetChild(7).gameObject.SetActive(false);
         }
      }
-
+    public void ShowSettings()
+    {
+        MenuSettings.gameObject.SetActive(true);
+        MainMenu.gameObject.SetActive(false);
+        SoundManager.instance.PlaySound(12);
+    }
     // Update is called once per frame
     void Update()
     {

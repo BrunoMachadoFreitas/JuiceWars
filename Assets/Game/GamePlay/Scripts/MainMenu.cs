@@ -24,16 +24,11 @@ namespace Game.GamePlay.Scripts
 
             this.gameObject.SetActive(false);
             SoundManager.instance.PlaySound(12);
-
+           
 
         }
 
-        public void HideMainMenuShowSettings()
-        {
-            MenuSettings.SetActive(true);
-            this.gameObject.SetActive(false);
-            SoundManager.instance.PlaySound(12);
-        }
+        
 
         public void HideMainMenuShowAchievements()
         {
