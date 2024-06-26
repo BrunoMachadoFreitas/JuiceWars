@@ -6,11 +6,11 @@ using UnityEngine;
 public class MiniGun_Main : MonoBehaviour
 {
     Rigidbody2D rb;
-    public GameObject closestMonster;
+    public GameObject currentTarget;
     public Transform aimTransform;
     private Animator anim;
 
-    float fireRate = 0.1f; // Taxa de disparo (tempo entre os disparos)
+    float fireRate = 0.5f; // Taxa de disparo (tempo entre os disparos)
     float nextFireTime = 0f; // Tempo até o próximo disparo
     bool reloading = false;
     bool isShooting = false;
@@ -39,27 +39,23 @@ public class MiniGun_Main : MonoBehaviour
     void Update()
     {
         reloadTime = Player_Stats.instance.RealoadTime - (lvlUpgrade * 0.3f) - 0.2f;
-        float closestDistance = Player_Stats.instance.Range;
 
         if (WaveManager.instance != null && Player_Main.instance != null)
         {
             if (WaveManager.instance.Monsters.Count > 0)
             {
-                // Encontrar o monstro mais próximo
-                closestMonster = GetClosestMonster();
+                // Se não há alvo atual ou o alvo atual está morto, encontrar um novo alvo
+                if (currentTarget == null || currentTarget.GetComponent<Monster>().isDead)
+                {
+                    currentTarget = GetClosestMonster();
+                }
 
                 muzzle.SetActive(false);
-                if (closestMonster && !reloading)
+                if (currentTarget && !reloading)
                 {
-                    if (closestMonster.GetComponent<Monster>().isBeingAttacked)
+                    if (Time.time > nextFireTime)
                     {
-                        // Se o monstro mais próximo está sendo atacado, encontrar o próximo mais próximo
-                        closestMonster = GetNextClosestMonster(closestMonster);
-                    }
-
-                    if (closestMonster != null && !closestMonster.GetComponent<Monster>().isBeingAttacked && Time.time > nextFireTime)
-                    {
-                        Vector2 direction = (closestMonster.transform.position - this.transform.position).normalized;
+                        Vector2 direction = (currentTarget.transform.position - this.transform.position).normalized;
                         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
                         aimTransform.eulerAngles = new Vector3(0, 0, angle);
 
@@ -78,7 +74,7 @@ public class MiniGun_Main : MonoBehaviour
 
                         if (!isShooting)
                         {
-                            StartCoroutine(FireBulletsCoroutine(closestMonster));
+                            StartCoroutine(FireBulletsCoroutine(currentTarget));
                         }
                     }
                 }
@@ -105,27 +101,6 @@ public class MiniGun_Main : MonoBehaviour
         }
 
         return closestMonster;
-    }
-
-    GameObject GetNextClosestMonster(GameObject currentMonster)
-    {
-        float closestDistance = Player_Stats.instance.Range;
-        GameObject nextClosestMonster = null;
-
-        foreach (var monster in WaveManager.instance.Monsters)
-        {
-            if (monster != null && monster != currentMonster)
-            {
-                float distanceToMonster = Vector2.Distance(Player_Main.instance.transform.position, monster.transform.position);
-                if (distanceToMonster < closestDistance && !monster.GetComponent<Monster>().isBeingAttacked)
-                {
-                    nextClosestMonster = monster;
-                    closestDistance = distanceToMonster;
-                }
-            }
-        }
-
-        return nextClosestMonster;
     }
 
     IEnumerator FireBulletsCoroutine(GameObject monster)

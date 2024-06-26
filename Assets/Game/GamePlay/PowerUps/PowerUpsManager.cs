@@ -27,16 +27,16 @@ public class PowerUpsManager : MonoBehaviour
     public List<GameObject> PowerUpObject; // Lista que vai guardar o objeto pai que tem 1 botao 1 imagem 1 text para descri��o 1 text para pre�o **BOTOES PARA CLICAR PARA ESCOLHER UM POWERUP**
 
 
-    public List<Sprite> ImagesForButtons; // Lista que vai guardar o objeto pai que tem 1 botao 1 imagem 1 text para descri��o 1 text para pre�o
+    public List<Sprite> ImagesForButtons; // Imagens dos itens
 
-    public List<Sprite> ImagesForButtonsCards; // Lista que vai guardar o objeto pai que tem 1 botao 1 imagem 1 text para descri��o 1 text para pre�o
+    public List<Sprite> ImagesForButtonsCards; // Imagens das cartas
 
 
 
-    [SerializeField] List<string> Prices; // Lista que vai guardar o objeto pai que tem 1 botao 1 imagem 1 text para descri��o 1 text para pre�o
-    [SerializeField] List<string> PricesCards; // Lista que vai guardar o objeto pai que tem 1 botao 1 imagem 1 text para descri��o 1 text para pre�o
-    [SerializeField] List<string> Descriptions; // Lista que vai guardar o objeto pai que tem 1 botao 1 imagem 1 text para descri��o 1 text para pre�o
-    [SerializeField] List<string> DescriptionsCards; // Lista que vai guardar o objeto pai que tem 1 botao 1 imagem 1 text para descri��o 1 text para pre�o
+    [SerializeField] List<string> Prices; // Lista de preços dos itens
+    [SerializeField] List<string> PricesCards; // Lista de preços das cartas
+    [SerializeField] List<string> Descriptions; // Descrição dos itens
+    [SerializeField] List<string> DescriptionsCards; // Descrição das cartas
 
     [SerializeField] List<string> WhatToBuy = new List<string>(); // Lista que guarda os itens para comprar depois de serem selecionados no randomizepowerups
     [SerializeField] List<string> PricesWhatToBuy = new List<string>(); // Lista que guarda os preços para comprar depois de serem selecionados no randomizepowerups
@@ -196,7 +196,7 @@ public class PowerUpsManager : MonoBehaviour
     }
 
 
-    public void resetEveryThing(int i)
+    public void HideButtOnAfterBuy(int i)
     {
         //WhatToBuy.Clear();
         
@@ -251,7 +251,7 @@ public class PowerUpsManager : MonoBehaviour
 
         SoundManager.instance.GameSounds[3].Play();
         if (buyed)
-            resetEveryThing(0);
+            HideButtOnAfterBuy(0);
 
         buyed = false;
     }
@@ -265,7 +265,7 @@ public class PowerUpsManager : MonoBehaviour
         //PowerUpObject[1].transform.GetChild(2).gameObject.SetActive(false);
         PowerUpObject[0].SetActive(!buyed);
         if(buyed)
-        resetEveryThing(1);
+            HideButtOnAfterBuy(1);
 
 
         buyed = false;
@@ -278,7 +278,7 @@ public class PowerUpsManager : MonoBehaviour
         //PowerUpObject[2].transform.GetChild(2).gameObject.SetActive(false);
         PowerUpObject[0].SetActive(!buyed);
         if (buyed)
-            resetEveryThing(2);
+            HideButtOnAfterBuy(2);
 
 
         buyed = false;
@@ -290,8 +290,9 @@ public class PowerUpsManager : MonoBehaviour
         SoundManager.instance.GameSounds[3].Play();
         //PowerUpObject[3].transform.GetChild(2).gameObject.SetActive(false);
         PowerUpObject[0].SetActive(!buyed);
+
         if (buyed)
-            resetEveryThing(3);
+            HideButtOnAfterBuy(3);
 
 
         buyed = false;

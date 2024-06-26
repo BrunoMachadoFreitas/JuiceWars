@@ -56,6 +56,10 @@ public class WaveManager : MonoBehaviour
     private int enemiesKilled = 0; // Contador de inimigos mortos
     private int bossSpawnThreshold = 100; // Número de inimigos mortos para spawnar um boss
 
+    // Variáveis para inimigos especiais
+    private float specialEnemyChance = 0.1f; // 10% de chance de spawnar um inimigo especial
+    private int specialEnemyHealth = 30;
+
     private void Awake()
     {
         if (instance == null)
@@ -119,9 +123,26 @@ public class WaveManager : MonoBehaviour
         position += Player_Main.instance.transform.position;
 
         int randomValue = UnityEngine.Random.Range(0, monsterToSpawn.Count);
-
         GameObject newEnemy = Instantiate(monsterToSpawn[randomValue]);
         newEnemy.transform.position = position;
+
+        // Verifica se deve spawnar um inimigo especial
+        if (UnityEngine.Random.value < specialEnemyChance)
+        {
+            Monster enemyScript = newEnemy.GetComponent<Monster>();
+            if (enemyScript != null)
+            {
+                enemyScript.life = (specialEnemyHealth); // Define a vida do inimigo especial
+            }
+
+            // Adiciona um indicador visual para distinguir o inimigo especial
+            SpriteRenderer spriteRenderer = newEnemy.GetComponent<SpriteRenderer>();
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.color = Color.green; // Altere a cor para verde para indicar o inimigo especial
+            }
+        }
+
         Monsters.Add(newEnemy);
     }
 

@@ -161,31 +161,39 @@ public class CardSpot : MonoBehaviour
         }
     }
 
+    public void SetCardSpotStucked()
+    {
+        IsCardSpotStucked = true;
+        ImageCardSpotStucked.gameObject.SetActive(true);
+    }
+
    
     public void ShowText()
     {
-        if (countRotates == 0)
-        {
-            textDescCard.gameObject.SetActive(true);
-            countRotates++;
-
-            // Inicia a Coroutine para esconder o texto após 2 segundos
-            if (hideTextCoroutine != null)
+        if (!IsCardSpotStucked) { 
+            if (countRotates == 0)
             {
-                StopCoroutine(hideTextCoroutine);
+                textDescCard.gameObject.SetActive(true);
+                countRotates++;
+
+                // Inicia a Coroutine para esconder o texto após 2 segundos
+                if (hideTextCoroutine != null)
+                {
+                    StopCoroutine(hideTextCoroutine);
+                }
+                hideTextCoroutine = StartCoroutine(HideTextAfterDelay(2.0f));
             }
-            hideTextCoroutine = StartCoroutine(HideTextAfterDelay(2.0f));
-        }
-        else if (countRotates > 0)
-        {
-            textDescCard.gameObject.SetActive(false);
-            countRotates = 0;
-
-            // Cancela a Coroutine se o texto foi manualmente escondido
-            if (hideTextCoroutine != null)
+            else if (countRotates > 0)
             {
-                StopCoroutine(hideTextCoroutine);
-                hideTextCoroutine = null;
+                textDescCard.gameObject.SetActive(false);
+                countRotates = 0;
+
+                // Cancela a Coroutine se o texto foi manualmente escondido
+                if (hideTextCoroutine != null)
+                {
+                    StopCoroutine(hideTextCoroutine);
+                    hideTextCoroutine = null;
+                }
             }
         }
     }

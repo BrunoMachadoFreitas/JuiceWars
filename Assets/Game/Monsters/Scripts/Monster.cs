@@ -22,7 +22,7 @@ public class Monster : MonoBehaviour
     private float randomMoveInterval = 5f; // Intervalo de tempo para mudança de direção aleatória
     private float nextRandomMoveTime = 0f;
 
-
+    public bool isDead = false;
 
 
 
@@ -45,7 +45,7 @@ public class Monster : MonoBehaviour
     [SerializeField] private Transform PopUpTransform;
     [SerializeField] private GameObject floatingTextPrefab;
     [SerializeField] private List<SpriteRenderer> spriteRenderer = new List<SpriteRenderer>();
-    [SerializeField] private float life = 6f;
+    public float life = 6f;
 
     //see the distance between monster and the player
     private float closestDistance = 0.6f;
@@ -154,9 +154,9 @@ public class Monster : MonoBehaviour
         {
             //Player_Main.instance.CurrentLife -= 1;
             // Inicia a repetição para ativar e desativar o collider
-            InvokeRepeating("ToggleCollider", 2f, 2f);
+            InvokeRepeating("ToggleCollider", 1f, 2f);
             collidingPlayer = true;
-
+            Debug.LogError("From ToggleCollider");
            
         }
     

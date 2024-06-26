@@ -420,6 +420,7 @@ public class Player_Main : MonoBehaviour
                                 {
                                     if (Player_Stats.instance.CardsActive[i].thisCardType == CardType.TonicOfThePhoenixCard)
                                     {
+                                        Player_Stats.instance.CardsActive[i].AssociatedCardSpot.SetCardSpotStucked();
                                         Player_Stats.instance.CardsActive[i].DeletedCard();
                                     }
                                 }
