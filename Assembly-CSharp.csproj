@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Game\GamePlay\Scripts\ButtonUiClick.cs" />
+    <Compile Include="Assets\Game\UI\ScriptsUI\ResolutionDropdownHandler.cs" />
     <Compile Include="Assets\Game\GamePlay\Waves\RoundsManager.cs" />
     <Compile Include="Assets\Game\Camera\CameraShake.cs" />
     <Compile Include="Assets\Game\GamePlay\Scripts\ChoosePowerUpUiUiAndStartRound.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="Assets\Game\GamePlay\Scripts\CanvasInstantiate.cs" />
     <Compile Include="Assets\Game\GamePlay\PowerUps\JuiceLife.cs" />
     <Compile Include="Assets\Game\Player\Scripts\Player_Main.cs" />
+    <Compile Include="Assets\Game\UI\ScriptsUI\ScreenModeSettings.cs" />
     <Compile Include="Assets\Game\Player\Weapons\Scripts\Cactus_Main.cs" />
     <Compile Include="Assets\Game\Player\Weapons\Scripts\Whip_Main.cs" />
     <Compile Include="Assets\Game\Player\Weapons\Scripts\Turret_Main.cs" />

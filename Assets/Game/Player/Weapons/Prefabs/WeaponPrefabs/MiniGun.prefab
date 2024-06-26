@@ -70,10 +70,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6f3415468c4a8941b99af857db2b451, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  closestMonster: {fileID: 0}
+  currentTarget: {fileID: 0}
   aimTransform: {fileID: 0}
+  lvlUpgrade: 0
   muzzle: {fileID: 9150115796470738882}
   Bullet: {fileID: 4359740963027715113, guid: 490a51645a2245a438d0844bf5bc31ea, type: 3}
+  sound: {fileID: 0}
+  ImageMinigunWaiter: {fileID: 0}
 --- !u!95 &9187369920422939507
 Animator:
   serializedVersion: 5
@@ -296,7 +299,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3576590196268009277
 Transform:
   m_ObjectHideFlags: 0
@@ -304,14 +307,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9150115796470738882}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.16, y: 0.025, z: 0.041}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.8889564, w: 0.45799184}
+  m_LocalPosition: {x: 0.193, y: 0.025, z: 0.041}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6669417082623239313}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -125.485}
 --- !u!212 &6342493861417852525
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -353,12 +356,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: ec991a388184d214d8c9bef68873b65a, type: 3}
+  m_Sprite: {fileID: 231282441, guid: 536d85ce387945345b0581e741ef81ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 12.86, y: 9.52}
+  m_Size: {x: 0.16, y: 0.17}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

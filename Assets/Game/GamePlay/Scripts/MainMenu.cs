@@ -7,7 +7,7 @@ namespace Game.GamePlay.Scripts
     public class MainMenu : MonoBehaviour
     {
 
-        [SerializeField] SettingsPopUp MenuSettings;
+        [SerializeField] GameObject MenuSettings;
         [SerializeField] GameObject canvasAchievements;
         public void startGame()
         {
@@ -30,7 +30,7 @@ namespace Game.GamePlay.Scripts
 
         public void HideMainMenuShowSettings()
         {
-            MenuSettings.gameObject.SetActive(true);
+            MenuSettings.SetActive(true);
             this.gameObject.SetActive(false);
             SoundManager.instance.PlaySound(12);
         }

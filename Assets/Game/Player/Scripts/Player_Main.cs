@@ -95,7 +95,7 @@ public class Player_Main : MonoBehaviour
 
     public GameObject WhipPrefab; // Referência ao prefab do JuiceHole
     private GameObject currentWhip;
-
+    private float currenHealthFillVelocity;
     private void Awake()
     {
         if (instance == null)
@@ -237,7 +237,7 @@ public class Player_Main : MonoBehaviour
         VectorCurrentPlatform = myInput;
         transform.GetChild(2).GetComponent<SpriteRenderer>().transform.localScale = localScale;
     }
-
+    
     Vector2 VectorCurrentPlatform = Vector2.zero;
     void FixedUpdate()
     {
@@ -303,10 +303,17 @@ public class Player_Main : MonoBehaviour
         {
             Player_Stats.instance.CurrentLife = Player_Stats.instance.Life;
         }
-        HealthBar.fillAmount = Mathf.Clamp(Player_Stats.instance.CurrentLife / Player_Stats.instance.Life, 0, 1);
+
+        float targetFillAmount = (float)Player_Stats.instance.CurrentLife / Player_Stats.instance.Life;
+        HealthBar.fillAmount = Mathf.SmoothDamp(HealthBar.fillAmount, targetFillAmount, ref currenHealthFillVelocity, 20f * Time.fixedDeltaTime);
+
+
+        //HealthBar.fillAmount = Mathf.Lerp(HealthBar.fillAmount, targetFillAmount, 20f * Time.fixedDeltaTime);
+
+        //HealthBar.fillAmount = Mathf.Clamp(Player_Stats.instance.CurrentLife / Player_Stats.instance.Life, 0, 1);
         //if(Player_Stats.instance.InDash && ImageDash.fillAmount < 1)
 
-        if(movement != Vector2.zero || myInput != Vector2.zero)
+        if (movement != Vector2.zero || myInput != Vector2.zero)
         {
             if(!SoundManager.instance.GameSoundsInGame[11].isPlaying)
             SoundManager.instance.PlaySound(11);

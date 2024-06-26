@@ -28,6 +28,7 @@ public class Leveling : MonoBehaviour
     [SerializeField] private GameObject CanvasPowerUps;
 
     private List<AudioSource> AudiosInScene = new List<AudioSource>();
+    private float currentExpFillVelocity;
     private void Awake()
     {
         if (instance == null)
@@ -54,7 +55,12 @@ public class Leveling : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ExpBar.fillAmount = (float)currentExp / NextLvlExpNeed;
+        //ExpBar.fillAmount = (float)currentExp / NextLvlExpNeed;
+
+        float targetExpFillAmount = (float)currentExp / NextLvlExpNeed;
+        ExpBar.fillAmount = Mathf.SmoothDamp(ExpBar.fillAmount, targetExpFillAmount, ref currentExpFillVelocity, 20f * Time.fixedDeltaTime);
+
+
         //TextExp.text = currentExp.ToString();
         TextLvl.text = currentLvl.ToString();
         if (currentExp != NextLvlExpNeed)

@@ -263,7 +263,7 @@ public class PowerUpsManager : MonoBehaviour
         switchPowerups(1);
         SoundManager.instance.GameSounds[3].Play();
         //PowerUpObject[1].transform.GetChild(2).gameObject.SetActive(false);
-        PowerUpObject[0].SetActive(!buyed);
+        PowerUpObject[1].SetActive(!buyed);
         if(buyed)
             HideButtOnAfterBuy(1);
 
@@ -276,7 +276,7 @@ public class PowerUpsManager : MonoBehaviour
         switchPowerups(2);
         SoundManager.instance.GameSounds[3].Play();
         //PowerUpObject[2].transform.GetChild(2).gameObject.SetActive(false);
-        PowerUpObject[0].SetActive(!buyed);
+        PowerUpObject[2].SetActive(!buyed);
         if (buyed)
             HideButtOnAfterBuy(2);
 
@@ -289,7 +289,7 @@ public class PowerUpsManager : MonoBehaviour
         switchPowerups(3);
         SoundManager.instance.GameSounds[3].Play();
         //PowerUpObject[3].transform.GetChild(2).gameObject.SetActive(false);
-        PowerUpObject[0].SetActive(!buyed);
+        PowerUpObject[3].SetActive(!buyed);
 
         if (buyed)
             HideButtOnAfterBuy(3);
