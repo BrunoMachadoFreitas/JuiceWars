@@ -24,7 +24,7 @@ public class ControlMenu : MonoBehaviour
 
     public DataInfo objectData = new DataInfo();
 
-
+    public bool showSkake = true;
 
     private void Awake()
     {
@@ -48,7 +48,7 @@ public class ControlMenu : MonoBehaviour
         soundManagerX = Instantiate(soundManager, new Vector3(-487.442993f, 1.04410005f, 0), Quaternion.identity);
 
         soundManagerX.MainMusic.volume = objectData.SoundMusicValue;
-
+        showSkake = objectData.ShowShakeCamera;
         if (DeviceController.instance.TargetPlatform != TargetPlatform.PC)
         {
             //MenuSettingsX.transform.GetChild(1).GetChild(7).gameObject.SetActive(false);

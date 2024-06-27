@@ -58,7 +58,7 @@ public class WaveManager : MonoBehaviour
 
     // Variáveis para inimigos especiais
     private float specialEnemyChance = 0.1f; // 10% de chance de spawnar um inimigo especial
-    private int specialEnemyHealth = 30;
+    private int specialEnemyHealth = 100;
 
     private void Awake()
     {

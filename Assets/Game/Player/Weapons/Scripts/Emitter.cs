@@ -20,6 +20,10 @@ public class Emitter : MonoBehaviour
         StartCoroutine(RepeatedlyEmitProjectiles());
     }
 
+    public void StopEmitter()
+    {
+        StopCoroutine(RepeatedlyEmitProjectiles());
+    }
     private IEnumerator RepeatedlyEmitProjectiles()
     {
         while (true)

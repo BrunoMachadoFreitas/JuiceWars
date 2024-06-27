@@ -41,6 +41,7 @@ public class Player_Stats : MonoBehaviour
     public bool InDash = false;
 
     public bool HasWhip = false;
+    public float DamageWhip = 15f;
 
     public List<Card> ListCards = new List<Card>();
 
@@ -95,9 +96,9 @@ public class Player_Stats : MonoBehaviour
             
         }
      }
-    public void ApplyDamageFromWhip(Collider2D ToSend)
+    public void ApplyDamageFromWhip(Collision2D ToSend)
     {
-        ToSend.SendMessage("TakeDamageMonster", 6f);
+        ToSend.gameObject.SendMessage("TakeDamageMonster", DamageWhip);
         // Verifica se o dinheiro deve ser spawnado
         float randomValueLifeSteal = Random.Range(0f, 100f);
         if (randomValueLifeSteal < PercentStealLife)

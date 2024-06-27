@@ -201,9 +201,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  moveSpeed: 5
+  moveSpeed: 3
   CurrentMoveSpeed: 0
   currentMonsterType: 0
+  isDead: 0
   CanFollowPlayer: 1
   Attacking: 0
   BrainBullet: {fileID: 0}
@@ -213,7 +214,7 @@ MonoBehaviour:
   floatingTextPrefab: {fileID: 5560712678904348730, guid: 29c02709a862d90469b85acf2efefb1a, type: 3}
   spriteRenderer:
   - {fileID: 0}
-  life: 7
+  life: 25
   ColliderDamage: {fileID: 5032226427726061036}
   isBeingAttacked: 0
   particle: {fileID: 0}
@@ -254,7 +255,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.026361346, y: -0.010033071}

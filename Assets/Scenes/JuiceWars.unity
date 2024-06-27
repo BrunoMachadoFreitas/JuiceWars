@@ -3988,7 +3988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: PricesCards.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: Descriptions.Array.size
@@ -4020,6 +4020,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: PricesCards.Array.data[6]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
+      propertyPath: PricesCards.Array.data[7]
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
@@ -4068,7 +4072,7 @@ PrefabInstance:
       objectReference: {fileID: 1438724376}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: DescriptionsCards.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: ImagesForButtons.Array.data[6]
@@ -4115,12 +4119,16 @@ PrefabInstance:
       value: You don't die the next time, card it's destroyed
       objectReference: {fileID: 0}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
+      propertyPath: DescriptionsCards.Array.data[7]
+      value: Spawn an Juice Emitter!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: ImagesForButtons.Array.data[10]
       value: 
       objectReference: {fileID: 21300000, guid: b7d2cbfbc67812c4c9c03626c9d03b52, type: 3}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: ImagesForButtonsCards.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: ImagesForButtonsCards.Array.data[0]
@@ -4150,6 +4158,10 @@ PrefabInstance:
       propertyPath: ImagesForButtonsCards.Array.data[6]
       value: 
       objectReference: {fileID: 21300000, guid: a46c9930245e43e40a6d6730339b8b46, type: 3}
+    - target: {fileID: 5260209740749482449, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
+      propertyPath: ImagesForButtonsCards.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: cf18af3807df2294c917a80eb788023b, type: 3}
     - target: {fileID: 5260209740749482451, guid: 5ab9cbc9358ab10468c4b4c4241ccbde, type: 3}
       propertyPath: m_Name
       value: PowerUpManager

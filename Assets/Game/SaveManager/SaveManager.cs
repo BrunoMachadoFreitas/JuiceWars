@@ -67,11 +67,13 @@ namespace Game.SaveManager
         public bool FoundBreakCardSpot;
         public bool FoundJuiceCollectCard;
         public bool FoundTonicOfThePhoenixCard;
+        public bool FoundJuiceEmitterCard;
 
         public bool CanPlayGameSounds;
         public bool CanPlayGameMusic;
 
-
+        //Display Settings
+        public bool ShowShakeCamera;
 
 
     }

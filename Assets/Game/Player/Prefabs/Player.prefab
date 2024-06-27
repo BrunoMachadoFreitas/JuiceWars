@@ -3447,6 +3447,7 @@ MonoBehaviour:
   DashRechargeTime: 2
   InDash: 0
   HasWhip: 1
+  DamageWhip: 15
   ListCards: []
   GeneralVolume: 0.3
   moneyToDrop: {fileID: 1944652089098600243, guid: 65488af406f73394fbd8287c94c36120, type: 3}
@@ -5887,7 +5888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2925676638783729497, guid: c41661fa975ca2348ba32c378f817e14, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2925676638783729497, guid: c41661fa975ca2348ba32c378f817e14, type: 3}
       propertyPath: ClubPrefab

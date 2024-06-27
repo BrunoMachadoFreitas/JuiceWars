@@ -157,7 +157,19 @@ public class CardSpot : MonoBehaviour
                 textDescCard = CardX.textDesc;
                 Player_Stats.instance.ListCards.Add(CardX);
                 break;
-                
+
+            case CardType.JuiceEmitterCard:
+                CardX = Instantiate(Card, this.transform.position, Quaternion.identity);
+                CardX.gameObject.SetActive(true);
+                CardX.transform.SetParent(this.transform);
+                CardX.transform.GetChild(1).GetComponent<Image>().sprite = PowerUpsManager.instance.ImagesForButtonsCards[7];
+                CardX.AssociatedCardSpot = this;
+                HasCard = true;
+                CardX.InitializePowerUp(CardType);
+                textDescCard = CardX.textDesc;
+                Player_Stats.instance.ListCards.Add(CardX);
+                break;
+
         }
     }
 

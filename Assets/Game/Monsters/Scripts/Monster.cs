@@ -68,6 +68,19 @@ public class Monster : MonoBehaviour
 
 
     Vector2 direction;
+
+    Vector2 KnockBackDirection;
+    float knockBackDuration;
+    Vector2 knockBackVelocity;
+
+    public void KnockBack(Vector2 velocity, float duration)
+    {
+        if (knockBackDuration > 0) return;
+
+        knockBackVelocity = velocity;
+        knockBackDuration = duration;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -123,6 +136,17 @@ public class Monster : MonoBehaviour
             // Atualiza a velocidade de movimento para a direção aleatória
             this.gameObject.GetComponent<Rigidbody2D>().velocity = randomDirection * moveSpeed;
         }
+
+        if(knockBackDuration > 0)
+        {
+            transform.position += (Vector3)knockBackVelocity * Time.deltaTime;
+            knockBackDuration -= Time.deltaTime;
+
+        }
+        else
+        {
+            transform.position = Vector2.MoveTowards(transform.position, Player_Main.instance.transform.position, moveSpeed * Time.deltaTime);
+        }
     }
     void FixedUpdate()
     {
@@ -172,32 +196,28 @@ public class Monster : MonoBehaviour
             TakeDamageMonster(Player_Stats.instance.Power);
         }
 
-        else if (other.CompareTag("Whip"))
+        else if (other.CompareTag("Whip") || other.CompareTag("Emitter"))
         {
-            Vector2 pushDirection = (transform.position - other.transform.position).normalized;
+            float knockBackForce = 5f;
+            Vector2 dir = transform.position - other.transform.position;
+            KnockBack(dir, knockBackDuration);
 
-            Debug.Log("Push Direction: " + pushDirection);
-
-            if (rb != null)
-            {
-                rb.velocity = Vector2.zero;
-                float pushForce = 20f;
-                Debug.Log("Applying push force: " + pushForce);
-                rb.AddForce(pushDirection * pushForce, ForceMode2D.Impulse);
-                Debug.Log("Monster velocity after push: " + rb.velocity);
-                
-            }
-            else
-            {
-                Debug.LogWarning("Rigidbody2D not found on monster.");
-            }
+           
         }
         if (other.CompareTag("BallRotate"))
         {
             StartCoroutine(StopMonster());
         }
     }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Whip")
+        {
+            if (AnimFlash != null)
+                AnimFlash.SetTrigger("hit");
 
+        }
+    }
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player") || other.CompareTag("Dagger"))
@@ -208,8 +228,16 @@ public class Monster : MonoBehaviour
         {
 
         }
-        
-        
+
+        else if (other.CompareTag("Whip") || other.CompareTag("Emitter"))
+        {
+
+
+
+            GetComponent<BoxCollider2D>().isTrigger = true;
+
+
+        }
         isDamaged = false;
     }
 

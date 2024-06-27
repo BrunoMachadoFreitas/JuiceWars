@@ -96,6 +96,14 @@ public class Player_Main : MonoBehaviour
     public GameObject WhipPrefab; // Referência ao prefab do JuiceHole
     private GameObject currentWhip;
     private float currenHealthFillVelocity;
+
+
+
+
+
+
+    public bool CanJuiceHole = false;
+    public bool CanGreenTea = false;
     private void Awake()
     {
         if (instance == null)
@@ -325,55 +333,7 @@ public class Player_Main : MonoBehaviour
     }
 
 
-    public void DashTrigger()
-    {
-        if ((movement != Vector2.zero && !Player_Stats.instance.InDash) || (myInput != Vector2.zero && !Player_Stats.instance.InDash))
-        {
-            Player_Stats.instance.InDash = true;
-
-            spriteDash = Instantiate(SpriteDash, this.transform.position, Quaternion.identity);
-            spriteDash.transform.localScale = new Vector3(.5f, .5f, 0f);
-
-            TrailDash.SetActive(true);
-
-            GetComponent<BoxCollider2D>().enabled = false;
-
-            Player_Stats.instance.CurrentSpeed = Player_Stats.instance.DashSpeed;
-
-            Invoke("PosDash", 0.1f);
-        }
-    }
-
-    public void PosDash()
-    {
-        Player_Stats.instance.CurrentSpeed = Player_Stats.instance.moveSpeed;
-        Destroy(spriteDash);
-        TrailDash.SetActive(false);
-        GetComponent<BoxCollider2D>().enabled = true;
-        Invoke("EndDash", Player_Stats.instance.DashRechargeTime);
-        StartCoroutine(DashRechargeCoroutine());
-    }
-
-    private IEnumerator DashRechargeCoroutine()
-    {
-        float rechargeTime = Player_Stats.instance.DashRechargeTime;
-        float elapsedTime = 0f;
-
-        while (elapsedTime < rechargeTime)
-        {
-            elapsedTime += Time.deltaTime;
-            ImageDash.fillAmount = Mathf.Clamp01(elapsedTime / rechargeTime);
-            yield return null;
-        }
-
-        // Ao final do timer, garantir que o fillAmount esteja em 1
-        ImageDash.fillAmount = 1f;
-        Player_Stats.instance.InDash = false; // Permitir dash novamente
-    }
-    public void EndDash()
-    {
-        Player_Stats.instance.InDash = false;
-    }
+    
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -434,7 +394,9 @@ public class Player_Main : MonoBehaviour
                             }
                             
                         }
-                        ShakeCamera();
+                        if (ControlMenu.instance.showSkake) { 
+                            ShakeCamera();
+                        }
                     }
                     else
                     {
@@ -535,8 +497,59 @@ public class Player_Main : MonoBehaviour
         Camera.main.gameObject.transform.localPosition = originalPosition; // Retorna a câmera à sua posição original
     }
 
-    public bool CanJuiceHole = false;
-    public bool CanGreenTea = false;
+    
 
-   
+
+
+
+    public void DashTrigger()
+    {
+        if ((movement != Vector2.zero && !Player_Stats.instance.InDash) || (myInput != Vector2.zero && !Player_Stats.instance.InDash))
+        {
+            Player_Stats.instance.InDash = true;
+
+            spriteDash = Instantiate(SpriteDash, this.transform.position, Quaternion.identity);
+            spriteDash.transform.localScale = new Vector3(.5f, .5f, 0f);
+
+            TrailDash.SetActive(true);
+
+            GetComponent<BoxCollider2D>().enabled = false;
+
+            Player_Stats.instance.CurrentSpeed = Player_Stats.instance.DashSpeed;
+
+            Invoke("PosDash", 0.1f);
+        }
+    }
+
+    public void PosDash()
+    {
+        Player_Stats.instance.CurrentSpeed = Player_Stats.instance.moveSpeed;
+        Destroy(spriteDash);
+        TrailDash.SetActive(false);
+        GetComponent<BoxCollider2D>().enabled = true;
+        Invoke("EndDash", Player_Stats.instance.DashRechargeTime);
+        StartCoroutine(DashRechargeCoroutine());
+    }
+
+    private IEnumerator DashRechargeCoroutine()
+    {
+        float rechargeTime = Player_Stats.instance.DashRechargeTime;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < rechargeTime)
+        {
+            elapsedTime += Time.deltaTime;
+            ImageDash.fillAmount = Mathf.Clamp01(elapsedTime / rechargeTime);
+            yield return null;
+        }
+
+        // Ao final do timer, garantir que o fillAmount esteja em 1
+        ImageDash.fillAmount = 1f;
+        Player_Stats.instance.InDash = false; // Permitir dash novamente
+    }
+    public void EndDash()
+    {
+        Player_Stats.instance.InDash = false;
+    }
+
 }

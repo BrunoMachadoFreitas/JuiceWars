@@ -1,3 +1,5 @@
+using Game.SaveManager;
+using Game.Sounds.SoundScripts;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +8,7 @@ using UnityEngine.UI;
 
 public class ResolutionDropdownHandler : MonoBehaviour
 {
+    public static ResolutionDropdownHandler instance;
     [SerializeField] private TMPro.TMP_Dropdown resolutionDropDown;    //check name!
 
     private Resolution[] resolutions;
@@ -14,11 +17,26 @@ public class ResolutionDropdownHandler : MonoBehaviour
     //private float currentRefreshRate;
     private int currentResolutionIndex = 0;
     [HideInInspector] public Resolution resolution;
+
+    [SerializeField] private Toggle toggleCanShowShakeCamera;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+    }
     private void Start()
     {
         resolutions = Screen.resolutions;
         filteredResolutions = new List<Resolution>();
-
+        toggleCanShowShakeCamera.isOn = ControlMenu.instance.showSkake;
         resolutionDropDown.ClearOptions();
         //currentRefreshRate = Screen.currentResolution.refreshRate;
 
@@ -69,5 +87,23 @@ public class ResolutionDropdownHandler : MonoBehaviour
             //Screen.fullScreen = false;
             Screen.fullScreenMode = FullScreenMode.Windowed;
         }
+    }
+
+
+    public void OnChangeValueCheckCanShowShakeCamera()
+    {
+        if (toggleCanShowShakeCamera.isOn)
+        {
+            ControlMenu.instance.showSkake = true;
+            ControlMenu.instance.objectData.ShowShakeCamera = true;
+        }
+        else if (!toggleCanShowShakeCamera.isOn)
+        {
+            
+            ControlMenu.instance.showSkake = false;
+            ControlMenu.instance.objectData.ShowShakeCamera = false;
+        }
+
+        SaveManager.SaveData();
     }
 }

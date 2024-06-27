@@ -82,6 +82,7 @@ public class PowerUpsManager : MonoBehaviour
         powerUpsCards.Add("GreenTea", ControlMenu.instance.objectData.FoundGreenTeaCard);
         powerUpsCards.Add("CoffeeCard", ControlMenu.instance.objectData.FoundCoffeeCard);
         powerUpsCards.Add("TonicOfThePhoenix", ControlMenu.instance.objectData.FoundTonicOfThePhoenixCard);
+        powerUpsCards.Add("JuiceEmitter", ControlMenu.instance.objectData.FoundJuiceEmitterCard);
 
 
     }
@@ -180,7 +181,7 @@ public class PowerUpsManager : MonoBehaviour
                 PowerUpObject[i].GetComponentInChildren<Button>().image.sprite = ImagesForButtonsCards[randomPowerUp];
                 PowerUpObject[i].GetComponentInChildren<Button>().gameObject.GetComponentInChildren<TextMeshProUGUI>().text = DescriptionsCards[randomPowerUp];
                 PowerUpObject[i].transform.GetChild(0).gameObject.GetComponentInChildren<TextMeshProUGUI>().text = PricesCards[randomPowerUp];
-                PricesWhatToBuy.Add(Prices[randomPowerUp]);
+                PricesWhatToBuy.Add(PricesCards[randomPowerUp]);
                 WhatToBuy.Add(powerUpsCards.ElementAt(randomPowerUp).Key);
                 if (powerUpsCards.ElementAt(randomPowerUp).Value == false)
                 {
@@ -668,6 +669,19 @@ public class PowerUpsManager : MonoBehaviour
                     SaveManager.SaveData();
                 }
                 break;
+
+            case "JuiceEmitter":
+                if (Player_Main.instance.Money >= Convert.ToInt32(PricesCards[7]))
+                {
+                    ManageCardEffects("JuiceEmitter");
+                    ControlMenu.instance.objectData.FoundJuiceEmitterCard = true;
+
+                    powerUps["JuiceEmitter"] = ControlMenu.instance.objectData.FoundJuiceEmitterCard;
+                    Player_Main.instance.Money -= Convert.ToInt32(PricesCards[7]);
+                    buyed = true;
+                    SaveManager.SaveData();
+                }
+                break;
                 
         }
         PlayerItemOnUiManager.instance.ManageItemsOfPLayer();
@@ -708,6 +722,11 @@ public class PowerUpsManager : MonoBehaviour
         if (CardPower == "TonicOfThePhoenix")
         {
             AtributteCardPowerImagesAndStats("TonicOfThePhoenix");
+        }
+
+        if (CardPower == "JuiceEmitter")
+        {
+            AtributteCardPowerImagesAndStats("JuiceEmitter");
         }
         
     }
@@ -759,7 +778,11 @@ public class PowerUpsManager : MonoBehaviour
                     o.GetComponent<CardSpot>().CardType = CardType.TonicOfThePhoenixCard;
                     o.InstantiateCard();
                 }
-                
+                else if (Type == "JuiceEmitter")
+                {
+                    o.GetComponent<CardSpot>().CardType = CardType.JuiceEmitterCard;
+                    o.InstantiateCard();
+                }
                 break; // Para a iteração assim que encontrar um CardSpot sem card e atribuir o tipo de card.
             }
 

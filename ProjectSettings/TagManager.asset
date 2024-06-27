@@ -30,6 +30,7 @@ TagManager:
   - Modifier 4
   - Modifier 5
   - CardSpot
+  - Emitter
   layers:
   - Default
   - TransparentFX

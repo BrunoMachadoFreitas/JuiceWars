@@ -30,6 +30,9 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     private float clickTime = 0f;
     private Coroutine hideTextCoroutine;
 
+
+    [SerializeField] private Emitter emitterPrefab;
+    public Emitter emitterToUse;
     void Start()
     {
         canvas = transform.parent.parent.parent.GetComponent<Canvas>();
@@ -106,7 +109,13 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 Player_Stats.instance.TonicOfThePhoenixActivated = true;
                 textDesc.text = "You don't die the next time, card it's destroyed";
                 break;
-                
+            case CardType.JuiceEmitterCard:
+                thisCardType = CardType.JuiceEmitterCard;
+                emitterToUse = Instantiate(emitterPrefab, Player_Main.instance.transform.position, Quaternion.identity);
+                emitterToUse.transform.SetParent(Player_Main.instance.transform);
+                textDesc.text = "Spawn an Juice Emitter!";
+                break;
+
         }
     }
 
@@ -168,6 +177,11 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 Player_Stats.instance.CardsActive.Add(this);
                 Player_Stats.instance.TonicOfThePhoenixActivated = true;
                 //textDesc.text = "You don't die the next time, card it's destroyed";
+                break;
+
+            case CardType.JuiceEmitterCard:
+                thisCardType = CardType.JuiceEmitterCard;
+                
                 break;
         }
     }

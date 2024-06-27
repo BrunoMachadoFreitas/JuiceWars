@@ -97,12 +97,19 @@ public class Whip_Weapon : MonoBehaviour
             }
         }
     }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Monster")
+        {
+            Player_Stats.instance.ApplyDamageFromWhip(collision);
 
+        }
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Monster"))
         {
-            Player_Stats.instance.ApplyDamageFromWhip(other);
+           
         }
     }
 

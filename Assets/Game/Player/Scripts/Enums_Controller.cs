@@ -36,6 +36,7 @@ public enum CardType
     GreenTea = 4,
     CoffeeCard = 5,
     TonicOfThePhoenixCard = 6,
+    JuiceEmitterCard = 7,
 }
 public class Enums_Controller : MonoBehaviour
 {

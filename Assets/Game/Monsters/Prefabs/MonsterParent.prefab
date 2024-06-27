@@ -159,9 +159,9 @@ GameObject:
   - component: {fileID: 198855782816037485}
   - component: {fileID: 2884544507656122372}
   - component: {fileID: 2141905930424989619}
-  - component: {fileID: 8586228066475317192}
   - component: {fileID: 2442726250997335295}
   - component: {fileID: 1397684298865749486}
+  - component: {fileID: 1001847239603909051}
   m_Layer: 0
   m_Name: MonsterParent
   m_TagString: Monster
@@ -221,9 +221,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  moveSpeed: 3
+  moveSpeed: 1
   CurrentMoveSpeed: 0
   currentMonsterType: 0
+  isDead: 0
   CanFollowPlayer: 1
   Attacking: 0
   BrainBullet: {fileID: 0}
@@ -244,8 +245,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  life: 9
-  ColliderDamage: {fileID: 8586228066475317192}
+  life: 30
+  ColliderDamage: {fileID: 0}
   isBeingAttacked: 0
   particle: {fileID: 0}
   spriteFlash: {fileID: 0}
@@ -254,22 +255,6 @@ MonoBehaviour:
   PlayerCriticalChance: 10
   PlayerInitialCritalChance: 0
   Exp: {fileID: 1944652089098600243, guid: 653dc3abc6146df44b39bca654afe1db, type: 3}
---- !u!58 &8586228066475317192
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6501984974712581605}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.83133495
 --- !u!95 &2442726250997335295
 Animator:
   serializedVersion: 5
@@ -343,6 +328,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1001847239603909051
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6501984974712581605}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.011534274, y: -0.14129645}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 2.56}
+    newSize: {x: 2.56, y: 2.56}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.67989266, y: 1.4123269}
+  m_EdgeRadius: 0
 --- !u!1001 &2742628524656359927
 PrefabInstance:
   m_ObjectHideFlags: 0
